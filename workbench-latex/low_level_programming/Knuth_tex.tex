@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Set indentation to-------------------------------------------------------------------------------- zero
+\setlength{\parindent}{0ex}
+
+\begin{document}
+
+\section{101}
+
+% count<0~256> ->  32bits int
+	\count2=42
+	The value is now ‘\the\count2’ \\
+	\def\macro{-1234}
+	\count0=\macro
+	The value is now ‘\the\count0’.
+	\newline\\
+	% dimen <0~255> -> fixed pont number
+	\dimen0=0.001pt
+	Float point value \the\dimen0\\
+	\\
+	%toks -> string type
+	\newtoks\slbstr
+	\slbstr={NICE}%
+	This is \the\slbstr
+
+	\count0=1 \count1=2
+	\advance\count0 by \count1 %note that it actually use the "by" as operator
+	count0 updated to \the\count0
+
+\section{Macros}
+
+\def\slbMacro{A replacement text}
+Executing the macro "\slbMacro"
+%arguments:
+\def\slbArgMacro#1{replacement with argument=#1}
+Invoking "\slbArgMacro{Hello!}"
+
+\def\point(#1,#2){Point that take two args ->  #1 and #2}
+\def\temp{(1,2)}
+\expandafter\point\temp
+
+\section{Scoping}
+\def\x{1}
+
+{
+    \def\x{2}
+    Value of x is now \x -> 2
+
+    \global\def\y{3}
+}
+
+Value of x is now \x -> 1
+
+Extract value from local scope \y ->3
+
+\section{branching}
+
+1=2? \ifnum 1 = 2 %
+\else
+No!
+\fi
+
+1=1? \ifnum 1 = 1
+yes1
+\else
+\fi
+
+\newcount\exactone %
+\exactone=1
+\advance\exactone by 1
+1+1=2? \ifnum \exactone = 2
+yes\fi
+
+
+\end{document}

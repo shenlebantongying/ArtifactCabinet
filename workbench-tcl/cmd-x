@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+SCRIPT=$(realpath "$0") # -> Complete path /home/slbtty/scripts/sourcetest.bash
+SCRIPTPATH=$(dirname "$SCRIPT") #-> only /home/slbtty/scripts
+
+find "${SCRIPTPATH}" -name "*.tcl" -exec sh -c '
+    echo "chmod +x $1"
+    chmod +x "$1"
+' sh {} \;

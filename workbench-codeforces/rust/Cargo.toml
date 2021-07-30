@@ -1,0 +1,13 @@
+[package]
+name = "Codeforces-Solutions-in-Rust"
+version = "0.1.0"
+authors = ["shenleban tongying <shenlebantongying@gmail.com>"]
+edition = "2018"
+default-run= "playground"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[[bin]]
+name="playground"
+path="playground.rs"

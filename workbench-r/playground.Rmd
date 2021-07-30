@@ -1,0 +1,18 @@
+---
+title: "playground"
+output:  html_document
+---
+
+```{r}
+seq(-10,10,by=2) -> y
+sum(y/2)
+```
+```{r}
+for (i in 1:length(y)){
+  print(y[[i]])
+}
+```
+```{r}
+slb_sum <- function(x1,x2){x1+x2}
+slb_sum(1,2)
+```

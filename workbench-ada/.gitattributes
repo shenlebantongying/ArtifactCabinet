@@ -1,0 +1,4 @@
+.ada linguist-language=Ada
+.adb linguist-language=Ada
+.ads linguist-language=Ada
+.gpr linguist-language=Ada
