@@ -1,0 +1,9 @@
+# async -> sync
+To change the message model to synchronous messaging we need to do the
+following steps:
+1 Each receive clause will also have to match the process ID of the
+requesting sender (in addition to the “original” message, e.g., the word)
+2 Each receive clause has to send a response to the sender (instead of, e.g.,
+just printing the result)
+3 On the sender side, instead of using !, we’ll write a simple function that
+sends a request and waits for the response
