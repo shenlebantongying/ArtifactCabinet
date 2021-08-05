@@ -31,3 +31,5 @@ Let's mainly use `SBCL` and possibly another actively developing one.
 If someday `Lispwork` lower their price for personal use........
 
 For windows, just use the [`Portacle`](https://portacle.github.io/) to avoid all the troublesome.
+
+Editor: SLIME -> sly
