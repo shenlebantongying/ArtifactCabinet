@@ -7,7 +7,7 @@
 * Algorithms, 4th by Robert Sedgewick <https://algs4.cs.princeton.edu/home/>
 
 * E-Maxx Algorithms in English <https://cp-algorithms.com/>
-
+* http://jeffe.cs.illinois.edu/teaching/algorithms/
 ## Courses
 
 * 6.046J -> Design and Analysis of Algorithms

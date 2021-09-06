@@ -49,3 +49,8 @@ Use `Core/Base` for bigger applications.
 `Batteries` is community driven.
 
 The source code of inria std is actually here and its quite elegant: https://github.com/ocaml/ocaml/tree/trunk/stdlib
+
+
+## Inspecting a module
+
+`#show` on a toplevel.

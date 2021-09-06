@@ -12,7 +12,7 @@
 ;; reduce
 (reduce (lambda (x y) (+ x y)) '(1 2 3) :initial-value 10)
 
-(reduce #'* '(1 2 3 4 5))i
+(reduce #'* '(1 2 3 4 5))
 
 ;; mini data as code
 (defvar x '(+ 1 2))

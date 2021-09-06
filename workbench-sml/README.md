@@ -4,7 +4,6 @@ To read two books ->
 + Okasaki's "Purely functional data structures"
 + Andrew Appel's "Modern Compiler Implementation in ML"
 
-
 # Tooling
 
 * Main -> Standard ML of New Jersey
@@ -25,3 +24,9 @@ C-c C-r => send region (without focus)
 Shift + C-a => select the line
 
 M+; => comment
+
+# Other materials
+
+http://www.cs.cmu.edu/~rwh/isml/book.pdf
+
+OCaml VS SML http://adam.chlipala.net/mlcomp/
