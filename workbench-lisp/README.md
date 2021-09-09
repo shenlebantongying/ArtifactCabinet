@@ -33,3 +33,8 @@ If someday `Lispwork` lower their price for personal use........
 For windows, just use the [`Portacle`](https://portacle.github.io/) to avoid all the troublesome.
 
 Editor: SLIME -> sly
+
+# Other Lisps
+
++ picoLisp
++ newLisp
