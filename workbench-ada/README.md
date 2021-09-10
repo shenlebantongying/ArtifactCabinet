@@ -4,6 +4,8 @@ TODO:
 
 + Answer why ada claim itself as a "safety critical language"?
 
++ A dude who are studying ada https://pyjarrett.github.io/programming-with-ada/index.html#
+
 # Build
 
 Single file
