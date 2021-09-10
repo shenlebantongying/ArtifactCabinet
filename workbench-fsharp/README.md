@@ -1,3 +1,7 @@
+# todo
+
+Read most of the topics in this page https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/
+
 # How to run fsharp?
 
 repl: `dotnet fsi` -> You can send selection of code to the repl in Jetbrains Rider!
@@ -16,3 +20,7 @@ or
 
 + Single Entry Point (aka main function)
 + use the `dotnet` cli to create libraries or things
+
+# Tooling tips
+
+`dotnet tools` => fun additional programs

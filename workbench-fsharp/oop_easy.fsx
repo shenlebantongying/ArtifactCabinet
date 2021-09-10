@@ -1,4 +1,3 @@
-
 open System
 (* A type with function *)
 type peopleName =
