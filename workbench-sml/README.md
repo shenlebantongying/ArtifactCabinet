@@ -30,3 +30,8 @@ M+; => comment
 http://www.cs.cmu.edu/~rwh/isml/book.pdf
 
 OCaml VS SML http://adam.chlipala.net/mlcomp/
+
+https://homepages.inf.ed.ac.uk/stg/NOTES/notes.html
+
+unix 
+http://mlton.org/References.attachments/Shipman02.pdf
