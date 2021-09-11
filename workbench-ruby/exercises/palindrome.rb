@@ -20,3 +20,6 @@ unless palindrome("abcdefg".split(""))
 # aka "if not"
   puts "no"
 end
+
+# alternatively -> just
+# a == a.reverse
