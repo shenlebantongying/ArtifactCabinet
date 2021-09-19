@@ -1,26 +1,33 @@
-(* 
-This file is mean to be build with dune system!
-use `make playground`
-*)
+#require "base";;
+open Base
 
-class stack_of_ints =
-    object (_)
-      val mutable the_list = ( [] : int list ) (* instance variable *)
-      method push x =                        (* push method *)
-        the_list <- x :: the_list
-      method pop =                           (* pop method *)
-        let result = List.hd the_list in
-        the_list <- List.tl the_list;        (*TODO: this do not working hwen open Core! *) 
-        result
-      method peek =                          (* peek method *)
-        List.hd the_list
-       method size =                          (* size method *)
-        List.length the_list
-    end;;
+type nucleotide = A | C | G | T
 
-let mystack = new stack_of_ints;;
+let dna_of_string s =
+  let f = function
+    | 'A' -> A
+    | 'C' -> C
+    | 'G' -> G
+    | 'T' -> T
+    | _   -> failwith "Big news! New nucleotide discovered" in
+  String.to_list s |> List.map ~f;;
 
-mystack#push 1;
-print_int mystack#peek;
+let hamming_distance (a : nucleotide list) (b : nucleotide list):(int,Base.string) Result.t =
+  let rec accu (a : nucleotide list) (b : nucleotide list) (n:int):int=
+    match a,b with
+    | ah::at,bh::bt -> if (not (phys_equal ah bh))
+                    then accu at bt (n+1)
+                    else accu at bt n
+    | _,_ -> n
+  in
+  match List.is_empty a,List.is_empty b with
+  | true,false -> Error "left strand must not be empty"
+  | false,true -> Error "right strand must not be empty"
+  | _,_ ->
+    if (List.length a) <> (List.length b)
+    then Error "left and right strands must be of equal length"
+    else Ok (accu a b 0);;
 
+let hamdist a b = hamming_distance (dna_of_string a) (dna_of_string b);;
 
+hamdist "GGACGGATTCTG" "AGGACGGATTCT";;

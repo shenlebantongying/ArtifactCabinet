@@ -1,4 +1,3 @@
 (executable
- (name playground))
-
-
+ (name playground)
+ (libraries base))

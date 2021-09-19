@@ -1,7 +1,0 @@
-type vs datatype
-modules
-struct vs structure
-multiple sig in one struct?
-is functor simply add another layer of things to existing types?
-Another Closure Idiom: Callbacks?
-Another Closure Idiom: Abstract Data Types?

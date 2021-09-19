@@ -25,6 +25,15 @@ Scheme community is bazaar.
 `.rtk`
 + Racket
 
+## do it in emacs
+
+
+``` emacs-lisp
+;; -*- geiser-scheme-implementation: guile -*-
+;; -*- geiser-scheme-implementation: chicken -*-
+;; -*- geiser-scheme-implementation: chez -*-
+```
+
 # Interesting New Scheme
 
 Why not embrace chaotic bizarre?
@@ -36,3 +45,4 @@ Why not embrace chaotic bizarre?
 # Links
 
 SRFI -> <https://srfi.schemers.org/>
+Learn scheme in fixnum of days -> https://ds26gte.github.io/tyscheme/

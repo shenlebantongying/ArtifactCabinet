@@ -10,7 +10,7 @@
 
 # Tooling notes
 
-Use `ghcup` -> global and `stack` -> per-project only.
+Use `ghcup` -> For Everything Haskell related
 
 `stack runghc ./nice.hs` -> run single file
 

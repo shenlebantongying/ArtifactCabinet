@@ -35,3 +35,8 @@ https://homepages.inf.ed.ac.uk/stg/NOTES/notes.html
 
 unix 
 http://mlton.org/References.attachments/Shipman02.pdf
+
+# Short Overviews
+
+https://cs.lmu.edu/~ray/notes/introml/
+https://saityi.github.io/sml-tour/tour/welcome

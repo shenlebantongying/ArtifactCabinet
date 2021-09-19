@@ -1,5 +1,6 @@
 # Monolithic Artifact Cabinet
 Codes & notes from my adventure of computer science.
 
-Workbench for more concrete/practical knowledge
-Topic for more meta/abstract things
+`workbench` for more concrete/practical knowledge
+`topic` for more meta/abstract things
+`proj` for a specific project
