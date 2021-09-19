@@ -1,0 +1,4 @@
+val msg="nice"
+
+msg
+

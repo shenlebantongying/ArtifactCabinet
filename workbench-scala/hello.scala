@@ -1,6 +1,4 @@
-@main 
-def hello = 
-
+@main def hello() =  
     println("Hello, world!")
 
     val msg="xxx"
@@ -14,3 +12,4 @@ def hello =
     val ints = List(1, 2, 3, 4, 5)
 
     for i <- ints do println(i)
+
