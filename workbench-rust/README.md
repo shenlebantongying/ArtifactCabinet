@@ -13,3 +13,9 @@ Ownership (aka _affine_ or _substructural_ type system)
 
 # SuckLess libraries
 + Rayon -> data-parallelism
++ StructOpt -> faster cli interface
++ pyo3 -> create python things
+
++ Rouille -> quick web
+
++ cargo-edit
