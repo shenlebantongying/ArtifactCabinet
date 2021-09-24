@@ -14,6 +14,9 @@ rules to infer new facts!
 Learn Prolog Now! <http://www.let.rug.nl/bos/lpn//lpnpage.php?pageid=online>
 prolog :- tutorial <https://www.cpp.edu/~jrfisher/www/prolog_tutorial/contents.html>
 
+
+adventure in prolog <https://www.amzi.com/AdventureInProlog/advtop.php>
+
 Good summary <http://www.cs.toronto.edu/~hojjat/384w10/>
 
 Common "keywords" with example <http://www.cse.unsw.edu.au/~billw/dictionaries/prolog/>
