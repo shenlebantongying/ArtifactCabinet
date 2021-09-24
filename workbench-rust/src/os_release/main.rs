@@ -1,6 +1,6 @@
 // SHIT
 
-// get os name
+// Get OS name on linux
 
 use std::fs::File;
 use std::io::{self, BufRead};
