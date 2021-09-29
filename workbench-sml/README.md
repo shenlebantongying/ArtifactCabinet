@@ -41,5 +41,4 @@ http://mlton.org/References.attachments/Shipman02.pdf
 https://cs.lmu.edu/~ray/notes/introml/
 https://saityi.github.io/sml-tour/tour/welcome
 
-
 ConcurrentML API -> http://cml.cs.uchicago.edu/pages/cml.html

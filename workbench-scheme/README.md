@@ -27,7 +27,6 @@ Scheme community is bazaar.
 
 ## do it in emacs
 
-
 ``` emacs-lisp
 ;; -*- geiser-scheme-implementation: guile -*-
 ;; -*- geiser-scheme-implementation: chicken -*-
@@ -41,8 +40,16 @@ Why not embrace chaotic bizarre?
 + Gerbil <https://github.com/vyzo/gerbil>
 + Chibi -> minimum C
 + Gambit
++ Gauche  https://practical-scheme.net/gauche/index.html (their doc is nice)
 
 # Links
 
 SRFI -> <https://srfi.schemers.org/>
 Learn scheme in fixnum of days -> https://ds26gte.github.io/tyscheme/
+
+
+# MISC
+
+r6rs vs r7rs
++ SixRejections -> https://github.com/johnwcowan/r7rs-work/blob/master/SixRejection.md
++ By weinholt -> _https://weinholt.se/articles/r7rs-vs-r6rs/

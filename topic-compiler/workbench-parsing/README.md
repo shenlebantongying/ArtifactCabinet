@@ -27,4 +27,4 @@ the one written by Andrew W. Appel
 
 this https://groups.seas.harvard.edu/courses/cs152/2021sp/schedule.html
 
-https://www.cs.cornell.edu/courses/cs6120/2020fa/self-guided/
+The self-guide (too hard for me) https://www.cs.cornell.edu/courses/cs6120/2020fa/self-guided/
