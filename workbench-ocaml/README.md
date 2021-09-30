@@ -51,7 +51,12 @@ Use `Core/Base` for bigger applications.
 
 The source code of inria std is actually here and its quite elegant: https://github.com/ocaml/ocaml/tree/trunk/stdlib
 
-
 ## Inspecting a module
 
 `#show` on a toplevel.
+
+
+# Connect C and Ocaml
+
+A lot of basic examples http://decapode314.free.fr/ocaml/ocaml-wrapping-c.html
+
