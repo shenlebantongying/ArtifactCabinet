@@ -1,4 +1,7 @@
-# haskell-workbench
+# Resources
+
+CIS 552: Advanced Programming
+https://www.seas.upenn.edu/~cis552/current/resources.html
 
 # Batteries
 <https://hackage.haskell.org/packages/top>
