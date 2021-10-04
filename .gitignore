@@ -5,3 +5,4 @@ build/
 *.sublime-workspace
 cmake-build*/
 .ccls-cache/
+.clj-kondo/
