@@ -6,6 +6,9 @@ https://www.seas.upenn.edu/~cis552/current/resources.html
 Every corners:
 http://dev.stephendiehl.com/hask/
 
+A gentler intro
+http://learnyouahaskell.com/chapters
+
 # Batteries
 <https://hackage.haskell.org/packages/top>
 + lens
