@@ -1,4 +1,5 @@
-// an object is a collection of zero or more properties each with attributes that determine how each property can be used
+// an object is a collection of zero or more properties each with attributes that
+// determine how each property can be used
 
 // Attach property at Run time
 let o = {};
