@@ -17,3 +17,8 @@ A lot of the critiques toward javascript are aggressive type convection which is
 [0] Brendan Eich and Allen Wirfs-Brock. "JavaScript: the first 20 years." Proceedings of the ACM on Programming Languages 4.HOPL (2020): 1-189.
 
 [1] Up to date ECMA-262 <https://262.ecma-international.org/>
+
+# Learn
+
++ <https://exploringjs.com/>
++ <https://developer.mozilla.org/en-US/docs/Web/JavaScript>
