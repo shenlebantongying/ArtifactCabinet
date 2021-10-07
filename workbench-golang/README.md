@@ -3,7 +3,5 @@
 go run ./nice.go
 ```
 
-# Technical 
-
-> Write `main(number)` in separate files then call it from `main.go`.
-
+# Docs
+[gobyexample](https://gobyexample.com/)
