@@ -6,3 +6,4 @@ build/
 cmake-build*/
 .ccls-cache/
 .clj-kondo/
+build-*-Debug/
