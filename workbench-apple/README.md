@@ -1,3 +1,7 @@
+You should consider ban those things, as they are not open source.
+
+Qt is simply better.
+
 # Objective C 
 
 ## Resources
