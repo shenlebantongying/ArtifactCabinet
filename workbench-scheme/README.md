@@ -53,3 +53,8 @@ Learn scheme in fixnum of days -> https://ds26gte.github.io/tyscheme/
 r6rs vs r7rs
 + SixRejections -> https://github.com/johnwcowan/r7rs-work/blob/master/SixRejection.md
 + By weinholt -> _https://weinholt.se/articles/r7rs-vs-r6rs/
+
+# Related publications
+
++ Clinger, William D., and Mitchell Wand. “Hygienic Macro Technology.” Proceedings of the ACM on Programming Languages 4, no. HOPL (June 12, 2020): 1–110. https://doi.org/10.1145/3386330.
+
