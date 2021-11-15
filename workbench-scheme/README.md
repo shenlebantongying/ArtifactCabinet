@@ -37,9 +37,10 @@ Scheme community is bazaar.
 
 Why not embrace chaotic bizarre?
 
++ Gambit -> high performance, and actively maintained
 + Gerbil <https://github.com/vyzo/gerbil>
 + Chibi -> minimum C
-+ Gambit
++ S7 Scheme -> also minimum C
 + Gauche  https://practical-scheme.net/gauche/index.html (their doc is nice)
 
 # Links
