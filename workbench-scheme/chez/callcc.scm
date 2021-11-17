@@ -33,3 +33,12 @@
 
 (product '(1 2 3 4 5)) ;; 120
 (product '(7 3 8 0 1 9 5)) ;; 3
+
+;; If use CC to the toplevel, the continuation will simply be the rest of program
+(call-with-current-continuation
+  (lambda (exit)
+    (for-each (lambda (x)
+                (when (negative? x)
+                    (exit x)))
+              '(54 0 37 -3 245 19))
+   #t))   ;; => -3
