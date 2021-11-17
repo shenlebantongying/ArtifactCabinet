@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Most Cited Computer Science Articles",
+    "link": "http://citeseer.ist.psu.edu/stats/articles",
+    "description": "By CiteSeer X"
+  },
+  {
+    "name": "Best Paper Awards in Computer Science(By jeff huang)",
+    "link": "https://jeffhuang.com/best_paper_awards.html"
+  },
+  {
+    "name": "Marxists Internet Archive",
+    "link": "https://www.marxists.org/"
+  },
+  {
+    "name": "The Feynman Lectures on Physics",
+    "link": "http://www.feynmanlectures.caltech.edu/"
+  },
+  {
+    "name": "Open Syllabus Project",
+    "link": "http://explorer.opensyllabusproject.org/"
+  },
+  {
+    "name": "UEfAP(Academic writing)",
+    "link": "http://www.uefap.net/"
+  },
+  {
+    "name": "Leslie Lamport's homepage",
+    "link": "http://lamport.org/"
+  },
+  {
+    "name": "Abstract Heresies ",
+    "link": "https://funcall.blogspot.com/",
+    "description": "Unknown lisp hacker from Harvard"
+  },
+  {
+    "name": "Robert Sedgewick",
+    "link": "https://www.cs.princeton.edu/~rs/",
+    "description": "algorithm prof."
+  },
+  {
+    "name": "Benjamin Pierce's Papers, Books, and Software",
+    "link": "https://www.cis.upenn.edu/~bcpierce/papers/index.shtml",
+    "description": "Ocaml hacker, Robert Harper's student "
+  },
+  {
+    "name": "Robert Harper",
+    "link": "http://www.cs.cmu.edu/~rwh/",
+    "description": "CMU's pl prof, one of author of Standard ML"
+  },
+  {
+    "name": "Alexandre Duret-Lutz",
+    "link": "https://www.lrde.epita.fr/~adl/",
+    "description": "One of the author of GNU Build System "
+  },
+  {
+    "name": "Arnold Robbins's Home Page",
+    "link": "https://www.skeeve.com/",
+    "description": "GNU Hacker & major contributor of GNU awk"
+  },
+  {
+    "name": "Chris Siebenmanne",
+    "link": "https://utcc.utoronto.ca/~cks/",
+    "description": "A Unix hacker from uToronto!"
+  },
+  {
+    "name": "Charles Petzold's homepage",
+    "link": "http://www.charlespetzold.com/",
+    "description": "Legendary Microsoft/Windows programmer"
+  },
+  {
+    "name": "Nathan's GUI Gallery",
+    "link": "http://toastytech.com/guis/index.html",
+    "description": "Old generation GUIs"
+  },
+  {
+    "name": "Lennart Poettering",
+    "link": "http://0pointer.de/lennart/",
+    "description": "Outstanding Linux hacker, main author of Systemd init system"
+  },
+  {
+    "name": "Aaron Swartz homepage",
+    "link": "http://www.aaronsw.com/",
+    "description": "1986-2013 \"The Internet's Own Boy\""
+  },
+  {
+    "name": "Julian Assange`s original blog (pre-2007)",
+    "link": "https://cryptome.org/iq-org/IQ.ORG.htm"
+  },
+  {
+    "name": "Julian Assange`s backup blog",
+    "link": "http://re-iq.blogspot.com/",
+    "description": "someone else create it"
+  },
+  {
+    "name": "Alexandra Elbakyan",
+    "link": "https://engineuring.wordpress.com/",
+    "description": "Creator of Sci-Hub"
+  },
+  {
+    "name": "Jesús Fernández-Villaverde(Economist)",
+    "link": "https://www.sas.upenn.edu/~jesusfv/index.html"
+  },
+  {
+    "name": "Xavier Leroy",
+    "link": "https://xavierleroy.org/index.html",
+    "description": "French & cool hacker & scientist!"
+  },
+  {
+    "name": "Stephen wolfram's blog",
+    "link": "https://www.stephenwolfram.com/"
+  },
+  {
+    "name": "N. Gregory Mankiw Harvard Page",
+    "link": "https://scholar.harvard.edu/mankiw/home"
+  },
+  {
+    "name": "Tristan Miller",
+    "link": "https://logological.org/",
+    "description": "computational linguist working mainly in the area of lexical semantics.(Author of GPP)"
+  },
+  {
+    "name": "Paul Graham Essasys",
+    "link": "http://www.paulgraham.com/articles.html"
+  },
+  {
+    "name": "Martin Fowler (.com)",
+    "link": "https://martinfowler.com/"
+  },
+  {
+    "name": "Peter@Norvig.com",
+    "link": "http://norvig.com/"
+  },
+  {
+    "name": "Eric S. Raymond's Home Page",
+    "link": "http://www.catb.org/~esr/"
+  },
+  {
+    "name": "Eric S. Raymond's Blog",
+    "link": "http://esr.ibiblio.org/"
+  },
+  {
+    "name": "Richard Stallman's Personal Site",
+    "link": "https://stallman.org/"
+  },
+  {
+    "name": "Xah Lee's homepage",
+    "link": "http://xahlee.info/"
+  },
+  {
+    "name": "Terence tao's(陶哲轩) blog",
+    "link": "https://terrytao.wordpress.com/"
+  },
+  {
+    "name": "Tsung Dao (T. D.) Lee's(李政道) Home Page",
+    "link": "http://tdlee.ccast.ac.cn/"
+  },
+  {
+    "name": "卢昌海的个人主页",
+    "link": "https://www.changhai.org/"
+  },
+  {
+    "name": "王垠的博客",
+    "link": "http://www.yinwang.org/"
+  },
+  {
+    "name": "冰河田春的博客",
+    "link": "https://ctian.livejournal.com/"
+  },
+  {
+    "name": "Roy T. Fielding's homepage",
+    "link": "http://roy.gbiv.com/"
+  },
+  {
+    "name": "Bill Gates Notes",
+    "link": "https://www.gatesnotes.com/"
+  },
+  {
+    "name": "Rosetta Code",
+    "link": "http://rosettacode.org/wiki/Rosetta_Code"
+  },
+  {
+    "name": "Stanford Encyclopedia of Philosophy",
+    "link": "https://plato.stanford.edu/"
+  },
+  {
+    "name": "Best Paper Awards in Computer Science (since 1996)",
+    "link": "https://jeffhuang.com/best_paper_awards.html"
+  },
+  {
+    "name": "Project Gutenberg",
+    "link": "http://www.gutenberg.org/"
+  },
+  {
+    "name": "Marxists Internet Archive",
+    "link": "https://www.marxists.org/"
+  },
+  {
+    "name": "William R. Cook",
+    "link": "https://www.cs.utexas.edu/users/wcook/"
+  },
+  {
+    "name": "Adam Chilpala (sml hacker)",
+    "link": "http://adam.chlipala.net/"
+  }
+]
