@@ -6,6 +6,10 @@
 + [htdp 2e](https://htdp.org/2020-8-1/Book/index.html) How to Design Programs, Second Edition
 + [EoPL3](http://www.eopl3.com/) Essentials of Programming Languages, Third Edition
 
+## MISC docs
+
+[Teach Yourself Scheme in Fixnum Days](https://ds26gte.github.io/tyscheme/index.html)
+
 # Emacs
 
 Dont't use `scheme` layer of spacemacs or `geiser`, they are kind of overhead. Vallina scheme mode + paredit = nice.
@@ -37,12 +41,12 @@ Scheme community is bazaar.
 
 Why not embrace chaotic bizarre?
 
++ MIT scheme -> the one
 + Gambit -> high performance, and actively maintained
 + Gerbil <https://github.com/vyzo/gerbil>
 + Chibi -> minimum C
 + S7 Scheme -> also minimum C
 + Gauche  https://practical-scheme.net/gauche/index.html (their doc is nice)
-
 # Links
 
 SRFI -> <https://srfi.schemers.org/>
