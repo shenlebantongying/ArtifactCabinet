@@ -8,6 +8,7 @@
 
 * E-Maxx Algorithms in English <https://cp-algorithms.com/>
 * http://jeffe.cs.illinois.edu/teaching/algorithms/
+* [Competitive Programmer’s Handbook](https://cses.fi/book/book.pdf)
 ## Courses
 
 * 6.046J -> Design and Analysis of Algorithms

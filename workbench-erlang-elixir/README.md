@@ -21,3 +21,6 @@ What is "Let It Crash"
 + the book by joe himself
 + <http://erlang.org/doc/index.html>
 + <https://www.cis.upenn.edu/~matuszek/General/ConciseGuides/concise-erlang.html>
++ <https://learnyousomeerlang.com/content>
++ <https://erlang-in-anger.com/>
++ <https://adoptingerlang.org/>

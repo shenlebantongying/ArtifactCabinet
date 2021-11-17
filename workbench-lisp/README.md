@@ -16,11 +16,15 @@ Sorted in the order of my interest
 + <https://common-lisp.net/>
 + CLiki <https://www.cliki.net/>
 + ANSI common lisp (mainly about macro) <http://www.paulgraham.com/acl.html>
-<https://lispcookbook.github.io/cl-cookbook/>
+  <https://lispcookbook.github.io/cl-cookbook/>
 + The Common Lisp HyperSpec <http://www.lispworks.com/documentation/HyperSpec/Front/index.htm>
 + search libraries https://ultralisp.org/
 
 2021.6 most downloaded packages -> <https://www.quicklisp.org/stats/2021/2021-05.csv>
+
+
+
+Lisp mega list: https://www.cs.cmu.edu/Groups/AI/html/faqs/lang/lisp/part1/faq-doc-4.html
 
 # Technical Notes
 
