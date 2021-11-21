@@ -3,14 +3,13 @@
 https://gitlab.haskell.org/ghc/ghc/-/tree/master/libraries/base
 https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems
 http://wiki.haskell.org/Typeclassopedia
-http://learnyouahaskell.com/making-our-own-types-and-typeclasses#a-yes-no-typeclass
 
 # Resources
 
 CIS 552: Advanced Programming
 https://www.seas.upenn.edu/~cis552/current/resources.html
 
-Every corners:
+What I Wish I Knew When Learning Haskell
 http://dev.stephendiehl.com/hask/
 
 A gentler intro
