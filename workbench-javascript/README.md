@@ -22,3 +22,4 @@ A lot of the critiques toward javascript are aggressive type convection which is
 
 + <https://exploringjs.com/>
 + <https://developer.mozilla.org/en-US/docs/Web/JavaScript>
++ <https://addyosmani.com/resources/essentialjsdesignpatterns/book/>
