@@ -8,9 +8,9 @@ edition = "2018"
 
 
 [dependencies.sdl2]
-version = "0.34"
+version = "0.35.1"
 default-features = false
 features = ["ttf","image","gfx","mixer","unsafe_textures"]
 
 [dependencies.time]
-version="0.2"
+version="0.3.2"
