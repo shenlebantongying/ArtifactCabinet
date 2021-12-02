@@ -20,4 +20,4 @@ Ownership (aka _affine_ or _substructural_ type system)
 
 + cargo-edit
 
-+ Run single file for quick scratch https://github.com/stevedonovan/runner
++ Single file for Code runner of vscode => `"rust": "cd $dir && rustc $fileName -o $fileName.exe && $dir$fileName.exe"` (add .exe to .gitignore)
