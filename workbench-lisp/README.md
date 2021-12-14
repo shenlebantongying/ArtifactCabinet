@@ -2,7 +2,7 @@
 
 Sorted in the order of my interest
 
-+ **Norvig**: Paradigms of Artificial Intelligence Programming <https://github.com/norvig/paip-lisp>
++ **Norvig**: Paradigms of Artificial Intelligence Programming <>
 + Common Lisp Recipes: A Problem-Solution Approach
 + Let Over Lambda ( A hard-core book)
 + Practical Common Lisp
