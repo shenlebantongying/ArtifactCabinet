@@ -1,6 +1,7 @@
 .idea/
 .vscode/
 .*.kak.*
+*.kate-swp
 build/
 *.sublime-project
 *.sublime-workspace
