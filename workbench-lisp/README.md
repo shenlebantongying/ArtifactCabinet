@@ -4,10 +4,12 @@ Sorted in the order of my interest
 
 + **Norvig**: Paradigms of Artificial Intelligence Programming <>
 + Common Lisp Recipes: A Problem-Solution Approach
-+ Let Over Lambda ( A hard-core book)
 + Practical Common Lisp
 + the little lisper
 + Common Lisp the Language 2nd
+
+? This book might be a "hacky" showup rather than an inspiration. It is hard but might be useless.
++ Let Over Lambda ( A hard-core book)
 
 ## Reference:
 
