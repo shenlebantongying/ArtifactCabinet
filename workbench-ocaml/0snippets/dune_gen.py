@@ -6,8 +6,9 @@ import os
 names=""
 for f  in os.listdir("."):
     if f.endswith(".ml"):
-        names=names+ " "+f.rstrip(".ml")
+        names=names+ " "+f.rstrip(".ml")+"\n"
 
 with open("dune", "w") as f:
     f.write("""(executables
-(names {names}))""".format(names=names))
+(names
+{names}))""".format(names=names))
