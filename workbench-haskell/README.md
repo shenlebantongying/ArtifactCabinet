@@ -15,6 +15,9 @@ http://dev.stephendiehl.com/hask/
 A gentler intro
 http://learnyouahaskell.com/chapters
 
+kfisher's slides
+https://www.cs.tufts.edu/~kfisher/teaching.html
+
 # Batteries
 
 <https://hackage.haskell.org/packages/top>
