@@ -1,3 +1,9 @@
+#lang htdp/bsl
+
+(define (delimater? x)
+  (or (equal? x ",")
+      (equal? x ".")))
+
 (define (string-first s)
   (substring s 0 1))
 
