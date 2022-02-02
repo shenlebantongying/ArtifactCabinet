@@ -11,7 +11,9 @@ To finish quicker, you should just skim through those functionalities that are p
 
 ## Links
 * https://man7.org
+* https://sysprog21.github.io/lkmpg/
 * https://www.kernel.org/doc/html/latest/
+* http://cs241.cs.illinois.edu/coursebook/
 * https://cliutils.gitlab.io/modern-cmake/
 * https://chromium.googlesource.com/chromiumos/docs/+/HEAD/constants/syscalls.md
 
@@ -21,5 +23,5 @@ To finish quicker, you should just skim through those functionalities that are p
 
 # Research
 
-USENIX <https://www.usenix.org/publications>
+USENIX <https://www.usenix.org/publications>*
 
