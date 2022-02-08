@@ -19,3 +19,23 @@
 ## Math
 
 Mathematics for Computer Science <https://courses.csail.mit.edu/6.042/spring18/mcs.pdf>
+
+# Online Judges
+
+## With Solutions accessable
+LeetCode
+Codeforces
+Exercism
+www.codewars.com
+
+HackerRank => mostly a commercial company
+Not exactly, but has some info https://programmingpraxis.com/
+
+## Nope
+dmoj (support very new version of exotic languages)
+https://open.kattis.com/
+SPOJ (not updated for older languages)
+HackerRank
+
+
+
