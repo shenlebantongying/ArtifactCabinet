@@ -2,7 +2,7 @@
 + The OCaml system <https://ocaml.org/manual/>
 + Real World OCaml <https://dev.realworldocaml.org/>
 + Cornell CS 3110 https://www.cs.cornell.edu/courses/cs3110/2021sp/textbook/
-  + There is a more complete new version which is not a strict super-set of old one.
++ https://smlhelp.github.io/book/index.html
 
 # Types
 
