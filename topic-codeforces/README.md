@@ -22,7 +22,7 @@ Mathematics for Computer Science <https://courses.csail.mit.edu/6.042/spring18/m
 
 # Online Judges
 
-## With Solutions accessable
+## With Solutions accessible
 LeetCode
 Codeforces
 Exercism
