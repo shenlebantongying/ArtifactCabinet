@@ -6,15 +6,15 @@
       acc
       (aux y (add1 acc))))
 
-(define (obtain-mini-fact x)
+(define (obtain-smallest-factor x)
   (aux x 2))
 
 (define (pfd num)
   (cond
-    [(= num (obtain-mini-fact num)) (list num)]
+    [(= num (obtain-smallest-factor num)) (list num)]
     [else (cons
-           (obtain-mini-fact num)
-           (pfd (/ num (obtain-mini-fact num))))]))
+           (obtain-smallest-factor num)
+           (pfd (/ num (obtain-smallest-factor num))))]))
 
 (pfd 24)
 (pfd 42) ;; (list 2 3 7)
