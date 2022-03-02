@@ -35,3 +35,5 @@ Why not embrace chaotic bizarre?
 + Chibi -> minimum C
 + S7 Scheme -> also minimum C
 + Gauche  https://practical-scheme.net/gauche/index.html (their doc is nice)
+
+Scheme that works on M1 mac: guile, gambit-scheme, chibi-scheme, chicken

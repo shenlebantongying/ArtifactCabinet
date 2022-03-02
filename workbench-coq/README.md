@@ -1,6 +1,6 @@
 # Coq Playground
 
-Some fun with Coq, a theorem prover developed by INRIA.
+Serious fun with Coq, a theorem prover developed by INRIA.
 
 # Documents
 
@@ -8,8 +8,7 @@ Some fun with Coq, a theorem prover developed by INRIA.
 + std <https://coq.inria.fr/distrib/current/stdlib/>
 
 + Software foundations Vol.1 <https://softwarefoundations.cis.upenn.edu/lf-current/toc.html>
-+ Certified Programming with Dependent Types
-<http://adam.chlipala.net/cpdt/>
++ Certified Programming with Dependent Types <http://adam.chlipala.net/cpdt/>
 + Formal Reasoning About Programs <http://adam.chlipala.net/frap/>
 
 # Theory
@@ -20,11 +19,22 @@ Some fun with Coq, a theorem prover developed by INRIA.
 + Coq Tactics Cheatsheet <https://www.cs.cornell.edu/courses/cs3110/2017fa/a5/coq-tactics-cheatsheet.html>
 -->
 
+# Courses
+
+Benjamin Pierce -> cis500
+
 # TODO
 
 Proofing without IDE
 
 # Tedious notes
+
+## ProofGeneral
+
+
+## coqide
+
+Super ugly due to GTK
 
 Keep pressing `Ctrl+↓` to compute each steps.
 
