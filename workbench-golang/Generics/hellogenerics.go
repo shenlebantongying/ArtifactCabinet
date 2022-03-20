@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func SumIntsOrFloats[K comparable, V int64 | float64](m map[K]V) V{
+func SumIntsOrFloats[K comparable, V int64 | float64](m map[K]V) V {
 	var s V
 	for _, v := range m {
 		s += v
@@ -10,10 +10,10 @@ func SumIntsOrFloats[K comparable, V int64 | float64](m map[K]V) V{
 	return s
 }
 
-func main(){
-	
+func main() {
+
 	ints := map[string]int64{
-		"first": 34,
+		"first":  34,
 		"second": 12,
 	}
 
@@ -23,5 +23,7 @@ func main(){
 	}
 
 	fmt.Printf("%v",
-				SumIntsOrFloats(ints))
+		SumIntsOrFloats(ints))
+	fmt.Printf("%v",
+		SumIntsOrFloats(floats))
 }
