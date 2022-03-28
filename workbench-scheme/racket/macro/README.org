@@ -7,3 +7,6 @@ Some info about racket macros
 * [[https://www.greghendershott.com/fear-of-macros/index.html][Fear of Macros by GregH]]
 * [[http://rmculpepper.github.io/malr/index.html][Macros and Languages in Racket by RyanCulpepper]]
 * [[https://github.com/syntax-objects/syntax-parse-example][git -> syntax-parse-example by bennn]]
+
+* https://school.racket-lang.org/2019/plan/index.html
+=> syntax parse

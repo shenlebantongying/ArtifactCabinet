@@ -2,6 +2,9 @@ Mainly: https://felleisen.org/matthias/4400-s20/index.html
 
 Also, a similar course, probably not useful: https://felleisen.org/matthias/lp/index.html
 
+Also, some focus on syntax-parse
+https://school.racket-lang.org/2019/plan/index.html
+
 The first two cover interpretive models of programming language concepts:
 
     Krishnamurthi, Programming Languages: Applications and Implementations (PLAI)
