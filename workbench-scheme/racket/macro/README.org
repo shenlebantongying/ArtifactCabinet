@@ -1,0 +1,9 @@
+
+Some info about racket macros
+
+* [[https://lexi-lambda.github.io/racket-macro-exercises/index.html][Racket Macro Exercises by Alexis]]
+
+
+* [[https://www.greghendershott.com/fear-of-macros/index.html][Fear of Macros by GregH]]
+* [[http://rmculpepper.github.io/malr/index.html][Macros and Languages in Racket by RyanCulpepper]]
+* [[https://github.com/syntax-objects/syntax-parse-example][git -> syntax-parse-example by bennn]]
