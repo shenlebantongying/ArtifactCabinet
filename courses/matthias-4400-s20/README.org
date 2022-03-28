@@ -1,5 +1,6 @@
-<https://felleisen.org/matthias/4400-s20/index.html>
+Mainly: https://felleisen.org/matthias/4400-s20/index.html
 
+Also, a similar course, probably not useful: https://felleisen.org/matthias/lp/index.html
 
 The first two cover interpretive models of programming language concepts:
 
@@ -16,3 +17,5 @@ If you like types or the connection between types and proofs,
 For the connections between interpreters, semantics, and abstract machines, consider
 
     Felleisen, Findler, Flatt, Semantics Engineering (parts I, II)
+
+
