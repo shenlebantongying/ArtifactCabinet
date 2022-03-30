@@ -1,0 +1,3 @@
+
+* TODO frequentism versus Bayesianism
+* TODO What is parser generator?
