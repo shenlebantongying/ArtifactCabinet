@@ -17,3 +17,7 @@ Graphics PGF/TikZ > MetaPost > others and probably asymptote
 
 
 * LaTeX3 & expl3
+
+* Math
+
+mathpartir for induction rules
