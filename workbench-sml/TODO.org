@@ -8,6 +8,3 @@ there are also primitive types like numbers, bools....
 struct vs structure
 multiple sig in one struct?
 is functor simply add another layer of things to existing types?
-Another Closure Idiom: Callbacks?
-Another Closure Idiom: Abstract Data Types?
-http://mlton.org/PolymorphicEquality
