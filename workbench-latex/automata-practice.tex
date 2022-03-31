@@ -6,12 +6,11 @@
   every state/.style={ % Sets the properties for each state
     semithick,
     fill=gray!10},
-  initial text={}, % No label on start arrow
-  double distance=2pt, % Adjust appearance of accept states
-  every edge/.style={ % Sets the properties for each transition
+  initial text={},
+  double distance=2pt,
+  every edge/.style={
     draw,
-    ->,>=stealth, % Makes edges directed with bold arrowheads
-    auto,
+    ->,>=stealth,
     semithick}}
 \let\epsilon\varepsilon
 

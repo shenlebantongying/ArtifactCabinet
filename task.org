@@ -1,3 +1,8 @@
 
 * TODO frequentism versus Bayesianism
 * TODO What is parser generator?
+* TODO MetaCircular Evaluator
+https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-26.html
+
+* Curiosity
+** TODO Graal <- Futamura Projections
