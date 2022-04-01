@@ -1,2 +1,9 @@
 (executables
-(names dune_gen p02_command_pattern p04_seq p01_int2bits p05_closure recition p03_poly))
+(names
+dune_gen
+p02_command_pattern
+p04_seq
+p01_int2bits
+recition
+p03_poly
+p05_closure_callback))
