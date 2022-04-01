@@ -1,0 +1,2 @@
+* TODO https://docs.racket-lang.org/more/index.html
+* TODO racket stream from cse how?
