@@ -14,7 +14,7 @@ let newf=trimml f;;
 print_endline "(executables";;
 print_string "(names";;
 let f e =
-  Printf.printf " %s" e
+  Printf.printf "\n%s" e
 in 
   List.iter f newf;;
 print_string "))\n";;
