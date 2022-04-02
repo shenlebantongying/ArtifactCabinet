@@ -2,6 +2,7 @@ default:
 	bison -d r2.y
 	flex r2.l 
 	gcc -lm lex.yy.c r2.tab.c -o  r2
+# -m just mean library-math, or libm.a
 
 dist: default clean
 
