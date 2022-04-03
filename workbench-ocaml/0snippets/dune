@@ -6,5 +6,6 @@ p04_seq
 p01_int2bits
 p06_adt
 recition
+p07_module_innser_t
 p03_poly
 p05_closure_callback))

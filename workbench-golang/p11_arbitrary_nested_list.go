@@ -5,7 +5,7 @@ import "fmt"
 // plan:
 // make a list that suit structures like [+, 1, [- 3 2]]
 
-// TODO: write more tests
+// TODO: this is a possible structure for a lisp interepter
 
 type TokType int
 
