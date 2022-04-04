@@ -18,6 +18,9 @@ https://learnyouahaskell.github.io/chapters.html
 kfisher's slides
 https://www.cs.tufts.edu/~kfisher/teaching.html
 
+Very cool course to review
+http://www.cs.columbia.edu/~sedwards/classes/2021/4995-fall/index.html
+
 # Batteries
 
 <https://hackage.haskell.org/packages/top>
