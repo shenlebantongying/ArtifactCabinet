@@ -36,3 +36,11 @@ effiReverse lst =
 
 -- >>> [(a,b) | a <- [1..3], b <- [1..a]]
 -- [(1,1),(2,1),(2,2),(3,1),(3,2),(3,3)]
+
+max' :: Ord a => [a] -> a
+max' [] = error "empty"
+max' [x] = x
+max' (x:xs) 
+    | x > maxTail = x 
+    | otherwise = maxTail
+    where maxTail = max' xs -- recursion happens here
