@@ -1,0 +1,20 @@
+#+TITLE: Research Diary
+
+* The Expression Problem
+
+<2022-04-03 Sun>
+
+https://homepages.inf.ed.ac.uk/wadler/papers/expression/expression.txt
+
+One can think of cases as rows and functions as columns in a table. In a
+functional language, the rows are fixed (cases in a datatype declaration) but it
+is easy to add new columns (functions). In an object-oriented language, the
+columns are fixed (methods in a class declaration) but it is easy to add new
+rows (subclasses). We want to make it easy to add either rows or columns.
+
+** TODO read https://courses.cs.washington.edu/courses/cse341/19sp/unit8notes.pdf
+
+Featherweight says close to solve the problem
+
+** TODO dynamic dispatch
+** TODO visitor patter in java/go/clojure?

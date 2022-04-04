@@ -9,9 +9,8 @@ public class filter_basis {
 
             List<String> filterd
                     = words.stream().
-                        filter(x->x.length()>3).
-                        filter(x->Character.isUpperCase(x.charAt(0))).
-                        collect(Collectors.toList());
+                    filter(x -> x.length() > 3).
+                    filter(x -> Character.isUpperCase(x.charAt(0))).toList();
 
             filterd.forEach(System.out::println);
     }

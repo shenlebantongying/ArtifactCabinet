@@ -1,4 +1,0 @@
-val msg="nice"
-
-msg
-
