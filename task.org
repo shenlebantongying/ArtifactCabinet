@@ -10,3 +10,6 @@ https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-26.htm
 
 * OCaml
 ** TODO ocaml module and functor?
+
+* Racket
+** TODO CPS passing style, again!
