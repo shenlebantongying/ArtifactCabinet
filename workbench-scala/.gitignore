@@ -1,1 +1,5 @@
 .metals/
+target/
+.idea/
+.bsp/
+project/
