@@ -12,8 +12,8 @@ https://www.seas.upenn.edu/~cis552/current/resources.html
 What I Wish I Knew When Learning Haskell
 http://dev.stephendiehl.com/hask/
 
-A gentler intro
-http://learnyouahaskell.com/chapters
+A gentler intro (community updated fork)
+https://learnyouahaskell.github.io/chapters.html
 
 kfisher's slides
 https://www.cs.tufts.edu/~kfisher/teaching.html
