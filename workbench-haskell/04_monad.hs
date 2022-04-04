@@ -1,7 +1,7 @@
 
 -- from kfisher's slides
 echoDup :: IO () 
-echoDup = getChar >>= (\c -> putChar c >>= (\() -> putChar c)
+echoDup = getChar >>= (\c -> putChar c >>= (\() -> putChar c))
 
 -- use of >> 
 echoDup' = getChar >>= (\c -> putChar c >> putChar c)
