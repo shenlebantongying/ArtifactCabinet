@@ -18,3 +18,8 @@ https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-26.htm
 
 * Algorithms
 ** TODO Quicksort
+
+* Math
+** Logic
+*** TODO from 2 sat prove that a V b is eq of (neg a -> b) ^ (neg b -> a)
+https://en.wikipedia.org/wiki/Material_conditional
