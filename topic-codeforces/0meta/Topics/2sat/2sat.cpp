@@ -45,7 +45,7 @@ struct two_sat {
     int neg(int i) {
         return i + n;
     }
-
+    //                    note the => symbol here doesn't mean equivalence
     //A∨B is equivalent to ¬A ⇒ B ∧ ¬B ⇒ A (if one of the two variables is false, then the other one must be true).
     void add_or(int a, bool aff_a_q, int b, bool aff_b_q) {
         add_edge(aff_a_q ? neg(a) : a,  // ¬A // if a is affirmation, we choose n+a (aka negation of a)
