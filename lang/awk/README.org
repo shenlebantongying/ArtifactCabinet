@@ -1,0 +1,3 @@
+* [[http://www.skeeve.com/awk-sys-prog.html][AWK As A Major Systems Programming Language]]
+
+run awk program =awk -f f.awk=
