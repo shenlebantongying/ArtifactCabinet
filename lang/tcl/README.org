@@ -10,3 +10,10 @@ Reference card
 tk [[https://tkdocs.com/tutorial/concepts.html]]
 
 https://www.cwflynt.com/
+
+* Critical
+
+Tcl the misunderstood, high level view the good of tcl
+http://antirez.com/articoli/tclmisunderstood.html
+
+John Ousterhout -> the "father" of tcl https://web.stanford.edu/~ouster/cgi-bin/home.php
