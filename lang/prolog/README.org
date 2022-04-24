@@ -13,55 +13,16 @@
 
 ** Quick links
 
-Learn Prolog Now!
-[[http://www.let.rug.nl/bos/lpn//lpnpage.php?pageid=online]] prolog :-
-tutorial
-[[https://www.cpp.edu/~jrfisher/www/prolog_tutorial/contents.html]]
+Learn Prolog Now! [[http://www.let.rug.nl/bos/lpn//lpnpage.php?pageid=online]]
 
-adventure in prolog
-[[https://www.amzi.com/AdventureInProlog/advtop.php]]
+prolog :- tutorial [[https://www.cpp.edu/~jrfisher/www/prolog_tutorial/contents.html]]
 
-Good summary [[http://www.cs.toronto.edu/~hojjat/384w10/]]
+Common "keywords" with example [[http://www.cse.unsw.edu.au/~billw/dictionaries/prolog/]]
 
-Common "keywords" with example
-[[http://www.cse.unsw.edu.au/~billw/dictionaries/prolog/]]
+The power of prolog https://www.metalevel.at/prolog
 
-** Difference between =fact= and =rule=:
-
-A rule is a general statement about objects and their relationships.
-
-A rule is all facts that follow same pattern.
-
-Instead of
-
-#+begin_src
-likes(wallace, gromit).
-likes(wallace, tom).
-....
-#+end_src
-
-one can imply wallace like everyone by
-
-#+begin_src
-likes(wallace,X) :- true.
-#+end_src
-
-Or =Wallace is friend to anyone who love cheese=
-
-#+begin_example
-friend(wallace,X) :- likes(X,cheese).
-#+end_example
+https://github.com/dtonhofer/prolog_notes
 
 *** TODO prolog box model
-*** TODO list representation
 *** TODO Coding Guidelines for Prolog https://arxiv.org/pdf/0911.2899.pdf
-*** TODO https://www.metalevel.at/prolog
 *** TODO https://en.wikibooks.org/wiki/Prolog/Higher_Order_Programming
-
-** Bibliography
-
-By the main developer of SWI-prolog:
-
-Wielemaker, Jan, Tom Schrijvers, Markus Triska, and Torbjörn Lager.
-"Swi-prolog." Theory and Practice of Logic Programming 12, no. 1-2
-(2012): 67-96.
