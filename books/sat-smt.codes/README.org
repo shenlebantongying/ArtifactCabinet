@@ -1,0 +1,7 @@
+* https://sat-smt.codes/
+
+
+```
+# 4.8 -> current source
+pip install z3-solver
+```
