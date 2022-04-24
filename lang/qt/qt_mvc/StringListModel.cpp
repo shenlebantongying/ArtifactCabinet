@@ -19,7 +19,7 @@ StringListModel::data (const QModelIndex &index, int role) const
 {
   if (!index.isValid ())
     {
-      return QVariant ();
+      return {};
     };
 
   if (role == Qt::DisplayRole)
@@ -34,7 +34,7 @@ StringListModel::data (const QModelIndex &index, int role) const
           return stringData[index.row ()].content;
         };
     }
-  return QVariant ();
+  return {};
 }
 
 QVariant
@@ -42,7 +42,7 @@ StringListModel::headerData (int section, Qt::Orientation orientation,
                              int role) const
 {
   if (role != Qt::DisplayRole)
-    return QVariant ();
+    return {};
 
   if (orientation == Qt::Horizontal)
     {
@@ -55,7 +55,7 @@ StringListModel::headerData (int section, Qt::Orientation orientation,
     {
       return QStringLiteral ("Row %1").arg (section + 1);
     }
-  return QVariant ();
+  return {};
 }
 
 void

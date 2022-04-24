@@ -11,13 +11,13 @@ main (int argc, char *argv[])
 {
   QApplication a (argc, argv);
 
-  StringListModel *model = new StringListModel ();
+  auto *model = new StringListModel ();
 
   model->appendData ("1", "Darwin");
   model->appendData ("2", "Lorance");
   model->appendData ("3", "Morty");
 
-  QTableView *view = new QTableView ();
+  auto *view = new QTableView ();
 
   view->setModel (model);
 
@@ -25,5 +25,5 @@ main (int argc, char *argv[])
 
   view->show ();
 
-  return a.exec ();
+  return QApplication::exec ();
 }
