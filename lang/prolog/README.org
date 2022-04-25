@@ -23,6 +23,13 @@ The power of prolog https://www.metalevel.at/prolog
 
 https://github.com/dtonhofer/prolog_notes
 
-*** TODO prolog box model
+https://www.amzi.com/AdventureInProlog/index.php
+
+http://www.cliplab.org/logalg/
+
+*** DONE prolog box model
+
+aka "Byrd Box Model"
+
 *** TODO Coding Guidelines for Prolog https://arxiv.org/pdf/0911.2899.pdf
 *** TODO https://en.wikibooks.org/wiki/Prolog/Higher_Order_Programming
