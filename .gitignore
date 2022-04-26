@@ -10,3 +10,5 @@ cmake-build*/
 .clj-kondo/
 .lsp/
 build-*-Debug/
+README.tex
+README.pdf
