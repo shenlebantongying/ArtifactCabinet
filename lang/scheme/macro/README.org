@@ -1,3 +1,4 @@
+#+LaTeX_HEADER: \usepackage{indentfirst}
 
 * Some info about racket macros
 
@@ -11,6 +12,7 @@
 ** Hygienic macro technology
 
 aka. Why Lisp's macro suck.
+
 aka. Origins and innovations of Scheme's Macro.
 
 https://dl.acm.org/doi/10.1145/3386330
@@ -28,7 +30,7 @@ https://www.cs.utah.edu/plt/publications/gpce13-f-color.pdf
 
 also. The problem described by lisp people
 
-13. Macros and Name Collisions -> Technical Issues of Separation in Function Cells and Value Cells.
+in 13. Macros and Name Collisions -> Technical Issues of Separation in Function Cells and Value Cells.
 
 http://www.nhplace.com/kent/Papers/Technical-Issues.html
 
@@ -37,6 +39,7 @@ Q: does r7rs solved this problem?
 ** Syntactic abstraction in Scheme
 
 aka. Origin of ~syntax-case~
+
 aka. Pattern-Based Macros
 
 https://dl.acm.org/doi/10.1007/BF01806308
@@ -56,6 +59,7 @@ https://docs.racket-lang.org/syntax/stxparse.html
 Syntactic abstraction in Scheme
 
 aka. Origin of ~syntax-case~
+
 aka. Pattern-Based Macros
 
 https://dl.acm.org/doi/10.1007/BF01806308
@@ -76,9 +80,28 @@ https://docs.racket-lang.org/syntax-parse-example/index.html
 
 ** Pattern-Based Syntax Matching
 
+[[./basic.rkt]]
+
 *** =syntax-case=
+#+begin_src racket
+  (define-syntax (swap stx)
+    (syntax-case stx ()
+        [(swap x y)
+         (if (and (identifier? #'x)
+                  (identifier? #'y))
+             #'(let ([tmp x])
+                 (set! x y)
+                 (set! y tmp))
+             (raise-syntax-error #f
+                                 "not an identifier"
+                                 stx
+                                 (if (identifier? #'x)
+                                     #'y
+                                     #'x)))]))
 
-
+  (define x 1)
+  (swap x 1)
+#+end_src
 
 ** Syntax/Parse
 

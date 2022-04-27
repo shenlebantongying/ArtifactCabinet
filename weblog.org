@@ -1,0 +1,12 @@
+* <2022-04-27 Wed> The Go Programming Language and Environment
+https://cacm.acm.org/magazines/2022/5/260357-the-go-programming-language-and-environment/fulltext
+
+Types in go:
+
+Go does not define classes but allows methods to be bound to any type, including structs, arrays, slices, maps, and even basic types, such as integers. It does not have a type hierarchy; we felt that inheritance tended to make programs harder to adapt as they grow. Instead, Go encourages composition of types.
+
+Go provides object-oriented polymorphism through its interface types. Like a Java interface or a C++ abstract virtual class, a Go interface contains a list of method names and signatures.
+
+Avoiding the explicit association between interfaces and implementations allows Go programmers to define small, nimble, often ad hoc interfaces, rather than using them as foundation blocks in a complex type hierarchy. It encourages capturing relationships and operations as they arise during development, instead of needing to plan and define them all ahead of time. This especially helps with large programs, in which the eventual structure is much more difficult to see clearly when first beginning development. Removing the bookkeeping of declaring implementations encourages the use of precise, one- or two-method interfaces, such as Writer, Reader, Stringer (analogous to Java's toString method), and so on, which pervade the standard library.
+
+Developers first learning about Go often worry about a type accidentally implementing an interface. Although it is easy to build hypotheticals, in practice it is unlikely that the same name and signature would be chosen for two incompatible operations, and we have never seen it happen in real Go program
