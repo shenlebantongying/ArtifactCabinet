@@ -15,6 +15,7 @@ https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-26.htm
 
 * Racket
 ** TODO CPS passing style, again!
+** TODO engine https://racket.discourse.group/t/where-can-i-find-examples-of-engines/915/7
 
 * Algorithms
 ** TODO Quicksort
@@ -26,3 +27,5 @@ https://en.wikipedia.org/wiki/Material_conditional
 
 ** TODO Sexp parsing!
 
+* Multicore
+** TODO Semaphore
