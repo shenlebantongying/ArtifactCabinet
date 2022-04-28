@@ -30,4 +30,7 @@ https://en.wikipedia.org/wiki/Material_conditional
 * Multicore
 ** TODO Semaphore
 
+* Operating Systems
+
+** TODO Kqueue (freebsd), Epoll(Linux) and Even ports (Illumous)
 * TODO qt -> does signal need definition?
