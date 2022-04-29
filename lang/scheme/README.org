@@ -50,3 +50,16 @@ Scheme that works on M1 mac: guile, gambit-scheme, chibi-scheme, chicken
 
 * TODO https://docs.racket-lang.org/more/index.html
 * TODO racket stream from cse how?
+* TODO CPS passing style, again!
+* TODO HOW TO USE Tasks?
+
+* TODO engine https://racket.discourse.group/t/where-can-i-find-examples-of-engines/915/7
+
+It is another type of parallel execution by limiting how long a proc can do, but how can it be implemented in other languages?
+
+What does it do?
+-> Set a time limit for a unit of operations, and let the unit run in a separate thread.
+-> If the time limit is reached, the unit will be paused.
+!!-> AND, it may be resumed with another time limit.
+
+** TODO What does concurrent-ML provides?
