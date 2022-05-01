@@ -1,0 +1,10 @@
+digraph A {
+    a -> b
+    b -> d
+    c -> f
+    d -> f
+    a -> c
+    c -> d
+    d -> e
+    f -> a
+}
