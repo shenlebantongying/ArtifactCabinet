@@ -23,3 +23,8 @@ https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-stand
 
 ** Rust data structures with circular references
 https://eli.thegreenplace.net/2021/rust-data-structures-with-circular-references/
+
+
+** The Little Book of Rust Macros
+
+https://veykril.github.io/tlborm/
