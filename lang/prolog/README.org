@@ -31,5 +31,4 @@ http://www.cliplab.org/logalg/
 
 aka "Byrd Box Model"
 
-*** TODO Coding Guidelines for Prolog https://arxiv.org/pdf/0911.2899.pdf
 *** TODO https://en.wikibooks.org/wiki/Prolog/Higher_Order_Programming
