@@ -29,3 +29,5 @@ https://en.wikipedia.org/wiki/Material_conditional
 
 ** TODO Kqueue (freebsd), Epoll(Linux) and Even ports (Illumous)
 * TODO qt -> does signal need definition?
+
+* TODO Guile CPS? https://www.gnu.org/software/guile/manual/guile.html#Continuation_002dPassing-Style
