@@ -2,11 +2,8 @@
 _
 * TODO frequentism versus Bayesianism
 * TODO What is parser generator?
-* DONE MetaCircular Evaluator
-https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-26.html
+* DONE MetaCircular Evaluator https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-26.html
 
-* Curiosity
-** TODO Graal <- Futamura Projections
 
 * OCaml
 ** TODO ocaml module and functor?
@@ -31,3 +28,6 @@ https://en.wikipedia.org/wiki/Material_conditional
 * TODO qt -> does signal need definition?
 
 * TODO Guile CPS? https://www.gnu.org/software/guile/manual/guile.html#Continuation_002dPassing-Style
+
+
+* TODO how to do an eBPF

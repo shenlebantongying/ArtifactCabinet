@@ -1,6 +1,7 @@
 (executables
 (names
 dune_gen
+cs3110
 p02_command_pattern
 p04_seq
 p01_int2bits
