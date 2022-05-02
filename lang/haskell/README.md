@@ -32,3 +32,16 @@ http://www.cs.columbia.edu/~sedwards/classes/2021/4995-fall/index.html
 + prelude (base) library <https://hackage.haskell.org/package/base>
 
 TODO create a type class and add a function to it
+
+
+# Haskell vs Ocaml
+
+ocaml for haskeller
+http://blog.ezyang.com/2010/10/ocaml-for-haskellers/
+
+->
+
+# haskell for ocamler
+https://dr-knz.net/haskell-for-ocaml-programmers.html
+
+`import qualified Debug.Trace`
