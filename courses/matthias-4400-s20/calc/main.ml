@@ -19,6 +19,12 @@ let is_value : expr -> bool = function
   | Int _ | Bool _ -> true
   | _ -> false;;
 
+(*
+e -> expr/env
+v -> value
+x -> the symbol x
+*)
+
 let rec subst e v x = match e with
   | Var y -> if x = y then v else e
   | Bool _ -> e
@@ -56,4 +62,8 @@ let rec eval (e : expr) : expr =
   if is_value e then e
   else e |> step |> eval;;
 
-eval (Let ("X", (Int 6) ,(Binop (Add,(Int 2),(Var "X"))))) ;;
+eval (Let ("Y", (Int 3),
+           (Let ("X", (Int 6),
+                 (Binop (Add, (Var "Y"),
+                         (Binop (Add, (Int 2),(Var "X"))))))))) ;;
+(* 3+6+2 *)
