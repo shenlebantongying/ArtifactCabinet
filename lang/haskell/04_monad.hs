@@ -18,3 +18,12 @@ obTwoChars = do {
 
     return (c1,c2)
 }
+
+
+-- For loop
+
+mfor :: [a] -> (a -> IO b) -> IO ()
+mfor [] fa = return ()
+mfor (x:xs) fa = fa x >> mfor xs fa
+
+-- mfor [1..10] (\x -> putStr (show x))
