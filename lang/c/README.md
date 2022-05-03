@@ -19,4 +19,6 @@
 + glob.h https://man7.org/linux/man-pages/man3/glob.3.html
 
 # Links
-Good C overview: The Descent to C by Simon Tatham https://www.chiark.greenend.org.uk/~sgtatham/cdescent/
+Good C overview: The Descent to C by Simon Tatham <https://www.chiark.greenend.org.uk/~sgtatham/cdescent/>
+
+The Lost Art of Structure Packing <http://www.catb.org/esr/structure-packing/>
