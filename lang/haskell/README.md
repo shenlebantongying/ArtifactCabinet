@@ -15,8 +15,8 @@ http://dev.stephendiehl.com/hask/
 A gentler intro (community updated fork)
 https://learnyouahaskell.github.io/chapters.html
 
-kfisher's slides
-https://www.cs.tufts.edu/~kfisher/teaching.html
+Real World Haskell (Community fork)
+https://github.com/tssm/up-to-date-real-world-haskell
 
 Very cool course to review
 http://www.cs.columbia.edu/~sedwards/classes/2021/4995-fall/index.html
