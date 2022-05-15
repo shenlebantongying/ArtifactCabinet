@@ -31,3 +31,10 @@ https://en.wikipedia.org/wiki/Material_conditional
 
 
 * TODO how to do an eBPF
+
+* TODO Concurrent -> I/O Multiplexing
+
+CSAPP -> only about select
+tlpi -> see the epoll api
+
+** TODO libuv -> https://eli.thegreenplace.net/2017/concurrent-servers-part-4-libuv/
