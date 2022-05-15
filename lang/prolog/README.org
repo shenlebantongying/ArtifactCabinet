@@ -30,5 +30,3 @@ http://www.cliplab.org/logalg/
 *** DONE prolog box model
 
 aka "Byrd Box Model"
-
-*** TODO https://en.wikibooks.org/wiki/Prolog/Higher_Order_Programming
