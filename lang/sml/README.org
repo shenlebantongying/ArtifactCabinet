@@ -23,6 +23,11 @@ Shift + C-a => select the line
 M+; => comment
 
 * Other materials
+
+sml for working programmers
+https://www.cl.cam.ac.uk/~lp15/MLbook/pub-details.html
+
+Programming in Standard ML by Robert Harper
 http://www.cs.cmu.edu/~rwh/isml/book.pdf
 
 OCaml VS SML http://adam.chlipala.net/mlcomp/
