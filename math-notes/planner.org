@@ -1,0 +1,9 @@
+* linear algebra
+Interactive Linear Algebra https://textbooks.math.gatech.edu/ila/index.html
+
+
+* Diary
+A diary to record concepts without detailed explanation
+** Contrapositive Proof
+<2022-05-18 Wed>
+
