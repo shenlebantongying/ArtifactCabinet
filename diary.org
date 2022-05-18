@@ -18,3 +18,7 @@ Featherweight says close to solve the problem
 
 ** TODO dynamic dispatch
 ** TODO visitor patter in java/go/clojure?
+
+* Hoare logic
+
+https://www.cl.cam.ac.uk/teaching/2122/HLog+ModC/materials.html
