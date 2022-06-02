@@ -21,9 +21,8 @@ Ownership (aka /affine/ or /substructural/ type system)
 ** Tour of Rust's Standard Library Traits
 https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md
 
-** Rust data structures with circular references
-https://eli.thegreenplace.net/2021/rust-data-structures-with-circular-references/
-
+** Traits: Rust's unifying concept
+https://darkcoding.net/software/traits-rusts-unifying-concept/
 
 ** The Little Book of Rust Macros
 
