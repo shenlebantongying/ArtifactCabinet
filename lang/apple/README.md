@@ -25,3 +25,22 @@ Classic Cocoa study
 + <http://cocoadevcentral.com/>
 
 This book <https://www.hackingwithswift.com/store/hacking-with-macos>
+
+# Apple Script
+
+* Official friendly intro: <https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/index.html>
+* Fan website: <https://macosxautomation.com/index.html>
+* Formal description: <https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html>
+
+
+# Swift
+
+Language website
+https://www.swift.org/
+
+SwiftUI official
+https://developer.apple.com/documentation/swiftui
+
+Swift Programming for macOS
+https://gavinw.me/swift-macos/
+
