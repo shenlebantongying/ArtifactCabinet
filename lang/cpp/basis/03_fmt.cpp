@@ -16,7 +16,7 @@ int main() {
     // :[center][add sign][width][.][three floating points][FP]
     fmt::print(
     "┌{0:─^{2}}┐\n"
-              "│{1: ^{2}}│\n"
-              "└{0:─^{2}}┘\n", "", "Hello, world!", 20);
+    "│{1: ^{2}}│\n"
+    "└{0:─^{2}}┘\n", "", "Hello, world!", 20);
 
 }
