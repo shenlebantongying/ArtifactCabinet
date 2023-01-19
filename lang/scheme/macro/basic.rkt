@@ -16,7 +16,7 @@
   (print stx)
   #'(void))
 
-(show-stx '(+ 1 2)) ;; #<syntax::77:14 (if x (list "true") #f)>
+(show-stx '(+ 1 2))
 
 
 ;; [reverse me]

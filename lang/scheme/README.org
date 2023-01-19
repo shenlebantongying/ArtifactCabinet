@@ -48,8 +48,6 @@ Why not embrace chaotic bizarre?
 
 Scheme that works on M1 mac: guile, gambit-scheme, chibi-scheme, chicken
 
-* TODO https://docs.racket-lang.org/more/index.html
-
 It is another type of parallel execution by limiting how long a proc can do, but how can it be implemented in other languages?
 
 What does it do?
@@ -57,4 +55,3 @@ What does it do?
 -> If the time limit is reached, the unit will be paused.
 !!-> AND, it may be resumed with another time limit.
 
-** TODO What does concurrent-ML provides?

@@ -9,9 +9,3 @@ Current reading: C++ Crash Course by Josh Lospinoso -> a good book that throw aw
 - GNU libc++
   [[https://gcc.gnu.org/onlinedocs/libstdc++/manual/index.html]]
 - [[https://www.learncpp.com]]
-
-* Learning
-
-** TODO std::atomic
-See Threads and data races, what does an atomic means?
-https://en.cppreference.com/w/cpp/language/memory_model

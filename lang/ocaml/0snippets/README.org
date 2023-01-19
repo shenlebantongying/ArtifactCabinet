@@ -1,2 +1,0 @@
-* TODO recite this unit3 of the dan grossman
-About how to implement an functional stack?
