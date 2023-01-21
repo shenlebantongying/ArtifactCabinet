@@ -1,12 +1,9 @@
 # Some info about racket macros
 
 - [Mythical macros](https://soegaard.github.io/mythical-macros/)
-- [Racket Macro Exercises by
-  Alexis](https://lexi-lambda.github.io/racket-macro-exercises/index.html)
-- [Fear of Macros by
-  GregH](https://www.greghendershott.com/fear-of-macros/index.html)
-- [Macros and Languages in Racket by
-  RyanCulpepper](http://rmculpepper.github.io/malr/index.html)
+- [Racket Macro Exercises by Alexis](https://lexi-lambda.github.io/racket-macro-exercises/index.html)
+- [Fear of Macros by GregH](https://www.greghendershott.com/fear-of-macros/index.html)
+- [Macros and Languages in Racket by RyanCulpepper](http://rmculpepper.github.io/malr/index.html)
 - <https://school.racket-lang.org/2019/plan/index.html> =\> syntax parse
 
 # TimeLine of Macrology
