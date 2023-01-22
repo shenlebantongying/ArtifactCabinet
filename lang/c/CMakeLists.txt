@@ -4,5 +4,14 @@ project(advanced_cpp)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_C_STANDARD 23)
 
+#set(ECM_ENABLE_SANITIZERS "address;undefined")
+
+find_package(ECM REQUIRED NO_MODULE)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+
+include(ECMEnableSanitizers)
+
 add_executable(1 deserializing_binary.c)
 add_executable(2 closure.c)
+
+add_executable(reverse_cons reverse_cons.c)
