@@ -5,23 +5,28 @@
 #include <QWindow>
 #include <QPainter>
 #include <QLayout>
+#include <QWindow>
 
-
-class Protractor : public QWidget
+class protractor : public QWidget
 {
     Q_OBJECT
 protected:
-    void resizeEvent(QResizeEvent *event) override;
-
     void mouseMoveEvent(QMouseEvent *event) override;
-
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 public:
-    explicit Protractor(QWidget *parent = nullptr);
+    explicit protractor(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent *) override;
 
 private:
-    QColor mColor;
-    void drawCircle(QPainter &painter);
+    QRect handle_A;
+    QRect handle_B;
+
+    bool handle_A_MOVE = false;
+    bool handl_B_MOVE = false;
+
+    bool window_MOVE = false;
+
 };
 
 #endif // CIRCLE_H

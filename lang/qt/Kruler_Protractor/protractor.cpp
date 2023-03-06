@@ -1,109 +1,94 @@
 #include "protractor.h"
 #include <QList>
 #include <QtMath>
+#include <cmath>
+#include <QMouseEvent>
 
-const int TICK_WIDTH = 20;
+const int HANDLE_W = 20;
 
-Protractor::Protractor(QWidget *parent)
-        : QWidget{parent} {
+protractor::protractor(QWidget *) {
     setAttribute(Qt::WA_TranslucentBackground);
     setMouseTracking(true);
-    setMinimumSize(200,200);
-    mColor = QColor(255,200,80);
+    setFixedSize(400, 400);
+    handle_A = QRect(370, 200 - HANDLE_W / 2, HANDLE_W, HANDLE_W);
+    handle_B = QRect(50, 50, HANDLE_W, HANDLE_W);
 }
 
-void Protractor::drawCircle(QPainter &painter) {
-
-    auto diamater = (float)this->width();
-    float radius = diamater / 2;
-    float inner_radius = radius - TICK_WIDTH;
-
-
-    int n = 4 * 30;
-
-
-    QList<float> m_rads(n);
-
-    for (int i = 0; i < m_rads.size(); ++i) {
-        m_rads[i] = 2 * M_PI * i / n;
-    }
-
-    QList <QLineF> mCircleTicks(m_rads.size());
-
-    for (int i = 0; i < m_rads.size(); ++i) {
-        mCircleTicks[i] = QLineF(inner_radius*qCos(m_rads[i])+radius,
-                                 inner_radius*qSin(m_rads[i])+radius,
-                                 radius*qCos(m_rads[i])+radius,
-                                 radius*qSin(m_rads[i])+radius);
-    }
-
-    painter.drawLines(mCircleTicks);
-}
-
-
-double inline qLineLength(QLine l){
-    return qSqrt(qPow(l.dx(),2) + qPow(l.dy(),2));
-}
-
-void Protractor::paintEvent(QPaintEvent *inEvent)
-{
+void protractor::paintEvent(QPaintEvent *inEvent) {
     Q_UNUSED(inEvent);
 
-
-
     int w = this->width();
-    int r = w/2;
-    QPoint curPos = mapFromGlobal(QCursor::pos());
-
+    int r = w / 2;
+    auto pen = new QPen(Qt::black,2);
     QPainter painter(this);
-
+    painter.setPen(*pen);
     painter.setRenderHint(QPainter::Antialiasing);
 
-    auto *pen = new QPen();
-    auto *brush = new QBrush();
+    pen->setColor(Qt::green);
     painter.setPen(*pen);
-    painter.setBrush(*brush);
+    painter.drawLine(0,200,400,200);
+    painter.drawLine(200,0,200,400);
 
-    // draw background
-    pen->setWidth(0);
-    painter.setPen(*pen);
-    painter.setBrush(QBrush(mColor));
-    painter.setOpacity(0.8);
-    painter.drawEllipse(0,0,this->width(),this->width());
-
-    painter.setOpacity(1);
-
-    pen->setWidth(2);
     pen->setColor(Qt::red);
-
     painter.setPen(*pen);
+    painter.drawLine(QPoint(r, r), handle_A.center());
+    painter.drawLine(QPoint(r, r), handle_B.center());
 
+    painter.setPen(Qt::black);
+    painter.setBrush(QBrush(Qt::white));
+    painter.drawRect(handle_A);
+    painter.drawRect(handle_B);
 
-    auto tLength = qLineLength(QLine(QPoint(w/2,w/2),curPos));
+    // TODO: revise math here
+    int x1 = handle_A.center().x() - this->width() / 2;
+    int y1 = -(handle_A.center().y() - this->width() / 2);
+    int x2 = handle_B.center().x() - this->width() / 2;
+    int y2 = -(handle_B.center().y() - this->width() / 2);
+    int dot = x1 * x2 + y1 * y2;
+    int det = x1 * y2 - y1 * x2;
 
-    if (curPos.x() != 0 && curPos.y() != 0 && tLength!=0) {
-        painter.drawLine(QPoint(r,r),
-                         QPoint((curPos.x()-r)*r/tLength+r,(curPos.y()-r)*r/tLength+r));
-    }
-
-    // draw ticks
-    pen->setColor(Qt::black);
-    pen->setWidth(1);
-    painter.setPen(*pen);
-    drawCircle(painter);
+    this->windowHandle()->setTitle(QString::number(round(qRadiansToDegrees(qAbs(std::atan2(det, dot)))))+QString("°"));
 }
 
-void Protractor::resizeEvent(QResizeEvent *event) {
-    Q_UNUSED(event);
-    int h = this->height();
-    int w = this->width();
-    if (h!=w){
-        resize(w,w);
-    }
-}
 
-void Protractor::mouseMoveEvent(QMouseEvent *event) {
+void protractor::mouseMoveEvent(QMouseEvent *event) {
     Q_UNUSED(event);
+
+    QPoint p = event->position().toPoint();
+
+    if (!this->geometry().contains(p)){
+        event->accept();
+        return;
+    }
+
+    if (handle_A_MOVE) {
+        handle_A.moveCenter(p);
+
+    } else if (handl_B_MOVE) {
+        handle_B.moveCenter(p);
+    } else if (window_MOVE) {
+        this->windowHandle()->startSystemMove();
+    }
+
+    event->accept();
 
     update();
+}
+
+void protractor::mousePressEvent(QMouseEvent *ev) {
+    if (handle_A.contains(ev->position().toPoint())) {
+        handle_A_MOVE = true;
+    } else if (handle_B.contains(ev->position().toPoint())) {
+        handl_B_MOVE = true;
+    } else {
+        window_MOVE = true;
+    };
+    ev->accept();
+}
+
+void protractor::mouseReleaseEvent(QMouseEvent *event) {
+    handle_A_MOVE = false;
+    handl_B_MOVE = false;
+    window_MOVE = false;
+    event->accept();
 }

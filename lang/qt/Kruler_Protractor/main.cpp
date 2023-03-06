@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-    Protractor c(nullptr);
+    protractor c(nullptr);
     c.show();
     return QApplication::exec();
 }
