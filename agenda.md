@@ -1,8 +1,8 @@
-** TODO std::atomic
+## TODO std::atomic
 See Threads and data races, what does an atomic means?
 https://en.cppreference.com/w/cpp/language/memory_model
 
-* TODO recite this unit3 of the dan grossman
+# TODO recite this unit3 of the dan grossman
 About how to implement an functional stack?
 
-** TODO What does concurrent-ML provides?
+## TODO What does concurrent-ML provides?
