@@ -1,1 +1,1 @@
-Play with certain libraries
+Play with all kinds of techs
