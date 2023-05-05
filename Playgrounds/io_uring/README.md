@@ -1,6 +1,9 @@
 https://kernel.dk/io_uring.pdf
 
-https://blogs.oracle.com/linux/an-introduction-to-the-io_uring-asynchronous-io-framework
+https://unixism.net/loti/
+
+https://lwn.net/Kernel/Index/#io_uring
+
 
 tested on liburing 2.0
 

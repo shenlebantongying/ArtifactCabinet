@@ -3,9 +3,10 @@ project(Linux_Kernal_Interface C CXX)
 
 set(CMAKE_C_STANDARD 11)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}")
-find_package(LibUring REQUIRED)
+find_package(PkgConfig REQUIRED)
+
+pkg_check_modules(LIBURING IMPORTED_TARGET liburing)
 
 add_executable(ring_cat ring_cat.c)
 
-target_link_libraries(ring_cat LIBURING)
+target_link_libraries(ring_cat PkgConfig::LIBURING)
