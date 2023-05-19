@@ -2,7 +2,7 @@ module Hybird = struct
   type t =                      (* Note that the Nil/String  *)
     | Nil
     | String of string
-  let rec to_str = function
+  let to_str = function
     | Nil -> "nil"
     | String s -> s
   let pprint s = ( print_endline (to_str s))
