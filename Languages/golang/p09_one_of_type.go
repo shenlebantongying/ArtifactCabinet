@@ -6,7 +6,7 @@ import (
 
 // an Atom can be either a string or int
 
-func pprint(a interface{}) {
+func pprint09(a interface{}) {
 	switch a.(type) {
 	case int:
 		fmt.Printf("int -> %d\n", a)
@@ -16,6 +16,6 @@ func pprint(a interface{}) {
 }
 
 func main() {
-	pprint("a")
-	pprint(123)
+	pprint09("a")
+	pprint09(123)
 }
