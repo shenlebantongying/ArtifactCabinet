@@ -1,6 +1,6 @@
 # Some summary
 
-Erlang's syntax derived from Prolog and was heavily influenced by smalltalk, CSP and the functional programming. --Joe Armstrong
+Erlang's syntax derived from Prolog and was heavily influenced by smalltalk, CSP and the functional programming.
 
 Concurrent means that tasks can be done in any order without compromising the results
 
