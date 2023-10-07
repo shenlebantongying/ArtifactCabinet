@@ -1,6 +1,5 @@
 #lang racket
 
-;; TODO: learn ellipses
 (define-syntax shift-to
   (syntax-rules ()
     ((shift-to (from0 from ...) (to0 to ...))
