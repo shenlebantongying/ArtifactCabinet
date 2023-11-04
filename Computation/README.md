@@ -1,4 +1,4 @@
-# Algorithms
+# Data Structures & Algorithms
 
 ## Books
 
