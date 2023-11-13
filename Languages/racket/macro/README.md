@@ -1,12 +1,13 @@
-# Some info about racket macros
+# Macrology
+
+## To read from racket community
 
 - [Mythical macros](https://soegaard.github.io/mythical-macros/)
 - [Racket Macro Exercises by Alexis](https://lexi-lambda.github.io/racket-macro-exercises/index.html)
 - [Fear of Macros by GregH](https://www.greghendershott.com/fear-of-macros/index.html)
-- [Macros and Languages in Racket by RyanCulpepper](http://rmculpepper.github.io/malr/index.html)
 - <https://school.racket-lang.org/2019/plan/index.html> =\> syntax parse
 
-# TimeLine of Macrology
+## Readings
 
 ## Hygienic macro technology
 
@@ -66,42 +67,6 @@ aka. Pattern-Based Macros
 <https://dl.acm.org/doi/10.1007/BF01806308>
 
 modern-description. <https://www.scheme.com/tspl4/syntax.html#>.
-
-## Syntax/Parse
-
-See paper "Fortifying Macros"
-
-Main doc: <https://docs.racket-lang.org/syntax/stxparse.html>
-
-Examples <https://docs.racket-lang.org/syntax-parse-example/index.html>
-
-# Samples
-
-## Pattern-Based Syntax Matching
-
-[./basic.rkt](./basic.rkt)
-
-### `syntax-case`
-
-``` racket
-(define-syntax (swap stx)
-  (syntax-case stx ()
-      [(swap x y)
-       (if (and (identifier? #'x)
-                (identifier? #'y))
-           #'(let ([tmp x])
-               (set! x y)
-               (set! y tmp))
-           (raise-syntax-error #f
-                               "not an identifier"
-                               stx
-                               (if (identifier? #'x)
-                                   #'y
-                                   #'x)))]))
-
-(define x 1)
-(swap x 1)
-```
 
 ## Syntax/Parse
 
