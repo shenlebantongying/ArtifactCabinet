@@ -6,17 +6,16 @@ set(CMAKE_C_STANDARD 23)
 
 #set(ECM_ENABLE_SANITIZERS "address;undefined")
 
-find_package(ECM REQUIRED NO_MODULE)
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+#find_package(ECM REQUIRED NO_MODULE)
+#set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
-include(ECMEnableSanitizers)
+#include(ECMEnableSanitizers)
 
-add_executable(1 deserializing_binary.c)
-add_executable(2 closure.c)
-
-add_executable(reverse_cons reverse_cons.c)
-
+add_executable(bit_masking bit_masking.c)
+add_executable(closure closure.c)
+add_executable(deserializing_binary deserializing_binary.c)
 add_executable(niceStr appendStr.c)
-add_executable(pointer_array pointer_array.c)
 add_executable(offset_play offset_play.c)
+add_executable(pointer_array pointer_array.c)
+add_executable(reverse_cons reverse_cons.c)
 add_executable(short_int_64_bench short_int_64_bench.c)
