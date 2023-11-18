@@ -1,1 +1,0 @@
-int slb_double(int x);

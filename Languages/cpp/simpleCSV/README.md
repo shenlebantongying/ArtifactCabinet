@@ -1,1 +1,0 @@
-There are no standard for CSV file!
