@@ -15,3 +15,8 @@ add_executable(1 deserializing_binary.c)
 add_executable(2 closure.c)
 
 add_executable(reverse_cons reverse_cons.c)
+
+add_executable(niceStr appendStr.c)
+add_executable(pointer_array pointer_array.c)
+add_executable(offset_play offset_play.c)
+add_executable(short_int_64_bench short_int_64_bench.c)
