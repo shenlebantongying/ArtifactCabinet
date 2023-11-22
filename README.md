@@ -1,3 +1,1 @@
-# Monolithic Artifact Cabinet
-
-Code & notes
+# Artifact Cabinet

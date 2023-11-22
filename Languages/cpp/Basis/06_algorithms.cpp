@@ -1,5 +1,7 @@
-#include "09_algorithms.h"
 #include <numeric>
+#include <string_view>
+#include <vector>
+#include <string>
 
 bool
 is_palindrome (const std::string_view &s)
