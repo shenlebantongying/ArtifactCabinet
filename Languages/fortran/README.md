@@ -17,6 +17,7 @@ int(i,kind=8) !8bytes
 # Quick links
 
 + gfortran manual <https://gcc.gnu.org/onlinedocs/gfortran/index.html>
++ https://cyber.dabamos.de/programming/modernfortran/index.html
 
 # GEM
 
