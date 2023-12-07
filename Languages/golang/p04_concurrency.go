@@ -1,39 +1,38 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"sync"
-	"time"
 )
 
-//TODO: compare Goroutines with threads
-
 func main() {
-	rand.Seed(time.Now().UTC().UnixNano())
 
-	wg := new(sync.WaitGroup) // A special counter for Gor
+	// Wait everyone before continue, similar to std::latch
+	var wg sync.WaitGroup
 	c := make(chan int)
 
-	for i := 0; i < 10; i++ {
+	N := 10
+	for i := 0; i < N; i++ {
 		wg.Add(1)
-		go goRand(c, wg)
+		go func() {
+			defer wg.Done()
+			goRand(c)
+		}()
 	}
 
-	go func() { //this is a GoR to `monitor` if the channel need to be closed
-		wg.Wait()
-		close(c)
-	}()
-
-	for x := range c {
-		println(x)
+	// Note that we need to read the channel so that new values can be added
+	for i := 0; i < N; i++ {
+		fmt.Println(<-c)
 	}
+	close(c)
 
 	wg.Wait()
+	fmt.Println("Finished")
 
 }
 
 // Channels
-func goRand(c chan int, wg *sync.WaitGroup) {
-	defer wg.Done()
+func goRand(c chan int) {
 	c <- rand.Intn(10)
 }
