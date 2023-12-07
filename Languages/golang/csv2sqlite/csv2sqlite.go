@@ -14,40 +14,40 @@ import (
 )
 
 func main() {
-	csvPath := flag.String("csv","./oscar_age_female.csv","path to csv file")
-	dbPath := flag.String("o","./oscar.db","desired path for output database")
+	csvPath := flag.String("csv", "./oscar_age_female.csv", "path to csv file")
+	dbPath := flag.String("o", "./oscar.db", "desired path for output database")
 	flag.Parse()
-	println("Reading csv ->",*csvPath)
-	println("Storing to ->",*dbPath)
+	println("Reading csv ->", *csvPath)
+	println("Storing to ->", *dbPath)
 	csvFile, err := os.Open(*csvPath)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	csvReader :=csv.NewReader(csvFile)
-	csvReader.LazyQuotes=true
-	csvReader.Comma=','
+	csvReader := csv.NewReader(csvFile)
+	csvReader.LazyQuotes = true
+	csvReader.Comma = ','
 	csvReader.TrimLeadingSpace = true
 	head, err := csvReader.Read()
-	if  err != nil {
+	if err != nil {
 		panic(err)
 	}
 
-	csvReader.FieldsPerRecord =5
+	csvReader.FieldsPerRecord = 5
 
-	headFields :=""
+	headFields := ""
 	for i := 0; i < len(head)-1; i++ {
-		headFields += "`"+head[i]+ "` TEXT, "
+		headFields += "`" + head[i] + "` TEXT, "
 	}
-	headFields+=head[len(head)-1]+" TEXT"
+	headFields += head[len(head)-1] + " TEXT"
 
-    dbname := filepath.Base(*dbPath)
-    dbname =strings.TrimSuffix(dbname,filepath.Ext(dbname))
+	dbname := filepath.Base(*dbPath)
+	dbname = strings.TrimSuffix(dbname, filepath.Ext(dbname))
 
 	database, _ :=
 		sql.Open("sqlite3", *dbPath)
 
-	statement, _ := database.Prepare("DROP TABLE IF EXISTS `"+dbname+"`;")
+	statement, _ := database.Prepare(fmt.Sprint("DROP TABLE IF EXISTS `", dbname, "`;"))
 	_, err = statement.Exec()
 
 	statement, _ = database.Prepare("CREATE TABLE IF NOT EXISTS `" + dbname + "` (" + headFields + ");")
@@ -62,21 +62,23 @@ func main() {
 	}
 
 	for {
-		line,err:= csvReader.Read()
-		if err == io.EOF{
+		line, err := csvReader.Read()
+		if err == io.EOF {
 			break
 		} else if err != nil {
 			log.Fatal(err)
 		}
 
-		qur:="INSERT INTO "+dbname+" (\""+strings.Join(head,"\",\"")+"\") VALUES ('"+strings.Join(line,"','")+"');"
-		statement, _ =
-			database.Prepare(qur)
-		_, err = statement.Exec()
+		var qur = fmt.Sprintf("INSERT INTO %s (\"%s\") VALUES ('%s');", dbname, strings.Join(head, "\",\""), strings.Join(line, "','"))
+		println(qur)
+		_, err = database.Exec(qur)
+		if err != nil {
+			return
+		}
 	}
 
 	rows, _ :=
-		database.Query("SELECT* FROM "+dbname)
+		database.Query("SELECT* FROM " + dbname)
 	fmt.Println(rows)
 
 	for rows.Next() {

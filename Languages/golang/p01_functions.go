@@ -4,13 +4,12 @@ import "fmt"
 
 //Variadic functions!
 
-// Tail recursion
-// TODO: check if go support this usage
+// Note: Go does not support tail recursion
 func recSum(car int, cdr ...int) int {
 	if len(cdr) == 0 {
 		return car
 	} else {
-		return car + recSum(cdr[0], cdr[1:len(cdr)]...)
+		return car + recSum(cdr[0], cdr[1:]...)
 	}
 }
 

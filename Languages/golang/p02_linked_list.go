@@ -1,7 +1,6 @@
 package main
 
-// TODO: insertAt()
-// TODO:
+import "fmt"
 
 // one direction linked_list
 type chain struct {
@@ -44,6 +43,28 @@ func slbAppend(l *LinkedList, val int) {
 	}
 }
 
+func slbInsert(l *LinkedList, pos int, val int) error {
+
+	if pos >= l.length {
+		return fmt.Errorf("too long")
+	}
+
+	l.length += 1
+
+	cur := l.head
+	for i := 0; i < pos; i++ {
+		cur = cur.next
+	}
+
+	toBeInserted := chain{}
+	toBeInserted.value = val
+
+	toBeInserted.next = cur.next
+	cur.next = &toBeInserted
+
+	return nil
+}
+
 type handler func(int)
 
 // pass function as parameter
@@ -67,6 +88,8 @@ func main() {
 	slbAppend(&my, 7)
 	slbAppend(&my, 6)
 	slbAppend(&my, 5)
+
+	_ = slbInsert(&my, 1, 3)
 
 	println("Length", slbLen(my))
 	slbIterate(&my, func(i int) {

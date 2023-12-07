@@ -1,12 +1,10 @@
 package main
 
-//TODO: check if there are some good community containers
-
 import (
 	"container/ring"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 )
 
 var mapper map[int]string
@@ -14,12 +12,16 @@ var mapper map[int]string
 func main() {
 	//map functions
 	mapper = make(map[int]string)
-	files, err := ioutil.ReadDir(".")
+	files, err := os.ReadDir(".")
 	if err != nil {
 		log.Fatal(err)
 	}
 	for x, f := range files {
 		mapper[x] = f.Name()
+	}
+
+	for i, s := range mapper {
+		fmt.Println(i, "->", s)
 	}
 
 	//std.ring => infinity data structure

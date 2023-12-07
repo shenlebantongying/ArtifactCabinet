@@ -1,3 +1,3 @@
 module simple_http_temp
 
-go 1.20
+go 1.21
