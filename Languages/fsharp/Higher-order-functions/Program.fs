@@ -1,8 +1,4 @@
-module playground.Program
-
-open System
-
-// A few higher order functions
+﻿open System
 
 [<EntryPoint>]
 let main argv =
