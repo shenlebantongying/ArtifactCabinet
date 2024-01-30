@@ -1,5 +1,6 @@
 #include <atomic>
 #include <cassert>
+#include <cstdio>
 
 /// Safe persistent stack
 class Stack {
@@ -86,8 +87,6 @@ public:
         }
     }
 };
-
-#include <cstdio>
 
 int main()
 {
