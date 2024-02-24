@@ -31,7 +31,7 @@ fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     let mut n = q.len();
     
     while n > 0 {
-        let mut hi = std::i32::MIN;
+        let mut hi = i32::MIN;
         let mut has_node = false;
         for root in &q {
             if let Some(node) = root {

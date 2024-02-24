@@ -1,15 +1,15 @@
 use std::fmt::{self, Display, Formatter};
 use std::io;
 use std::process::exit;
-// TODO: use enum rather than num
 
 #[derive(Copy, Clone, PartialEq, Eq)]
-//       ^     ^ Rust quirk
 enum PosType {
     P1,
     P2,
     None,
 }
+
+type Board = [[PosType; 3]; 3];
 
 impl Display for PosType {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
@@ -33,8 +33,8 @@ fn main() -> io::Result<()> {
     // user input row:col
 
     let mut switch = PosType::P1;
-    let mut board = [[PosType::None; 3]; 3];
-    println!("=[Game board]>");
+    let mut board: Board = [[PosType::None; 3]; 3];
+    println!("=[Game Board]>");
     print_board(board);
 
     loop {
@@ -59,7 +59,7 @@ fn main() -> io::Result<()> {
                 row = row - 1;
                 col = col - 1;
 
-                // Modification of the board;
+                // Modification of the Board;
                 println!("= {} > take {} {}", switch, row + 1, col + 1);
 
                 if board[row as usize][col as usize] != PosType::None {
@@ -118,59 +118,68 @@ fn print_board(board: [[PosType; 3]; 3]) {
     }
 }
 
-// TODO: There should be a better way to handle the thing below
-// NOTE: enum type is werid
-fn judge(board: [[PosType; 3]; 3]) -> PosType {
-    for row in 0..3 {
-        match (board[row][0], board[row][1], board[row][2]) {
-            (PosType::None, PosType::None, PosType::None) => {
-                continue;
-            }
-            (PosType::P1, PosType::P1, PosType::P1) => {
-                return PosType::P1;
-            }
-            (PosType::P2, PosType::P2, PosType::P2) => {
-                return PosType::P2;
-            }
-            _ => {}
+fn check_tri_equal(p1: PosType, p2: PosType, p3: PosType) -> Option<PosType> {
+    return match (p1, p2, p3) {
+        (PosType::None, PosType::None, PosType::None) => {
+            None
         }
+        (PosType::P1, PosType::P1, PosType::P1) => {
+            Some(PosType::P1)
+        }
+        (PosType::P2, PosType::P2, PosType::P2) => {
+            Some(PosType::P2)
+        }
+        _ => {
+            None
+        }
+    };
+}
+
+fn get_lines(board: Board) -> Vec<[PosType; 3]> {
+    let mut r = Vec::new();
+
+    // TODO: array?
+    for row in 0..3 {
+        let mut a = [PosType::None; 3];
+        a[0] = board[row][0];
+        a[1] = board[row][1];
+        a[2] = board[row][2];
+        r.push(a);
     }
 
     for col in 0..3 {
-        match (board[0][col], board[1][col], board[2][col]) {
-            (PosType::None, PosType::None, PosType::None) => {
-                continue;
-            }
-            (PosType::P1, PosType::P1, PosType::P1) => {
-                return PosType::P1;
-            }
-            (PosType::P2, PosType::P2, PosType::P2) => {
-                return PosType::P2;
-            }
-            _ => {}
-        }
+        let mut a = [PosType::None; 3];
+        a[0] = board[0][col];
+        a[1] = board[1][col];
+        a[2] = board[2][col];
+        r.push(a);
     }
 
-    match (board[0][0], board[1][1], board[2][2]) {
-        (PosType::None, PosType::None, PosType::None) => {}
-        (PosType::P1, PosType::P1, PosType::P1) => {
-            return PosType::P1;
-        }
-        (PosType::P2, PosType::P2, PosType::P2) => {
-            return PosType::P2;
-        }
-        _ => {}
+    {
+        let mut a = [PosType::None; 3];
+        a[0] = board[0][0];
+        a[1] = board[1][1];
+        a[2] = board[2][2];
+        r.push(a);
     }
 
-    match (board[0][2], board[1][1], board[2][0]) {
-        (PosType::None, PosType::None, PosType::None) => {}
-        (PosType::P1, PosType::P1, PosType::P1) => {
-            return PosType::P1;
+    {
+        let mut a = [PosType::None; 3];
+        a[0] = board[0][2];
+        a[1] = board[1][1];
+        a[2] = board[2][0];
+        r.push(a);
+    }
+
+    return r;
+}
+
+fn judge(board: Board) -> PosType {
+    for line in get_lines(board) {
+        let result = check_tri_equal(line[0], line[1], line[2]);
+        if result.is_some() {
+            return result.unwrap();
         }
-        (PosType::P2, PosType::P2, PosType::P2) => {
-            return PosType::P2;
-        }
-        _ => {}
     }
 
     return PosType::None;
