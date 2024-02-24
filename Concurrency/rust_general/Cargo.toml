@@ -3,17 +3,18 @@ name = "rust_general"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-futures = "0.3.28"
-
-
-[[bin]]
-name="ubc"
-path="src/unbound_chan.rs"
-
+futures = { version = "0.3" }
 
 [[bin]]
-name="asc"
-path="src/async_io.rs"
+name = "unbound_chan"
+path = "src/unbound_chan.rs"
+
+[[bin]]
+name = "async_io"
+path = "src/async_io.rs"
+
+[[bin]]
+name = "arc_basis"
+path = "src/arc_basis.rs"
+
