@@ -15,7 +15,7 @@ print_source_view_buffer_cb (GtkWidget *widget, gpointer data)
 
   char *text = gtk_text_buffer_get_text (buffer, &start, &end, false);
 
-  g_message (text);
+  g_message ("%s", text);
 }
 
 static void
@@ -39,6 +39,9 @@ activate_cb (GtkApplication *app)
   gtk_list_box_append (GTK_LIST_BOX (sidebar_list), hello_btn);
   adw_toolbar_view_add_top_bar (ADW_TOOLBAR_VIEW (sidebar), sidebar_headbar);
   adw_toolbar_view_set_content (ADW_TOOLBAR_VIEW (sidebar), sidebar_list);
+
+  adw_header_bar_set_decoration_layout (ADW_HEADER_BAR (sidebar_headbar),
+                                        "close");
 
   // content
 
