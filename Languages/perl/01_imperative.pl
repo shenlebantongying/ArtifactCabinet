@@ -1,9 +1,6 @@
 #!/usr/bin/env perl
-# Strict and warnings are recommended.
-use strict;
-use warnings;
-use Test::Most;
-use feature qw(say);
+use v5.38;
+use Test::More;
 
 # concateing strings
 my $name = "a1b";
