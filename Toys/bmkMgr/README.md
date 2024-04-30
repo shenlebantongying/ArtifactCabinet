@@ -1,0 +1,3 @@
+# bmkMgr
+
+Mini bookmark manager.
