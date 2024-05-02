@@ -1,3 +1,4 @@
-CREATE TABLE IF NOT EXISTS person (
+CREATE TABLE IF NOT EXISTS bookmarks (
         id    INTEGER PRIMARY KEY,
-        name  TEXT NOT NULL)
+        title  TEXT NOT NULL,
+        url  TEXT NOT NULL)

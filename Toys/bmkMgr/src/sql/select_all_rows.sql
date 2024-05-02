@@ -1,1 +1,1 @@
-SELECT * FROM person
+SELECT title,url FROM bookmarks

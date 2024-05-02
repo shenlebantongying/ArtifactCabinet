@@ -1,1 +1,1 @@
-INSERT INTO person (name) VALUES (?1)
+INSERT INTO bookmarks (title,url) VALUES (?1,?2)
