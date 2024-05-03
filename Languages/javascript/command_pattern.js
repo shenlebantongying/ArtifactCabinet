@@ -1,19 +1,18 @@
-var carManager = {
-    // request information
-    requestInfo: function( model, id ){
-        return "The information for " + model + " with ID " + id + " is foobar";
-    },
-    // arrange a viewing
-    arrangeViewing: function( model, id ){
-        return "You have successfully booked a viewing of " + model + " ( " + id + " ) ";
-    }
+var mgr = {
+  func1: function (func_id, s) {
+    return func_id + " -> " + s;
+  },
+  func2: function (func_id, s) {
+    return func_id + " -> " + s;
+  },
 };
 
-carManager.execute = function ( name ) {
-    return carManager[name].apply( carManager,              // Mandatory "this",
-                                    Array.from(arguments)); // Convert arguments to simple array
-
+mgr.execute = function (name) {
+  return mgr[name].apply(
+    mgr,
+    Array.from(arguments),
+  );
 };
 
-console.log(carManager.execute( "arrangeViewing", "Ferrari", "14523" ));
-console.log(carManager.execute( "requestInfo", "Ford Mondeo", "54323" ));
+console.log(mgr.execute("func1", "str1"));
+console.log(mgr.execute("func2", "str2"));
