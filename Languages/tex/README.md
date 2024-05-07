@@ -1,7 +1,10 @@
+# Current No brainer -> latexmk -pdf
+
+- microtype
+- mathtools
+
 # Frequently used packages
 
-- microtype -\> Extreme perfectionism for pdflatex
-- mathtools -\> amsmath + some goodies
 - hyperref -\> links
 - fancyhdr -\> headers & footer
 - fancyref (cleverref?)
