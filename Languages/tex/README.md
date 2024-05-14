@@ -3,6 +3,30 @@
 - microtype
 - mathtools
 
+Citation in a good way -> Biblatex + Biber
+
+Graphics PGF/TikZ > MetaPost > others and probably asymptote
+
+The minted 3.0 unreleased  https://github.com/gpoore/minted?tab=readme-ov-file#development-status
+
+# latexmk no-brainer
+
+https://ctan.org/pkg/latexmk
+
+```sh
+latexmk -c # clean
+```
+
+`.latexmkrc`
+
+
+```perl
+$pdf_mode = 
+
+1 -> pdflatex
+4 -> lualatex
+```
+
 # Frequently used packages
 
 - hyperref -\> links
@@ -14,14 +38,9 @@
 - datatool -\> load csv directly to file
 - todonotes \# For fun
 
-# Other notes:
-
-Citation in a good way -\> Biblatex + Biber
-
-Graphics PGF/TikZ \> MetaPost \> others and probably asymptote
-
 # LaTeX3 & expl3
 
 # Math
 
 mathpartir for induction rules
+
