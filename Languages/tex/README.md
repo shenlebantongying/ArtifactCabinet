@@ -1,15 +1,13 @@
-# Current No brainer -> latexmk -pdf
+# Current No brainers
 
-- microtype
 - mathtools
+- hyperref
 
 Citation in a good way -> Biblatex + Biber
 
 Graphics PGF/TikZ > MetaPost > others and probably asymptote
 
-The minted 3.0 unreleased  https://github.com/gpoore/minted?tab=readme-ov-file#development-status
-
-# latexmk no-brainer
+## latexmk no-brainer
 
 https://ctan.org/pkg/latexmk
 
@@ -17,30 +15,42 @@ https://ctan.org/pkg/latexmk
 latexmk -c # clean
 ```
 
-`.latexmkrc`
 
 
 ```perl
+# .latexmkrc
+
 $pdf_mode = 
 
 1 -> pdflatex
 4 -> lualatex
 ```
 
-# Frequently used packages
+## Fonts
 
-- hyperref -\> links
-- fancyhdr -\> headers & footer
+```tex
+% See doc, various fontsetup
+\usepackage[default]{fontsetup}
+% check fontspec for what's under the hood
+```
+
+# G
+
+- microtype
 - fancyref (cleverref?)
-- gensymb -\> the degree symbol
+- gensymb -> the degree symbol
 - xcolor
-- pdfpages -\> to automate combining pdfs
-- datatool -\> load csv directly to file
-- todonotes \# For fun
-
-# LaTeX3 & expl3
+- pdfpages -> to automate combining pdfs
+- todonotes -> For fun
 
 # Math
 
 mathpartir for induction rules
+
+# Future
+
+LuaMetaTex
+
+The minted 3.0 unreleased  https://github.com/gpoore/minted?tab=readme-ov-file#development-status
+
 
