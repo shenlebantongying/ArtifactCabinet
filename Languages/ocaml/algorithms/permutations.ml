@@ -1,53 +1,48 @@
-(* Calculating n! permutations
-   We use std modules here
-   https://caml.inria.fr/pub/docs/manual-ocaml/libref/List.html
+(* Calculating n permutations*)
+
+(* Method 1 -> The insert-to-all-positions / brutal force
+   {v
+   Base case ->  [] -> no combination
+   One       -> [a] -> [a]
+   Two       -> [a,b] -> [a,b] [b,a]
+   three     -> [a,b,c] ->
+      Base on the previous case -> c can be in many places
+         insert c into [a,b] -> [c,a,b] [a,c,b] [a,b,c]
+         insert c into [b,a] -> [c,b,a] [b,c,a] [b,a,c]
+   v}
 *)
 
-(* Counter: 1 -> This counter reach 3 -> finished -> if not -> read C14 *)
+type ll = int list [@@deriving show]
+type lll = ll list [@@deriving show]
 
-(* Method 1 -> The insert-to-all-positions / brutal force *)
-
-let rec insert_e element seen l=
-  match l with
-    []->[ seen @ [element]]
-  | h::t->( seen @ element::h::t )::insert_e element (seen @ [h]) t
-
-let insert_element_to_list element l=
-  insert_e element [] l
-(* Step 3:
-   Assuming X is the inserted element, o is 3 original list elements
-   We would like to get folling lists
-   x o o o
-   o x o o
-   o o x o
-   o! o o x
-   Note that we would keep track of the elements before x -> `seen`
-   We always put the `seen` at beginning for next round,
-   followed by our element to be inserted
-   i.e. (seen @ element :: h::t)
-   h::t means complete original list
-   ----
-   We then put the first element to the `seen`,
-   the `seen` would be [o] now
-   then the head element would be the head of the tail from last round.
-   concat the (seen @ element :: h::t) again, then go next round,
-   the `seen` would be [o;o],
-   contact again.
-   Finally we would get the four lists we desired.
-*)
-let insert_to_all_lists element lists =
-  List.concat (List.map (insert_element_to_list element ) lists)
-(* Step 2:
-   Apply the insert_element function to each lists
-   and combine/concate them
-*)
 let rec permutate l =
+  (*
+     generate all combinations when inserting a single element, like
+     {v
+         rest (or the original list)
+         v---v
+         o o o x
+         o o x o
+         o x o o
+         x o o o
+            ^---^ the prev list which was positioned before
+     v}
+  *)
+  let rec gen_combinations e (prev : int list) (rest : int list) =
+    match rest with
+    | [] -> [ e :: prev ]
+    | h :: t -> ((h :: t) @ (e :: prev)) :: gen_combinations e (h :: prev) t
+  in
   match l with
-    []-> [[]]
-  | h::t -> insert_to_all_lists h (permutate t);;
-(* Step1:
-   Assuming we have know the permutates other than the head.
-   We can then insert the head to all possitions on each permutates.
-*)
+  | [] -> [ [] ]
+  | h :: t -> List.concat_map (gen_combinations h []) (permutate t)
+;;
 
-permutate [1;2;3;4];
+print_endline (show_lll (permutate [ 1; 2; 3 ]))
+
+let rec dup_exist = function
+  | [] -> "ok"
+  | hd :: tl -> if List.exists (( = ) hd) tl then show_ll hd else dup_exist tl
+;;
+
+print_endline (dup_exist (permutate [ 1; 2; 3; 4; 5 ]))

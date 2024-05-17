@@ -12,3 +12,11 @@ cmake-build*/
 build-*-Debug/
 README.tex
 README.pdf
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.pdf
+*.synctex.gz
+

@@ -1,23 +1,25 @@
 (*
-According to "Introduction to algorithms 3rd"
+   According to "Introduction to algorithms 3rd"
 
-There are 7 approaches for sorting
+   There are 7 approaches for sorting
 *)
-open Base;;                     (* Just to get definition of drop & take *)
+open Base
+
+(* Just to get definition of drop & take *)
 
 (* Approach 1: insertion sort *)
 
-let rec insert x l=
+let rec insert x l =
   match l with
-    []->[x]
-  | h::t ->
-    if x<=h
-    then x::h::t
-    else h::insert x t
+  | [] -> [ x ]
+  | h :: t -> if x <= h then x :: h :: t else h :: insert x t
+;;
 
-let rec insertion_sort =function
-    [] -> []
-  | h::t -> insert h (insertion_sort t);;
+let rec insertion_sort = function
+  | [] -> []
+  | h :: t -> insert h (insertion_sort t)
+;;
+
 (* Assuming we have the function to get a sorted tail,
    we just have to insert head in to the tail
    which will created a call to sort the tail
@@ -27,37 +29,44 @@ let rec insertion_sort =function
    each levels
 *)
 
-insertion_sort [9;3;4;1;10]
+insertion_sort [ 9; 3; 4; 1; 10 ]
 
 (* Approach 2: merge sort *)
 
-let rec merge x y =             (* Conquer *)
-  match x,y with
-    [],r ->r
-  | l ,[]->l
-  | hx::tx,hy::ty ->
+let rec merge x y =
+  (* Conquer *)
+  match x, y with
+  | [], r -> r
+  | l, [] -> l
+  | hx :: tx, hy :: ty ->
     if hx < hy
-    then hx::merge tx (hy::ty)  (* Pick the smaller one between two heads*)
-    else hy::merge ty (hx::tx)  (* Put it in front then let the rest keep comparing *)
+    then hx :: merge tx (hy :: ty) (* Pick the smaller one between two heads*)
+    else hy :: merge ty (hx :: tx)
+;;
 
-let rec merge_sort l=
+(* Put it in front then let the rest keep comparing *)
+
+let rec merge_sort l =
   match l with
-    []->[]
-  | [x]-> [x]                   (* 1 or 0 elements no need to sort *)
+  | [] -> []
+  | [ x ] -> [ x ] (* 1 or 0 elements no need to sort *)
   | __ ->
     let half_length = List.length l / 2 in
-    let left  = List.take l half_length in
-    let right = List.drop l half_length  in
-    merge(merge_sort left) (merge_sort right);; (* Dividing *)
+    let left = List.take l half_length in
+    let right = List.drop l half_length in
+    merge (merge_sort left) (merge_sort right)
+;;
 
-merge_sort [6; 4; 5; 7; 2; 5; 3; 4];;
+(* Dividing *)
+
+merge_sort [ 6; 4; 5; 7; 2; 5; 3; 4 ]
 
 (*
-[6; 4; 5; 7; 2; 5; 3; 4]
-[6; 4; 5; 7][2; 5; 3; 4]
-[6; 4][5; 7][2; 5][3; 4]
-[6][4][5][7][2][5][3][4]
-[4; 6][5; 7][2; 5][3; 4]
-[4; 5; 6; 7][2; 3; 4; 5]
-[2; 3; 4; 4; 5; 5; 6; 7]
+   [6; 4; 5; 7; 2; 5; 3; 4]
+   [6; 4; 5; 7][2; 5; 3; 4]
+   [6; 4][5; 7][2; 5][3; 4]
+   [6][4][5][7][2][5][3][4]
+   [4; 6][5; 7][2; 5][3; 4]
+   [4; 5; 6; 7][2; 3; 4; 5]
+   [2; 3; 4; 4; 5; 5; 6; 7]
 *)
