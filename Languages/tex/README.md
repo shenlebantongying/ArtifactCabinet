@@ -36,6 +36,8 @@ $pdf_mode =
 
 # G
 
+https://authors.acm.org/proceedings/production-information/accepted-latex-packages
+
 - microtype
 - fancyref (cleverref?)
 - gensymb -> the degree symbol
