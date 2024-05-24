@@ -1,5 +1,5 @@
 (executables
  (preprocess
   (pps ppx_deriving.show))
- (names permutations sorting)
+ (names combinations permutations sorting)
  (libraries base))
