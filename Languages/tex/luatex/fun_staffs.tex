@@ -31,6 +31,28 @@
 
 \setlength\parindent{0pt}
 
+\definecolor{racketBracket}{RGB}{0,178,178}
+\definecolor{racketText}{RGB}{34,34,119}
+\definecolor{racketComment}{RGB}{119,34,119}
+\definecolor{racketString}{RGB}{34,119,34}
+
+\lstdefinelanguage{racket}{
+    morekeywords={},  
+    sensitive=false,
+    morecomment=[l];,
+    morestring=[b]",
+    otherkeywords={(,),[,]}
+}
+
+\lstdefinestyle{rackeStyle}{
+    keywordstyle=\color{racketBracket},
+    basicstyle=\ttfamily\color{racketText},
+    commentstyle=\color{racketComment},
+    stringstyle=\color{racketString},
+    numberstyle=\color{black},
+    rulecolor=\color{black}
+}
+
 \begin{document}
 
 \section{Fancy Fonts}
@@ -89,6 +111,13 @@ def galton(stages: int, n_balls: int):
 
 
 galton(100, 5000)
+\end{lstlisting}
+
+\section{Racket Listing}
+\begin{lstlisting}[language=racket,style=rackeStyle]
+; count the elements        
+(length (list "hop" "skip" "jump"))
+3
 \end{lstlisting}
 
 \section{Draw staff with Tikz}
