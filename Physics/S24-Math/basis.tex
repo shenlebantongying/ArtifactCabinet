@@ -1,0 +1,130 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{mathtools}
+\usepackage[default]{fontsetup}
+
+\usepackage{hyperref}
+
+\usepackage{amsthm}
+\usepackage{unicode-math}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+
+\tcbset{
+  boxrule=1pt,
+  sharp corners=all,
+  halign=left,halign upper=left,halign lower=left,
+  coltitle=black,
+  colbacktitle=white,
+  colback=white}
+
+\NewTcbTheorem[number within=section]{fact}{Fact}{}{th}
+\NewTcbTheorem[number within=section]{exercise}{Exercise}{}{th}
+
+\setlength\parindent{0pt}
+\usepackage{nopageno}
+
+% MY ===
+
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\samplespace}{\Omega}
+\newcommand{\g}{$\rightarrow\ $}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\begin{document}
+
+  \section{Counting}
+
+  \begin{fact}{Binomial theorem}{}
+    \[
+    (a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k}b^k
+    \]
+    where $\binom{n}{k} = \frac{n!}{k!(n-k)!}$.
+  \end{fact}
+
+  \subsection{The Division or Pigeonhole Principles}
+
+  \begin{fact}{Division Principle}{}
+    If $n$ objects are placed into $k$ boxes,
+    then at lease one box contains $\ceil{\frac{n}{k}}$ or more objects,
+    and at lease one box contains $\floor{\frac{n}{k}}$ or fewer objects.
+  \end{fact}
+
+  \begin{exercise}{}{}
+    Pick 6 integers between 0 and 9. Show that 2 of them must add up to 9.
+    \tcblower
+    All possible ways of adding up to 9 are known:
+    $(0,9),(1,8),(2,7),(3,6),(4,5)$
+
+    At lease one pair will contain both number when putting picked 6 numbers into those pairs, because at lease one pair will contains $\ceil{\frac{9}{6}}=2$ objects, thus there must be one box that add up to 9.
+  \end{exercise}
+
+  \subsection{Combinatorial Proof}
+
+  \begin{fact}{Pascal’s identity}{}
+    \[
+    {n+1 \choose k} = {n+1 \choose k} + {n \choose k}
+    \]
+  \end{fact}
+
+  Also
+
+  \[
+  {n \choose k} = {n \choose n-k}
+  \]
+
+  \begin{exercise}{}{}
+    Show that $\sum_{k=0}^{n}{n \choose k}^2 = {2n \choose n}.$
+    \tcblower
+    Divide $2n$ in the right side into 2 equal sized parts A and B, where $size(A)=size(B)=n$.
+
+    To choose n objects from 2n, we choose $k$ from A and $n-k$ from B.
+    Sum up all possible values of $k$, which is $[0,n]$.
+
+    \[
+    {2n \choose n} = \sum_{k=0}^{n}{n \choose k}{n \choose n-k} = \sum_{k=0}^{n}{n \choose k}^2
+    \]
+
+    where ${n \choose i} = {n \choose n-k}$.
+  \end{exercise}
+
+
+
+  \section{Conditional Probability}
+
+  \begin{fact}{}{}
+    The conditional probability of A given B is $\prob(A|B) = \frac{\prob(A\cap B)}{\prob(B)}$.
+  \end{fact}
+
+  \begin{fact}{}{}
+    Two events are statistically independent if $\prob(A\cap B) = \prob(A)\prob(B)$
+  \end{fact}
+
+  Equivilent defination \g $\prob(A|B) = \prob(A)$.
+
+  \begin{fact}{}{}
+    Bayes’ theorem \g $\prob(A|B) = \frac{\prob (B|A)\prob(A)}{\prob(B)}$.
+  \end{fact}
+
+
+  \section{Random variables}
+
+  PMF \g Probability mass function
+
+  \subsection{Binomial}
+
+  \begin{fact}{}{}
+    Let X be a binomial random variable.
+
+    PMF of X is
+    \begin{align}
+      P_x(k) = \binom{n}{k}p^k(1-p)^{n-k} &&k=0,1,...n.
+    \end{align}
+    where $p$ is the binomial parameter, and n is the total number of stats.
+
+  \end{fact}
+
+\end{document}
