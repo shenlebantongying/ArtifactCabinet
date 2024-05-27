@@ -1,0 +1,4 @@
+- [ ] handle tabs
+- [ ] read yaml front matter
+- [ ] convert to html table format
+- [ ] arbitrary number of comparison
