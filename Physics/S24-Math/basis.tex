@@ -1,5 +1,6 @@
 \documentclass[10pt,a4paper]{article}
-
+\usepackage{geometry}
+\geometry{margin=1in}
 \usepackage{mathtools}
 \usepackage[default]{fontsetup}
 
@@ -13,16 +14,19 @@
 
 \tcbset{
   boxrule=1pt,
-  sharp corners=all,
+  arc=1px,
+  parbox=false, %?
   halign=left,halign upper=left,halign lower=left,
   coltitle=black,
   colbacktitle=white,
   colback=white}
 
 \NewTcbTheorem[number within=section]{fact}{Fact}{}{th}
-\NewTcbTheorem[number within=section]{exercise}{Exercise}{}{th}
+\NewTcbTheorem[number within=section]{exec}{Exercise}{}{th}
 
 \setlength\parindent{0pt}
+\setlength{\parskip}{1.02\baselineskip}
+
 \usepackage{nopageno}
 
 % MY ===
@@ -53,14 +57,14 @@
     and at lease one box contains $\floor{\frac{n}{k}}$ or fewer objects.
   \end{fact}
 
-  \begin{exercise}{}{}
+  \begin{exec}{}{}
     Pick 6 integers between 0 and 9. Show that 2 of them must add up to 9.
     \tcblower
     All possible ways of adding up to 9 are known:
     $(0,9),(1,8),(2,7),(3,6),(4,5)$
 
     At lease one pair will contain both number when putting picked 6 numbers into those pairs, because at lease one pair will contains $\ceil{\frac{9}{6}}=2$ objects, thus there must be one box that add up to 9.
-  \end{exercise}
+  \end{exec}
 
   \subsection{Combinatorial Proof}
 
@@ -76,7 +80,7 @@
   {n \choose k} = {n \choose n-k}
   \]
 
-  \begin{exercise}{}{}
+  \begin{exec}{}{}
     Show that $\sum_{k=0}^{n}{n \choose k}^2 = {2n \choose n}.$
     \tcblower
     Divide $2n$ in the right side into 2 equal sized parts A and B, where $size(A)=size(B)=n$.
@@ -89,9 +93,18 @@
     \]
 
     where ${n \choose i} = {n \choose n-k}$.
-  \end{exercise}
+  \end{exec}
 
+  \begin{exec}{}{}
+    Show that $\sum_{k=0}^{n} k(n+1-k)={n+1 \choose 3}$.
+    \tcblower
+    The right hand side can be interpreted as choosing 3 objects $\{j,k,l\}$ from $\{0,1,2,3,...,n,n+1\}$, where $0<=j<k<l<=n+1$.
 
+    Object $j$ has $k$ choices while object $l$ has $n+1-k$ choices. Using the multiplication principle, for any given value of $k$, the total ways of picking $j$ and $l$ is $k(n+1-k)$. Summing them up, we get the left hand side.
+    \qed
+
+    Similarly, expression $1+2+3+...+n-1+n$ can be viewed as choosing two objects from both side of $k$ in set $\{0,1,2,3....n-1,n\}$ where $0<k<n, k \in \mathbb{Z}$, and thus $\sum_{i=1}^{n}i={n+1 \choose 2}$.
+  \end{exec}
 
   \section{Conditional Probability}
 
@@ -103,7 +116,7 @@
     Two events are statistically independent if $\prob(A\cap B) = \prob(A)\prob(B)$
   \end{fact}
 
-  Equivilent defination \g $\prob(A|B) = \prob(A)$.
+  Equivalent definition \g $\prob(A|B) = \prob(A)$.
 
   \begin{fact}{}{}
     Bayes’ theorem \g $\prob(A|B) = \frac{\prob (B|A)\prob(A)}{\prob(B)}$.
