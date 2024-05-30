@@ -1,0 +1,64 @@
+\section{Counting}
+\begin{fact}{Binomial theorem}{binom}
+  \[
+  (a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k}b^k
+  \]
+  where $\binom{n}{k} = \frac{n!}{k!(n-k)!}$.
+\end{fact}
+
+\subsection{The Division or Pigeonhole Principles}
+
+\begin{fact}{Division Principle}{}
+  If $n$ objects are placed into $k$ boxes,
+  then at lease one box contains $\ceil{\frac{n}{k}}$ or more objects,
+  and at lease one box contains $\floor{\frac{n}{k}}$ or fewer objects.
+\end{fact}
+
+\begin{exec}{}{}
+  Pick 6 integers between 0 and 9. Show that 2 of them must add up to 9.
+  \tcblower
+  All possible ways of adding up to 9 are known:
+  $(0,9),(1,8),(2,7),(3,6),(4,5)$
+
+  At lease one pair will contain both number when putting picked 6 numbers into those pairs, because at lease one pair will contains $\ceil{\frac{9}{6}}=2$ objects, thus there must be one box that add up to 9.
+\end{exec}
+
+\subsection{Combinatorial Proof}
+
+\begin{fact}{Pascal’s identity}{}
+  \[
+  \binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}
+  \]
+\end{fact}
+
+Also
+
+\[
+{n \choose k} = {n \choose n-k}
+\]
+
+\begin{exec}{}{}
+  Show that $\sum_{k=0}^{n}{n \choose k}^2 = {2n \choose n}.$
+  \tcblower
+  Divide $2n$ in the right side into 2 equal sized parts A and B, where $size(A)=size(B)=n$.
+
+  To choose n objects from 2n, we choose $k$ from A and $n-k$ from B.
+  Sum up all possible values of $k$, which is $[0,n]$.
+
+  \[
+  {2n \choose n} = \sum_{k=0}^{n}{n \choose k}{n \choose n-k} = \sum_{k=0}^{n}{n \choose k}^2
+  \]
+
+  where ${n \choose i} = {n \choose n-k}$.
+\end{exec}
+
+\begin{exec}{}{}
+  Show that $\sum_{k=0}^{n} k(n+1-k)={n+1 \choose 3}$.
+  \tcblower
+  The right hand side can be interpreted as choosing 3 objects $\{j,k,l\}$ from $\{0,1,...,n,n+1\}$, where $0<=j<k<l<=n+1$.
+
+  Object $j$ has $k$ choices while object $l$ has $n+1-k$ choices. Using the multiplication principle, for any given value of $k$, the total ways of picking $j$ and $l$ is $k(n+1-k)$. Summing them up, we get the left hand side.
+  \qed
+
+  Similarly, expression $1+2+3+...+n-1+n$ can be viewed as choosing two objects from both side of $k$ in set $\{0,1,2,3....n-1,n\}$ where $0<k<n, k \in \mathbb{Z}$, and thus $\sum_{i=1}^{n}i={n+1 \choose 2}$.
+\end{exec}

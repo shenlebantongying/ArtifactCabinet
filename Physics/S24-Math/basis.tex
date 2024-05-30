@@ -1,11 +1,14 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 \usepackage{geometry}
 \geometry{margin=1in}
 \usepackage{mathtools}
 \usepackage[default]{fontsetup}
 
-\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{DodgerBlue4}{RGB}{16,78,139}
+\usepackage[colorlinks=true,allcolors=DodgerBlue4]{hyperref}
 
+\usepackage{cleveref}
 \usepackage{amsthm}
 \usepackage{unicode-math}
 
@@ -13,21 +16,24 @@
 \tcbuselibrary{theorems}
 
 \tcbset{
-  boxrule=1pt,
-  arc=1px,
-  parbox=false, %?
-  halign=left,halign upper=left,halign lower=left,
-  coltitle=black,
-  colbacktitle=white,
-  colback=white}
+boxrule=1pt,
+arc=1px,
+parbox=false, %?
+halign=left,halign upper=left,halign lower=left,
+coltitle=black,
+colbacktitle=white,
+colback=white}
 
-\NewTcbTheorem[number within=section]{fact}{Fact}{}{th}
-\NewTcbTheorem[number within=section]{exec}{Exercise}{}{th}
+\NewTcbTheorem[number within=section, list inside=facts,crefname={fact}{Fact}]{fact}{Fact}{}{fact}
+\NewTcbTheorem[number within=section, list inside=execs,crefname={exec}{Exercise}]{exec}{Exercise}{}{}
 
 \setlength\parindent{0pt}
 \setlength{\parskip}{1.02\baselineskip}
+\numberwithin{equation}{section}
 
 \usepackage{nopageno}
+\usepackage{tocbibind}
+\usepackage{setspace}
 
 % MY ===
 
@@ -39,105 +45,57 @@
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \begin{document}
+\tcblistof{facts}{List of facts}\clearpage
+\input{approximation.tex}
+\input{counting.tex}
+\section{Probability basis}
 
-  \section{Counting}
+\begin{fact}{Conditional probability}{}
+  The probability of A given B is $\prob(A|B) = \frac{\prob(A\cap B)}{\prob(B)}$.
+\end{fact}
 
-  \begin{fact}{Binomial theorem}{}
-    \[
-    (a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k}b^k
-    \]
-    where $\binom{n}{k} = \frac{n!}{k!(n-k)!}$.
-  \end{fact}
+\begin{fact}{Statistically independent}{}
+  Two events are independent if $\prob(A\cap B) = \prob(A)\prob(B)$
+\end{fact}
 
-  \subsection{The Division or Pigeonhole Principles}
+Equivalent definition \g $\prob(A|B) = \prob(A)$.
 
-  \begin{fact}{Division Principle}{}
-    If $n$ objects are placed into $k$ boxes,
-    then at lease one box contains $\ceil{\frac{n}{k}}$ or more objects,
-    and at lease one box contains $\floor{\frac{n}{k}}$ or fewer objects.
-  \end{fact}
+\begin{fact}{Bayes’ theorem}{}
+  \g $\prob(A|B) = \frac{\prob (B|A)\prob(A)}{\prob(B)}$.
+\end{fact}
 
-  \begin{exec}{}{}
-    Pick 6 integers between 0 and 9. Show that 2 of them must add up to 9.
-    \tcblower
-    All possible ways of adding up to 9 are known:
-    $(0,9),(1,8),(2,7),(3,6),(4,5)$
+\section{Random variables}
 
-    At lease one pair will contain both number when putting picked 6 numbers into those pairs, because at lease one pair will contains $\ceil{\frac{9}{6}}=2$ objects, thus there must be one box that add up to 9.
-  \end{exec}
+PMF \g Probability mass function
 
-  \subsection{Combinatorial Proof}
+PDF \g Probability density function
 
-  \begin{fact}{Pascal’s identity}{}
-    \[
-    {n+1 \choose k} = {n+1 \choose k} + {n \choose k}
-    \]
-  \end{fact}
+CDF \g Cumulative distribution functions
 
-  Also
+\subsection{Binomial}
 
-  \[
-  {n \choose k} = {n \choose n-k}
-  \]
+\begin{fact}{Binomial random variable}{}
+  Let X be a Binomial random variable.
 
-  \begin{exec}{}{}
-    Show that $\sum_{k=0}^{n}{n \choose k}^2 = {2n \choose n}.$
-    \tcblower
-    Divide $2n$ in the right side into 2 equal sized parts A and B, where $size(A)=size(B)=n$.
+  PMF of X is
+  \begin{align}
+    f_X(k) = \binom{n}{k}p^k(1-p)^{n-k} &&k=0,1,...
+  \end{align}
+  where $p$ is the binomial parameter, and n is the total number of stats.
 
-    To choose n objects from 2n, we choose $k$ from A and $n-k$ from B.
-    Sum up all possible values of $k$, which is $[0,n]$.
+\end{fact}
 
-    \[
-    {2n \choose n} = \sum_{k=0}^{n}{n \choose k}{n \choose n-k} = \sum_{k=0}^{n}{n \choose k}^2
-    \]
+\subsection{Poisson}
+A special case of Binomial distribution, where $p\rightarrow0,n\rightarrow\infty$.
 
-    where ${n \choose i} = {n \choose n-k}$.
-  \end{exec}
-
-  \begin{exec}{}{}
-    Show that $\sum_{k=0}^{n} k(n+1-k)={n+1 \choose 3}$.
-    \tcblower
-    The right hand side can be interpreted as choosing 3 objects $\{j,k,l\}$ from $\{0,1,2,3,...,n,n+1\}$, where $0<=j<k<l<=n+1$.
-
-    Object $j$ has $k$ choices while object $l$ has $n+1-k$ choices. Using the multiplication principle, for any given value of $k$, the total ways of picking $j$ and $l$ is $k(n+1-k)$. Summing them up, we get the left hand side.
-    \qed
-
-    Similarly, expression $1+2+3+...+n-1+n$ can be viewed as choosing two objects from both side of $k$ in set $\{0,1,2,3....n-1,n\}$ where $0<k<n, k \in \mathbb{Z}$, and thus $\sum_{i=1}^{n}i={n+1 \choose 2}$.
-  \end{exec}
-
-  \section{Conditional Probability}
-
-  \begin{fact}{}{}
-    The conditional probability of A given B is $\prob(A|B) = \frac{\prob(A\cap B)}{\prob(B)}$.
-  \end{fact}
-
-  \begin{fact}{}{}
-    Two events are statistically independent if $\prob(A\cap B) = \prob(A)\prob(B)$
-  \end{fact}
-
-  Equivalent definition \g $\prob(A|B) = \prob(A)$.
-
-  \begin{fact}{}{}
-    Bayes’ theorem \g $\prob(A|B) = \frac{\prob (B|A)\prob(A)}{\prob(B)}$.
-  \end{fact}
-
-
-  \section{Random variables}
-
-  PMF \g Probability mass function
-
-  \subsection{Binomial}
-
-  \begin{fact}{}{}
-    Let X be a binomial random variable.
+\begin{fact}{Poisson random variable}{}
+    Let X be a Poisson random variable.
+    X is drawn from a Poisson distribution with a parameter $\mu$.
 
     PMF of X is
     \begin{align}
-      P_x(k) = \binom{n}{k}p^k(1-p)^{n-k} &&k=0,1,...n.
+      f_X(k) =  \frac{\mu^k}{k!}e^{-\mu} && k = 0,1,...
     \end{align}
-    where $p$ is the binomial parameter, and n is the total number of stats.
-
-  \end{fact}
+\end{fact}
 
 \end{document}

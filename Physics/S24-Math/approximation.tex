@@ -1,0 +1,33 @@
+\section{Approximation}
+\begin{fact}{Taylor Approximation}{}
+  Let $f$ be a continuous function with infinite derivatives.
+  Let $a\in \textbf{R}$ be a fixed constant.
+
+  The Taylor approximation of $f$ at $x=a$ is
+
+  \begin{align}
+    f(x) &= f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a^2)+...\\
+         &= \sum^{\infty}_{n=0}\frac{f^{(n)}(a)}{n!}(x-a)^n
+  \end{align}
+  where $f^{(n)}$ denotes the nth-order derivative of $f$.
+\end{fact}
+
+
+\begin{fact}{Exponential series}{}
+  Let $x$ be any real number. Then,
+  \[
+    e^x = \sum_{k=0}^{\infty}\frac{x^k}{k!}.
+  \]
+  \tcblower
+  \begin{proof}
+    Let $f(x) = e^x$.
+    The nth-order derivative of $f(x)$ is $f^{(n)}=1$.
+    The Taylor approximation around $x=0$ (or $a=0$) is simply the right hand side.
+  \end{proof}
+\end{fact}
+
+\begin{exec}{}{}
+   Show that $\lim_{n\rightarrow\infty}(1+\frac{1}{n})^n=e$.
+   \tcblower
+   TODO
+\end{exec}
