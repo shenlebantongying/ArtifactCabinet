@@ -1,0 +1,61 @@
+\section{Calculus}
+\subsection{Limit}
+\begin{fact}{L'Hôpital's rule}{lhopital}
+  Suppose that ($\lim\limits_{x\rightarrow a}f(x)=0$, $\lim\limits_{x\rightarrow a}g(x)=0$) or ($\lim\limits_{x\rightarrow a}f(x)=\infty$, $\lim\limits_{x\rightarrow a}g(x)=\infty$) and that $\lim\limits_{x\rightarrow a}\frac{f'(x)}{g'(x)}$ exists.
+  Then
+  \[
+   \lim\limits_{x\rightarrow a}\frac{f(x)}{g(x)} = \lim\limits_{x\rightarrow a}\frac{f'(x)}{g'(x)}
+  \]
+\end{fact}
+
+\subsection{Integration Methods}
+\begin{fact}{Integration by parts}{intByPart}
+  If $f'$ and $g'$ are continuous on $[a,b]$ then
+\begin{align*}
+   \int_{a}^{b} f'(t)g(t) dt & = \int_{a}^{b} f'(t)g'(t)\,dt - \int_{a}^{b} f(t)g'(t)\,dt\\
+                             & = f(b)g(b)-f(a)g(a) - \int_{a}^{b} f(t)g'(t)\,dt.
+\end{align*}
+
+For indefinite integrals,
+\[
+  \int f'(t)g(t) dt = f(t)g(t) - \int f(t)g'(t)\,dt.
+\]
+\end{fact}
+
+\begin{exec}
+  Calculate $\int e^x \sin{x} dx$.
+  \tcblower
+  Factor $e^x\sin{x} = f'(x)g(x)$ into $f'(x) =e^x$ and $g(x)=\sin{x}$,
+  where $f(x)=e^x$ and $g'(x)=\cos{x}$.
+  \begin{align*}
+    \int e^x \sin{x} dx = e^x \sin{x} - \int e^x \cos{x}\,dx
+  \end{align*}
+  Apply \nameref*{fact:intByPart} again for $\int e^x \cos{x}\,dx$,
+  where $f'(x)=e^x$ \g $f(x)=e^x$ and $g(x)=\cos{x}$ \g $g'(x)=-\sin{x}$.
+  \begin{align*}
+    \int e^x \sin{x} dx &= e^x \sin{x} - (e^x\cos{x}-\int e^x (-\sin{x},dx))\\
+    2\int e^x \sin{x} dx &= e^x \sin{x} - e^x\cos{x} \\
+    \int e^x \sin{x} dx &= \frac{e^x}{2} \left(\sin{x} - \cos{x}\right)
+  \end{align*}
+\end{exec}
+
+\begin{exec}
+  Prove that $\int_{0}^{\infty}\frac{x^n}{e^{x}}\,dx = n!$, where $n$ is positive integer.
+  \tcblower
+  \begin{proof}
+  Let $I_n = \int_{0}^{\infty}\frac{x^n}{e^{x}}\,dx$.
+
+  Let $f'(x)=e^{-x}$\g$f(x)=-e^{-x}$ and $g(x)=x^n$\g$g'(x)=nx^{n-1}$, therefore
+  \begin{align*}
+    I_n = \int_{0}^{\infty}\frac{x^n}{e^{x}}\,dx
+      &= \left[-e^{-x}nx^{n-1}\right]^{\infty}_{0} - \int_{0}^{\infty}-e^{-x}nx^{n-1} \\
+      &= \left[\lim_{x\rightarrow\infty}e^{-x}(-nx^{n-1})\right] + n\int_{0}^{\infty}e^{-x}x^{n-1} \\
+      &= nI_{n-1}
+  \end{align*}
+  Note that $\lim_{x\rightarrow\infty}e^{-x}p(x)=0$ for any polynomial function $p(x)$. Easily provable using \nameref{fact:lhopital}.
+
+  Also $I_{0}=\int^{\infty}_{0}\frac{1}{e^x}=\left[-e^{-x}\right]^{\infty}_{0}=1$.
+
+  Therefore $\int_{0}^{\infty}\frac{x^n}{e^{x}}\,dx=n!$ using proof by induction.
+  \end{proof}
+\end{exec}
