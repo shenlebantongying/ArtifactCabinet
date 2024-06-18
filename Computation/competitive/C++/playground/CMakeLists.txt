@@ -1,10 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 
-# set the project name
 project(playground)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_COMPILE_WARNING_AS_ERROR ON)
 
-# add the executable
 add_executable(playground playground.cpp)
 
