@@ -1,0 +1,57 @@
+\section{Random variables}
+
+PMF \g Probability mass function
+
+
+\begin{fact}{PDF \g Probability density function}{}
+  Let $X$ be a continuous random variable.
+
+  The PDF of X is a function $f:\Omega\rightarrow\mathbb{R}$ that, when integrated
+  over an interval $[a,v]$, yields the probability of obtaining $a\le X \le b$:
+  \[
+    \mathbb{P}[a\le X \le b] = \int_{a}^{v}f(x)dx.
+  \]
+\end{fact}
+
+CDF \g Cumulative distribution functions
+
+\subsection{Binomial}
+
+\begin{fact}{Binomial random variable}{}
+  Let X be a Binomial random variable.
+
+  PMF of X is
+  \begin{align}
+    f_X(k) = \binom{n}{k}p^k(1-p)^{n-k} &&k=0,1,...
+  \end{align}
+  where $p$ is the binomial parameter, and n is the total number of stats.
+
+\end{fact}
+
+\subsection{Poisson}
+A special case of Binomial distribution, where $p\rightarrow0,n\rightarrow\infty$.
+
+\begin{fact}{Poisson random variable}{}
+  Let X be a Poisson random variable.
+  X is drawn from a Poisson distribution with a parameter $\mu$.
+
+  PMF of X is
+  \begin{align}
+    f_X(k) =  \frac{\mu^k}{k!}e^{-\mu} && k = 0,1,...
+  \end{align}
+\end{fact}
+
+\subsection{Gaussian}
+
+\begin{fact}{Gaussian random variable}{}
+  PMF of a Gaussian random variable is
+  \begin{equation*}
+    f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right],
+  \end{equation*}
+  where $(\mu\rightarrow mean,\sigma^2\rightarrow variance)$ are parameters of the distribution.
+
+  \textbf{Standard Gaussian} random variable is a Gaussian with $\mu=0$ and $\sigma^2=1$. Its PDF is
+  \begin{equation*}
+    f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+  \end{equation*}
+\end{fact}

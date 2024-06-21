@@ -43,6 +43,7 @@ colback=white}
 \newcommand{\prob}{\mathbb{P}}
 \newcommand{\samplespace}{\Omega}
 \newcommand{\g}{$\rightarrow\ $}
+\AtBeginDocument{\def\varnothing{\char"2300}}
 
 \newcommand{\TODO}{\textcolor{ErrorRed}{\fbox{TODO}}}
 
@@ -54,54 +55,7 @@ colback=white}
 \input{calculus.tex}
 \input{approximation.tex}
 \input{counting.tex}
-\section{Probability basis}
-
-\begin{fact}{Conditional probability}{}
-  The probability of A given B is $\prob(A|B) = \frac{\prob(A\cap B)}{\prob(B)}$.
-\end{fact}
-
-\begin{fact}{Statistically independent}{}
-  Two events are independent if $\prob(A\cap B) = \prob(A)\prob(B)$
-\end{fact}
-
-Equivalent definition \g $\prob(A|B) = \prob(A)$.
-
-\begin{fact}{Bayes’ theorem}{}
-  $\prob(A|B) = \frac{\prob (B|A)\prob(A)}{\prob(B)}$.
-\end{fact}
-
-\section{Random variables}
-
-PMF \g Probability mass function
-
-PDF \g Probability density function
-
-CDF \g Cumulative distribution functions
-
-\subsection{Binomial}
-
-\begin{fact}{Binomial random variable}{}
-  Let X be a Binomial random variable.
-
-  PMF of X is
-  \begin{align}
-    f_X(k) = \binom{n}{k}p^k(1-p)^{n-k} &&k=0,1,...
-  \end{align}
-  where $p$ is the binomial parameter, and n is the total number of stats.
-
-\end{fact}
-
-\subsection{Poisson}
-A special case of Binomial distribution, where $p\rightarrow0,n\rightarrow\infty$.
-
-\begin{fact}{Poisson random variable}{}
-    Let X be a Poisson random variable.
-    X is drawn from a Poisson distribution with a parameter $\mu$.
-
-    PMF of X is
-    \begin{align}
-      f_X(k) =  \frac{\mu^k}{k!}e^{-\mu} && k = 0,1,...
-    \end{align}
-\end{fact}
+\input{probability_basis.tex}
+\input{random_variables.tex}
 
 \end{document}

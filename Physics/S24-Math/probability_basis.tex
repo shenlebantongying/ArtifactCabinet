@@ -1,0 +1,27 @@
+\section{Probability basis}
+
+\begin{fact}{Probability triplet}{}
+  \begin{itemize}
+    \item $\Omega$ \g Sample space: A set of all possible outcomes.
+    \item $\mathcal{F}$ \g Event space: The collection of all  possible events. An event E is a subset of $\Omega$ that defines a combination of outcomes.
+    \item $\mathbb{P}$ \g Probability law: A mapping from an event $E$ to a number $\mathbb{P}[E]$ within $[0,1]$.
+  \end{itemize}
+  Basic properties:
+  \begin{itemize}
+    \item $\mathbb{P}(\varnothing)=0$ and $\mathbb{P}(\Omega)=1$
+  \end{itemize}
+\end{fact}
+
+\begin{fact}{Conditional probability}{}
+  The probability of A given B is $\prob(A|B) = \frac{\prob(A\cap B)}{\prob(B)}$.
+\end{fact}
+
+\begin{fact}{Statistically independent}{}
+  Two events are independent if $\prob(A\cap B) = \prob(A)\prob(B)$
+\end{fact}
+
+Equivalent definition \g $\prob(A|B) = \prob(A)$.
+
+\begin{fact}{Bayes’ theorem}{}
+  $\prob(A|B) = \frac{\prob (B|A)\prob(A)}{\prob(B)}$.
+\end{fact}
