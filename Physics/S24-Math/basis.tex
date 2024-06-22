@@ -1,6 +1,6 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage{geometry}
-\geometry{margin=1in}
+\geometry{margin={1in,0.3in}}
 \usepackage{mathtools}
 \usepackage[default]{fontsetup}
 
@@ -17,7 +17,7 @@
 \tcbuselibrary{theorems}
 
 \tcbset{
-boxrule=1pt,
+boxrule=0.5pt,
 arc=1px,
 parbox=false, %?
 halign=left,halign upper=left,halign lower=left,
@@ -31,7 +31,7 @@ colback=white}
 \newtcolorbox{exec}{}
 
 \setlength\parindent{0pt}
-\setlength{\parskip}{1.02\baselineskip}
+\setlength{\parskip}{0.5\baselineskip}
 \numberwithin{equation}{section}
 
 \usepackage{nopageno}
@@ -44,6 +44,7 @@ colback=white}
 \newcommand{\samplespace}{\Omega}
 \newcommand{\g}{$\rightarrow\ $}
 \AtBeginDocument{\def\varnothing{\char"2300}}
+\newcommand{\Var}{\mathrm{Var}}
 
 \newcommand{\TODO}{\textcolor{ErrorRed}{\fbox{TODO}}}
 

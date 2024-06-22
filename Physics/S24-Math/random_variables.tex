@@ -1,19 +1,46 @@
 \section{Random variables}
 
-PMF \g Probability mass function
+\begin{fact}{PMF \g Probability mass function}{}
+    The PMF of a discrete random variable $X$ is the function $p_X$ given by $p_X(x) = \mathbb{P}(X=x)$.
+    
+    Note that $X=x$ denote an event, consisting of all outcomes to which $X$ assigns the number $x$.
+\end{fact}
 
 
 \begin{fact}{PDF \g Probability density function}{}
   Let $X$ be a continuous random variable.
 
-  The PDF of X is a function $f:\Omega\rightarrow\mathbb{R}$ that, when integrated
+  The PDF of X is a function $f_X:\Omega\rightarrow\mathbb{R}$ that, when integrated
   over an interval $[a,v]$, yields the probability of obtaining $a\le X \le b$:
-  \[
+  \begin{equation*}
     \mathbb{P}[a\le X \le b] = \int_{a}^{v}f(x)dx.
-  \]
+  \end{equation*}
+  Basic properties:
+  \begin{itemize}
+    \item Unity: $\int_\samplespace f(x)dx=1$ (Integration over the entire sample space of PDF yields 1.)
+  \end{itemize}
 \end{fact}
 
-CDF \g Cumulative distribution functions
+\begin{fact}{CDF \g Cumulative distribution functions}{}
+    The CDF of a random variable $X$ is the function $F_X(x)=\mathbb{P}(X\le x)$.
+\end{fact}
+
+\subsection{Properties of random variables}
+
+The \textbf{expectation} of a continuous random variable X is
+\begin{equation*}
+  \mathbb{E}[X] = \int_{\samplespace}xf_X(x)\,dx.
+\end{equation*}
+
+The \textbf{variance} of a continuous random variable X is
+\begin{equation*}
+  \Var[X] = \mathbb{E}[(X-\mu)^2]=\int_{\samplespace}(x-\mu)^2f_X(x)\,dx.
+\end{equation*}
+
+Note that if a function $g$ is applied to random variable $X$, the expectation can be found via
+\begin{equation*}
+  \mathbb{E}[g(X)]=\int_{\samplespace}g(x)f_X(x)\,dx.
+\end{equation*}
 
 \subsection{Binomial}
 
@@ -50,8 +77,19 @@ A special case of Binomial distribution, where $p\rightarrow0,n\rightarrow\infty
   \end{equation*}
   where $(\mu\rightarrow mean,\sigma^2\rightarrow variance)$ are parameters of the distribution.
 
+  Its expectation $\mathbb{E}[X]=\mu$ and variance $\Var[X]=\sigma^2$.
+
   \textbf{Standard Gaussian} random variable is a Gaussian with $\mu=0$ and $\sigma^2=1$. Its PDF is
   \begin{equation*}
     f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
   \end{equation*}
 \end{fact}
+
+\begin{fact}{Convolution}{}
+  The convolution of two function $f$ and $g$ for a value $x$ over infinite range $t$ is given by
+  \begin{equation*}
+    (f*g)[x] = \int_{-\infty}^{\infty}f(t)g(x-t)\,dt.
+  \end{equation*}
+\end{fact}
+
+For two random variables $X$ and $Y$, the PDF of $X+Y$ is equivalent to convolving the PDFs of $X$ and $Y$.
