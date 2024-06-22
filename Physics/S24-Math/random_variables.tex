@@ -27,51 +27,79 @@
 
 \subsection{Properties of random variables}
 
-The \textbf{expectation} of a continuous random variable X is
-\begin{equation*}
-  \mathbb{E}[X] = \int_{\samplespace}xf_X(x)\,dx.
-\end{equation*}
+\begin{fact}{Expectation definition}{}
+    The \textbf{expectation} of a continuous random variable X is
+    \begin{equation*}
+        \mathbb{E}[X] = \int_{\samplespace}xf_X(x)\,dx.
+    \end{equation*}
+\end{fact}
 
-The \textbf{variance} of a continuous random variable X is
-\begin{equation*}
-  \Var[X] = \mathbb{E}[(X-\mu)^2]=\int_{\samplespace}(x-\mu)^2f_X(x)\,dx.
-\end{equation*}
+\begin{fact}{Variance definition}{}
+    
+    The \textbf{variance} of a continuous random variable X is
+    \begin{equation*}
+        \Var[X] = \mathbb{E}[(X-\mu)^2]=\int_{\samplespace}(x-\mu)^2f_X(x)\,dx
+    \end{equation*}
+    where $\mu=\mathbb{E}[X]$ is the expectation of $X$.
+\end{fact}
 
 Note that if a function $g$ is applied to random variable $X$, the expectation can be found via
 \begin{equation*}
   \mathbb{E}[g(X)]=\int_{\samplespace}g(x)f_X(x)\,dx.
 \end{equation*}
 
+\subsection{Bernoulli}
+
+\begin{fact}{Bernoulli random variable}{}
+    The expression
+    \begin{equation*}
+        X \sim Bernoulli(p)
+    \end{equation*}
+    means $X$ is drawn form a Bernoulli distribution with parameter $p$
+    , which is controls the probability of obtaining 1.
+    
+    The PMF of $X$ is
+    \begin{align*}
+        p_X(0) &= 1-p\\
+        p_X(1) &= p
+    \end{align*}
+    where $0<p<1$.
+\end{fact}
+
 \subsection{Binomial}
 
 \begin{fact}{Binomial random variable}{}
-  Let X be a Binomial random variable.
-
-  PMF of X is
-  \begin{align}
+  For $X \sim Binomial(n,p)$, the PMF of X is
+  \begin{align*}
     f_X(k) = \binom{n}{k}p^k(1-p)^{n-k} &&k=0,1,...
-  \end{align}
+  \end{align*}
   where $p$ is the binomial parameter, and n is the total number of stats.
-
 \end{fact}
 
 \subsection{Poisson}
 A special case of Binomial distribution, where $p\rightarrow0,n\rightarrow\infty$.
 
 \begin{fact}{Poisson random variable}{}
-  Let X be a Poisson random variable.
-  X is drawn from a Poisson distribution with a parameter $\mu$.
+  Random variable $X$ is drawn from a Poisson distribution with a parameter $\lambda$.
+  \begin{equation*}
+      X \sim \text{Poisson}(\lambda)
+  \end{equation*}
 
   PMF of X is
-  \begin{align}
-    f_X(k) =  \frac{\mu^k}{k!}e^{-\mu} && k = 0,1,...
-  \end{align}
+  \begin{align*}
+    f_X(k) =  \frac{\lambda^k}{k!}e^{-\lambda} && k = 0,1,...
+  \end{align*}
+  The parameter $\lambda$ determines the rate of the arrival.
 \end{fact}
 
 \subsection{Gaussian}
 
 \begin{fact}{Gaussian random variable}{}
-  PMF of a Gaussian random variable is
+  Let $X$ be a Gaussian (Normal) random variable.
+  \begin{equation*}
+      X \sim \mathcal{N}(\mu,\sigma^2)
+  \end{equation*}
+  Its PMF of is
   \begin{equation*}
     f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right],
   \end{equation*}
