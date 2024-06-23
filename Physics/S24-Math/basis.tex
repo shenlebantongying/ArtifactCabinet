@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 \usepackage{geometry}
 \geometry{margin={1in,0.3in}}
 \usepackage{mathtools}
@@ -7,7 +7,11 @@
 \usepackage{xcolor}
 \definecolor{DodgerBlue4}{RGB}{16,78,139}
 \definecolor{ErrorRed}{RGB}{136,17,17}
-\usepackage[colorlinks=true,allcolors=DodgerBlue4]{hyperref}
+\usepackage[%
+bookmarksopen=true,
+colorlinks=true,
+allcolors=DodgerBlue4%
+]{hyperref}
 
 \usepackage{cleveref}
 \usepackage{amsthm}
@@ -46,7 +50,7 @@ colback=white}
 \AtBeginDocument{\def\varnothing{\char"2300}}
 \newcommand{\Var}{\mathrm{Var}}
 
-\newcommand{\TODO}{\textcolor{ErrorRed}{\fbox{TODO}}}
+\newcommand{\TODO}{\textcolor{ErrorRed}{\fbox{TODO}}\ }
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
@@ -58,5 +62,6 @@ colback=white}
 \input{counting.tex}
 \input{probability_basis.tex}
 \input{random_variables.tex}
+\input{special_functions.tex}
 
 \end{document}

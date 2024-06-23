@@ -1,16 +1,23 @@
 \section{Random variables}
 
-\begin{fact}{PMF \g Probability mass function}{}
-    The PMF of a discrete random variable $X$ is the function $p_X$ given by $p_X(x) = \mathbb{P}(X=x)$.
-    
-    Note that $X=x$ denote an event, consisting of all outcomes to which $X$ assigns the number $x$.
+\subsection{Basis of random variables}
+
+\begin{fact}{Random variable definition}{}
+  A random variable $X$ is a function $X:\samplespace\rightarrow\mathbb{R}$ that maps an outcome $o\in\samplespace$ to a number $X(o)$ on the real line.
+
+  Note that $\Omega$ is the sample space.
 \end{fact}
 
+\begin{fact}{PMF \g Probability mass function}{}
+    The PMF of a discrete random variable $X$ is the function $p_X$ given by $p_X(x) = \mathbb{P}(X=x)$.
+
+    Note that $X=x$ denote an event, consisting of all outcomes to which $X$ assigns the number $x$.
+\end{fact}
 
 \begin{fact}{PDF \g Probability density function}{}
   Let $X$ be a continuous random variable.
 
-  The PDF of X is a function $f_X:\Omega\rightarrow\mathbb{R}$ that, when integrated
+  The PDF of X is a function $f_X\mathbin{:}\Omega\rightarrow\mathbb{R}$ that, when integrated
   over an interval $[a,v]$, yields the probability of obtaining $a\le X \le b$:
   \begin{equation*}
     \mathbb{P}[a\le X \le b] = \int_{a}^{v}f(x)dx.
@@ -25,17 +32,19 @@
     The CDF of a random variable $X$ is the function $F_X(x)=\mathbb{P}(X\le x)$.
 \end{fact}
 
-\subsection{Properties of random variables}
-
 \begin{fact}{Expectation definition}{}
     The \textbf{expectation} of a continuous random variable X is
     \begin{equation*}
         \mathbb{E}[X] = \int_{\samplespace}xf_X(x)\,dx.
     \end{equation*}
+    The \textbf{expectation} of a discrete random variable X is
+    \begin{equation*}
+        \mathbb{E}[X]=\sum_{x\in \samplespace}x f_X(x).
+    \end{equation*}
 \end{fact}
 
 \begin{fact}{Variance definition}{}
-    
+
     The \textbf{variance} of a continuous random variable X is
     \begin{equation*}
         \Var[X] = \mathbb{E}[(X-\mu)^2]=\int_{\samplespace}(x-\mu)^2f_X(x)\,dx
@@ -57,7 +66,7 @@ Note that if a function $g$ is applied to random variable $X$, the expectation c
     \end{equation*}
     means $X$ is drawn form a Bernoulli distribution with parameter $p$
     , which is controls the probability of obtaining 1.
-    
+
     The PMF of $X$ is
     \begin{align*}
         p_X(0) &= 1-p\\
@@ -91,6 +100,19 @@ A special case of Binomial distribution, where $p\rightarrow0,n\rightarrow\infty
   \end{align*}
   The parameter $\lambda$ determines the rate of the arrival.
 \end{fact}
+
+\begin{exec}
+  Show that if $X\sim \text{Poisson}(\lambda)$, then $\mathbb{E}[X]=\lambda$.
+  \tcblower
+  \begin{align*}
+    \mathbb{E}[X]
+    &= \sum_{k=0}^{\infty} k\frac{\lambda^k}{k!}e^{-\lambda}\\
+    &= \sum_{k=1}^{\infty}\frac{\lambda^k}{(k-1)!}e^{-\lambda} = \lambda e^{-\lambda}\sum_{k=1}^{\infty}\frac{\lambda^{k-1}}{(k-1)!}\\
+    &= \lambda e^{-\lambda}\sum_{r=0}^{\infty}\frac{\lambda^{r}}{r!} = \lambda e^{-\lambda}e^{\lambda}\\
+    &= \lambda.
+  \end{align*}
+  Note that $e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}$ (The Maclaurin series of $e^x$).
+\end{exec}
 
 \subsection{Gaussian}
 
