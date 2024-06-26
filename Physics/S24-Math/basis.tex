@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper,fleqn]{article}
 \usepackage{geometry}
 \geometry{margin={1in,0.3in}}
 \usepackage{mathtools}
@@ -35,7 +35,7 @@ colback=white}
 \newtcolorbox{exec}{}
 
 \setlength\parindent{0pt}
-\setlength{\parskip}{0.5\baselineskip}
+\setlength{\parskip}{0.6\baselineskip}
 \numberwithin{equation}{section}
 
 \usepackage{nopageno}
@@ -48,7 +48,8 @@ colback=white}
 \newcommand{\samplespace}{\Omega}
 \newcommand{\g}{$\rightarrow\ $}
 \AtBeginDocument{\def\varnothing{\char"2300}}
-\newcommand{\Var}{\mathrm{Var}}
+\DeclareMathOperator\Var{\mathrm{Var}}
+\DeclareMathOperator\Erf{\ensuremath{\text{erf}}}
 
 \newcommand{\TODO}{\textcolor{ErrorRed}{\fbox{TODO}}\ }
 
@@ -63,5 +64,6 @@ colback=white}
 \input{probability_basis.tex}
 \input{random_variables.tex}
 \input{special_functions.tex}
+\input{diary.tex}
 
 \end{document}

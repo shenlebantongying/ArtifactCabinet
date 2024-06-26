@@ -29,7 +29,11 @@
 \end{fact}
 
 \begin{fact}{CDF \g Cumulative distribution functions}{}
-    The CDF of a random variable $X$ is the function $F_X(x)=\mathbb{P}(X\le x)$.
+    Let $X$ be a continuous random variable with sample space $\samplespace=\mathbb{R}$.
+    The CDF of $X$ is
+    \begin{equation*}
+      F_X(x)=\mathbb{P}(X\le x)=\int_{-\infty}^{x}f_X(t)dt.
+    \end{equation*}
 \end{fact}
 
 \begin{fact}{Expectation definition}{}
@@ -98,7 +102,9 @@ A special case of Binomial distribution, where $p\rightarrow0,n\rightarrow\infty
   \begin{align*}
     f_X(k) =  \frac{\lambda^k}{k!}e^{-\lambda} && k = 0,1,...
   \end{align*}
-  The parameter $\lambda$ determines the rate of the arrival.
+  Variable $k$ is the number of events that occurs in a range of time or a region of space (or whatever).
+
+  The parameter $\lambda$ determines the rate of the arrival or occurrence.
 \end{fact}
 
 \begin{exec}
@@ -127,11 +133,59 @@ A special case of Binomial distribution, where $p\rightarrow0,n\rightarrow\infty
   \end{equation*}
   where $(\mu\rightarrow mean,\sigma^2\rightarrow variance)$ are parameters of the distribution.
 
+  It can also be rewritten by letting $b=\frac{1}{2\sigma^2}$, and thus
+  \begin{equation*}
+    f(x)=\sqrt{\frac{b}{\pi}}e^{-b(x-\mu)^2}.
+  \end{equation*}
+
   Its expectation $\mathbb{E}[X]=\mu$ and variance $\Var[X]=\sigma^2$.
 
   \textbf{Standard Gaussian} random variable is a Gaussian with $\mu=0$ and $\sigma^2=1$. Its PDF is
   \begin{equation*}
     f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+  \end{equation*}
+\end{fact}
+
+\begin{exec}
+  Using multivariate Standard Gaussian distribution to obtain random points on a sphere.
+  \tcblower
+  Suppose that $x,y,z$ are 3 independent random variables that follows Standard Gaussian distribution.
+  The probability of $x,y,z$ are certain values $(x',y',z')$ is
+  \begin{align*}
+    f(x')f(y')f(z')=\frac{1}{\sqrt{2\pi}}e^{-\frac{x'^2+y'^2+z'^2}{2}}.
+  \end{align*}
+  Normalizing $(x',y',z')$ by multiplying each with $r'=\frac{1}{\sqrt{x'^2+y'^2+z'^2}}$ will yield a point $(\frac{x'}{r'},\frac{y'}{r'},\frac{z'}{r'})$ at a unit sphere.
+\end{exec}
+
+\begin{fact}{CDF of standard Gaussian and Error function}{}
+  For standard Gaussian, the CDF is defined as
+  \begin{equation*}
+    \Phi(x)=\int_{-\infty}^{x}f(t)dt=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x} e^{-\frac{t^2}{2}}\,dt.
+  \end{equation*}
+  The \textbf{error function} is defined as
+  \begin{equation*}
+    \Erf (x)=\frac{2}{\sqrt{\pi}}\int_{0}^{x}e^{-t^2}\,dt.
+  \end{equation*}
+\end{fact}
+
+\begin{exec}
+  Show that $\Erf(x)=2\Phi(x\sqrt{2})-1$
+  \tcblower
+  \TODO
+  \begin{align*}
+    2\Phi(x\sqrt{2})-1
+    &= 2\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x\sqrt{2}}e^{-\frac{t^2}{2}\,dt}-1\\
+  \end{align*}
+  \TODO hint: polar coordinate and E
+  \begin{equation*}
+    \int e^{-x^2}\,dt = \int_{0}^{x} e^{t^2}\,dx = \frac{\sqrt{\pi}}{2}\Erf(x)
+  \end{equation*}
+\end{exec}
+
+\begin{fact}{CDF of arbitrary Gaussian}{}
+  Let $X\sim \mathcal{N}(\mu, \sigma^2)$
+  \begin{equation*}
+    F_X(x)=\Phi(\frac{x-\mu}{\sigma}) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\frac{x-\mu}{\sigma}} e^{-\frac{t^2}{2}}\,dt.
   \end{equation*}
 \end{fact}
 
