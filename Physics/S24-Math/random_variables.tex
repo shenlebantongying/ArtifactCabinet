@@ -197,3 +197,64 @@ A special case of Binomial distribution, where $p\rightarrow0,n\rightarrow\infty
 \end{fact}
 
 For two random variables $X$ and $Y$, the PDF of $X+Y$ is equivalent to convolving the PDFs of $X$ and $Y$.
+
+\subsection{Multiple independent random variables}
+
+\begin{fact}{Sample mean \g  Expectation}{sampleMean}
+  Let $X_1,X_2,...,X_n$ be random sample of size $n$ from a distribution with mean $\mu$ and variance $\sigma^2$.
+
+  Sample mean is a linear combination of independent random variables
+  \begin{equation*}
+    \mean{X}=\frac{X_1+X_2+...+X_n}{n}.
+  \end{equation*}
+
+  The expectation is
+  \begin{equation*}
+    \mathbb{E}[\mean{X}]=\mathbb{E}[\frac{X_1+X_2+...+X_n}{n}]=\frac{1}{n}[\mu+\mu+...+\mu]=\mu.
+  \end{equation*}
+\end{fact}
+
+\begin{exec}
+  Suppose $X_1,X_2,...,X_n$ are $n$ independent random variables with means $\mu_1,\mu_2,...\mu_n$ and variances $\sigma_1^2,\sigma_2^2,...,\sigma_n^2$.
+
+  Show that the variance of the linear combination $Y=\sum_{i=1}^{n}a_iX_i$ is $\sigma_Y^2=\sum_{i=1}^{n}a_i^2\sigma_i^2$ where $a_1,a_2,...,a_n$ are real constants.
+  \tcblower
+  By definition of the variance.
+  \begin{equation*}
+    \sigma_Y^2=\Var(Y)=\mathbb{E}[(Y-\mu_Y)^2]
+  \end{equation*}
+  Then, substitute the value and the mean of of $Y$.
+  \begin{align*}
+    \sigma_Y^2
+    &=\mathbb{E}\left[\left(\sum_{i=1}^{n}a_iX_i-\sum_{i=1}^{n}a_i\mu_i\right)^2\right]\\
+    &=\mathbb{E}\left[\left(\sum_{i=1}^{n}a_i(X_i-\mu_i)\right)^2\right]\\
+    &=\mathbb{E}\left[\left(\sum_{i=1}^{n}a_i(X_i-\mu_i)\right) \left(\sum_{i=j}^{n}a_j(X_j-\mu_j)\right)\right]\\
+    &=\mathbb{E}\left[\sum_{i=1}^{n}\sum_{i=j}^{n}a_ia_j(X_i-\mu_i)(X_j-\mu_j) \right]\\
+    &=\sum_{i=1}^{n}\sum_{i=j}^{n}a_ia_j\mathbb{E}\left[(X_i-\mu_i)(X_j-\mu_j) \right]
+  \end{align*}
+  Expand this summation. Note that when $i=j$, the term's expectation is the variance of $X_i$, and when $i\neq j$, the term's expectation is the covariance between independent random variable $X_i$ and $X_j$ which is zero.
+  \begin{align*}
+    \sigma_Y^2
+    =&\mathcolor{blue}{a_1a_1\mathbb{E}[(x_1-\mu_1)(x_1-\mu_1)]}+
+      \mathcolor{red}{a_1a_2\mathbb{E}[(x_1-\mu_1)(x_2-\mu_2)]}+
+      \mathcolor{red}{a_1a_3\mathbb{E}[(x_1-\mu_1)(x_3-\mu_3)]}+ ... +\\
+     &\mathcolor{red}{a_2a_1\mathbb{E}[(x_2-\mu_2)(x_1-\mu_1)]}+
+      \mathcolor{blue}{a_2a_2\mathbb{E}[(x_2-\mu_2)(x_2-\mu_2)]}+
+      \mathcolor{red}{a_2a_2\mathbb{E}[(x_2-\mu_2)(x_3-\mu_3)]}+ ... +\\
+     &\mathcolor{red}{a_na_1\mathbb{E}[(x_n-\mu_n)(x_1-\mu_1)]}+
+      \mathcolor{red}{a_na_2\mathbb{E}[(x_n-\mu_n)(x_2-\mu_2)]}+...+
+      \mathcolor{blue}{a_na_n\mathbb{E}[(x_n-\mu_n)(x_n-\mu_n)]}\\
+    =&\mathcolor{blue}{a_1^2\mathbb{E}[(X_1-\mu_1)^2]+a_2^2\mathbb{E}[(X_2-\mu_2)^2]+...+a_n^2\mathbb{E}[(X_n-\mu_n)^2]}\\
+    =&a_1^2\mu_1^2+a_2^2\mu_2^2+...+a_n^2\mu_n^2\\
+    =&\sum_{i=1}^{n}a_i^2\sigma_i^2
+  \end{align*}
+  \TODO read covariance.
+\end{exec}
+
+\begin{fact}{The variance of sample mean}{}
+  If every $X_i$ is the same distribution and $a_i=1$ in the above exercise, the variance of the sample mean is
+  \begin{equation*}
+    \Var[\mean{X}]=\frac{\sigma^2}{n}.
+  \end{equation*}
+\end{fact}
+
