@@ -1,0 +1,633 @@
+\documentclass[11pt,a4paper,fleqn]{article}
+\usepackage{geometry}
+\geometry{margin={0.3in,0.3in}}
+\usepackage{mathtools}
+\usepackage[default]{fontsetup}
+
+\usepackage{xcolor}
+\definecolor{DodgerBlue4}{RGB}{16,78,139}
+\definecolor{ErrorRed}{RGB}{136,17,17}
+\usepackage[%
+bookmarksopen=true,
+colorlinks=true,
+allcolors=DodgerBlue4%
+]{hyperref}
+
+\usepackage{cleveref}
+\usepackage{amsthm}
+\usepackage{unicode-math}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+
+\tcbset{
+boxrule=0.8pt,
+arc=1px,
+parbox=false, %?
+halign=left,halign upper=left,halign lower=left,
+coltitle=black,
+colbacktitle=white,
+colback=white}
+
+\NewTcbTheorem[number within=section, list inside=facts,crefname={fact}{Fact}]%
+{fact}{Fact}%
+{fonttitle=\bfseries,attach title to upper={\par}}{fact}
+\newtcolorbox{exec}{}
+
+\setlength\parindent{0pt}
+\setlength{\parskip}{0.6\baselineskip}
+\numberwithin{equation}{section}
+
+\usepackage{nopageno}
+\usepackage{tocbibind}
+\usepackage{setspace}
+
+% MY ===
+
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\samplespace}{\Omega}
+\newcommand{\g}{$\rightarrow\ $}
+\AtBeginDocument{\def\varnothing{\char"2300}}
+\DeclareMathOperator\Var{\mathrm{Var}}
+\DeclareMathOperator\Erf{\ensuremath{\text{erf}}}
+\newcommand{\mean}[1]{\bar{#1}}
+
+\newcommand{\TODO}{\textcolor{ErrorRed}{\fbox{TODO}}\ }
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\arithMean{\langle}{\rangle}
+\begin{document}
+\tcblistof{facts}{List of facts}\clearpage
+
+\section{Calculus}
+\subsection{Limit}
+\begin{fact}{L'Hôpital's rule}{lhopital}
+    Suppose that ($\lim\limits_{x\rightarrow a}f(x)=0$, $\lim\limits_{x\rightarrow a}g(x)=0$) or ($\lim\limits_{x\rightarrow a}f(x)=\infty$, $\lim\limits_{x\rightarrow a}g(x)=\infty$) and that $\lim\limits_{x\rightarrow a}\frac{f'(x)}{g'(x)}$ exists.
+    Then
+    \[
+    \lim\limits_{x\rightarrow a}\frac{f(x)}{g(x)} = \lim\limits_{x\rightarrow a}\frac{f'(x)}{g'(x)}
+    \]
+\end{fact}
+
+\subsection{Integration Methods}
+\begin{fact}{Integration by parts}{intByPart}
+    If $f'$ and $g'$ are continuous on $[a,b]$ then
+    \begin{align*}
+        \int_{a}^{b} f'(t)g(t) dt & = \int_{a}^{b} f'(t)g'(t)\,dt - \int_{a}^{b} f(t)g'(t)\,dt\\
+        & = f(b)g(b)-f(a)g(a) - \int_{a}^{b} f(t)g'(t)\,dt.
+    \end{align*}
+    
+    For indefinite integrals,
+    \[
+    \int f'(t)g(t) dt = f(t)g(t) - \int f(t)g'(t)\,dt.
+    \]
+\end{fact}
+
+\begin{exec}
+    Calculate $\int e^x \sin{x} dx$.
+    \tcblower
+    Factor $e^x\sin{x} = f'(x)g(x)$ into $f'(x) =e^x$ and $g(x)=\sin{x}$,
+    where $f(x)=e^x$ and $g'(x)=\cos{x}$.
+    \begin{align*}
+        \int e^x \sin{x} dx = e^x \sin{x} - \int e^x \cos{x}\,dx
+    \end{align*}
+    Apply \nameref*{fact:intByPart} again for $\int e^x \cos{x}\,dx$,
+    where $f'(x)=e^x$ \g $f(x)=e^x$ and $g(x)=\cos{x}$ \g $g'(x)=-\sin{x}$.
+    \begin{align*}
+        \int e^x \sin{x} dx &= e^x \sin{x} - (e^x\cos{x}-\int e^x (-\sin{x},dx))\\
+        2\int e^x \sin{x} dx &= e^x \sin{x} - e^x\cos{x} \\
+        \int e^x \sin{x} dx &= \frac{e^x}{2} \left(\sin{x} - \cos{x}\right)
+    \end{align*}
+\end{exec}
+
+\begin{exec}
+    Prove that $\int_{0}^{\infty}\frac{x^n}{e^{x}}\,dx = n!$, where $n$ is positive integer.
+    \tcblower
+    \begin{proof}
+        Let $I_n = \int_{0}^{\infty}\frac{x^n}{e^{x}}\,dx$.
+        
+        Let $f'(x)=e^{-x}$\g$f(x)=-e^{-x}$ and $g(x)=x^n$\g$g'(x)=nx^{n-1}$, therefore
+        \begin{align*}
+            I_n = \int_{0}^{\infty}\frac{x^n}{e^{x}}\,dx
+            &= \left[-e^{-x}nx^{n-1}\right]^{\infty}_{0} - \int_{0}^{\infty}-e^{-x}nx^{n-1} \\
+            &= \left[\lim_{x\rightarrow\infty}e^{-x}(-nx^{n-1})\right] + n\int_{0}^{\infty}e^{-x}x^{n-1} \\
+            &= nI_{n-1}
+        \end{align*}
+        Note that $\lim_{x\rightarrow\infty}e^{-x}p(x)=0$ for any polynomial function $p(x)$. Easily provable using \nameref{fact:lhopital}.
+        
+        Also $I_{0}=\int^{\infty}_{0}\frac{1}{e^x}=\left[-e^{-x}\right]^{\infty}_{0}=1$.
+        
+        Therefore $\int_{0}^{\infty}\frac{x^n}{e^{x}}\,dx=n!$ using proof by induction.
+    \end{proof}
+\end{exec}
+
+\subsection{Properties of the Integral}
+
+\begin{fact}{Odd Integrand}{}
+    The integral of an odd function f, $f(-x)=-f(x)$, on an interval that is symmetric about 0 is zero. For example $\int_{-\infty}^{\infty} ye^{-\frac{y^2}{2}}dy=0$.
+\end{fact}
+
+\section{Approximation}
+\begin{fact}{Taylor Approximation}{}
+    Let $f$ be a continuous function with infinite derivatives.
+    Let $a\in \textbf{R}$ be a fixed constant.
+    
+    The Taylor approximation of $f$ at $x=a$ is
+    
+    \begin{align}
+        f(x) &= f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a^2)+...\\
+        &= \sum^{\infty}_{n=0}\frac{f^{(n)}(a)}{n!}(x-a)^n
+    \end{align}
+    where $f^{(n)}$ denotes the nth-order derivative of $f$.
+\end{fact}
+
+
+\begin{fact}{Exponential series}{}
+    Let $x$ be any real number. Then,
+    \[
+    e^x = \sum_{k=0}^{\infty}\frac{x^k}{k!}.
+    \]
+    \tcblower
+    \begin{proof}
+        Let $f(x) = e^x$.
+        The nth-order derivative of $f(x)$ is $f^{(n)}=1$.
+        The Taylor approximation around $x=0$ (or $a=0$) is simply the right hand side.
+    \end{proof}
+\end{fact}
+
+\begin{exec}
+    Show that $\lim_{n\rightarrow\infty}(1+\frac{1}{n})^n=e$.
+    \tcblower
+    TODO
+\end{exec}
+
+\section{Counting}
+\begin{fact}{Binomial theorem}{binom}
+    \[
+    (a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k}b^k
+    \]
+    where $\binom{n}{k} = \frac{n!}{k!(n-k)!}$.
+\end{fact}
+
+\subsection{The Division or Pigeonhole Principles}
+
+\begin{fact}{Division Principle}{}
+    If $n$ objects are placed into $k$ boxes,
+    then at lease one box contains $\ceil{\frac{n}{k}}$ or more objects,
+    and at lease one box contains $\floor{\frac{n}{k}}$ or fewer objects.
+\end{fact}
+
+\begin{exec}
+    Pick 6 integers between 0 and 9. Show that 2 of them must add up to 9.
+    \tcblower
+    All possible ways of adding up to 9 are known:
+    $(0,9),(1,8),(2,7),(3,6),(4,5)$
+    
+    At lease one pair will contain both number when putting picked 6 numbers into those pairs, because at lease one pair will contains $\ceil{\frac{9}{6}}=2$ objects, thus there must be one box that add up to 9.
+\end{exec}
+
+\subsection{Combinatorial Proof}
+
+\begin{fact}{Pascal’s identity}{}
+    \[
+    \binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}
+    \]
+\end{fact}
+
+Also
+
+\[
+{n \choose k} = {n \choose n-k}
+\]
+
+\begin{exec}
+    Show that $\sum_{k=0}^{n}{n \choose k}^2 = {2n \choose n}.$
+    \tcblower
+    Divide $2n$ in the right side into 2 equal sized parts A and B, where $size(A)=size(B)=n$.
+    
+    To choose n objects from 2n, we choose $k$ from A and $n-k$ from B.
+    Sum up all possible values of $k$, which is $[0,n]$.
+    
+    \[
+    {2n \choose n} = \sum_{k=0}^{n}{n \choose k}{n \choose n-k} = \sum_{k=0}^{n}{n \choose k}^2
+    \]
+    
+    where ${n \choose i} = {n \choose n-k}$.
+\end{exec}
+
+\begin{exec}
+    Show that $\sum_{k=0}^{n} k(n+1-k)={n+1 \choose 3}$.
+    \tcblower
+    The right hand side can be interpreted as choosing 3 objects $\{j,k,l\}$ from $\{0,1,...,n,n+1\}$, where $0<=j<k<l<=n+1$.
+    
+    Object $j$ has $k$ choices while object $l$ has $n+1-k$ choices. Using the multiplication principle, for any given value of $k$, the total ways of picking $j$ and $l$ is $k(n+1-k)$. Summing them up, we get the left hand side.
+    \qed
+    
+    Similarly, expression $1+2+3+...+n-1+n$ can be viewed as choosing two objects from both side of $k$ in set $\{0,1,2,3....n-1,n\}$ where $0<k<n, k \in \mathbb{Z}$, and thus $\sum_{i=1}^{n}i={n+1 \choose 2}$.
+\end{exec}
+
+\section{Probability basis}
+
+\begin{fact}{Probability triplet}{}
+    \begin{itemize}
+        \item $\Omega$ \g Sample space: A set of all possible outcomes.
+        \item $\mathcal{F}$ \g Event space: The collection of all  possible events. An event E is a subset of $\Omega$ that defines a combination of outcomes.
+        \item $\mathbb{P}$ \g Probability law: A mapping from an event $E$ to a number $\mathbb{P}[E]$ within $[0,1]$.
+    \end{itemize}
+    Basic properties:
+    \begin{itemize}
+        \item $\mathbb{P}(\varnothing)=0$ and $\mathbb{P}(\Omega)=1$
+    \end{itemize}
+\end{fact}
+
+\begin{fact}{Conditional probability}{}
+    The probability of A given B is $\prob(A|B) = \frac{\prob(A\cap B)}{\prob(B)}$.
+\end{fact}
+
+\begin{fact}{Statistically independent}{}
+    Two events are independent if $\prob(A\cap B) = \prob(A)\prob(B)$
+\end{fact}
+
+Equivalent definition \g $\prob(A|B) = \prob(A)$.
+
+\begin{fact}{Bayes’ theorem}{}
+    $\prob(A|B) = \frac{\prob (B|A)\prob(A)}{\prob(B)}$.
+\end{fact}
+
+\section{Random variables}
+
+\subsection{Basis of random variables}
+
+\begin{fact}{Random variable definition}{}
+    A random variable $X$ is a function $X:\samplespace\rightarrow\mathbb{R}$ that maps an outcome $o\in\samplespace$ to a number $X(o)$ on the real line.
+    
+    Note that $\Omega$ is the sample space.
+\end{fact}
+
+\begin{fact}{PMF \g Probability mass function}{}
+    The PMF of a discrete random variable $X$ is the function $p_X$ given by $p_X(x) = \mathbb{P}(X=x)$.
+    
+    Note that $X=x$ denote an event, consisting of all outcomes to which $X$ assigns the number $x$.
+\end{fact}
+
+\begin{fact}{PDF \g Probability density function}{}
+    Let $X$ be a continuous random variable.
+    
+    The PDF of X is a function $f_X\mathbin{:}\Omega\rightarrow\mathbb{R}$ that, when integrated
+    over an interval $[a,v]$, yields the probability of obtaining $a\le X \le b$:
+    \begin{equation*}
+        \mathbb{P}[a\le X \le b] = \int_{a}^{v}f(x)dx.
+    \end{equation*}
+    Basic properties:
+    \begin{itemize}
+        \item Unity: $\int_\samplespace f(x)dx=1$ (Integration over the entire sample space of PDF yields 1.)
+    \end{itemize}
+\end{fact}
+
+\begin{fact}{CDF \g Cumulative distribution functions}{}
+    Let $X$ be a continuous random variable with sample space $\samplespace=\mathbb{R}$.
+    The CDF of $X$ is
+    \begin{equation*}
+        F_X(x)=\mathbb{P}(X\le x)=\int_{-\infty}^{x}f_X(t)dt.
+    \end{equation*}
+\end{fact}
+
+\begin{fact}{Expectation definition}{}
+    The \textbf{expectation} of a continuous random variable X is
+    \begin{equation*}
+        \mathbb{E}[X] = \int_{\samplespace}xf_X(x)\,dx.
+    \end{equation*}
+    The \textbf{expectation} of a discrete random variable X is
+    \begin{equation*}
+        \mathbb{E}[X]=\sum_{x\in \samplespace}x f_X(x).
+    \end{equation*}
+\end{fact}
+
+\begin{fact}{Variance definition}{}
+    
+    The \textbf{variance} of a continuous random variable X is
+    \begin{equation*}
+        \Var[X] = \mathbb{E}[(X-\mu)^2]=\int_{\samplespace}(x-\mu)^2f_X(x)\,dx
+    \end{equation*}
+    where $\mu=\mathbb{E}[X]$ is the expectation of $X$.
+\end{fact}
+
+Note that if a function $g$ is applied to random variable $X$, the expectation can be found via
+\begin{equation*}
+    \mathbb{E}[g(X)]=\int_{\samplespace}g(x)f_X(x)\,dx.
+\end{equation*}
+
+\subsection{Bernoulli}
+
+\begin{fact}{Bernoulli random variable}{}
+    The expression
+    \begin{equation*}
+        X \sim Bernoulli(p)
+    \end{equation*}
+    means $X$ is drawn form a Bernoulli distribution with parameter $p$
+    , which is controls the probability of obtaining 1.
+    
+    The PMF of $X$ is
+    \begin{align*}
+        p_X(0) &= 1-p\\
+        p_X(1) &= p
+    \end{align*}
+    where $0<p<1$.
+\end{fact}
+
+\subsection{Binomial}
+
+\begin{fact}{Binomial random variable}{}
+    For $X \sim Binomial(n,p)$, the PMF of X is
+    \begin{align*}
+        f_X(k) = \binom{n}{k}p^k(1-p)^{n-k} &&k=0,1,...
+    \end{align*}
+    where $p$ is the binomial parameter, and n is the total number of stats.
+\end{fact}
+
+\subsection{Poisson}
+A special case of Binomial distribution, where $p\rightarrow0,n\rightarrow\infty$.
+
+\begin{fact}{Poisson random variable}{}
+    Random variable $X$ is drawn from a Poisson distribution with a parameter $\lambda$.
+    \begin{equation*}
+        X \sim \text{Poisson}(\lambda)
+    \end{equation*}
+    
+    PMF of X is
+    \begin{align*}
+        f_X(k) =  \frac{\lambda^k}{k!}e^{-\lambda} && k = 0,1,...
+    \end{align*}
+    Variable $k$ is the number of events that occurs in a range of time or a region of space (or whatever).
+    
+    The parameter $\lambda$ determines the rate of the arrival or occurrence.
+\end{fact}
+
+\begin{exec}
+    Show that if $X\sim \text{Poisson}(\lambda)$, then $\mathbb{E}[X]=\lambda$.
+    \tcblower
+    \begin{align*}
+        \mathbb{E}[X]
+        &= \sum_{k=0}^{\infty} k\frac{\lambda^k}{k!}e^{-\lambda}\\
+        &= \sum_{k=1}^{\infty}\frac{\lambda^k}{(k-1)!}e^{-\lambda} = \lambda e^{-\lambda}\sum_{k=1}^{\infty}\frac{\lambda^{k-1}}{(k-1)!}\\
+        &= \lambda e^{-\lambda}\sum_{r=0}^{\infty}\frac{\lambda^{r}}{r!} = \lambda e^{-\lambda}e^{\lambda}\\
+        &= \lambda.
+    \end{align*}
+    Note that $e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}$ (The Maclaurin series of $e^x$).
+\end{exec}
+
+\subsection{Gaussian}
+
+\begin{fact}{Gaussian random variable}{}
+    Let $X$ be a Gaussian (Normal) random variable.
+    \begin{equation*}
+        X \sim \mathcal{N}(\mu,\sigma^2)
+    \end{equation*}
+    Its PMF of is
+    \begin{equation*}
+        f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right],
+    \end{equation*}
+    where $(\mu\rightarrow mean,\sigma^2\rightarrow variance)$ are parameters of the distribution.
+    
+    It can also be rewritten by letting $b=\frac{1}{2\sigma^2}$, and thus
+    \begin{equation*}
+        f(x)=\sqrt{\frac{b}{\pi}}e^{-b(x-\mu)^2}.
+    \end{equation*}
+    
+    Its expectation $\mathbb{E}[X]=\mu$ and variance $\Var[X]=\sigma^2$.
+    
+    \textbf{Standard Gaussian} random variable is a Gaussian with $\mu=0$ and $\sigma^2=1$. Its PDF is
+    \begin{equation*}
+        f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+    \end{equation*}
+\end{fact}
+
+\begin{exec}
+    Using multivariate Standard Gaussian distribution to obtain random points on a sphere.
+    \tcblower
+    Suppose that $x,y,z$ are 3 independent random variables that follows Standard Gaussian distribution.
+    The probability of $x,y,z$ are certain values $(x',y',z')$ is
+    \begin{align*}
+        f(x')f(y')f(z')=\frac{1}{\sqrt{2\pi}}e^{-\frac{x'^2+y'^2+z'^2}{2}}.
+    \end{align*}
+    Normalizing $(x',y',z')$ by multiplying each with $r'=\frac{1}{\sqrt{x'^2+y'^2+z'^2}}$ will yield a point $(\frac{x'}{r'},\frac{y'}{r'},\frac{z'}{r'})$ at a unit sphere.
+\end{exec}
+
+\begin{fact}{CDF of standard Gaussian and Error function}{}
+    For standard Gaussian, the CDF is defined as
+    \begin{equation*}
+        \Phi(x)=\int_{-\infty}^{x}f(t)dt=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x} e^{-\frac{t^2}{2}}\,dt.
+    \end{equation*}
+    The \textbf{error function} is defined as
+    \begin{equation*}
+        \Erf (x)=\frac{2}{\sqrt{\pi}}\int_{0}^{x}e^{-t^2}\,dt.
+    \end{equation*}
+\end{fact}
+
+\begin{exec}
+    Show that $\Erf(x)=2\Phi(x\sqrt{2})-1$
+    \tcblower
+    \TODO
+    \begin{align*}
+        2\Phi(x\sqrt{2})-1
+        &= 2\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x\sqrt{2}}e^{-\frac{t^2}{2}\,dt}-1\\
+    \end{align*}
+    \TODO hint: polar coordinate and E
+    \begin{equation*}
+        \int e^{-x^2}\,dt = \int_{0}^{x} e^{t^2}\,dx = \frac{\sqrt{\pi}}{2}\Erf(x)
+    \end{equation*}
+\end{exec}
+
+\begin{fact}{CDF of arbitrary Gaussian}{}
+    Let $X\sim \mathcal{N}(\mu, \sigma^2)$
+    \begin{equation*}
+        F_X(x)=\Phi(\frac{x-\mu}{\sigma}) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\frac{x-\mu}{\sigma}} e^{-\frac{t^2}{2}}\,dt.
+    \end{equation*}
+\end{fact}
+
+\begin{fact}{Convolution}{}
+    The convolution of two function $f$ and $g$ for a value $x$ over infinite range $t$ is given by
+    \begin{equation*}
+        (f*g)[x] = \int_{-\infty}^{\infty}f(t)g(x-t)\,dt.
+    \end{equation*}
+\end{fact}
+
+For two random variables $X$ and $Y$, the PDF of $X+Y$ is equivalent to convolving the PDFs of $X$ and $Y$.
+
+\subsection{Multiple independent random variables}
+
+\begin{fact}{Sample mean \g  Expectation}{sampleMean}
+    Let $X_1,X_2,...,X_n$ be random sample of size $n$ from a distribution with mean $\mu$ and variance $\sigma^2$.
+    
+    Sample mean is a linear combination of independent random variables
+    \begin{equation*}
+        \mean{X}=\frac{X_1+X_2+...+X_n}{n}.
+    \end{equation*}
+    
+    The expectation is
+    \begin{equation*}
+        \mathbb{E}[\mean{X}]=\mathbb{E}[\frac{X_1+X_2+...+X_n}{n}]=\frac{1}{n}[\mu+\mu+...+\mu]=\mu.
+    \end{equation*}
+\end{fact}
+
+\begin{exec}
+    Suppose $X_1,X_2,...,X_n$ are $n$ independent random variables with means $\mu_1,\mu_2,...\mu_n$ and variances $\sigma_1^2,\sigma_2^2,...,\sigma_n^2$.
+    
+    Show that the variance of the linear combination $Y=\sum_{i=1}^{n}a_iX_i$ is $\sigma_Y^2=\sum_{i=1}^{n}a_i^2\sigma_i^2$ where $a_1,a_2,...,a_n$ are real constants.
+    \tcblower
+    By definition of the variance.
+    \begin{equation*}
+        \sigma_Y^2=\Var(Y)=\mathbb{E}[(Y-\mu_Y)^2]
+    \end{equation*}
+    Then, substitute the value and the mean of of $Y$.
+    \begin{align*}
+        \sigma_Y^2
+        &=\mathbb{E}\left[\left(\sum_{i=1}^{n}a_iX_i-\sum_{i=1}^{n}a_i\mu_i\right)^2\right]\\
+        &=\mathbb{E}\left[\left(\sum_{i=1}^{n}a_i(X_i-\mu_i)\right)^2\right]\\
+        &=\mathbb{E}\left[\left(\sum_{i=1}^{n}a_i(X_i-\mu_i)\right) \left(\sum_{i=j}^{n}a_j(X_j-\mu_j)\right)\right]\\
+        &=\mathbb{E}\left[\sum_{i=1}^{n}\sum_{i=j}^{n}a_ia_j(X_i-\mu_i)(X_j-\mu_j) \right]\\
+        &=\sum_{i=1}^{n}\sum_{i=j}^{n}a_ia_j\mathbb{E}\left[(X_i-\mu_i)(X_j-\mu_j) \right]
+    \end{align*}
+    Expand this summation. Note that when $i=j$, the term's expectation is the variance of $X_i$, and when $i\neq j$, the term's expectation is the covariance between independent random variable $X_i$ and $X_j$ which is zero.
+    \begin{align*}
+        \sigma_Y^2
+        =&\mathcolor{blue}{a_1a_1\mathbb{E}[(x_1-\mu_1)(x_1-\mu_1)]}+
+        \mathcolor{red}{a_1a_2\mathbb{E}[(x_1-\mu_1)(x_2-\mu_2)]}+
+        \mathcolor{red}{a_1a_3\mathbb{E}[(x_1-\mu_1)(x_3-\mu_3)]}+ ... +\\
+        &\mathcolor{red}{a_2a_1\mathbb{E}[(x_2-\mu_2)(x_1-\mu_1)]}+
+        \mathcolor{blue}{a_2a_2\mathbb{E}[(x_2-\mu_2)(x_2-\mu_2)]}+
+        \mathcolor{red}{a_2a_2\mathbb{E}[(x_2-\mu_2)(x_3-\mu_3)]}+ ... +\\
+        &\mathcolor{red}{a_na_1\mathbb{E}[(x_n-\mu_n)(x_1-\mu_1)]}+
+        \mathcolor{red}{a_na_2\mathbb{E}[(x_n-\mu_n)(x_2-\mu_2)]}+...+
+        \mathcolor{blue}{a_na_n\mathbb{E}[(x_n-\mu_n)(x_n-\mu_n)]}\\
+        =&\mathcolor{blue}{a_1^2\mathbb{E}[(X_1-\mu_1)^2]+a_2^2\mathbb{E}[(X_2-\mu_2)^2]+...+a_n^2\mathbb{E}[(X_n-\mu_n)^2]}\\
+        =&a_1^2\mu_1^2+a_2^2\mu_2^2+...+a_n^2\mu_n^2\\
+        =&\sum_{i=1}^{n}a_i^2\sigma_i^2
+    \end{align*}
+    \TODO read covariance.
+\end{exec}
+
+\begin{fact}{The variance of sample mean}{}
+    If every $X_i$ is the same distribution and $a_i=1$ in the above exercise, the variance of the sample mean is
+    \begin{equation*}
+        \Var[\mean{X}]=\frac{\sigma^2}{n}.
+    \end{equation*}
+\end{fact}
+
+\section{Joint distributions}
+
+\subsection{Two random variables}
+
+\begin{fact}{Cartesian product of two sample spaces}{}
+    The sample spaces of $X$ and $Y$ are $\samplespace_X$ and $\samplespace_Y$, respectively.
+    
+    Then their Cartesian product $\samplespace_X\times\samplespace_Y = \{(x,y)|x\in\samplespace_X, y\in\samplespace_Y\}$.
+\end{fact}
+
+\begin{fact}{Measuring probability in 2d space (formal)}{}
+    Recall that probability is a measure of the size of a set.
+    
+    Let $X$ and $Y$ be two random variables with sample spaces $\samplespace_X$ and $\samplespace_Y$.
+    
+    Let $w\in\samplespace_X$ and $\xi\in\samplespace_Y$.
+    
+    A coordinate $(w,\xi)$ can be mapped to $(X(w),Y(\xi))$ where $X(w)\in\mathbb{R},Y(\xi)\in\mathbb{R}$.
+    
+    Let denote this mapping with $Z(\cdot): \samplespace_X\times\samplespace_Y\rightarrow\mathbb{R}\times\mathbb{R}$, and the inverse of this mapping is $Z^{-1}(\cdot)$.
+    
+    If we have an event $A\in\mathbb{R}\times\mathbb{R}$, the probability that $A$ happens is
+    \begin{equation*}
+        \prob[A]=\prob[\{(w,\xi) \mid Z(w,\xi)\in A\}] = \prob[\{(w,\xi) \mid Z^{-1}(A)\} ].
+    \end{equation*}
+    In words, the size of inverse image of event $A$ in sample space $\samplespace_X\times\samplespace_Y$ is the probability.
+\end{fact}
+
+\subsubsection{Discrete}
+
+\begin{fact}{PDF and CDF of Discrete Joint distribution}{}
+    The joint PDF of two random variables $X$ and $Y$ is the function $p_{X,Y}$ given by
+    \begin{equation*}
+        p_{X,Y}(x,y) = \prob(X=x,Y=y) = \prob[\{ (w,\xi) \mid X(w) =x, Y(\xi) = y\}].
+    \end{equation*}
+    Unity: $ \sum_x \sum_y \prob(X=x,Y=y) = 1$
+\end{fact}
+
+\subsubsection{Continuous}
+
+\begin{fact}{PDF and CDF of Continuous Joint distribution}{}
+    If $X$ and $Y$ are continuous random variables with joint CDF $F_{X,Y}(x,y)=\prob[X\le x,Y\le y]]$.
+    Their joint PDF $f_{X,Y}$ is the derivative of the joint CDF with respect to $x$ and $y$:
+    \begin{equation*}
+        f_{X,Y}(x,y)=\frac{\partial^2}{\partial{x}\partial{y}}F_{X,Y}(x,y).
+    \end{equation*}
+    A valid PDF of joint distribution is nonnegative and integrate to 1:
+    \begin{equation*}
+        f_{X,Y}(x,y) \ge 0 \text{ and} \iint f_{X,Y}(x,y)\,dxdy=1.
+    \end{equation*}
+    Integrating the PDF yields the probability 
+    \begin{equation*}
+        \prob[A]=\iint_{A}f_{X,y}(x,y)\,dxdy ,
+    \end{equation*}
+    for an event $A\in\samplespace_X\times\samplespace_Y$.
+\end{fact}
+
+\subsection{N random variables}
+
+
+\section{Correlation and Regression}
+
+\subsection{Line fitting}
+
+\begin{fact}{Least squares fitting}{}
+    Suppose the best fitting line of two data sequences $X = \{x_i\}$ and $Y = \{y_i\}$ is $y=Ax+B$.
+    
+    Constant $A$ can be obtained with
+    \begin{equation*}
+        A = \frac{n\sum x_i y_i - \sum x_i \sum y_i}{n \sum x_i^2 - (\sum x_i)^2}.
+    \end{equation*}
+    If we uses $\arithMean{}$ to denote arithmetic mean, the above equation can be rewritten by multiplying both the numerator and denominator by $1/n^2$.
+    \begin{equation*}
+        A = \frac{\arithMean{xy} -\arithMean{x}\arithMean{y}}{\arithMean{x^2}-\arithMean{x}^2}
+    \end{equation*}
+    Constant $B$ can be obtained with
+    \begin{align*}
+        B
+        &= \frac{\sum x_i^2 \sum y_i - \sum x_i \sum x_i y_i}{n\sum x_i^2 - (\sum x_i)^2} \\
+        &= \frac{\arithMean{x^2}\arithMean{y}-\arithMean{x}\arithMean{xy}}{\arithMean{x^2}-\arithMean{x}^2}.
+    \end{align*}
+    
+\end{fact}
+
+\TODO Why?
+
+\section{Special functions}
+
+\subsection{The factorial function}
+
+Factorial can be represented in terms of a continuous function with $e$:
+\begin{align*}
+    \int_{0}^{\infty}x^{n}e^{-a x}\,dx&=\frac{n!}{a^{n+1}} \\
+    \int_{0}^{\infty}x^{n}e^{-x}\,dx&=n!.
+\end{align*}
+
+\TODO proof this and Stirling's formula
+
+\begin{fact}{Stirling's formula}{}
+    Value of factorials can be estimated with
+    \begin{equation*}
+        n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n.
+    \end{equation*}
+    If $n$ is very large,
+    \begin{equation*}
+        \ln n! \sim n\ln n -n.
+    \end{equation*}
+\end{fact}
+
+\section{Diary}
+
+\begin{fact}{}{}
+    content...
+\end{fact}
+
+\end{document}
