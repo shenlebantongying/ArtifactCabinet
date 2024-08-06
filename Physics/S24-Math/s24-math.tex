@@ -227,6 +227,51 @@ Also
     Similarly, expression $1+2+3+...+n-1+n$ can be viewed as choosing two objects from both side of $k$ in set $\{0,1,2,3....n-1,n\}$ where $0<k<n, k \in \mathbb{Z}$, and thus $\sum_{i=1}^{n}i={n+1 \choose 2}$.
 \end{exec}
 
+
+\section{Special functions}
+
+\subsection{The factorial function}
+
+\begin{fact}{Factorial as a Continuous function}{factAsC}
+    Factorial can be represented in terms of a continuous function with $e$:
+    \begin{align*}
+        \int_{0}^{\infty}x^{n}e^{-a x}\,dx&=\frac{n!}{a^{n+1}} \\
+        \int_{0}^{\infty}x^{n}e^{-x}\,dx&=n!.
+    \end{align*}
+\end{fact}
+
+\TODO proof this and Stirling's formula
+
+\begin{fact}{Stirling's formula}{}
+    Value of factorials can be estimated with
+    \begin{equation*}
+        n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n.
+    \end{equation*}
+    If $n$ is very large,
+    \begin{equation*}
+        \ln n! \sim n\ln n -n.
+    \end{equation*}
+\end{fact}
+
+\subsection{Gamma Function}
+
+\begin{fact}{Gamma Function}{defGamma}
+    Factorials can be represented as a continuous function's definite integral as stated in \Cref{fact:factAsC}.
+    
+    Gamma function $\Gamma$ is another notation of $n!$.
+    
+    For any $p>0$ which is usually an integer,
+    \begin{align*}
+        \Gamma(p)&=\int_{0}^{\infty}x^{p-1}e^{-x}\,dx = \int_{0}^{\infty} x^{p}e^{-x}\,\frac{dx}{x},
+    \end{align*}
+    The recursion relation of the $\Gamma$ function is
+    \begin{align*}
+        \Gamma(n)&=\int_{0}^{\infty}x^{n-1}e^{-x}\,dx=(n-1)!,\\
+        \Gamma(n+1)&=\int_{0}^{\infty}x^{n}e^{-x}\,dx = n!,\\
+        \Gamma(p+1)&=p\Gamma(p).
+    \end{align*}
+\end{fact}
+
 \section{Probability basis}
 
 \begin{fact}{Probability triplet}{}
@@ -455,6 +500,27 @@ A special case of Binomial distribution, where $p\rightarrow0,n\rightarrow\infty
 
 For two random variables $X$ and $Y$, the PDF of $X+Y$ is equivalent to convolving the PDFs of $X$ and $Y$.
 
+\subsection{Gamma}
+
+\begin{fact}{Gamma distribution}{}
+Gamma function is defined as
+\begin{equation*}
+    \Gamma(a)=\int_{0}^{\infty} x^a e^{-x}\,\frac{dx}{x}
+\end{equation*}
+for real number $a>0$.
+
+Divide both side of the definition of $\Gamma$ by $\Gamma$, we get
+\begin{equation*}
+    1=\int_{0}^{\infty} \frac{1}{\Gamma(a)}x^a e^{-x}\,\frac{dx}{x}
+\end{equation*}
+
+Then, we get the case of $X \sim \Gamma(a,1)$ where $X$ has the Gamma distribution with parameters $a$ and 1 and its PDF is
+\begin{equation}
+    f_X(x)=\frac{1}{\Gamma(a)}x^a e^{-x}\frac{1}{x}.
+\end{equation}
+    
+\end{fact}
+
 \subsection{Multiple independent random variables}
 
 \begin{fact}{Sample mean \g  Expectation}{sampleMean}
@@ -600,29 +666,6 @@ For two random variables $X$ and $Y$, the PDF of $X+Y$ is equivalent to convolvi
 \end{fact}
 
 \TODO Why?
-
-\section{Special functions}
-
-\subsection{The factorial function}
-
-Factorial can be represented in terms of a continuous function with $e$:
-\begin{align*}
-    \int_{0}^{\infty}x^{n}e^{-a x}\,dx&=\frac{n!}{a^{n+1}} \\
-    \int_{0}^{\infty}x^{n}e^{-x}\,dx&=n!.
-\end{align*}
-
-\TODO proof this and Stirling's formula
-
-\begin{fact}{Stirling's formula}{}
-    Value of factorials can be estimated with
-    \begin{equation*}
-        n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n.
-    \end{equation*}
-    If $n$ is very large,
-    \begin{equation*}
-        \ln n! \sim n\ln n -n.
-    \end{equation*}
-\end{fact}
 
 \section{Diary}
 
