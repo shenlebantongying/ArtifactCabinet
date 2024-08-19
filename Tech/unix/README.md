@@ -17,10 +17,6 @@ To finish quicker, you should just skim through those functionalities that are p
 * https://cliutils.gitlab.io/modern-cmake/
 * https://chromium.googlesource.com/chromiumos/docs/+/HEAD/constants/syscalls.md
 
-## Books
-
-+ "The Linux Programming Interface" by Michael Kerrisk
-
 # Research
 
 USENIX <https://www.usenix.org/publications>*

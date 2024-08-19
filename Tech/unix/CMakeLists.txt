@@ -1,17 +1,11 @@
-cmake_minimum_required(VERSION 3.17)
-project(Linux_Kernal_Interface C CXX)
+cmake_minimum_required(VERSION 3.29)
+project(unix_playgrounds C CXX)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD 23)
+set(CMAKE_CXX_STANDARD 26)
 
-add_subdirectory(include)
+add_compile_definitions(_GNU_SOURCE)
 
-add_subdirectory(4_file_io)
-
-add_subdirectory(6_processes)
-add_subdirectory(7_memory_allocation)
-
+add_subdirectory(map_file)
+add_subdirectory(posix_threads)
 add_subdirectory(slim_core_utils)
-
-
-add_executable(Linux_Kernal_Interface scratch.c)
-target_link_libraries(Linux_Kernal_Interface include)
