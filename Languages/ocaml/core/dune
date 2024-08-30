@@ -1,5 +1,0 @@
-(executables
- (names core_language RWO_core)
- (libraries core)
-)
-

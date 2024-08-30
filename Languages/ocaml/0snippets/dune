@@ -1,16 +1,19 @@
 (executables
 (names
- cs3110
- dune_gen
- p01_int2bits
- p02_command_pattern
- p03_poly
- p05_closure_callback
- p06_adt
- p07_module_innser_t
- p08_play_std
- p09_GADT
- recition
- p04_seq
- variant_list
-))
+cs3110
+dune_gen
+p01_int2bits
+p02_command_pattern
+p03_poly
+p04_seq
+p05_closure_callback
+p06_adt
+p07_module_innser_t
+p08_play_std
+p09_GADT
+variant_list
+practice))
+
+(env
+  (dev
+    (flags (:standard -w -a))))

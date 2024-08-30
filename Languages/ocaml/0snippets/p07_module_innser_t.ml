@@ -7,6 +7,8 @@ module Hybird = struct
     | String s -> s
   let pprint s = ( print_endline (to_str s))
 end
+;;
 
-let x = Hybird.String "asd";;
-Hybird.pprint x;;
+let x = Hybird.String "asd" in
+let y = Hybird.Nil in
+Hybird.pprint x, Hybird.pprint y

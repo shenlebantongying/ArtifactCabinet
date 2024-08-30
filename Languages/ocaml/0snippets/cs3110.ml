@@ -34,6 +34,8 @@ let rec fib = function
   | 2 -> 1
   | n -> fib (n - 1) + fib (n - 2);;
 
+(fib 10)
+
 (* Fast  *)
 let rec h ni pp p =
     if ni = 1 then p
@@ -41,6 +43,7 @@ let rec h ni pp p =
 
 let fastfib n = h n 0 1;;
 
+(fastfib 10)
 (*
 
 h 10 0 1
