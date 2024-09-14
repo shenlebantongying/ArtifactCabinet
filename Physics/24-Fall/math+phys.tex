@@ -10,13 +10,12 @@
 
 \usepackage[default]{fontsetup}
 
-\usepackage{xcolor}
-\definecolor{DodgerBlue4}{RGB}{16,78,139}
-\definecolor{ErrorRed}{RGB}{136,17,17}
+\usepackage{tikz} %tikz is used to draw the glyphs
+\usetikzlibrary{arrows,scopes} %tikz libraries used to draw the glyphs
+
 \usepackage[%
 bookmarksopen=true,
-colorlinks=true,
-allcolors=DodgerBlue4%
+colorlinks=true
 ]{hyperref}
 
 \usepackage{cleveref}
@@ -47,23 +46,60 @@ colback=white}
 \usepackage{nopageno}
 \usepackage{tocbibind}
 \usepackage{setspace}
+\usepackage[none]{hyphenat}
 
 % MY ===
 
-\newcommand{\go}{$\rightarrow\ $}
+\newcommand{\go}{$ \rightarrow\ $}
 \newcommand{\TODO}{\textcolor{ErrorRed}{\fbox{TODO}}\ }
+\newcommand{\Concept}{\textbf}
+
+% Notations ===
+
+\def\bm{\ensuremath{\symbf}}
 
 % STD symbols ===
-
 \newcommand{\Del}{\ensuremath{\nabla}}
-\newcommand{\UnitVec}[1]{\ensuremath{\boldsymbol{\hat{#1}}}} % unit vector
+\newcommand{\UnitVec}[1]{\ensuremath{\bm{\hat{#1}}}} % unit vector
+
+
+\newcommand{\ScriptRMag}{
+  \resizebox{!}{1.25ex}{
+    \begin{tikzpicture}[>=round cap]
+      \clip (0.09em,-0.05ex) rectangle (0.61em,0.81ex);
+      \draw [line width=.11ex, <->, rounded corners=0.13ex] (0.1em,0.1ex) .. controls (0.24em,0.4ex) .. (0.35em,0.8ex) .. controls (0.29em,0.725ex) .. (0.25em,0.6ex) .. controls (0.7em,0.8ex) and (0.08em,-0.4ex) .. (0.55em,0.25ex);
+    \end{tikzpicture}
+  }
+}
+
+
+\newcommand{\ScriptR}{
+  \resizebox{!}{1.3ex}{
+    \begin{tikzpicture}[>=round cap]
+      \clip (0.085em,-0.1ex) rectangle (0.61em,0.875ex);
+      \draw [line width=.2ex, <->, rounded corners=0.13ex] (0.1em,0.1ex) .. controls (0.24em,0.4ex) .. (0.35em,0.8ex) .. controls (0.29em,0.725ex) .. (0.25em,0.6ex) .. controls (0.7em,0.8ex) and (0.08em,-0.4ex) .. (0.55em,0.25ex);
+    \end{tikzpicture}
+  }
+}
 
 \begin{document}
+
+\section{Notations}
+
+Griffiths' Script R, its magnitude and related unit vector are defined as
+\begin{align}
+  \ScriptR &= \bm{r} - \bm{r'} \\
+  \ScriptRMag &= |\bm{r} - \bm{r'}| \\
+  \hat{\ScriptR} & = \frac{\ScriptR}{\ScriptRMag} = \frac{\bm{r} - \bm{r'}}{|\bm{r} - \bm{r'}|}
+\end{align}
+where $\bm{r}$ is a field point and $\bm{r'}$ is a the source point.
+
+
 \section{Vector Analysis}
 \subsection{The del operator}
 
 The Del operator $\Del$ is defined as
-\begin{equation}
+\begin{equation}=-
   \newcommand{\utp}[1]{\UnitVec{#1}\frac{\partial}{\partial #1}}
   \Del =\utp{x} + \utp{y} + \utp{z}
 \end{equation}
@@ -79,6 +115,44 @@ For example, $\Del$ can act via
   \item Cross product \go $\Del \times \vec{v}$ (Curl).
 \end{itemize}
 
+
 \section{Diary}
 
+\subsection{Euler's homogeneous function}
+
+\begin{fact}{Define homogeneous function}{}
+  Let $f$ be a function of n variables defined on a set $S$ for which $(tx_1,...,tx_n)\in S$ whenever $t>0$ and $(x_1,...,x_n)\in S$, and let $k$ be a number.
+
+  Then $f$ is homogeneous of degree k if $f(tx_1,...,tx_n) = t^k f(x_1,...,x_n)$.
+\end{fact}
+
+Its partial differential can be written in many forms:
+
+\begin{align}
+  k f(x_1,...,x_n)
+  & = \sum_{i=1}^{n} x_i \left(\frac{\partial f(x_i)}{\partial a_i} \right) \\
+  & = \sum_{i=1}^{n} x_i f_i'(x_1,...,x_n) \\
+  & = x\cdot\Del f(x).
+\end{align}
+
+This models multi-component systems where certain observable property changes proportionally to each components' rate of change.
+
+\subsubsection{Application on ideal gas}
+Assume some ideal gas system has fixed temperature $T$ and pressure $P$, then the system's volume $V_{system}$ will depends on the components' molal numbers $n_i$ and volume $V_i$ of the system. This can be written as
+\begin{equation}
+  V_{system} = \sum n_i \left( \frac{\partial V_i}{\partial n_i} \right)_{T,P,{n_j|j\neq i}}.
+\end{equation}
+
+The $\left( \cdotp \right)_{T,P,{n_j|j\neq i}}$ denotes fixed part of the system \go temperature, pressure and other components.
+
+Then we can abstract the concept of \Concept{Partial molal volume} of component $i$ which is $\overline{V_i} = \left( \frac{\partial V_i}{\partial n_i} \right)_{T,P,{n_j|j\neq i}}$.
+\begin{equation}
+  V_{system} =\sum n_i \overline{V_i}
+\end{equation}
+
+The $\overline{V_i}$ means the amount of volume that will increase when adding infinitesimal amount of component $i$ to the system at constant temperature and pressure while keeping other components at fixed number will increase.
+
+This method of abstracting can be generalized into \Concept{Partial molar quantities} or \Concept{Partial molal properties}.
+
 \end{document}
+
