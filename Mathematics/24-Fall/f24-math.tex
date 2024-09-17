@@ -34,7 +34,7 @@ coltitle=black,
 colbacktitle=white,
 colback=white}
 
-\NewTcbTheorem[number within=section, list inside=facts,crefname={fact}{Fact}]%
+\NewTcbTheorem[no counter, list inside=facts,crefname={fact}{Fact}]%
 {fact}{Fact}%
 {fonttitle=\bfseries,attach title to upper={\par}}{fact}
 \newtcolorbox{exec}{}
@@ -48,10 +48,11 @@ colback=white}
 \usepackage{setspace}
 \usepackage[none]{hyphenat}
 
+\usepackage{xcolor}
 % MY ===
 
 \newcommand{\go}{$ \rightarrow\ $}
-\newcommand{\TODO}{\textcolor{ErrorRed}{\fbox{TODO}}\ }
+\newcommand{\TODO}{{\color{red}{\fbox{TODO}}\ }}
 \newcommand{\Concept}{\textbf}
 
 % Notations ===
@@ -61,7 +62,7 @@ colback=white}
 % STD symbols ===
 \newcommand{\Del}{\ensuremath{\nabla}}
 \newcommand{\UnitVec}[1]{\ensuremath{\bm{\hat{#1}}}} % unit vector
-
+\newcommand{\D}{\ensuremath{\,d}}
 
 \newcommand{\ScriptRMag}{
   \resizebox{!}{1.25ex}{
@@ -153,6 +154,65 @@ Then we can abstract the concept of \Concept{Partial molal volume} of component 
 The $\overline{V_i}$ means the amount of volume that will increase when adding infinitesimal amount of component $i$ to the system at constant temperature and pressure while keeping other components at fixed number will increase.
 
 This method of abstracting can be generalized into \Concept{Partial molar quantities} or \Concept{Partial molal properties}.
+
+\subsection{Legendre Transformation}
+
+Basically, for a function $f(x,y)$, a equation like
+\begin{equation}
+  \D f = \frac{\partial f}{\partial x} x + \frac{\partial f}{\partial y} y= p \D x + q \D y
+\end{equation} can be transformed into
+\begin{align}
+  g &= f - qy = f - \frac{\partial f}{\partial y}y\\
+ \D g &= p \D x - y \D q.
+\end{align}
+
+Alternatively, the transformation can be written as
+\begin{equation}
+  G(X) = F(x) - \frac{\partial F(x)}{\partial x} x.
+\end{equation}
+
+Note that
+\begin{align}
+  \frac{\partial g}{\partial x} &= p =  \partial f / \partial x \\
+  \frac{\partial g}{\partial q} &= -y.
+\end{align}
+Also note that
+\begin{align}
+  \frac{\partial^2 g}{\partial q\partial x} &= \frac{\partial}{\partial q} \frac{\partial g}{\partial x} = \left(\frac{\partial p}{\partial x}\right)_x \\
+  \frac{\partial^2 g}{\partial x \partial q} &= \frac{\partial}{\partial x} \frac{\partial g}{\partial q}= \left(- \frac{\partial y}{\partial x}\right)_q.
+\end{align}
+Assuming $\frac{\partial^2 g}{\partial q\partial x} = \frac{\partial^2 g}{\partial x \partial q}$, then we get
+\begin{equation}
+  \left(\frac{\partial p}{\partial x}\right)_x =  \left(- \frac{\partial y}{\partial x}\right)_q.
+\end{equation}
+\begin{fact}{Rediscover of Legendre transformation}{}
+  Given function $f(x,y)$ and its derivative
+  \begin{equation}
+    \D f=\frac{\partial f}{\partial x}\D x + \frac{\partial f}{\partial y}\D y.
+  \end{equation}
+  Let $\partial f / \partial x = p$ and $\partial f / \partial y = q$, then
+  \begin{equation}
+    \D f = p \D x + q \D y.
+  \end{equation}
+  Subtract from $\D f$ the quantity $\D (qy)$, then
+  \begin{align}
+    \D f - \D (qy) &= p \D x + q \D y - d(qy) = p \D x + q \D y - q \D y - y \D q \\
+    \D (f-qy) &= p \D x - y \D q.
+  \end{align}
+  Then let's define $g = f-qy = f - \frac{\partial f}{\partial y} y$ which has derivative
+  \begin{equation}
+     \D g = \D (f-qy) = p \D x - y \D q.
+  \end{equation}
+\end{fact}
+
+\begin{exec}
+  Transform $\D u = T \D s  - p \D v$ to  $f(T,v)$.
+  \tcblower
+  \begin{align}
+        f&=u-Ts\\
+    \D f &= -p \D v - s \D t
+  \end{align}
+\end{exec}
 
 \end{document}
 
