@@ -22,3 +22,9 @@ edit in XCode
 ```
 xed .
 ```
+
+# Format Staff
+
+```
+swift-format format -i -r .
+```
