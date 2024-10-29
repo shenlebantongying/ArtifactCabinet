@@ -39,7 +39,7 @@ int main()
         theData = &theContainer->data;
     }
 
-    // We cannot get rid of the name `theContainer` and only uses theData and get its container.
+    // We can now get rid of the name `theContainer` and only uses theData to get its container.
     printf("%s\n", container_of(theData, struct mContainer, data)->id);
 
     free(container_of(theData, struct mContainer, data));
