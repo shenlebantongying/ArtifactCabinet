@@ -20,3 +20,4 @@ README.pdf
 *.pdf
 *.synctex.gz
 *.toc
+.Rproj.user
