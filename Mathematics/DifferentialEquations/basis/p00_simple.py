@@ -19,5 +19,6 @@ for i in np.linspace(0, 10, 100):
   numericalResults.append(sp.N(result.rhs.subs(t, i)))
 
 fig, ax = plt.subplots()
-ax.plot(numericalResults)
+ax.plot(numericalResults,marker='o')
 fig.show()
+input()
