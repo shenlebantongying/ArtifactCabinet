@@ -1,0 +1,41 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\usepackage[default]{fontsetup}
+\usepackage{cleveref}
+
+\setlength\parindent{0pt}
+\setlength{\parskip}{0.6\baselineskip}
+
+\usepackage{nopageno}
+
+\begin{document}
+\section*{Orthogonal Trajectories}
+For a first order ODE
+\[
+  F(x,y,\frac{dy}{dx})=0,
+\]
+its general solution
+\begin{equation}\label{eq:ge}
+   f(x,y,C)=0
+\end{equation}
+
+normally contains one arbitrary parameter constant.
+
+When assigning various values to $C$, we could obtain a family of curves.
+Each curve is a particular solution of the ODE $F$.
+
+Conversely, we can find the curves of function in form of $ f(x,y,C)=0$ by eliminating $C$
+and find the ODE.
+
+First, differentiate \Cref{eq:ge} to obtain
+\begin{equation}\label{eq:diff}
+  f'=g(x,y,\frac{dy}{dx},c)=0.
+\end{equation}
+
+Then solve the equations \Cref{eq:ge} and \Cref{eq:diff} to obtain $F$.
+
+Example: Find the family of curves for $x^2+y^2+Cy=0$.
+
+\end{document}
