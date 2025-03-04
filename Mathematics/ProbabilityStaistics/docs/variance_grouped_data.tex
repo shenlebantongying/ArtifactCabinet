@@ -1,0 +1,50 @@
+\documentclass[12pt,letterpaper,fleqn]{article}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs}
+\usepackage{amssymb}
+\usepackage{fontsetup}
+\usepackage{nopageno}
+\usepackage[paperheight=12in]{geometry}
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+\begin{document}
+\section{Variance formula for grouped data}
+If a variable $X$ that has $k$ possible values
+\begin{equation}
+    X_1,X_2,X_3...,X_k
+\end{equation}
+occurring with respective frequencies
+\begin{equation}
+    f_1,f_2,f_3,...,f_k.
+\end{equation}
+The total number of samples is
+\begin{equation}
+    n = \sum_{i=1}^{k} f_i
+\end{equation}
+The mean of these values is
+\begin{equation}
+    \bar{X} = \frac{\sum_{i=1}^{k} f_i X_i}{n} = \frac{\sum fX}{n}
+\end{equation}
+
+The sample variance for a sample drawn from random variable Y is
+\begin{equation}
+    s^2 = \sum_{i=1}^{n}(Y_i - \bar{Y})^2/(n-1).
+\end{equation}
+
+Since we already knows frequencies, the sample variance for $X$ is thus
+\begin{align}
+    s^2
+    &= \frac{\sum_{i=1}^{k}f_i (X_i-\bar{X})^2}{n-1} \\
+    &= \frac{\sum_{i=1}^{k} f_i (X_i^2 - 2 X_i\bar{X}+\bar{X}^2)}{n-1} \\
+    &= \frac{\sum f X^2 - \sum 2 f X\bar{X} + \bar{X}^2 \sum f }{n-1} \\
+    &= \frac{\sum f X^2 - 2 \bar{X} \sum f X + \bar{X}^2 \sum f }{n-1}.
+\end{align}
+Note that $\sum f X = n \bar{X}$.
+\begin{align}
+    s^2
+    &= \frac{\sum f X^2 - 2n \bar{X} + n\bar{X}^2}{n-1} \\
+    &= \frac{\sum f X^2 - n \bar{X}^2}{n-1} \\
+    &= \frac{\sum f X^2 - n (\frac{\sum fX}{n})^2}{n-1} \\
+    &= \frac{1}{n-1} \left[ \sum f X^2 - \frac{(\sum fX)^2}{n} \right].
+\end{align}
+\end{document}
