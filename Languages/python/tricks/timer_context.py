@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 import time
 
+
 class Timer:
     """
     A hack to measure function runtime with some hacking
     """
+
     def __enter__(self):
         self.start = time.perf_counter()  # this function used to be time.clock()
         return self

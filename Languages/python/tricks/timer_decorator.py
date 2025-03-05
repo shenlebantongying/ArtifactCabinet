@@ -1,5 +1,6 @@
 import time
 
+
 def timer(func):
     def wrapper():
         start = time.perf_counter()

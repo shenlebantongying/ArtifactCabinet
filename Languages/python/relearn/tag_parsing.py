@@ -1,4 +1,4 @@
-def err(s = ""):
+def err(s=""):
     print("Whoops! " + s)
 
 
@@ -12,7 +12,7 @@ def parse_tags(s: str):
     result = []
 
     for x in s:
-        if x == '<':
+        if x == "<":
             if tag_txt == True:
                 tag_txt = False
                 end_tag = True
@@ -23,7 +23,7 @@ def parse_tags(s: str):
                 begin_tag = True
             else:
                 err("<")
-        elif x == '>':
+        elif x == ">":
             if begin_tag == True:
                 begin_tag = False
                 tag_txt = True
@@ -38,5 +38,6 @@ def parse_tags(s: str):
             normal_txt = True
 
     return result
+
 
 print(parse_tags("Hello <body>world!</body> Words: <b>monkeys</b>, oranges, conch"))

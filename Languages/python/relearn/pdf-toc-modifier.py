@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 def make_offset(off: int):
     if off > 1:
         print("""PageLabelBegin
@@ -27,7 +28,7 @@ BookmarkLevel: {l}
 BookmarkPageNumber: {p}""")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     offset = int(input())
     make_offset(offset)
     while True:
@@ -42,6 +43,4 @@ if __name__ == '__main__':
         n_of_tabs = len(line) - len(line.lstrip())
         page = int(line.split()[-1])
 
-        make_bookmark(t=title,
-                      l=n_of_tabs + 1,
-                      p=page + offset)
+        make_bookmark(t=title, l=n_of_tabs + 1, p=page + offset)

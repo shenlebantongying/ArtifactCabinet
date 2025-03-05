@@ -11,11 +11,12 @@ def next_biggest(n: int):
             break
 
     temp = nl[0]
-    nl[0] = nl[counter-1]
-    nl[counter-1]=temp
+    nl[0] = nl[counter - 1]
+    nl[counter - 1] = temp
 
-    nl[0:counter-1] = reversed(sorted(nl[0:counter-1]))
+    nl[0 : counter - 1] = reversed(sorted(nl[0 : counter - 1]))
 
     return int("".join(list(reversed(nl))))
+
 
 print(next_biggest(227543))

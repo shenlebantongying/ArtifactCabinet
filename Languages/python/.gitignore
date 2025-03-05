@@ -1,3 +1,5 @@
 venv/
 .idea/
 __pychche__/
+.virtual_documents/
+.ipynb_checkpoints/

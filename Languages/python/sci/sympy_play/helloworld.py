@@ -1,7 +1,8 @@
-from sympy import *
-init_printing()
-x = symbols('x')
-a=Integral(cos(x)*exp(x),x)
+import sympy as sym
 
-print(latex(a.doit()))
+sym.init_printing()
+x = sym.symbols("x")
+a = sym.Integral(sym.cos(x) * sym.exp(x), x)
+
+print(sym.latex(a.doit()))
 print(a.doit())

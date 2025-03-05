@@ -1,5 +1,6 @@
 from typing import Union
 
+
 def check_result_code(code: str):
     match code:
         case "Ok":
@@ -15,7 +16,8 @@ def type_checker(code: Union[str | int]):
         case int():
             print("c is int")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     check_result_code("Ok")
     check_result_code("What?")
 
@@ -24,7 +26,7 @@ if __name__ == '__main__':
         print(act)
         match act:
             # Trap: the case order is from top to bottom
-            case {"a": a, "b": b, 'c': c}:
+            case {"a": a, "b": b, "c": c}:
                 print(a, b, c)
             case {"a": a, "b": b}:
                 print(a, b)
