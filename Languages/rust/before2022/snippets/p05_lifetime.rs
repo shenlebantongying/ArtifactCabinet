@@ -3,7 +3,7 @@
 // {USENIX} Symposium on Operating Systems Design and Implementation ({OSDI}
 // 20), pp. 1-19. 2020.
 
-fn main(){
+pub fn main(){
 
     // In Rust, every value has an one owner
 

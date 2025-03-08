@@ -1,4 +1,1 @@
-```bash
-source ./rsr.bash
-rsr ./test.rs
-```
+create new file and uses the main.rs

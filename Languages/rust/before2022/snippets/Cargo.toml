@@ -1,17 +1,11 @@
 [package]
 name = "rust-workbench"
 version = "0.1.0"
-edition = '2018'
+edition = '2024'
 authors = ["slbtty<shenlebantongying@gmail.com>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
-
 [[bin]]
 name="main"
-path= "src/main.rs"
-
-[[bin]]
-name="osrelease"
-path= "src/os_release/main.rs"
+path= "main.rs"

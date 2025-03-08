@@ -2,15 +2,8 @@
 name = "pong-game"
 version = "0.1.0"
 authors = ["shenleban tongying <shenlebantongying@gmail.com>"]
-edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+edition = "2024"
 
 
-[dependencies.sdl2]
-version = "0.35.1"
-default-features = false
-features = ["ttf","image","gfx","mixer","unsafe_textures"]
-
-[dependencies.time]
-version="0.3.2"
+[dependencies]
+sdl3 = { version = "0.14.14", features = [] }

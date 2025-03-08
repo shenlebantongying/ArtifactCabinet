@@ -1,4 +1,4 @@
-fn main(){
+pub fn main(){
 
     const NROW:usize=2;
     const NCOL:usize=4;

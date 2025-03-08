@@ -1,65 +1,73 @@
-extern crate sdl2; 
-
-use sdl2::pixels::Color;
-use sdl2::event::Event;
-use sdl2::keyboard::Keycode;
-use std::time::Duration;
-use sdl2::render::{Texture, WindowCanvas, TextureCreator};
-use sdl2::rect::Rect;
-use sdl2::video::Window;
-use sdl2::EventPump;
-
-// TODO: keep window boarder?
-// TODO: read more examples
-//
+use sdl3::event::Event;
+use sdl3::keyboard::Keycode;
+use sdl3::pixels::Color;
+use sdl3::rect::Rect;
 
 pub fn main() {
-    let sdl_context = sdl2::init().unwrap();
-    let video_suqbsystem = sdl_context.video().unwrap();
- 
-    let window = video_suqbsystem.window("Pong game", 800, 600)
-        .position_centered()
+    let sdl = sdl3::init().unwrap();
+
+    let window = sdl
+        .video()
+        .unwrap()
+        .window("Pong game", 800, 600)
         .build()
         .unwrap();
- 
-    let mut canvas = window.into_canvas().present_vsync().build().unwrap();
 
-    let mut timer = sdl_context.timer().unwrap();
+    let mut canvas = window.into_canvas();
 
-    let x=0;
     let mut a = Rect::new(0,100,100,100);
     canvas.set_draw_color(Color::RGB(0, 255, 255));
     canvas.clear();
     canvas.present();
 
-    let mut event_pump = sdl_context.event_pump().unwrap();
-    let mut i = 0;
+    let mut event_pump = sdl.event_pump().unwrap();
+    let mut i: u8 = 0;
+    let mut inc_i_q: bool = true;
     'running: loop {
+        match i {
+            u8::MAX => inc_i_q = false,
+            u8::MIN => inc_i_q = true,
+            _ => {}
+        }
 
-        i = (i + 1) % 255;
+        match inc_i_q {
+            true => i += 1,
+            false => i -= 1,
+        }
+
         canvas.set_draw_color(Color::RGB(i, 64, 255 - i));
         canvas.clear();
 
         canvas.set_draw_color(Color::RGB(0, 255, 255));
-        canvas.fill_rect(a);
+        canvas.fill_rect(a).unwrap();
 
-        let ticks = timer.ticks() as i32;
-        a.set_right(ticks/10);
+        // TODO: what if 2 keys holding together??
 
         for event in event_pump.poll_iter() {
             match event {
-                Event::Quit {..} |
-                Event::KeyDown { keycode: Some(Keycode::Escape), .. } => {
-                    break 'running
-                },
+                Event::Quit { .. } => break 'running,
+                Event::KeyDown {
+                    keycode: Some(Keycode::W),
+                    ..
+                } => a.y -= 10,
+                Event::KeyDown {
+                    keycode: Some(Keycode::S),
+                    ..
+                } => a.y += 10,
+                Event::KeyDown {
+                    keycode: Some(Keycode::A),
+                    ..
+                } => a.x -= 10,
+                Event::KeyDown {
+                    keycode: Some(Keycode::D),
+                    ..
+                } => a.x += 10,
+                Event::KeyDown { .. } => println!("Rad key pressed"),
                 _ => {}
             }
         }
 
         canvas.present();
-
-        // Control the loop speed.
-        // However, we use ticks based animation.
-        //std::thread::sleep(Duration::new(0, 1_000_000_000u32 / 60));
+        sdl3::timer::delay(10);
     }
 }

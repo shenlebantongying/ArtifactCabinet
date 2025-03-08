@@ -9,14 +9,6 @@ Ownership (aka *affine* or *substructural* type system)
   - `Rc<RefCell<T>>`?
   - `Box<T>`?
 
-# SuckLess libraries
-
-- Rayon -\> data-parallelism
-- StructOpt -\> faster cli interface
-- pyo3 -\> create python things
-- Rouille -\> quick web
-- cargo-edit
-
 # Links
 
 ## Tour of Rust's Standard Library Traits
