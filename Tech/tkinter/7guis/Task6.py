@@ -9,9 +9,9 @@ root.rowconfigure(0, weight=1)
 root.columnconfigure(0, weight=1)
 
 mainFrame = ttk.Frame(root)
-mainFrame.grid(column=0, row=0, sticky='nswe')
+mainFrame.grid(column=0, row=0, sticky="nswe")
 
-canvas = tk.Canvas(mainFrame, width=500, height=500, background='white')
+canvas = tk.Canvas(mainFrame, width=500, height=500, background="white")
 canvas.grid(column=9, row=0)
 
 

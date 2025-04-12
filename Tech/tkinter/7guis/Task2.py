@@ -16,7 +16,7 @@ root.rowconfigure(0, weight=1)
 root.columnconfigure(0, weight=1)
 
 mainFrame = ttk.Frame(root)
-mainFrame.grid(column=0, row=0, sticky='nswe')
+mainFrame.grid(column=0, row=0, sticky="nswe")
 
 mainFrame.rowconfigure(0, weight=1)
 
@@ -32,23 +32,23 @@ Fa_entry = ttk.Entry(mainFrame, textvariable=F)
 Ce_label = ttk.Label(mainFrame, text="Celsius =")
 Fa_label = ttk.Label(mainFrame, text="Fahrenheit")
 
-Ce_entry.grid(column=0, row=0, sticky='nswe')
-Ce_label.grid(column=1, row=0, sticky='nswe')
-Fa_entry.grid(column=2, row=0, sticky='nswe')
-Fa_label.grid(column=3, row=0, sticky='nswe')
+Ce_entry.grid(column=0, row=0, sticky="nswe")
+Ce_label.grid(column=1, row=0, sticky="nswe")
+Fa_entry.grid(column=2, row=0, sticky="nswe")
+Fa_label.grid(column=3, row=0, sticky="nswe")
 
 
 def C_update(*args):
-    Fa_entry.delete(0, 'end')
+    Fa_entry.delete(0, "end")
     Fa_entry.insert(0, float(C.get()) * (9 / 5) + 32)
 
 
 def F_update(*args):
-    Ce_entry.delete(0, 'end')
+    Ce_entry.delete(0, "end")
     Ce_entry.insert(0, (float(F.get()) - 32) * (5 / 9))
 
 
-Ce_entry.bind('<KeyRelease>', C_update)
-Fa_entry.bind('<KeyRelease>', F_update)
+Ce_entry.bind("<KeyRelease>", C_update)
+Fa_entry.bind("<KeyRelease>", F_update)
 
 root.mainloop()

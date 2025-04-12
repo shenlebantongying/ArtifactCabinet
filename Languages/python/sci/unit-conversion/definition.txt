@@ -1,5 +1,0 @@
-hour = 60 * minute = h = hr
-minutes = 60 * second = min
-
-cubic_m=m * m * m
-quadic_m=10 * m * 10 * m * 10 * m

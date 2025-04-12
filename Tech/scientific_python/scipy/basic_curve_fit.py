@@ -37,4 +37,3 @@ y_f
 # %%
 plt.plot(x, y_f)
 plt.plot(x, y)
-

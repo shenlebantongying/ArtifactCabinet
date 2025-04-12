@@ -13,7 +13,7 @@ def shuffle(l):
     return new_l
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     l = [1, 2, 3, 4, 5]
     stat = dict()
 
@@ -24,17 +24,17 @@ if __name__ == '__main__':
             stat[k] = 1
         else:
             stat[k] = stat[k] + 1
-    for (i, k) in enumerate(sorted(stat.keys())):
+    for i, k in enumerate(sorted(stat.keys())):
         print(i, stat[k])
 
     # print(statistics.mean(stat.values()))
     # print(statistics.variance(stat.values()))
 
-'''
+"""
 ./Fisher–Yates-Shuffle.py > a.dat 
 
 gnu plot:
 
 set yrange [0:9000]
 plot 'a.dat' with linespoints linestyle 1
-'''
+"""

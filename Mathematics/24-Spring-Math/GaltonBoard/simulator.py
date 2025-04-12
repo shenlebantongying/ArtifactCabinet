@@ -11,7 +11,9 @@ ball_move_Right = 1
 
 
 def oneBall(stages: int) -> int:
-    return sum([random.choice([ball_move_Left, ball_move_Right]) for _ in range(stages)])
+    return sum(
+        [random.choice([ball_move_Left, ball_move_Right]) for _ in range(stages)]
+    )
 
 
 def galton(stages: int, n_balls: int):

@@ -4,8 +4,8 @@
 # Simple calculator that supports + - * /
 # A practice on parsing without any tools
 
-def slbEval(expr):
 
+def slbEval(expr):
     # [Tokenization] ---------------------------------------------------
     tokens = []
 
@@ -31,7 +31,6 @@ def slbEval(expr):
     # [Calc] ---------------------------------------------------
     # Use each operators as deliminator,
     for i in range(1, len(tokens), 2):
-
         cur = tokens[i]
 
         print("| pos->", i, " cur->", cur)

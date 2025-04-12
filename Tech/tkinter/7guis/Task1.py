@@ -7,7 +7,7 @@ root.rowconfigure(0, weight=1)
 root.columnconfigure(0, weight=1)
 
 mainFrame = ttk.Frame(root)
-mainFrame.grid(column=0, row=0, sticky='nswe')
+mainFrame.grid(column=0, row=0, sticky="nswe")
 
 mainFrame.rowconfigure(0, weight=1)
 
@@ -15,10 +15,10 @@ mainFrame.columnconfigure(0, weight=1)
 mainFrame.columnconfigure(1, weight=1)
 
 lbl = ttk.Label(mainFrame, text="0")
-lbl.grid(column=0, row=0, sticky='nswe', pady=10, padx=10)
+lbl.grid(column=0, row=0, sticky="nswe", pady=10, padx=10)
 
 tkCounterVar = tk.StringVar()
-lbl['textvariable'] = tkCounterVar
+lbl["textvariable"] = tkCounterVar
 
 
 def counter(i):
@@ -37,6 +37,6 @@ def update_label():
 
 
 btn = ttk.Button(mainFrame, text="count", command=update_label)
-btn.grid(column=1, row=0, sticky='nswe')
+btn.grid(column=1, row=0, sticky="nswe")
 
 root.mainloop()

@@ -6,6 +6,6 @@ import numpy as np
 
 print(",", ",".join(map("{:.2f}".format, np.arange(0, 0.1, 0.01))))
 for i in np.arange(0, 3.1, 0.1):
-  print(f"{i:.1f}", end=",")
-  row_results = map(lambda x: 1 - stats.norm.cdf(x), i + np.arange(0, 0.1, 0.01))
-  print(",".join(map("{:.4f}".format, row_results)))
+    print(f"{i:.1f}", end=",")
+    row_results = map(lambda x: 1 - stats.norm.cdf(x), i + np.arange(0, 0.1, 0.01))
+    print(",".join(map("{:.4f}".format, row_results)))
