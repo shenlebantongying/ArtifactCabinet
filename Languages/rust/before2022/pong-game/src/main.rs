@@ -15,7 +15,7 @@ pub fn main() {
 
     let mut canvas = window.into_canvas();
 
-    let mut a = Rect::new(0,100,100,100);
+    let mut a = Rect::new(0, 100, 100, 100);
     canvas.set_draw_color(Color::RGB(0, 255, 255));
     canvas.clear();
     canvas.present();

@@ -1,103 +1,75 @@
-use std::rc::Rc;
 use std::cell::RefCell;
 use std::cmp::max;
-
-// TODO: fix this by convert [1, 3,2, 5,3,9,none] to tree
-// TODO: lear Box<> type to replace Rc<RefCell>
+use std::rc::Rc;
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
-  pub val: i32,
-  pub left: Option<Rc<RefCell<TreeNode>>>,
-  pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub val: i32,
+    pub left: Option<Rc<RefCell<TreeNode>>>,
+    pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
 impl TreeNode {
-  #[inline]
-  pub fn new(val: i32) -> Self {
-    TreeNode {
-      val,
-      left: None,
-      right: None
+    pub fn new(
+        val: i32,
+        left: Option<Rc<RefCell<TreeNode>>>,
+        right: Option<Rc<RefCell<TreeNode>>>,
+    ) -> Option<Rc<RefCell<TreeNode>>> {
+        Some(Rc::new(RefCell::new(TreeNode { val, left, right })))
     }
-  }
+
+    pub fn new_end(val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+        Self::new(val, None, None)
+    }
 }
 
+fn largest_values(root_note: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    let mut results = Vec::new();
+    let mut level_nodes = Vec::from([root_note]);
 
-fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    let mut res = vec![];
-    let mut q = vec![root];
-    let mut q2 = vec![];
-    let mut n = q.len();
-    
-    while n > 0 {
-        let mut hi = i32::MIN;
-        let mut has_node = false;
-        for root in &q {
-            if let Some(node) = root {
-                // node `&std::rc::Rc<std::cell::RefCell<tree_node::TreeNode>>`
-                // v TreeNode, or `std::cell::Ref<'_, tree_node::TreeNode>`.
-                has_node = true;
-                let v = node.borrow_mut();
-                hi = max(hi, v.val);
-                q2.push(v.left.clone());
-                q2.push(v.right.clone());
+    while !level_nodes.is_empty() {
+        let mut temp_max = None;
+
+        level_nodes = level_nodes.iter().fold(Vec::new(), |mut acc, temp_node| {
+            if let Some(v) = temp_node {
+                match temp_max {
+                    Some(cur_max) => temp_max = Some(max(cur_max, v.borrow().val)),
+                    None => temp_max = Some(v.borrow().val),
+                }
+
+                acc.push(v.borrow().left.clone());
+                acc.push(v.borrow().right.clone());
             }
+            acc
+        });
+
+        if let Some(temp_v) = temp_max {
+            results.push(temp_v);
         }
-        if has_node {
-            res.push(hi);
-        }
-        q.clear();
-        q.append(&mut q2);
-        n = q.len();
     }
-    res
+    results
 }
 
-
-fn main(){
-    // find biggest value each row
+fn main() {
+    // find the biggest value each row
     //  1
     //  |\
     //  3 2
     //  |\  \
     //  5 3  9
-    //  => [1,2,9]
-    
-    let tree=
-      Some(Rc::new(RefCell::new(TreeNode{
-          val: 1,
-          left:Some(Rc::new(RefCell::new(
-            TreeNode{
-              val:3,
-              left:Some(Rc::new(RefCell::new(
-                TreeNode{
-                  val:5,
-                  left:None,
-                  right:None
-                }))),
-              right:Some(Rc::new(RefCell::new(
-                TreeNode{
-                  val:3,
-                  left:None,
-                  right:None
-                })))}))),
-          right: Some(Rc::new(RefCell::new(
-            TreeNode{
-              val:2,
-              left:Some(Rc::new(RefCell::new(
-                TreeNode{
-                  val:9,
-                  left:None,
-                  right:None
-                }))),
-              right:None
-            }))),
-      })));
+    //  |
+    //  7
+    //  => [1,3,9,7]
 
-    let res_vec=largest_values(tree);
-    for x in res_vec{
-      println!("{}",x);
-    }
+    let tree = TreeNode::new(
+        1,
+        TreeNode::new(
+            3,
+            TreeNode::new(5, TreeNode::new_end(7), None),
+            TreeNode::new_end(3),
+        ),
+        TreeNode::new(2, TreeNode::new_end(9), None),
+    );
 
+    println!("{:?}", largest_values(tree));
 }

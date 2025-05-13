@@ -1,9 +1,9 @@
 [package]
-name = "tree"
+name = "algo"
 version = "0.1.0"
-authors = ["slbtty<shenlebantongying@gmail.com>"]
+authors = []
 edition = "2024"
 
 [[bin]]
-name="bvew"
-path= "tree/biggest_value_each_row.rs"
+name = "tree_bvew"
+path = "tree/biggest_value_each_row.rs"
