@@ -1,9 +1,9 @@
 add_library(SDL_window STATIC "${CMAKE_CURRENT_LIST_DIR}/SDL_window.cpp")
-target_link_libraries(SDL_window PkgConfig::cairo SDL3::SDL3)
+target_link_libraries(SDL_window PkgConfig::cairo PkgConfig::sdl3)
 
 macro(SDL_add_p name)
         add_executable("${name}" "${CMAKE_CURRENT_LIST_DIR}/${name}.cpp")
-        target_link_libraries("${name}" PkgConfig::cairo  PkgConfig::pangocairo SDL3::SDL3 SDL_window)
+        target_link_libraries("${name}" PkgConfig::cairo  PkgConfig::pangocairo PkgConfig::sdl3 SDL_window)
 endmacro()
 
 SDL_add_p(SDL_sinWave)

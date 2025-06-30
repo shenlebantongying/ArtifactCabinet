@@ -1,6 +1,6 @@
 module minidraw
 
-libp = "../minidraw/libminidraw.so"
+libp = "../minidraw/libminidraw"
 
 function version()
     unsafe_string(@ccall libp.version()::Cstring)
