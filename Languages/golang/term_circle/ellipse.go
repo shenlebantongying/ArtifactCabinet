@@ -46,8 +46,8 @@ func ElpMaxVertical(e Elp) float64 {
 }
 
 func ElpPrintHorizontal(e Elp, y float64) {
-	fillChar :=" "
-	shapeChar:="▀"
+	fillChar := " "
+	shapeChar := "▀"
 	x1, x2 := ElpHorizontalCords(e, y)
 	rx1, rx2 := int(math.Round(x1)), int(math.Round(x2))
 	if rx1 == rx2 {

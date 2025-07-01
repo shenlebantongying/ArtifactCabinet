@@ -11,8 +11,8 @@ package main
 import (
 	"fmt"
 	"html/template"
-	"log"
 	"math/rand"
+	"net"
 	"net/http"
 )
 
@@ -49,5 +49,15 @@ func (ct *CounterHandler) ServeHTTP(writer http.ResponseWriter, request *http.Re
 func main() {
 
 	http.Handle("/", makeRadCounter())
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	listener, err := net.Listen("tcp", ":0")
+
+	if err != nil {
+		fmt.Println("Cannot listen!")
+	}
+	fmt.Println("Listening -> ", listener.Addr().String())
+	err = http.Serve(listener, nil)
+	if err != nil {
+		fmt.Println("Cannot Serve!")
+	}
+
 }

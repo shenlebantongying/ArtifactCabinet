@@ -4,41 +4,39 @@ import "strconv"
 
 // Notes:
 
-
-
 const (
 	Esc = "\033["
 )
 
-func i2s(i int)string{
+func i2s(i int) string {
 	return strconv.Itoa(i)
 }
 
 // [cur movement]
 //**********************************************************************************************************************
 
-func curUp(n int) string{
-	return Esc+strconv.Itoa(n)+"A"
+func curUp(n int) string {
+	return Esc + strconv.Itoa(n) + "A"
 }
 
-func curDown(n int) string{
-	return Esc+strconv.Itoa(n)+ "B"
+func curDown(n int) string {
+	return Esc + strconv.Itoa(n) + "B"
 }
 
-func curForward(n int) string{
-	return Esc+strconv.Itoa(n)+ "C"
+func curForward(n int) string {
+	return Esc + strconv.Itoa(n) + "C"
 }
 
-func curBackward(n int) string{
-	return Esc+strconv.Itoa(n)+ "D"
+func curBackward(n int) string {
+	return Esc + strconv.Itoa(n) + "D"
 }
 
-func curNextLine(n int) string{
-	return Esc+strconv.Itoa(n)+ "E"
+func curNextLine(n int) string {
+	return Esc + strconv.Itoa(n) + "E"
 }
 
-func curPreviousLine(n int) string{
-	return Esc+strconv.Itoa(n)+ "F"
+func curPreviousLine(n int) string {
+	return Esc + strconv.Itoa(n) + "F"
 }
 
 // [Imported]
@@ -46,7 +44,6 @@ func curPreviousLine(n int) string{
 
 const (
 	NewScreen = Esc + "2J" //"Clear" by scroll down
-
 
 	CursorUp       = Esc + "A"
 	CursorDown     = Esc + "B"
@@ -117,4 +114,3 @@ const (
 
 	ClearScreen = "\u001Bc"
 )
-
