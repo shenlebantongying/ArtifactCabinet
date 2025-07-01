@@ -20,10 +20,6 @@ pkg_check_modules(fmt IMPORTED_TARGET fmt)
 pkg_check_modules(FOR_EVERY_TARGETS IMPORTED_TARGET fmt)
 link_libraries(PkgConfig::FOR_EVERY_TARGETS) # All targets
 
-include(graphics/font/pango.cmake)
-
-include(graphics/SDL.cmake)
-
 # Sexpr
 
 add_library(sexpr_rec STATIC sexpr/sexpr_rec.cpp)
