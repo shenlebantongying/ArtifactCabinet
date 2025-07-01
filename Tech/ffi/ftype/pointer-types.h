@@ -9,6 +9,6 @@ struct sab {
     int32_t b;
 };
 
-int plus_sab(struct sab* s);
+int32_t plus_sab(struct sab* s);
 
 }
