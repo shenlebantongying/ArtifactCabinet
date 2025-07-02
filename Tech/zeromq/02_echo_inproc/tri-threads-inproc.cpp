@@ -1,6 +1,7 @@
 #include <fmt/color.h>
 #include <fmt/format.h>
 #include <iostream>
+#include <mutex>
 #include <thread>
 #include <vector>
 #include <zmq.h>
