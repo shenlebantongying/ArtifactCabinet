@@ -1,29 +1,30 @@
 #set document(title: "Français")
 #set text(lang: "fr")
-#set page(height: auto)
 #set smartquote(enabled: false)
 
 #set heading(numbering: (..numbers) => { h(-4em) + numbers.pos().map(_ => h(1em)).join() })
 
-#let _is = sym.arrow.r
-#let _eg(eg, trans) = {
+#let is_ = sym.arrow.r
+#let eg_(eg, ..trans) = {
   text([#eg], blue)
-  linebreak()
-  [#trans]
+  trans.pos().map(w => 
+  [\ #is_ #w ]).join()}
 }
 
-#let _term(term, trans) = {
+#let term_(term, trans) = {
   text(weight: "bold")[#term ]
   [: #trans]
 }
+
+#let hr_ = line(length: 50%, stroke: 0.5pt+gray)
 
 = ... avoir besoin de + infinitive form word ...
 
 need to do something
 
-- #_eg[J'ai besoin d'un verre.][I need a drink.]
-- #_eg[J'ai besoin d'aller à la poste.][I need to go to the post office.]
-- #_eg[J'ai besoin de manger.][]
+- #eg_[J'ai besoin d'un verre.][I need a drink.]
+- #eg_[J'ai besoin d'aller à la poste.][I need to go to the post office.]
+- #eg_[J'ai besoin de manger.][]
 
 = Passé composé
 
@@ -31,15 +32,15 @@ need to do something
 
 ... + avoir in present tense + past participle of the main verb + ...
 
-- #_eg[J'ai fait mes valises hier soir.][I packed my bags last night.]
+- #eg_[J'ai fait mes valises hier soir.][I packed my bags last night.]
 
 The endings of past participle should match with the person or thing completing the action.
 
-- #_eg[*Elle* est *allée* à la plage.][She went to a beach.]
-- #_eg[*Elles* sont *allées* à la plage.][They went to a beach.]
-- #_eg[J'ai grandi pas mal dans le milieu international][I grown up a lot in an international environment.]
+- #eg_[*Elle* est *allée* à la plage.][She went to a beach.]
+- #eg_[*Elles* sont *allées* à la plage.][They went to a beach.]
+- #eg_[J'ai grandi pas mal dans le milieu international][I grown up a lot in an international environment.]
 
-#_term[pas mal][lot less (a lot)]
+#term_[pas mal][lot less (a lot)]
 
 == M.VANDERTRAMPS
 
@@ -49,28 +50,77 @@ Some verbs combine with *être* instead of *avoir*.
 
 Subject + n' + avoir + pas + past participle of the main verb + ...
 
-- #_eg[Vous n'avez visité aucun musée?][Didn't you not visited any museum?]
+- #eg_[Vous n'avez visité aucun musée?][Didn't you not visited any museum?]
 
 == Question
 
 Avoir + a hyphen + subject + past participle ...
 
-- #_eg[As-tu mangé avec ton frère pendant le week-end?][Did you eat with your brother during the weekend?]
+- #eg_[As-tu mangé avec ton frère pendant le week-end?][Did you eat with your brother during the weekend?]
+- As-tu #is_ swap subject & verb for questioning.
 
 == Reflexive pronoun
 
 Subject + reflexive pronoun + *être* in present tense + past participle of the main verb + ...
 
-- #_eg[Je me suis douché.][I has a shower.]
+- #eg_[Je me suis douché.][I has a shower.]
 
 Subject + n'/ne + être in present tense + pas + past participle of the main verb + ...
 
-- #_eg[Nous ne sommes pas allés travailler ce matin.][We didn't go to work this morning.]
+- #eg_[Nous ne sommes pas allés travailler ce matin.][We didn't go to work this morning.]
 
 If the reflexive pronoun is the *direct object* then the past participle agrees gender and number with it. If reflexive pronoun is the *indirect object*, then there is no agreement.
 
-- #_eg[Elle s'est lavée.][She washed herself. Note that the `se` refers herself, aka the direct object of the action.]
-- #_eg[Elle s'est lavé les cheveux][She washed her hair. Note that `se` refers the les cheveux.]
+- #eg_[Elle s'est lavée.][She washed herself. Note that the `se` refers herself, aka the direct object of the action.]
+- #eg_[Elle s'est lavé les cheveux][She washed her hair. Note that `se` refers the les cheveux.]
 
 
 #link("https://www.ou.edu/class/FRINFO/gram/2/3/1.html")
+
+= Random Reviews
+
+== July 1
+
+#eg_[Quelle heure est-il?][What time is it?]
+
+#eg_[Je vais prendre un café / une bière.][I will go take a cup of coffee / a beer.]
+
+#eg_[jus d'orange][orange juice]
+
+#eg_[Je travaille avec un kinésiologue.]
+
+#eg_[Une fille parle sa saison préférée.][A girl talks abot her favorite season.]
+
+#eg_[Il est ici/là-bas.]
+- ici #is_ here 
+- là-bas #is_ over there
+
+#eg_[Il faut qu'on parle][We need to talk. #link("https://fr.wikipedia.org/wiki/Il_faut_qu%27on_parle")]
+
+#eg_[Elle et son amie veulent parler avec le garçon.][She and her friend want to talk with the boy.]
+
+#eg_[Vous voulez quoi?] est une _autre façon_ de dire #eg_[Qu'est-ce que vous voulez?]
+
+#hr_
+
+- à #is_ before city names (à Montréal)
+- en #is_ feminine countries (en Russie)
+- au #is_ masculine countries (au Canada)
+- aux #is_ plural countries (aux États-Unis)
+
+#hr_
+
+Comparatif de supériorité/d'infériorité/d'égalité
+
+plus/moins/aussi + adj. + que 
+
+#hr_
+
+Regular conjugaisons du participe passé
+
+- -er #is_ -é
+- -ir #is_ -i
+- -re #is_ -u
+
+#hr_
+
