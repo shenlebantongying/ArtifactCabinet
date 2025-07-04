@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.28)
 project(ac)
 
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 26)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-set(CMAKE_C_STANDARD 23)
+set(CMAKE_C_STANDARD 26)
 set(CMAKE_C_STANDARD_REQUIRED True)
 
 macro(add_single_file_targets)

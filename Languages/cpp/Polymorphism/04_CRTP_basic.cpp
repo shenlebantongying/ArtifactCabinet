@@ -4,14 +4,16 @@
 
 #include <iostream>
 #include <string>
+struct IntWrap {
+  int v = -1;
+};
 
 template <class D>
 struct Base {
 
-    int x = 1; // Invisible for Derived
+    IntWrap x = {1}; // Invisible for Derived
 
-    Base(std::ostream& pstream)
-        : pstream(pstream) {};
+     Base(std::ostream& pstream) : pstream(pstream) {};
 
     void doSth()
     {
@@ -34,23 +36,26 @@ struct Base {
         pstream << std::endl;
     }
 
+protected: // disable creation of the Base Class
+  Base() = default;
+
 private:
     std::ostream& pstream;
 };
 
 struct Derived : Base<Derived> {
 
-    int x = 2;
+    IntWrap c = {2}; // Invisible for Derived
 
     void doSthImpl()
     {
-        std::cout << "x -> " << this->x << std::endl;
+        std::cout << "Derived, x -> " << this->x.v << " c-> " << this->c.v << std::endl;
     };
 
     template <class T>
     Derived& setX(T&& t)
     {
-        x = t;
+        c.v = t;
         return *this; // compare this with Base::chainPrint's return
     }
 };
@@ -58,7 +63,7 @@ struct Derived : Base<Derived> {
 int main()
 {
     // Ok
-    auto poly = new Derived(std::cout);
+    Derived* poly = new Derived(std::cout);
 
     poly->chainPrint("ok.")
         .chainPrint("what.")
@@ -68,7 +73,7 @@ int main()
 
     poly->doSth();
 
-    // !! WRONG -> access x is invalid!
-    auto poly2 = new Base<Derived>(std::cout);
+    // !! WRONG -> creating Base is UB!
+    Base<Derived>* poly2 = new Base<Derived>(std::cout);
     poly2->doSth();
 }
