@@ -1,0 +1,25 @@
+[package]
+name = "Polymorphism"
+version = "0.1.0"
+edition = "2024"
+
+
+[[bin]]
+name = "01-dispatch"
+path = "01-dispatch.rs"
+
+[[bin]]
+name = "02-variant"
+path = "02-variant.rs"
+
+
+[[bin]]
+name = "03-generic"
+path = "03-generic.rs"
+
+[[bin]]
+name = "04-CRTP"
+path = "04-CRTP.rs"
+
+
+[dependencies]
