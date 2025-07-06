@@ -1,0 +1,12 @@
+[package]
+name = "ImJson"
+version = "0.1.0"
+edition = "2024"
+
+
+[lib]
+name = "im_json"
+path = "lib/im_json.rs"
+
+[dependencies]
+
