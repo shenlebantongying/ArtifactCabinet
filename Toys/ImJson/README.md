@@ -1,4 +1,6 @@
-Yet another JSON Something.
+WIP.
+
+Immediate Mode Json deserializer and serializer.
 
 ## Ref
 

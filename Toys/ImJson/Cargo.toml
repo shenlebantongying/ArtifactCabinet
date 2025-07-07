@@ -1,8 +1,10 @@
 [package]
 name = "ImJson"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2024"
-
+license = "AGPL-3.0-or-later"
+description = "Immediate Mode Json deserializer and serializer"
+homepage = "https://github.com/shenlebantongying/ArtifactCabinet/tree/main/Toys/ImJson"
 
 [lib]
 name = "im_json"
