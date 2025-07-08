@@ -1,0 +1,14 @@
+name = "sunkboat"
+uuid = "08fe8638-6fcb-4582-a0c3-4b3985f7f4f9"
+authors = ["shenleban tongying <shenlebantongying@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+XML = "72c71f33-b9b6-44de-8c94-c961784809e2"
+
+[compat]
+HTTP = "1.10.17"
+XML = "0.3.5"
+
+[apps.sunkboat]
