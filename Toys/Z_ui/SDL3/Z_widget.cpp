@@ -41,7 +41,7 @@ int Z_widget::stride()
 
 void Z_widget::add_child(Z_widget* o)
 {
-    if (std::ranges::find(children.cbegin(), children.cend(), o) == children.end()) {
+    if (std::find(children.cbegin(), children.cend(), o) == children.end()) {
         children.push_back(o);
     }
 }

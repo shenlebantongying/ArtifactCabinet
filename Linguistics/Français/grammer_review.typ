@@ -124,3 +124,10 @@ Regular conjugaisons du participe passé
 
 #hr_
 
+== July 8
+
+#eg_[Va dans le salon, j'ai des choses à finir dans la cuisine.][
+  Go to the living rootm, I have things to finish in the kitchen.
+]
+
+#eg_[Je m'excuse.][Sorry!]
