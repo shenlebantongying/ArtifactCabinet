@@ -7,16 +7,18 @@
 #let is_ = sym.arrow.r
 #let eg_(eg, ..trans) = {
   text([#eg], blue)
-  trans.pos().map(w => 
-  [\ #is_ #w ]).join()}
+  trans.pos().map(w => [\ #is_ #w ]).join()
+  linebreak()
 }
 
-#let term_(term, trans) = {
+
+#let term_(term, ..trans) = {
   text(weight: "bold")[#term ]
-  [: #trans]
+  trans.pos().map(w => [: #w ]).join()
+  linebreak()
 }
 
-#let hr_ = line(length: 50%, stroke: 0.5pt+gray)
+#let hr_ = line(length: 50%, stroke: 0.5pt + gray)
 
 = ... avoir besoin de + infinitive form word ...
 
@@ -24,7 +26,7 @@ need to do something
 
 - #eg_[J'ai besoin d'un verre.][I need a drink.]
 - #eg_[J'ai besoin d'aller à la poste.][I need to go to the post office.]
-- #eg_[J'ai besoin de manger.][]
+- #eg_[J'ai besoin de manger.]
 
 = Passé composé
 
@@ -92,7 +94,7 @@ If the reflexive pronoun is the *direct object* then the past participle agrees 
 #eg_[Une fille parle sa saison préférée.][A girl talks abot her favorite season.]
 
 #eg_[Il est ici/là-bas.]
-- ici #is_ here 
+- ici #is_ here
 - là-bas #is_ over there
 
 #eg_[Il faut qu'on parle][We need to talk. #link("https://fr.wikipedia.org/wiki/Il_faut_qu%27on_parle")]
@@ -112,7 +114,7 @@ If the reflexive pronoun is the *direct object* then the past participle agrees 
 
 Comparatif de supériorité/d'infériorité/d'égalité
 
-plus/moins/aussi + adj. + que 
+plus/moins/aussi + adj. + que
 
 #hr_
 
@@ -131,3 +133,24 @@ Regular conjugaisons du participe passé
 ]
 
 #eg_[Je m'excuse.][Sorry!]
+
+#term_[écrivain écrivaine][writer]
+#term_[danseur danseuse][dancer]
+
+#term_[réalisateur réalisatrice][director]
+
+#eg_[Malika fait des films. Ell est _réalisatrice_.]
+
+#term_[pouvoir][to be able to]
+#eg_[Il ne _peut_ pas parler][He cannot speak.]
+
+#term_[qqch. #is_ quelque chose][something]
+#eg_[Mets _quelque chose_ de chaud.][Wear something warm.]
+
+#eg_[Tu as passé un bon week-end?][
+  How was your weekend?]
+
+#eg_[On va se voir au même café _le mois prochain_.][
+  We're going to meet at the same coffee shop next month.
+]
+#term_[prochain][next]
