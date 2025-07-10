@@ -1,0 +1,93 @@
+\usemodule[visual]
+\usemodule[ipsum]
+
+\setuppagenumbering[
+  location=
+]
+
+\setupinteraction[
+  state=start,
+  color=blue,
+]
+
+\starttext
+
+\title{Ella}
+
+\startsection[title={Random Text}]
+  
+  \define\Hello{Hello!}
+  
+  Ref table -> \in{Table}[tbl:b]
+  
+  Ref sec -> \in{Sec}[SomeSec]
+
+  \goto{https://wiki.contextgarden.net/}[url(https://wiki.contextgarden.net/)]
+  
+  
+  \Hello{} \ConTeXt \hfill \Hello{} \par
+
+  \definecolor[MyPink][r=.8,g=.2,b=.2]
+
+  \framed{\MyPink\ipsum[alternative=words,n=10,inbetween=\space].}
+
+  \framed{\MyPink
+    \startformula
+      \int_0^{\infty}f(x)
+    \stopformula
+  }
+
+  \input shakespeare-en
+
+  \startitemize[8]
+  \item \fakewords{10}{}
+  \item \fakewords{10}{}
+  \stopitemize
+
+  \blank[line]
+
+  \fakewords{100}{}
+
+\stopsection
+
+\startsection[title={Table},reference=SomeSec]
+    
+  \placetable[here][tab:a]{Table Title}{%
+    \starttabulate[|c|c|c|]
+      \HL
+      \NC a \NC b \NC c \NR
+      \HL
+      \NC a \NC b \NC c \NR
+      \HL
+    \stoptabulate
+  }
+
+  \placetable[here][tbl:b]{Table Title}{%
+    \starttabulate[|c|c|c|]
+      \HL
+      
+      \NC a \NC b \NC c \NR
+      \HL
+      
+      \NC a \NC b \NC c \NR
+      \HL
+    \stoptabulate
+  }
+  
+\stopsection
+
+\startsection[title={Some Code}]
+
+  \setuptyping[
+    before={\startframedtext[width=\textwidth]},
+    after={\stopframedtext},
+  ]
+    
+  \starttyping
+    #include <stdio.h>
+    int main(){ return 1;}
+  \stoptyping
+  
+\stopsection
+\stoptext
+

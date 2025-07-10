@@ -1,0 +1,34 @@
+\usemodule[ipsum]
+\define\hello{\ipsum[alternative=words,n=50,inbetween=\space].}
+\starttext
+
+\startsection[title={Simple Line}]
+  Hello,
+  \startMPcode
+    pickup pencircle scaled 2pt;
+    draw (0,0) -- (3cm,0) withcolor red;
+  \stopMPcode
+  World.
+\stopsection
+
+
+\startsection[title={Adaptive Box via Overlay}]
+
+  \startuseMPgraphic{RadBox}
+    path p;
+    p := fullsquare xscaled \overlaywidth yscaled \overlayheight;
+    pickup pencircle scaled 2pt;
+    draw p withcolor darkred;
+  \stopuseMPgraphic
+  \defineoverlay[MyOverLay][\useMPgraphic{RadBox}]
+  
+  \startframedtext[background=MyOverLay]
+    \hello{}
+  \stopframedtext
+  
+  \defineframedtext[MyBox][frame=off, background=MyOverLay]
+  \MyBox{\hello{}}
+  
+\stopsection
+
+\stoptext

@@ -15,23 +15,18 @@ https://ctan.org/pkg/latexmk
 latexmk -c # clean
 ```
 
-
-
 ```perl
 # .latexmkrc
 
 $pdf_mode = 
 
-1 -> pdflatex
 4 -> lualatex
 ```
 
 ## Fonts
 
 ```tex
-% See doc, various fontsetup
 \usepackage[default]{fontsetup}
-% check fontspec for what's under the hood
 ```
 
 # G
@@ -43,16 +38,8 @@ https://authors.acm.org/proceedings/production-information/accepted-latex-packag
 - gensymb -> the degree symbol
 - xcolor
 - pdfpages -> to automate combining pdfs
-- todonotes -> For fun
 
 # Math
 
 mathpartir for induction rules
-
-# Future
-
-LuaMetaTex
-
-The minted 3.0 unreleased  https://github.com/gpoore/minted?tab=readme-ov-file#development-status
-
 
