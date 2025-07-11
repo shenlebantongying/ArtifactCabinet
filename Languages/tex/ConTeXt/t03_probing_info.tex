@@ -1,0 +1,77 @@
+\usemodule[setups]
+
+\define\Hello{Hello, World!}
+
+\starttext
+
+% overriding fonts
+\definefontfamily[mainface][ss][Comic Neue]
+\definefontfamily[mainface][rm][Neo Euler]
+\definefontfamily[mainface][tt][Kleymissky]
+
+\setupbodyfont[mainface, 12pt]
+
+Sans serif -> {\ss sans Lua}
+
+Roam -> {\rm asd}
+
+Typewriter -> {\tt 1+1 equals 2}
+
+\section{Lua}
+
+\startluacode
+  context("Hello World 1!")
+\stopluacode
+
+\ctxluacode{context("Yo.")}
+
+\define[1]\Bro{Bro #1}
+\startctxfunctiondefinition MyFunctionYo
+  context("HeHe, ")
+  context.Bro("San.")
+\stopctxfunctiondefinition
+
+\MyFunctionYo
+
+\section{Define New Head}
+
+\definehead[MyHead][subject][
+  style=\ttc, %% \tt + c suffix
+  color=blue,
+  alternative=middle
+]
+\startMyHead[title={What?}]
+  mmm
+\stopMyHead
+
+\section{BodyFont}
+
+\showbodyfont
+
+\showbodyfontenvironment
+
+
+\section{DefaultSection}
+\showinstancevalues[head][section]
+
+\setuphead[section][
+  style=\tfd
+]
+\section{NewSection}
+\showinstancevalues[head][section]
+
+\section{Setup}
+
+\define[1]\MyStyle{{\red #1}}
+
+\MyStyle{\Hello}
+
+\section{Show}
+
+\showgrid
+
+\showsetups
+
+\section{Layout}
+\showlayout
+\stoptext
