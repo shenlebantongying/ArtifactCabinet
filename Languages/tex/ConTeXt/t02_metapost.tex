@@ -1,34 +1,91 @@
 \usemodule[ipsum]
+
+% blurp to enable pdf bookmarks
+\setupinteraction[state=start,focus=standard]
+\setupinteractionscreen[option=bookmark]
+\placebookmarks[section,subsection][chapter]
+
 \define\hello{\ipsum[alternative=words,n=50,inbetween=\space].}
+
 \starttext
 
-\startsection[title={Simple Line}]
-  Hello,
-  \startMPcode
-    pickup pencircle scaled 2pt;
-    draw (0,0) -- (3cm,0) withcolor red;
-  \stopMPcode
-  World.
-\stopsection
+\section{Simple Line}
+
+Hello,
+\startMPcode
+  pickup pencircle scaled 2pt;
+  draw (0,0) -- (3cm,0) withcolor red;
+\stopMPcode
+World.
+
+%def a line
+\startuseMPgraphic{MyLine}
+  path p;
+  p := ((0,0) -- (\the\textwidth,0));
+  draw p
+  withcolor blue
+  withpen pencircle scaled 2pt;
+
+  drawdot (0,OverlayHeight) withcolor (1,1,1); % hack coordinate system.
+\stopuseMPgraphic
+
+%with overlay
+\defineoverlay[MyUnderLine][\useMPgraphic{MyLine}]
+
+\define[1]\MyUnderLineText{\framed[frame=on,background=MyUnderLine]{\line{#1}}}
+
+\MyUnderLineText{Hello this \hfill is the World!}
+
+TODO: how to get basicline of text?
+\underbar{Hello, World!}
+
+\section{Adaptive Box via Overlay}
+
+\startuseMPgraphic{RadBox}
+  path p;
+  p := fullsquare xscaled \overlaywidth yscaled \overlayheight;
+  pickup pencircle scaled 2pt;
+  draw p withcolor darkred;
+\stopuseMPgraphic
+\defineoverlay[MyOverLay][\useMPgraphic{RadBox}]
 
 
-\startsection[title={Adaptive Box via Overlay}]
+\startframedtext[background=MyOverLay]
+  \hello{}
+\stopframedtext
 
-  \startuseMPgraphic{RadBox}
-    path p;
-    p := fullsquare xscaled \overlaywidth yscaled \overlayheight;
-    pickup pencircle scaled 2pt;
-    draw p withcolor darkred;
-  \stopuseMPgraphic
-  \defineoverlay[MyOverLay][\useMPgraphic{RadBox}]
-  
-  \startframedtext[background=MyOverLay]
-    \hello{}
-  \stopframedtext
-  
-  \defineframedtext[MyBox][frame=off, background=MyOverLay]
-  \MyBox{\hello{}}
-  
-\stopsection
+\defineframedtext[MyBox][frame=off, background=MyOverLay]
+\MyBox{\hello{}}
+
+\section{Control Stuctures}
+
+\startMPcode
+  u=0.5cm;
+  half_u=0.5*u;
+  pickup pensquare scaled u;
+  for x = 1 step 1 until 10:
+    for y = 1 step 1 until 10:
+      drawdot (x*u,y*u) withrgbcolor ((x+y)/18,0.5,0.5);
+      if (x mod 2 = 0) and (y mod 2 = 0):
+        drawdot (x*u,y*u) withrgbcolor (0.5,0.5,(x+y)/18)
+          withpen pencircle scaled half_u;
+      fi;
+    endfor;
+  endfor;
+\stopMPcode
+
+\section{Random}
+\startMPcode
+  path p;
+  p := fullsquare scaled 2cm;
+  draw p
+  withpen pencircle scaled 0.3cm;
+
+  for i=0 upto length p:
+    draw point i of p
+    withcolor red
+    withpen pencircle scaled 0.5cm;
+  endfor;
+\stopMPcode
 
 \stoptext
