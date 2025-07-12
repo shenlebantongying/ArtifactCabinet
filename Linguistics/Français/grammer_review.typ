@@ -4,18 +4,29 @@
 
 #set heading(numbering: (..numbers) => { h(-4em) + numbers.pos().map(_ => h(1em)).join() })
 
+#show link: set text(fill: luma(30%))
+#show link: underline
+
 #let is_ = sym.arrow.r
+
 #let eg_(eg, ..trans) = {
   text([#eg], blue)
   trans.pos().map(w => [\ #is_ #w ]).join()
   linebreak()
 }
 
-
 #let term_(term, ..trans) = {
   text(weight: "bold")[#term ]
   trans.pos().map(w => [: #w ]).join()
   linebreak()
+}
+
+#let dict_(word) = {
+  link("https://dictionnaire.lerobert.com/definition/"+word.text)[#word]
+}
+
+#let conj_(word) = {
+  link("https://leconjugueur.lefigaro.fr/conjugaison/verbe/"+word.text)[#word]
 }
 
 #let hr_ = line(length: 50%, stroke: 0.5pt + gray)
@@ -79,6 +90,55 @@ If the reflexive pronoun is the *direct object* then the past participle agrees 
 
 #link("https://www.ou.edu/class/FRINFO/gram/2/3/1.html")
 
+== Adverbe
+
+#link("https://dictionnaire.lerobert.com/guide/formation-de-l-adverbe")
+
+Adjectif masc #is_ Adjectif fem #is_ +ment #is_ Adverbe
+
+- général, générale, généralement
+- parfait, parfaite, #dict_[parfaitement]
+
+Or just add +ment if masc already ends -e.
+
+- difficile, difficilement 
+
+#eg_[Vous faites _rarement_ de l'exercise!][You rarely exercise.]
+
+= Les modes
+
+- Indicatif
+- Subjonctif
+- Conditionnel
+- Impératif
+
+== Le Conditionnel Présent
+
+Verb form:
+
+le futur simple + imparfait endings #is_ le conditionnel
+
+parler_ai + ais #is_ parlerais
+
+== Combination of imparfait et conditionnel
+
+If something, then something.
+
+#dict_[Si] imparfait + conditionnel
+
+#eg_[Si tu veux, tu peux répondre aux questions.][
+  If I want, you can answer the questions.
+]
+
+#eg_[Si j'#conj_[avais] un chien, je serais le plus heureux au monde!][
+  If I had a dog, I would be the happiest person on earth!
+]
+
+#eg_[J'irais en Espagne si j'avais plus d'argent.][
+  I would go to Spain if I had more money.
+][Note the #conj_[aller] vs #conj_[avoir].]
+
+#pagebreak()
 = Random Reviews
 
 == July 1
