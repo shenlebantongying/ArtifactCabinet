@@ -1,4 +1,4 @@
-# no call/cc allowed
+# Continuation Passing Style, no call/cc allowed
 
 <https://web.mit.edu/6.001/6.037/l7a.pdf>
 
