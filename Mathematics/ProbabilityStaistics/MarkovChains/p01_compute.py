@@ -14,6 +14,7 @@ after_5_steps
 
 # %% simulation
 
+
 def step(state) -> int:
     to_probabilities = Q[state]
     return np.random.choice([0, 1, 2, 3], p=to_probabilities)
