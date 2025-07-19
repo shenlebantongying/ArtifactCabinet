@@ -1,0 +1,27 @@
+\setuppagenumbering
+  [location=]
+\setupmathalignment
+  [n=2,align={1:right,2:left}]
+\setupexternalfigure
+  [maxwidth=\textwidth]
+\setupinteraction
+  [state=start]
+
+\define[1]\RefFig{\goto{Figure \ref[number][#1]}[#1]}
+
+\starttext
+
+\subject{Example 1}
+
+\startformula\startalign
+  \NC \text{Problem: } \frac{dy}{dx} \NC= \frac{4x-x^3}{4+y^3} \NR
+  \NC (4+y^3) dy \NC= (4x-x^3) dx \NR
+  \NC 4y+\frac{y^4}{4} + C_1 \NC= (\frac{4x^2}{2} - \frac{x^4}{4}) + C_2\NR
+  \NC y^4 + 16y + x^4 - 8x^2 \NC= C \NR
+\stopalign\stopformula
+
+\RefFig{figep1} shows a solution that passes \m{(0,1)}.
+
+\placefigure[middle][figep1]{}{\externalfigure[figep1.pdf]}
+
+\stoptext
