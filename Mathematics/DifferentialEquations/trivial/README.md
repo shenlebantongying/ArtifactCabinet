@@ -1,3 +1,3 @@
 ```sh
-watchexec -e asy,tex make
+watchexec -e asy,tex zuo
 ```

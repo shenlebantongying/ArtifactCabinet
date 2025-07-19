@@ -1,0 +1,48 @@
+#lang zuo
+
+;; https://docs.racket-lang.org/zuo/
+;; TODO: read shake https://shakebuild.com/
+
+(provide-targets my-targets)
+
+(define tex "trivial_problems.tex")
+(define pdf "trivial_problems.pdf")
+(define asy (filter (glob->matcher "*.asy") (ls ".")))
+(define asy_pdf (map (lambda (p) (path-replace-extension p ".pdf")) asy))
+
+(define pp (lambda (source output) (display source) (display " -> ") (displayln output)))
+
+(define (my-targets at-dir vars)
+  (make-targets
+   `([:target ,pdf (,tex ,@asy_pdf)
+              ,(lambda (dest token)
+                 (pp tex dest)
+                 (shell/wait "contextjit" tex))]
+     
+     ;; target for each asy files
+     ,@(map
+        (lambda (s o)
+          `[:target ,o (,s)
+                    ,(lambda (dest token)
+                       (pp s dest)
+                       (shell/wait "asy" "-f" "pdf" s))])
+        asy asy_pdf)
+     
+     ;; this is a phony target cause "clean" is a symbol
+     [:target clean ()
+              ,(lambda (token)
+                 (let* ([all-files (ls ".")]
+                        [is-pdf (glob->matcher "*.pdf")]
+                        [is-tuc (glob->matcher "*.tuc")]
+                        [is-log (glob->matcher "*.log")]
+                        [is-zuodb (glob->matcher "*.db")]
+                        [to-be-deleted (filter
+                                        (lambda (o)
+                                          (or (is-pdf o)
+                                              (is-tuc o)
+                                              (is-log o)
+                                              (is-zuodb o)))
+                                        all-files)])
+                   (for-each rm* to-be-deleted)))])))
+
+
