@@ -1,0 +1,74 @@
+\setuppagenumbering
+  [location=]
+
+\setupfloat
+  [figure]
+  [default={here}]
+\setupexternalfigure
+  [maxwidth=\textwidth]
+
+\setupmathalignment
+  [n=2,align={1:right,2:left}]
+
+\setupmathematics
+  [integral=nolimits]
+
+\setupinteraction[state=start]
+\placebookmarks[section,subsection]
+
+\setupformulae
+  [location=left]
+
+\starttext
+\title{Joseph Fourier}
+
+\section{Backgrounds}
+
+\subsection{Fourier Series}
+
+The \emph{Fourier Series} of \m{f(x)}:
+
+\startformula
+  f(x) \sim \frac{a_0}{2} + \sum^\infty_{k=1} a_k \cos(\frac{k \pi x}{l}) + b_k \sin(\frac{k \pi x}{l})
+\stopformula
+
+The period of function \m{f(x)} is \m{T=2l}.
+
+Note the \m{\sim} is used instead of \m{=} because we don't know if the sum would converges or diverges.
+
+This function can be simplified:
+
+\startformula
+  F(t) = f(tl/\pi) \sim \frac{a_0}{2} + \sum_{k=1}^\infty(a_k \cos(kt) + b_k \sin(kt))
+\stopformula
+
+This has a fundamental period of \m{2\pi}.
+
+\startformula\startalign
+  \NC a_k \NC= 1/\pi \int^\pi_\pi F(t) \cos(kt) dt, k=0,1,2,3 ... \NR
+  \NC b_k \NC= 1/\pi \int^\pi_\pi F(t) \sin(kt) dt, k=0,1,2,3 ...
+\stopalign\stopformula
+
+\subsubsection{Example \m{f(x)=-t/2} in \m{[-pi,pi]}}
+
+Let's consider function \m{f(t)=-t/2} on interval \m{(-\pi,\pi)}. Expanding it periodically with period \m{2\pi}.
+
+\placefigure{f(t)}{\externalfigure[fig1_fx_theory.pdf]}
+
+\startformula\startalign
+  \NC a_0 \NC= 1/\pi \int^\pi_{-\pi} -t/2 dt = 0 \NR
+  \NC a_k \NC= 1/\pi \int^\pi_{-\pi} \cos(kt) dt = -\frac{1}{2 \pi k^2}(tk \sin(kt) + \cos(kt))|^{t=\pi}_{t=-\pi} = 0 \NR
+  \NC b_k \NC= 1/\pi \int^\pi_{-\pi} -\frac{-t}{2} \sin(kt) dt \NR
+  \NC     \NC= \frac{1}{2 \pi k^2}(kt \cos(kt) - \sin(kt))|^{t=pi}_{t=-pi} \NR
+  \NC     \NC= \frac{(-1)^k}{k}
+\stopalign\stopformula
+
+
+Then we can obtain
+\startformula
+f(t) = -t/2 = \sum^\infty_{k=1} \frac{(-1)^k}{k} \sin(kt), -\pi < t < \pi
+\stopformula
+
+\placefigure{f(t) in Fourier Series}{\externalfigure[fig1_fx_fourier.pdf]}
+
+\stoptext
