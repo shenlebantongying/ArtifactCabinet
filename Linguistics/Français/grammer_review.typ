@@ -31,6 +31,10 @@
 
 #let hr_ = line(length: 50%, stroke: 0.5pt + gray)
 
+#align(center, text(17pt)[
+  *Langue Française*
+])
+
 = ... avoir besoin de + infinitive form word ...
 
 need to do something
@@ -138,6 +142,81 @@ If something, then something.
   I would go to Spain if I had more money.
 ][Note the #conj_[aller] vs #conj_[avoir].]
 
+= The 21 Verbe Forms
+
+TODO: #link("https://vitrinelinguistique.oqlf.gouv.qc.ca/24658/la-grammaire/le-verbe/temps-grammaticaux/temps-simples-et-temps-composes")
+
+== L'Indicatif
+
+=== Le Présent
+
+#eg_[*Je danse* avec mes amis.][
+  *I dance / I am dancing* with my friends.
+]
+
+Note: French does not have have _present continuous verb form_.
+
+=== Le Passé Composé
+
+=== Le Passé Simple
+
+Similar to _Passé Composé_ and rarely used, except professional writing & fairy tales.
+
+
+=== L'Imparfait
+
+Similar to _Passé Composé_.
+
+#eg_[Il *#conj_[faisait]* beau, mais *j'étais* triste.][
+  It was nice outside, but I am sad.]
+
+=== Le Futur Simple
+
+#eg_[Nous *#conj_[finirons]* bientôt.][
+  We will finish it soon.
+]
+
+*Le futur proche*: talking about future by conjugate *aller*.
+
+#eg_[Demain, je #conj_[vais] #conj_[visiter] un musée sur les planètes.][
+  Tomorrow, I will visit a museum about planets.
+]
+
+=== Le Plus-Que-Parfait
+
+"More than perfect" #is_ talking about an event that happened before another event in the past.
+
+#eg_[J'#conj_[avais] beaucoup #conj_[pratiqué] avant d'étudier en France.][
+  I *had practiced* a lot before studying in France.
+]
+=== Passé Antérieur
+=== Le Futur Antérieur
+
+== Subjonctif
+
+=== Subjonctif Présent
+=== Subjonctif Passé
+=== Subjonctif Imparfait
+=== Subjonctif Plus-Que-Parfait
+
+== Conditionnel
+
+=== Conditionnel Présent
+=== Conditionnel Passé
+=== Conditionnel Passé 2 (Formal)
+
+== L'Impératif
+=== L'Impératif Présent
+=== L'Impératif Passé
+
+== L'Infinitif
+=== L'infinitif Présent
+=== L'infinitif Passé
+
+== Le Participe
+=== Le Participe Présent
+=== Le Participe Passé
+
 #pagebreak()
 = Random Reviews
 
@@ -214,3 +293,20 @@ Regular conjugaisons du participe passé
   We're going to meet at the same coffee shop next month.
 ]
 #term_[prochain][next]
+
+== July 21
+
+#term_[convenir][to admit; to agree]
+
+#eg_[Je conviens que c'est un problème.][
+  I agree that it is an problem.
+]
+
+#eg_[Nous sommes convenus d'un planning][
+  Have we agreed a schedule?
+]
+
+#term_[antérieur, ultérieur][
+  earlier, later
+]
+
