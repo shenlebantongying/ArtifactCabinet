@@ -16,21 +16,32 @@
 \setupinteraction[state=start]
 \placebookmarks[section,subsection]
 
-\setupformulae
-  [location=left]
+\setupformula
+  [align=flushleft]
+
+\define[1]\RefEq{\in{Formula. }[#1]}
 
 \starttext
 \title{Joseph Fourier}
 
 \section{Backgrounds}
 
-\subsection{Fourier Series}
+\subsection{Euler's Formula}
+
+\startformula\startalign
+  \NC e^{ ix} \NC= \cos(x) + i \sin(x) \NR
+  \NC e^{-ix} \NC= \cos(x) - i \sin(x) \NR
+  \NC \cos(x) \NC= \frac{e^{ix}+e^{-ix}}{2} \NR
+  \NC \sin(x) \NC= \frac{e^{ix}-e^{-ix}}{2i} \NR
+\stopalign\stopformula
+
+\section{Fourier Series}
 
 The \emph{Fourier Series} of \m{f(x)}:
 
-\startformula
-  f(x) \sim \frac{a_0}{2} + \sum^\infty_{k=1} a_k \cos(\frac{k \pi x}{l}) + b_k \sin(\frac{k \pi x}{l})
-\stopformula
+\startplaceformula[eq:fs_sincos]\startformula
+  f(x) \sim \frac{a_0}{2} + \sum^\infty_{k=1}( a_k \cos(\frac{k \pi x}{l}) + b_k \sin(\frac{k \pi x}{l}))
+\stopformula\stopplaceformula
 
 The period of function \m{f(x)} is \m{T=2l}.
 
@@ -49,7 +60,7 @@ This has a fundamental period of \m{2\pi}.
   \NC b_k \NC= 1/\pi \int^\pi_\pi F(t) \sin(kt) dt, k=0,1,2,3 ...
 \stopalign\stopformula
 
-\subsubsection{Example \m{f(x)=-t/2} in \m{[-pi,pi]}}
+\subsection{Example \m{f(x)=-t/2} in \m{[-pi,pi]}}
 
 Let's consider function \m{f(t)=-t/2} on interval \m{(-\pi,\pi)}. Expanding it periodically with period \m{2\pi}.
 
@@ -70,5 +81,23 @@ f(t) = -t/2 = \sum^\infty_{k=1} \frac{(-1)^k}{k} \sin(kt), -\pi < t < \pi
 \stopformula
 
 \placefigure{f(t) in Fourier Series}{\externalfigure[fig1_fx_fourier.pdf]}
+
+\subsection{Complex Fourier Series}
+
+Also called as Exponential Form of the the Fourier Series.
+
+Using
+\m{\cos(\frac{k\pi x}{l}) = (e^{i (k\pi x)/l} + e^{-(k\pi x)/ l})/2}
+and
+\m{\sin(\frac{k\pi x}{l}) = (e^{i (k\pi x)/l} - e^{-(k\pi x)/ l})/(i2)},
+\RefEq{eq:fs_sincos} can be written as
+
+\startformula
+  f(x) \sim \sum_{k=-\infty}^{\infty} a_k e^{i(k\pi x)/ l)},
+\stopformula
+where
+\startformula
+  a_k = \frac{1}{2l}\int^l_{-l} f(x) e^{-i (k\pi x)/l} dx, k= 0,\pm 1,\pm 2, \pm 3... 
+\stopformula
 
 \stoptext
