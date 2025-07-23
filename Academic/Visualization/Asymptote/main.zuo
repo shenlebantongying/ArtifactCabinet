@@ -1,0 +1,23 @@
+#lang zuo
+
+(provide-targets targets-at)
+
+;; note: at-dir is an procedure
+(define (targets-at at-dir options)
+  (define asy (filter (glob->matcher "*.asy") (ls ".")))
+  (define asy-pdfs (map (lambda (p) (path-replace-extension p ".pdf")) asy))
+
+  (define (asy-target src out)
+    (target (at-dir out)
+            (lambda (dest token)
+              (rule (list src)
+                    (lambda () (shell/wait "asy" "-f" "pdf" src))))))
+
+  (define asy-targets (map asy-target asy asy-pdfs))
+
+  (define all
+    (target 'all
+            (lambda (token)
+              (phony-rule asy-targets void))))
+
+  (list* all asy-targets))
