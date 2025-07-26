@@ -1,9 +1,19 @@
-# TODO: does julia auto vectorize this?
-
-ret = 0
-for i in 1:(1000-1)
-    if rem(i, 3) == 0 || rem(i, 5) == 0
-        global ret += i
+# noob
+begin
+    local ret = 0
+    for i = 1:(1000-1)
+        if rem(i, 3) == 0 || rem(i, 5) == 0
+            ret += i
+        end
     end
+    println(ret)
 end
-println(ret)
+
+#reduce
+begin
+    reduce(
+        (acc, i) -> (rem(i, 3) == 0 || rem(i, 5) == 0) ? acc + i : acc,
+        1:(1000-1),
+        init=0,
+    )
+end

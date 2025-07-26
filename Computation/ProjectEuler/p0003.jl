@@ -6,7 +6,7 @@ TODO: https://projecteuler.net/overview=0003
 
 function smallest_prime_factor(n::Int64)
     # TODO: optimize opportunity here, the upper bound can be smaller than n
-    for i in 2:n
+    for i = 2:n
         if rem(n, i) == 0
             return i
         end
