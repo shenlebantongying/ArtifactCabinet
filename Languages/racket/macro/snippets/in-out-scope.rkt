@@ -12,6 +12,6 @@
 ; Anything other than #f is true
 (define x '(3 4))
 
-(in-x x '(1 2) (car x))  ;; -> 1 !! x in e is bind to val
-  
+(in-x x '(1 2) (car x)) ;; -> 1 !! x in e is bind to val
+
 (out-x x '(1 2) (car x)) ;; -> 3

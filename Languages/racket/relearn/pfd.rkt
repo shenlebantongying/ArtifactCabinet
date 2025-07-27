@@ -12,9 +12,7 @@
 (define (pfd num)
   (cond
     [(= num (obtain-smallest-factor num)) (list num)]
-    [else (cons
-           (obtain-smallest-factor num)
-           (pfd (/ num (obtain-smallest-factor num))))]))
+    [else (cons (obtain-smallest-factor num) (pfd (/ num (obtain-smallest-factor num))))]))
 
 (pfd 24)
 (pfd 42) ;; (list 2 3 7)

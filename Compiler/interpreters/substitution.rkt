@@ -11,10 +11,9 @@
     [(decl var2 val2 scope)
      ;; name conflict happens
      (if (eq? var var2)
-         ;; this means we only change the 
+         ;; this means we only change the
          (decl var2 (sub var val val2) scope)
-         (decl var2 (sub var val val2) (sub var val scope)))]
-    ))
+         (decl var2 (sub var val val2) (sub var val scope)))]))
 
 ;; Note about name conflict, consider:
 ;; Outer scope (sub x -> 5)
@@ -25,16 +24,8 @@
   (match expr
     [(? integer?) expr]
     [(node op l r) (op (run l) (run r))]
-    [(decl var val scope)
-     (run (sub var (run val) scope))]))
+    [(decl var val scope) (run (sub var (run val) scope))]))
 
-(and
- (equal?
-  3
-  (run (decl "x" 1 (decl "y" 2 (node + "x" "y")))))
-
- ;; x will be value most close to the calculation place
- (equal?
-  20
-  (run (decl "x" 5 (decl "x" 10 (node + "x" "x")))))
- )
+(and (equal? 3 (run (decl "x" 1 (decl "y" 2 (node + "x" "y")))))
+     ;; x will be value most close to the calculation place
+     (equal? 20 (run (decl "x" 5 (decl "x" 10 (node + "x" "x"))))))

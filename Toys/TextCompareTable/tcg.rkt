@@ -15,9 +15,10 @@
                          [cur-type (line-analyze cur-line)])
                     (match cur-type
                       ['eof acc]
-                      ['line (if request-tag
-                                 (aux false (list cur-line 'normal))
-                                 (aux false (cons (string-trim cur-line #:left? #f) acc)))]
+                      ['line
+                       (if request-tag
+                           (aux false (list cur-line 'normal))
+                           (aux false (cons (string-trim cur-line #:left? #f) acc)))]
                       ['sec-start
                        (if request-tag
                            (aux false (list (obtain-title cur-line) 'section))
@@ -50,13 +51,17 @@
   (letrec ([rec (lambda (lst1 lst2 len)
                   (if (or (empty? lst1) (empty? lst2))
                       len
-                      (rec (cdr lst1) (cdr lst2) (max len (string-length (car lst1)) (string-length (car lst1))))))])
+                      (rec (cdr lst1)
+                           (cdr lst2)
+                           (max len (string-length (car lst1)) (string-length (car lst1))))))])
     (+ extra-space (rec lst1 lst2 0))))
 
 (define (print-header hd1 hd2 len)
   (printf "-~a~a+-~a~a\n"
-          hd1 (make-string (- len (string-length hd1)) #\-)
-          hd2 (make-string (- len (string-length hd2)) #\-)))
+          hd1
+          (make-string (- len (string-length hd1)) #\-)
+          hd2
+          (make-string (- len (string-length hd2)) #\-)))
 
 (define (loop-body-lines lst1 lst2 len)
   (let ([c1 (empty? lst1)]
@@ -74,8 +79,7 @@
       [else '()])))
 
 (define (print-body-lines l1 l2 len)
-  (let ([p-str (lambda (l)
-                 (string-append " " l (make-string (- len (string-length l)) #\space)))])
+  (let ([p-str (lambda (l) (string-append " " l (make-string (- len (string-length l)) #\space)))])
     (printf "~a|~a\n" (p-str l1) (p-str l2))))
 
 (define (print-sec-end len)
@@ -84,10 +88,11 @@
 ;; finally display everything
 (define (shutter data)
   (cond
-    [(empty? data)
-     (void)]
+    [(empty? data) (void)]
     [(eq? 'normal (caar data))
-     (for ([line (cdar data)]) (displayln line)) (shutter (cdr data))]
+     (for ([line (cdar data)])
+       (displayln line))
+     (shutter (cdr data))]
     [(eq? 'section (caar data))
      (let* ([lst1 (car data)]
             [lst2 (cadr data)]
@@ -109,5 +114,4 @@
 ;; for debug
 #;(define tfile (string->path "./test.md"))
 
-(with-input-from-file tfile
-  (lambda () (shutter (process-lines))))
+(with-input-from-file tfile (lambda () (shutter (process-lines))))

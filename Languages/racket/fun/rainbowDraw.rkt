@@ -6,10 +6,6 @@
 
 (for* ([x (in-range 200)]
        [y (in-range 200)])
-  (send c set-pixel x y
-        (make-object color%
-          (random 256)
-          (random 256)
-          (random 256))))
+  (send c set-pixel x y (make-object color% (random 256) (random 256) (random 256))))
 
 (send o save-file "rainbow" 'png)

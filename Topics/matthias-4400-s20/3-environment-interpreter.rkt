@@ -6,25 +6,53 @@
 
 ;; enviroment
 
-#; {type Env :
-         empty :: Env,
-         add :: Var Number Env -> Env,
-         defined? :: Var Env -> Any,
-         lookup :: Var Env -> Number
-         position-of :: Var Env -> N}
+#;{type
+   Env
+   :
+   empty
+   ::
+   Env
+   ,add
+   ::
+   Var
+   Number
+   Env
+   ->
+   Env
+   ,defined?
+   ::
+   Var
+   Env
+   ->
+   Any
+   ,lookup
+   ::
+   Var
+   Env
+   ->
+   Number
+   position-of
+   ::
+   Var
+   Env
+   ->
+   N}
 
 (define empty '[])
-(define (add x val env) (cons (list x val) env))
-(define (defined? x env) (assoc x env))
-(define (lookup x env) (second (defined? x env)))
+(define (add x val env)
+  (cons (list x val) env))
+(define (defined? x env)
+  (assoc x env))
+(define (lookup x env)
+  (second (defined? x env)))
 
 (define (position-of x env)
   (- (length env) (length (member x (map first env)))))
 
 ;; interpreter
-#; {VE -> Number}
+#;{VE -> Number}
 (define (value-of-env ae0)
-  #; {VE Env -> Number}
+  #;{VE Env -> Number}
   (define (value-of/acc ae env)
     (match ae
       [(? integer?) ae]
@@ -39,17 +67,10 @@
            (error 'value-of/acc "undecleared variable ~e" ae))]))
   (value-of/acc ae0 empty))
 
-(define ve-ex1
-  (decl "x" (decl "y" 5 {node + "y" "y"})
-        (decl "y" 42
-              (decl "x" "x"
-                    (node + "x" "y")))))
+(define ve-ex1 (decl "x" (decl "y" 5 {node + "y" "y"}) (decl "y" 42 (decl "x" "x" (node + "x" "y")))))
 
 (value-of-env (node + 10 42))
 
-(value-of-env (decl "x" 10
-                    (node + "x" 42)))
+(value-of-env (decl "x" 10 (node + "x" 42)))
 
-(value-of-env (decl "x" 10
-                    (decl "y" 42
-                          (node + "x" "y"))))
+(value-of-env (decl "x" 10 (decl "y" 42 (node + "x" "y"))))

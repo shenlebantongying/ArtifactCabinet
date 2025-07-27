@@ -8,16 +8,14 @@
         [p21 (hc-append p2 p1)])
     (vc-append p12 p21)))
 
-(let* ([rs  (colorize (square 10) "red")]
-       [bs  (colorize (square 10) "black")]
-       [c4  (four rs bs)]
+(let* ([rs (colorize (square 10) "red")]
+       [bs (colorize (square 10) "black")]
+       [c4 (four rs bs)]
        [c16 (four c4 c4)])
- (four c16 c16))
-
+  (four c16 c16))
 
 ;; note the apply can "feed" the function with a list
 (define (series o n)
-  (apply ht-append 4
-         (build-list n (lambda (x) (o (* x 10))))))
+  (apply ht-append 4 (build-list n (lambda (x) (o (* x 10))))))
 
 (series circle 10)

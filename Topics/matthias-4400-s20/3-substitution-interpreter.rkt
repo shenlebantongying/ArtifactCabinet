@@ -13,7 +13,9 @@
     [(? integer?) ae]
     [(node o a1 a2) (node o (subst val x a1) (subst val x a2))]
     [(decl y a1 scope)
-     (if (equal? x y) (decl y (subst val x a1) scope) (decl y (subst val x a1) (subst val x scope)))]
+     (if (equal? x y)
+         (decl y (subst val x a1) scope)
+         (decl y (subst val x a1) (subst val x scope)))]
     [(? string?) (if (equal? ae x) val ae)]))
 
 (module+ test

@@ -1,11 +1,13 @@
 #lang plai-typed
 
 (define-type ArithC
-  [numC (n : number)]
-  [plusC (l : ArithC) (r : ArithC)]
-  [multC (l : ArithC) (r : ArithC)])
+             [numC (n : number)]
+             [plusC (l : ArithC) (r : ArithC)]
+             [multC (l : ArithC) (r : ArithC)])
 
-(define (parse [s : s-expression]) : ArithC
+(define (parse [s : s-expression])
+  :
+  ArithC
   (cond
     [(s-exp-number? s) (numC (s-exp->number s))]
     [(s-exp-list? s)
@@ -20,4 +22,3 @@
 ;; > (parse '(+ (* 1 2) (+ 2 3)))
 ;; - ArithC
 ;; (plusC (multC (numC 1) (numC 2)) (plusC (numC 2) (numC 3)))
-

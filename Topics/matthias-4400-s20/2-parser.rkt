@@ -29,7 +29,5 @@
 
 (module+ test
   (check-equal? (parse '(1 "+" 1)) (node + 1 1))
-  (check-equal? (parse '("let" "x" 5 ("x" "+" "x")))
-                (decl "x" 5 (node + "x" "x")))
-  (check-equal? (parse '(3 "*" ("let" "x" 5 (1 "+" "x"))))
-                (node * 3 (decl "x" 5 (node + 1 "x")))))
+  (check-equal? (parse '("let" "x" 5 ("x" "+" "x"))) (decl "x" 5 (node + "x" "x")))
+  (check-equal? (parse '(3 "*" ("let" "x" 5 (1 "+" "x")))) (node * 3 (decl "x" 5 (node + 1 "x")))))

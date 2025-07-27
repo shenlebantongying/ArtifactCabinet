@@ -20,5 +20,4 @@
   (match p
     [(Program '() e) (interp_exp e)]))
 
-(interp_Lint
- (Program '() (Prim '+ (list (Int 3) (Prim '+ (list (Int 1) (Int 2)))))))
+(interp_Lint (Program '() (Prim '+ (list (Int 3) (Prim '+ (list (Int 1) (Int 2)))))))

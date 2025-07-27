@@ -10,8 +10,7 @@
 (define (fact n k)
   (if (= n 0)
       (k 1)
-      (fact (- n 1)
-            (λ (x) (k (* n x))))))
+      (fact (- n 1) (λ (x) (k (* n x))))))
 
 (equal? (fact 10 (λ (x) x)) (factorial 10))
 

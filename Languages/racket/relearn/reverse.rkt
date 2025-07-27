@@ -3,7 +3,7 @@
 
 ;; acc => accumulator
 (define (rev lst acc)
-  (cond 
+  (cond
     [(empty? lst) acc]
     [else (rev (rest lst) (cons (car lst) acc))]))
 

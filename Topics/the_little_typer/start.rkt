@@ -6,11 +6,7 @@
 (claim two Nat)
 (define two (add1 one))
 
-(claim vegetables
-  (Pair Atom Atom))
-(define vegetables
-  (cons 'celery 'carrot))
+(claim vegetables (Pair Atom Atom))
+(define vegetables (cons 'celery 'carrot))
 
-(which-Nat 5 0
-  (λ (n)
-    (+ 6 n)))
+(which-Nat 5 0 (λ (n) (+ 6 n)))

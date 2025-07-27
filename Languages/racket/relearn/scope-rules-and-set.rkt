@@ -1,14 +1,32 @@
 #lang racket
 
 (define x 7)
-(define f1 (lambda () (begin (set! x (+ x 1)) (+ x 1))))
-(define f2 (lambda (x) (begin (set! x (+ x 1)) (+ x 1))))
-(define f3 (let ([x 5]) (lambda () (begin (set! x (+ x 1)) (+ x 1)))))
-(define f4 (lambda () (let ([x 7]) (begin (set! x (+ x 1)) (+ x 1)))))
+(define f1
+  (lambda ()
+    (begin
+      (set! x (+ x 1))
+      (+ x 1))))
+(define f2
+  (lambda (x)
+    (begin
+      (set! x (+ x 1))
+      (+ x 1))))
+(define f3
+  (let ([x 5])
+    (lambda ()
+      (begin
+        (set! x (+ x 1))
+        (+ x 1)))))
+(define f4
+  (lambda ()
+    (let ([x 7])
+      (begin
+        (set! x (+ x 1))
+        (+ x 1)))))
 
 (define a1 (f1)) ;; 9 -> global x mutate to 8 and return (+ x 1)
 (define a2 (f2 x)) ;; 10 -> global x doesn't change, an inner x was changed
-(define a3 (f3)) 
+(define a3 (f3))
 (define a4 (f4))
 
 (define a5 (f1))

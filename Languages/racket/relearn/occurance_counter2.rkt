@@ -17,12 +17,13 @@
       (list-cut (sub1 N) (rest lst))))
 
 (define (ct lst)
-  (cond [(empty? lst) empty]
-        [(equal? (first lst) '-) (ct (rest lst))] ;; If encounter '-, skip it
-        [(cons            ;; Combine
-          (count-B lst)   ;; The number of following B
-          ;; and reapply (ct lst) to the lst with first a few B chopped
-          (ct (list-cut (count-B lst) lst)))])) 
+  (cond
+    [(empty? lst) empty]
+    [(equal? (first lst) '-) (ct (rest lst))] ;; If encounter '-, skip it
+    [(cons ;; Combine
+      (count-B lst) ;; The number of following B
+      ;; and reapply (ct lst) to the lst with first a few B chopped
+      (ct (list-cut (count-B lst) lst)))]))
 
 (ct '(B B - - B - B B B B B - B -))
 (ct '(- B - - B - B B B B B - B B))

@@ -24,34 +24,24 @@
 
 ;; ----- GUI init ---------------------------
 
-(define main-frame
-  (new frame%
-       [label "This is a pong game"]))
+(define main-frame (new frame% [label "This is a pong game"]))
 
-(define main-panel
-  (new vertical-panel%
-       [parent main-frame]))
+(define main-panel (new vertical-panel% [parent main-frame]))
 
-(define top-bar
-  (new horizontal-panel%
-       [parent main-frame]
-       [alignment '(center center)]))
+(define top-bar (new horizontal-panel% [parent main-frame] [alignment '(center center)]))
 
-(define score-message
-  (new message%
-       [parent top-bar]
-       [label "Score: 0"]
-       [auto-resize #t]))
+(define score-message (new message% [parent top-bar] [label "Score: 0"] [auto-resize #t]))
 
 (define restart-btn
   (new button%
        [parent top-bar]
        [label "start/restart"]
-       [callback (λ (btn ev)
-                   (set! score 0)
-                   (set! ball-x 0)
-                   (set! ball-y 0)
-                   (send clock start 1))]))
+       [callback
+        (λ (btn ev)
+          (set! score 0)
+          (set! ball-x 0)
+          (set! ball-y 0)
+          (send clock start 1))]))
 
 (define pong-canvas%
   (class canvas%
@@ -86,20 +76,15 @@
   (and (>= x low) (<= x high)))
 
 (define (collide?)
-  (and
-   (in-range? ball-x pad-left (+ pad-left pad-width))
-   (> (+ ball-y ball-width) pad-y)))
+  (and (in-range? ball-x pad-left (+ pad-left pad-width)) (> (+ ball-y ball-width) pad-y)))
 
 ;; ----- Ball & Pad moving logic ------------------------------
 
 (define (ball-move dx dy)
   (cond
-    [(or (> ball-x window-width) (< ball-x 0))
-     (set! ball-x-direction (invert ball-x-direction))]
-    [(< ball-y 0)
-     (set! ball-y-direction (invert ball-y-direction))]
-    [(> ball-y pad-y)
-     (send score-message set-label "You lose.")]
+    [(or (> ball-x window-width) (< ball-x 0)) (set! ball-x-direction (invert ball-x-direction))]
+    [(< ball-y 0) (set! ball-y-direction (invert ball-y-direction))]
+    [(> ball-y pad-y) (send score-message set-label "You lose.")]
     [(collide?)
      (set! score (add1 score))
      (set! ball-y-direction (invert ball-y-direction))
@@ -110,9 +95,6 @@
 
 ;; ----- Set the looping timer ---------------------------------
 
-(define clock
-  (new timer%
-       [notify-callback (λ () (ball-move 0.5 0.5))]))
+(define clock (new timer% [notify-callback (λ () (ball-move 0.5 0.5))]))
 
 (send main-frame show #t)
-

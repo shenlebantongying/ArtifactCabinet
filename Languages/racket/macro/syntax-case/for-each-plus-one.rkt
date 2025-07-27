@@ -4,18 +4,16 @@
   (lambda (stx)
     (syntax-case stx ()
       [(_ e) #'(cons (+ e 1) '())]
-      [(_ e1 e2 e3 ...)
-       #'(cons (+ 1 e1) (for-each-plus-one e2 e3 ...))])))
+      [(_ e1 e2 e3 ...) #'(cons (+ 1 e1) (for-each-plus-one e2 e3 ...))])))
 
 (for-each-plus-one 1 2 3 4 5 6 7 8)
 
 ;; racket-y-ify
 
 (define-syntax (v2 stx)
-    (syntax-case stx ()
-      [(_ e) #'(cons (+ e 1) '())]
-      [(_ e1 e2 e3 ...)
-       #'(cons (+ 1 e1) (v2 e2 e3 ...))]))
+  (syntax-case stx ()
+    [(_ e) #'(cons (+ e 1) '())]
+    [(_ e1 e2 e3 ...) #'(cons (+ 1 e1) (v2 e2 e3 ...))]))
 
 (v2 1 2 3 4 5 6 7 8)
 

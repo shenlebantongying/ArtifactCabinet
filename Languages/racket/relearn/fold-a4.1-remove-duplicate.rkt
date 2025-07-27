@@ -5,7 +5,7 @@
 (define (member* x acc)
   (cond
     [(empty? acc) (list x)]
-    [(member x acc)  acc]
+    [(member x acc) acc]
     [else (cons x acc)]))
 
 (trace member*)

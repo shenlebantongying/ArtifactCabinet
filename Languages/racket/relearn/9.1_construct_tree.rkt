@@ -1,6 +1,7 @@
 #lang racket
 
-(define-struct node (key left right) #:transparent)
+(define-struct node (key left right)
+  #:transparent)
 
 (define (nth lst n)
   (cond
@@ -17,13 +18,12 @@
     [(= n 0) empty]
     [else (cons (car lst) (before-n (cdr lst) (sub1 n)))]))
 
-
 (define (build-balanced-tree lst)
-  (local
-    [(define n  (sub1 (ceiling (/ (length lst) 2))))]
-    (cond
-      [(empty? lst) empty]
-      [else (make-node (nth lst n)
+  (local [(define n (sub1 (ceiling (/ (length lst) 2))))]
+         (cond
+           [(empty? lst) empty]
+           [else
+            (make-node (nth lst n)
                        (build-balanced-tree (before-n lst n))
                        (build-balanced-tree (after-n lst n)))])))
 

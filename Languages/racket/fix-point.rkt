@@ -10,10 +10,9 @@
 ; the func is a one step transformer
 (define (fp data func)
   (local [(define p-data (func data))] ; p-data -> processed-data
-    (if (eq? data p-data)
-        p-data
-        (fp p-data func))))
-
+         (if (eq? data p-data)
+             p-data
+             (fp p-data func))))
 
 (fp 1 identity)
 

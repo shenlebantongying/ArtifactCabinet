@@ -11,13 +11,13 @@
 (define-syntax rotate3
   (syntax-rules ()
     [(rotate a b) (swap a b)]
-    [(rotate a b c) (begin
-                      (swap a b)
-                      (swap b c))]))
+    [(rotate a b c)
+     (begin
+       (swap a b)
+       (swap b c))]))
 
 (let ([x 1]
       [y 2]
       [z 3])
   (rotate3 x y z)
-  (list x y z)
-  )
+  (list x y z))

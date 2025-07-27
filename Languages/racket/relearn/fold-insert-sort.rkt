@@ -1,6 +1,6 @@
 #lang racket
 (require racket/trace)
-  
+
 (define (insert x acc)
   (cond
     [(empty? acc) (list x)]

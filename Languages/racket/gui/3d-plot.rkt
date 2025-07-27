@@ -1,18 +1,19 @@
 #lang racket
-(require racket/gui/base plot)
+(require racket/gui/base
+         plot)
 
 (define n 2) ;; mutable
 
 (define (the-graph-plot-function dc)
-  (plot3d/dc (surface3d (λ (x y) (sin (+ x (expt y n)))) -5.1 5.1 -2.1 2.1
-                        #:samples 60
-                        #:label "z = x + y^n") dc 0 0 600 600))
+  (plot3d/dc
+   (surface3d (λ (x y) (sin (+ x (expt y n)))) -5.1 5.1 -2.1 2.1 #:samples 60 #:label "z = x + y^n")
+   dc
+   0
+   0
+   600
+   600))
 
-(define main-frame
-  (new frame%
-       [label "A 3d wave plot"]
-       [width 600]
-       [height 600]))
+(define main-frame (new frame% [label "A 3d wave plot"] [width 600] [height 600]))
 
 (define canvas
   (new canvas%

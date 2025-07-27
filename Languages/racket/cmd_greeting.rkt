@@ -8,16 +8,10 @@
 
 ;; command line parser
 
-(command-line
- #:usage-help
- "Have the computer greet you!"
-
- #:once-each
- [("-n" "--name") NAME
-                  "Set your name"
-                  (my-name NAME)]
-
- #:args () (void))
+(command-line #:usage-help "Have the computer greet you!"
+              #:once-each [("-n" "--name") NAME "Set your name" (my-name NAME)]
+              #:args ()
+              (void))
 
 ;; get-greeting : My-Name -> String
 ;; Gets the greeting for the given My-Name
