@@ -1,0 +1,30 @@
+% Slick boxes
+
+\documentclass[fleqn]{article}
+\usepackage{tcolorbox}
+\tcbset{
+boxrule=0.8pt,
+arc=1px,
+parbox=false, %?
+halign=left,halign upper=left,halign lower=left,
+coltitle=black,
+colbacktitle=white,
+colback=white}
+\tcbuselibrary{theorems}
+
+\NewTcbTheorem[no counter, list inside=facts]%
+{fact}{Fact}%
+{fonttitle=\bfseries,attach title to upper={\par}}{fact}
+\newtcolorbox{exec}{}
+
+\begin{document}
+\begin{fact}{Life is short?}{}
+    Yes.
+\end{fact}
+
+\begin{exec}
+    Some text.
+\tcblower
+    Some code.
+\end{exec}
+\end{document}

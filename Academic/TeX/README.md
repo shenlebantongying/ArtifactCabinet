@@ -1,43 +1,39 @@
+# To make compile LaTeX fast:
+
++ LaTeX is wrong. Just don't use.
++ Don't use convient wrappers. Just define commands.
++ Don't draw in the documents. Just draw separately and includes PDF.
++ Splitting.
+
 # Current No brainers
 
 - mathtools
 - hyperref
+- latexmk
+- microtype
+- pdfpages -> to automate combining pdfs
+- listings -> include source code
+- biblatex
 
-Citation in a good way -> Biblatex + Biber
+Graphics -> TikZ/MetaPost/Asymptote. 
 
-Graphics PGF/TikZ > MetaPost > others and probably asymptote
+For ref, just define one for each document.
 
-## latexmk no-brainer
+# Fonts
 
-https://ctan.org/pkg/latexmk
+Only OpenType fonts are good. Bundled ones are in `/usr/local/texlive/2025/texmf-dist/fonts`.
 
-```sh
-latexmk -c # clean
-```
-
-```perl
-# .latexmkrc
-
-$pdf_mode = 
-
-4 -> lualatex
-```
-
-## Fonts
+`unicode-math` -> <https://github.com/latex3/unicode-math>
 
 ```tex
-\usepackage[default]{fontsetup}
+\usepackage{unicode-math}
+\setmathfont{texgyrepagella-math.otf}
+\setmathfont{LibertinusMath-Regular.otf}
 ```
 
-# G
+# Reference
 
 https://authors.acm.org/proceedings/production-information/accepted-latex-packages
-
-- microtype
-- fancyref (cleverref?)
-- gensymb -> the degree symbol
-- xcolor
-- pdfpages -> to automate combining pdfs
 
 # Math
 

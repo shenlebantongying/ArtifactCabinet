@@ -8,8 +8,6 @@
   showonlyrefs,
 }
 
-\usepackage[default]{fontsetup}
-
 \usepackage{tikz} %tikz is used to draw the glyphs
 \usetikzlibrary{arrows,scopes} %tikz libraries used to draw the glyphs
 
@@ -17,10 +15,6 @@
 bookmarksopen=true,
 colorlinks=true
 ]{hyperref}
-
-\usepackage{cleveref}
-\usepackage{amsthm}
-\usepackage{unicode-math}
 
 \usepackage{tcolorbox}
 \tcbuselibrary{theorems}
@@ -34,7 +28,7 @@ coltitle=black,
 colbacktitle=white,
 colback=white}
 
-\NewTcbTheorem[no counter, list inside=facts,crefname={fact}{Fact}]%
+\NewTcbTheorem[no counter, list inside=facts]%
 {fact}{Fact}%
 {fonttitle=\bfseries,attach title to upper={\par}}{fact}
 \newtcolorbox{exec}{}
@@ -45,12 +39,14 @@ colback=white}
 
 \usepackage{nopageno}
 \usepackage{tocbibind}
-\usepackage{setspace}
 \usepackage[none]{hyphenat}
 
 \usepackage{xcolor}
-% MY ===
 
+\usepackage{unicode-math}
+\setmathfont{texgyrepagella-math.otf}
+
+% MY ===
 \newcommand{\go}{$ \rightarrow\ $}
 \newcommand{\TODO}{{\color{red}{\fbox{TODO}}\ }}
 \newcommand{\Concept}{\textbf}
@@ -72,7 +68,6 @@ colback=white}
     \end{tikzpicture}
   }
 }
-
 
 \newcommand{\ScriptR}{
   \resizebox{!}{1.3ex}{
@@ -100,7 +95,7 @@ where $\bm{r}$ is a field point and $\bm{r'}$ is a the source point.
 \subsection{The del operator}
 
 The Del operator $\Del$ is defined as
-\begin{equation}=-
+\begin{equation}
   \newcommand{\utp}[1]{\UnitVec{#1}\frac{\partial}{\partial #1}}
   \Del =\utp{x} + \utp{y} + \utp{z}
 \end{equation}
