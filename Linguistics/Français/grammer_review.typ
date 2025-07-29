@@ -6,21 +6,25 @@
 
 #set heading(numbering: (..numbers) => { h(-4em) + numbers.pos().map(_ => h(1em)).join() })
 
-#show link: set text(fill: luma(30%))
-#show link: underline
+#show link: i => {
+  underline(
+    text(i,
+      weight: "bold",
+      fill: luma(30%)))
+}
 
-#let is_ = sym.arrow.r
+#let is = sym.arrow.r
 
 /* Sentence */
 #let S(eg, ..trans) = {
   text([#eg],purple)
-  trans.pos().map(w => [\ #is_ #text([#w],olive)]).join()
+  trans.pos().map(w => [\ #is #text([#w],olive)]).join()
   linebreak()
 }
 
 /* Terms */
 #let T(term, ..trans) = {
-  text(weight: "bold")[#term ]
+  text(weight: "bold",fill: rgb(8,25,45))[#term ]
   trans.pos().map(w => [: #w ]).join()
   linebreak()
 }
@@ -78,7 +82,7 @@ Subject + n' + avoir + pas + past participle of the main verb + ...
 Avoir + a hyphen + subject + past participle ...
 
 - #S[As-tu mangé avec ton frère pendant le week-end?][Did you eat with your brother during the weekend?]
-- As-tu #is_ swap subject & verb for questioning.
+- As-tu #is swap subject & verb for questioning.
 
 == Reflexive pronoun
 
@@ -102,7 +106,7 @@ If the reflexive pronoun is the *direct object* then the past participle agrees 
 
 #link("https://dictionnaire.lerobert.com/guide/formation-de-l-adverbe")
 
-Adjectif masc #is_ Adjectif fem #is_ +ment #is_ Adverbe
+Adjectif masc #is Adjectif fem #is +ment #is Adverbe
 
 - général, générale, généralement
 - parfait, parfaite, #Dict[parfaitement]
@@ -124,9 +128,9 @@ Or just add +ment if masc already ends -e.
 
 Verb form:
 
-le futur simple + imparfait endings #is_ le conditionnel
+le futur simple + imparfait endings #is le conditionnel
 
-parler_ai + ais #is_ parlerais
+parler_ai + ais #is parlerais
 
 == Combination of imparfait et conditionnel
 
@@ -188,7 +192,7 @@ Similar to _Passé Composé_.
 
 === Le Plus-Que-Parfait
 
-"More than perfect" #is_ talking about an event that happened before another event in the past.
+"More than perfect" #is talking about an event that happened before another event in the past.
 
 #S[J'#Conj[avais] beaucoup #Conj[pratiqué] avant d'étudier en France.][
   I *had practised* a lot before studying in France.
@@ -248,8 +252,8 @@ Similar to _Passé Composé_.
 #S[Une fille parle sa saison préférée.][A girl talks abot her favorite season.]
 
 #S[Il est ici/là-bas.]
-- ici #is_ here
-- là-bas #is_ over there
+- ici #is here
+- là-bas #is over there
 
 #S[Il faut qu'on parle][We need to talk. #link("https://fr.wikipedia.org/wiki/Il_faut_qu%27on_parle")]
 
@@ -259,10 +263,10 @@ Similar to _Passé Composé_.
 
 #hr_
 
-- à #is_ before city names (à Montréal)
-- en #is_ feminine countries (en Russie)
-- au #is_ masculine countries (au Canada)
-- aux #is_ plural countries (aux États-Unis)
+- à #is before city names (à Montréal)
+- en #is feminine countries (en Russie)
+- au #is masculine countries (au Canada)
+- aux #is plural countries (aux États-Unis)
 
 #hr_
 
@@ -274,9 +278,9 @@ plus/moins/aussi + adj. + que
 
 Regular conjugaisons du participe passé
 
-- -er #is_ -é
-- -ir #is_ -i
-- -re #is_ -u
+- -er #is -é
+- -ir #is -i
+- -re #is -u
 
 #hr_
 
@@ -298,7 +302,7 @@ Regular conjugaisons du participe passé
 #T[pouvoir][to be able to]
 #S[Il ne _peut_ pas parler][He cannot speak.]
 
-#T[qqch. #is_ quelque chose][something]
+#T[qqch. #is quelque chose][something]
 #S[Mets _quelque chose_ de chaud.][Wear something warm.]
 
 #S[Tu as passé un bon week-end?][
@@ -338,8 +342,7 @@ Regular conjugaisons du participe passé
   Note that *a* is #Conj[avoir] and *de* and *à* are prepositions.
 ]
 
-=== Je veux
-#link("https://www.youtube.com/watch?v=0TFNGRYMz1U")
+*Je veux* #link("https://www.youtube.com/watch?v=0TFNGRYMz1U")
 
 #S[Je veux de l'amour, de la joie, de la bonne humeur][
   I want love, joy and good spirit.
@@ -352,3 +355,87 @@ Regular conjugaisons du participe passé
 #S[Allons ensemble, découvrir ma liberté.][
   Let's go together, to discover my liberty.
 ]
+
+== July 28
+
+- #Dict[bientôt]
+- #S[Dans #Dict[peu] de temps, dans un proche futur.][
+  In short time, in near future]
+- #S[Au revoir et à bientôt!][
+  Good bye and see you soon!]
+
+#T[journée soirée nuit][morning, evening, night]
+
+#[prénom, nom de famille]
+
+*Interrogative adjectives and pronouns*
+
+- quel/quels
+- quelle/quelles
+
+#S[Quelle est la couleur que tu préfères?][
+  Which is your favourite colour?
+]
+
+- qui #is who/whom
+- de qui/à qui #is whose
+
+qui as subject:
+
+#S[Qui est Américain dans ce groupe?][
+  Who is American in this group?
+]
+
+qui as direct object:
+
+#S[Qui #Conj[as]-tu #Conj[vu] ce matin?][
+  Who did you see this morning?
+][
+  as-tu #is tu avoir in reverse.
+]
+
+quit with à indicating possession:
+
+#S[À qui est cet ordinateur?][
+  Whose computer is this?
+]
+
+#hr_
+
+dont #is pronom relatif
+
+#S[#Dict[Voici] ce #Dict[dont] je veux te parler][
+  This is what I what i want to talk about.
+]
+
+#hr_
+
+#S[Ça *#Conj[vent] #Conj[dire]*...][
+  It means... or It want to say...
+]
+
+#S[Que *veut dire*...?][
+  What does ... mean?
+]
+
+#S[Après son explication, j'ai compris ce qu'elle voulait dire.][
+  After her 
+
+#S[Ça s'écrit avec deux Y][It's spelled with two letter Y]
+explanation, I understood what she meant.
+]
+
+#S[Comment on dit «friend» en français?][
+  How do you say "friend" in french?
+]
+
+#hr_
+
+- #T[comment]
+- #S[De quelle manière; par quel moyen.][
+  In what way; by what means.
+]
+- #S[Comment allez-vous?][How you doing?]
+
+#hr_
+
