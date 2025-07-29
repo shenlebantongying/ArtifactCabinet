@@ -15,6 +15,7 @@ let rec beval = function
 beval (And (Var true, (Or (Var false,Var false))));;
 beval (Xor (Var true, Var true));;
 beval (Xor (Var true, Var false));;
+beval (And (Not (Var false), (Var true)));;
 
 (* Very similar *)
 (* Define a mathematical type *)
@@ -52,3 +53,5 @@ evaluate --> 1
 evaluate --> 7
 - : int = 7
 *)
+
+evaluate (Div (Sub (Num 8, Num 2), Num 2));;

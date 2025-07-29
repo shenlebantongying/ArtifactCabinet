@@ -1,0 +1,3 @@
+(executables
+ (names hamming_distance)
+ (libraries base))

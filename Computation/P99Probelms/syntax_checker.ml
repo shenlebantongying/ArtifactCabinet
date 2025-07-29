@@ -1,6 +1,8 @@
 (* A simple impl of syntax checker *)
 
-(* 
+(*
+https://sites.google.com/site/prologsite/prolog-problems/7
+ 
 example of valid identifier:
 a
 a-b

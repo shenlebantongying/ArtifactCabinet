@@ -3,6 +3,7 @@
 .*.kak.*
 *.kate-swp
 build/
+_build/
 *.sublime-project
 *.sublime-workspace
 cmake-build*/

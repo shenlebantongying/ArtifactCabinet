@@ -37,5 +37,9 @@ https://open.kattis.com/
 SPOJ (not updated for older languages)
 HackerRank
 
+## Random
 
++ [Rosetta Code](http://www.rosettacode.org/wiki/Rosetta_Code)
++ [pytudes](https://github.com/norvig/pytudes)
++ <https://matt.might.net/articles/best-programming-languages/>
 
