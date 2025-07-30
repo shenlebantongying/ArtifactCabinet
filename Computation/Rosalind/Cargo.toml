@@ -1,0 +1,29 @@
+[package]
+name = "Rosalind"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "DNA"
+path = "DNA.rs"
+
+[[bin]]
+name = "RNA"
+path = "RNA.rs"
+
+[[bin]]
+name = "REVC"
+path = "REVC.rs"
+
+[[bin]]
+name = "HAMM"
+path = "HAMM.rs"
+
+[[bin]]
+name = "IPRB"
+path = "IPRB.rs"
+
+
+[[bin]]
+name = "FIB"
+path = "FIB.rs"
