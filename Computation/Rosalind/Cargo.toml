@@ -27,3 +27,11 @@ path = "IPRB.rs"
 [[bin]]
 name = "FIB"
 path = "FIB.rs"
+
+[[bin]]
+name = "GC"
+path = "GC.rs"
+
+[[bin]]
+name = "PROT"
+path = "PROT.rs"

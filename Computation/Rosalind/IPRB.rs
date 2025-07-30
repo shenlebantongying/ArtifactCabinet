@@ -13,8 +13,8 @@ fn main() {
     println!(
         "{:.5}",
         k / s // 1st -> k
-        + 0.5 * m/ s // 1st -> m-dom
-        + 0.5*m/ s * ( k/(s -1.0) + 0.5*(m-1.0)/(s -1.0)) // 1st -> m-rec, 2st k or m-dom
-        + n/ s * (k/(s -1.0) + 0.5*m/(s -1.0)) // 1st -> n, 2st k or m-dom
+        + 0.5 * m/s // 1st -> m-dom
+        + 0.5 * m/s * (k/(s-1.0) + 0.5 * (m-1.0)/(s-1.0)) // 1st -> m-rec, 2st k or m-dom
+        + n/s * (k/(s-1.0) + 0.5 * m/(s-1.0)) // 1st -> n, 2st k or m-dom
     );
 }

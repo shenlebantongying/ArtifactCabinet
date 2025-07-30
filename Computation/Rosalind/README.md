@@ -1,6 +1,7 @@
 # Bioinformatics, Rosalind Franklin
 
-<https://rosalind.info/problems/tree-view/>
++ <https://rosalind.info/problems/tree-view/>
++ <https://rosalind.info/users/shenlebantongying/>
 
 # Backgrounds
 
@@ -21,3 +22,5 @@ F(N) = F(N-1) + k * F(N-2)
 $$
 
 TODO: solve this visually
+
+## PROT, Genetic code, Codon
