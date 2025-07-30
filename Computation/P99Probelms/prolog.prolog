@@ -25,7 +25,7 @@ test(kth) :- element_at(X,[1,2,3,4,5],2) -> X==3.
 
 
 % reverse
-mrev(X,L) :- 
+mrev(X,L) :-
     mrev_helper(X,L,[]).
 
 mrev_helper(X,[],X) :- !.
@@ -40,4 +40,3 @@ test(rev) :- mrev(X,[1,2,3,4]) -> X==[4,3,2,1].
 main() :-
     run_tests,
     halt.
-

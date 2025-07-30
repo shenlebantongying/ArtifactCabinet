@@ -1,8 +1,8 @@
 
 (* 00 Example of inline test *)
-let rec fact n = 
-  if n = 1 
-    then 1 
+let rec fact n =
+  if n = 1
+    then 1
     else n * fact (n - 1)
 
 let%test _ = fact 3 = 6
@@ -31,7 +31,7 @@ let len list =
         | [] -> n
         | _::t -> aux (n+1) t
 in aux 0 list;;
-    
+
 let%test _ = len ["a";"b";"c"] =  3
 
 let rev list =
@@ -48,12 +48,12 @@ let rec compress = function
     | a :: ( (b :: _) as t) -> if a == b then compress t else a::compress t
     | x -> x;;
 
-let%test _ = compress ["a";"a";"a";"b";"c";"c"] = ["a";"b";"c"] 
+let%test _ = compress ["a";"a";"a";"b";"c";"c"] = ["a";"b";"c"]
 
 (* TODO: 09 pack list into sublists *)
 
 
-let pack list = 
+let pack list =
     let rec aux cur acc = function
         | [] -> []
         | [x] -> (x::cur) :: acc
@@ -69,22 +69,22 @@ let%test _ = pack [1;1;2;2;2;3;] = [[1;1];[2;2;2];[3]]
 
 (* Using the same principle on "Run-length encoding"*)
 
-let encode list = 
+let encode list =
     let rec aux count acc = function
         | []  -> []
         | [x] -> (count+1,x) :: acc
         | a::( b::_ as t) ->
             if a = b then aux (count + 1) acc t
-            else aux 0 ((count+1,a)::acc) t in 
+            else aux 0 ((count+1,a)::acc) t in
     List.rev (aux 0 [] list);;
 
-let%test _ = 
-    encode ["a"; "a"; "a"; "a"; "b"; "c"; "c"; "a"; "a"; "d"; "e"; "e"; "e"; "e"] 
+let%test _ =
+    encode ["a"; "a"; "a"; "a"; "b"; "c"; "c"; "a"; "a"; "d"; "e"; "e"; "e"; "e"]
     =[(4, "a"); (1, "b"); (2, "c"); (2, "a"); (1, "d"); (4, "e")]
 
 let encode_alt lst =
     List.map (fun l -> (List.length l, List.hd l)) (pack lst);;
 
-let%test _ = 
-    encode_alt ["a"; "a"; "a"; "a"; "b"; "c"; "c"; "a"; "a"; "d"; "e"; "e"; "e"; "e"] 
+let%test _ =
+    encode_alt ["a"; "a"; "a"; "a"; "b"; "c"; "c"; "a"; "a"; "d"; "e"; "e"; "e"; "e"]
     =[(4, "a"); (1, "b"); (2, "c"); (2, "a"); (1, "d"); (4, "e")]

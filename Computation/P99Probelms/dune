@@ -1,8 +1,2 @@
 (executables
-  (names logic syntax_checker))
-
-(library
-  (name p1to10)
-  (inline_tests)
-  (preprocess (pps ppx_inline_test)))
-
+ (names ocaml_syntax_checker))

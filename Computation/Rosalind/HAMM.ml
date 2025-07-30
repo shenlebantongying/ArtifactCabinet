@@ -1,7 +1,3 @@
-(* http://rosalind.info/problems/hamm/ *)
-
-open Base
-
 type nucleotide =
   | A
   | C
@@ -16,16 +12,13 @@ let dna_of_string s =
     | 'T' -> T
     | _ -> failwith "Big news! New nucleotide discovered"
   in
-  String.to_list s |> List.map ~f
+  String.to_seq s |> List.of_seq |> List.map f
 ;;
 
-let hamming_distance (a : nucleotide list) (b : nucleotide list)
-  : (int, Base.string) Result.t
-  =
+let hamming_distance (a : nucleotide list) (b : nucleotide list) : (int, string) Result.t =
   let rec accu (a : nucleotide list) (b : nucleotide list) (n : int) : int =
     match a, b with
-    | ah :: at, bh :: bt ->
-      if not (phys_equal ah bh) then accu at bt (n + 1) else accu at bt n
+    | ah :: at, bh :: bt -> if not (ah == bh) then accu at bt (n + 1) else accu at bt n
     | _, _ -> n
   in
   match List.is_empty a, List.is_empty b with
@@ -39,4 +32,8 @@ let hamming_distance (a : nucleotide list) (b : nucleotide list)
 
 let hamdist a b = hamming_distance (dna_of_string a) (dna_of_string b);;
 
-hamdist "GAGCCTACTAACGGGAT" "CATCGTAATGACGGCCT"
+let lines = In_channel.with_open_text "./data/rosalind_hamm.txt" In_channel.input_lines in
+let l1 = List.nth lines 0 in
+let l2 = List.nth lines 1 in
+print_int (Result.get_ok (hamdist l1 l2));
+print_endline

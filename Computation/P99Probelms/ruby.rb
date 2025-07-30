@@ -31,7 +31,7 @@ element_at([1,2,3,4],2)
 
 def flatten1(a)
   return [a] unless a.is_a? Array
-  a.inject([]) do |acc, element| 
+  a.inject([]) do |acc, element|
     acc + flatten1(element)
   end
 end
