@@ -1,2 +1,2 @@
 (executables
- (names HAMM))
+ (names DNA HAMM))

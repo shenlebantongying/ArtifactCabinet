@@ -22,3 +22,6 @@ README.pdf
 *.synctex.gz
 *.toc
 .Rproj.user
+.scala-build/
+.bsp/
+.metals/

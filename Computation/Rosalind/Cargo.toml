@@ -35,3 +35,7 @@ path = "GC.rs"
 [[bin]]
 name = "PROT"
 path = "PROT.rs"
+
+[[bin]]
+name = "SUBS"
+path = "SUBS.rs"
