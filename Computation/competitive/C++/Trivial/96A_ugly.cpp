@@ -47,4 +47,3 @@ int main ()
     cout<<"NO"<<endl;
     exit(0);
 }
-

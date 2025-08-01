@@ -32,5 +32,3 @@ contains
     res = r + 2
   end function m2
 end program Hello
-
-

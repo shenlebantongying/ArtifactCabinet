@@ -14,4 +14,3 @@ yvs = [ x for x in xs, y in ys ]
 arrows!(xs, ys, xvs, yvs, arrowsize = 10, lengthscale = 0.3)
 
 save("0curl.pdf",f)
-

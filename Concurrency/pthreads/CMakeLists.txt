@@ -11,4 +11,3 @@ foreach (SRC ${SOURCES})
     cmake_path(GET SRC_PATH STEM SRC_STEM)
     add_executable(${SRC_STEM} ${SRC_PATH})
 endforeach ()
-

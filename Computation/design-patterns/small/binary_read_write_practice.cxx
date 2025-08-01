@@ -31,7 +31,7 @@ int main(){
 Canonical hex+ASCII display.  Display the input offset in hexadecimal, followed by  sixteen  space-separated,
 two-column, hexadecimal bytes, followed by the same sixteen bytes in %_p format enclosed in '|' characters.
 
-hexdump -C ./temp.dat 
+hexdump -C ./temp.dat
 00000000  1e 00 00 00 74 6f 6d 00  00 00 00 00 00 00 00 00  |....tom.........|
 00000010
 

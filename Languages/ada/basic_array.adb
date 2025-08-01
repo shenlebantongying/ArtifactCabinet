@@ -6,7 +6,7 @@ procedure basis_array is
     --                     ^ lower bound can be greater than 3 ?
     type My_Array is array (My_Index) of My_Int;
     SLB_Array : My_Array := (1,2,3);
-begin 
+begin
     for I in My_Index loop
         Ada.Text_IO.Put (My_Int'Image (SLB_Array(I)));
     end loop;

@@ -2,7 +2,7 @@ You should consider ban those things, as they are not open source.
 
 Qt is simply better.
 
-# Objective C 
+# Objective C
 
 ## Resources
 
@@ -15,7 +15,7 @@ Qt is simply better.
 
 
 
-### Topics 
+### Topics
 + [Introduction to String Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/introStrings.html)
 
 ### links
@@ -43,4 +43,3 @@ https://developer.apple.com/documentation/swiftui
 
 Swift Programming for macOS
 https://gavinw.me/swift-macos/
-

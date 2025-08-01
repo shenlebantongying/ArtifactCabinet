@@ -30,7 +30,7 @@ Lisp mega list: https://www.cs.cmu.edu/Groups/AI/html/faqs/lang/lisp/part1/faq-d
 
 # Technical Notes
 
-Each Lisp implementations have their very own "extensions". Portability can be achieved by avoid using them, but it may be exhausting. 
+Each Lisp implementations have their very own "extensions". Portability can be achieved by avoid using them, but it may be exhausting.
 
 Let's mainly use `SBCL` and possibly another actively developing one.
 

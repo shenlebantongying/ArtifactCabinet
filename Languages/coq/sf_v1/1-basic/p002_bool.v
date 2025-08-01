@@ -3,7 +3,7 @@ Inductive slb_bool : Type :=
   | false.
 
 Definition slb_negb (b:slb_bool) : slb_bool :=
-  match b with 
+  match b with
   | true => false
   | false => true
   end.

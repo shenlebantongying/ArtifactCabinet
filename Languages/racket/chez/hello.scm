@@ -80,7 +80,3 @@
           (* (car s) (recur (cdr s)))))))
 
 (list-product '(2 3 4)) ;; => 24
-
-
-
-

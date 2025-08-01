@@ -59,11 +59,11 @@ let treeSize t = foldtree 0 (fun _ l r -> 1 + l + r) t;;
 let treeSum  t = foldtree 0 (fun x l r -> x +l + r) t;;
 
 (* Less abstraction ? *)
-let rec treeSize_alt = 
+let rec treeSize_alt =
   function
     | Leaf -> 0
     | Node (_,l,r) -> 1 + treeSize_alt l + treeSize_alt r;;
-let rec treeSum_alt = 
+let rec treeSum_alt =
   function
     | Leaf -> 0
     | Node (v,l,r) -> v + treeSum_alt l + treeSum_alt r;;

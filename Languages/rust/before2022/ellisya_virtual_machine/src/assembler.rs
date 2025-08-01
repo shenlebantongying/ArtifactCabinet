@@ -9,15 +9,15 @@ fn main() -> std::io::Result<()> {
     let  add:u8 = 03;
 
     let mut mdr1:u8; //memory address 1
-    let mut mdr2:u8; 
-    let mut mdr3:u8; 
+    let mut mdr2:u8;
+    let mut mdr3:u8;
 
     let mut data:u32=00000000;
 
     {
         let mut file = File::create("foo.hex")?;
         file.write(&[load])?;
-        
+
     }
 
     {

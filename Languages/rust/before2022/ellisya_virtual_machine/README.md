@@ -24,7 +24,7 @@ Hex | Word  | Usage       | Description
 0x00| halt  | halt |  |
 0x01| load  | load $1 0x12AF | load `Data` to $1
 0x02| inc   | inc  $1      | increase value on $1 by 1
-0x03| add   | add  $3 $1 $2| add $1 and $2 then store it to $3 
+0x03| add   | add  $3 $1 $2| add $1 and $2 then store it to $3
 0x04| print | print $1     | print the content of $1 to stdout
 0x05| strPrint | print $1  | convert number at $ to ansi code and print
 0xxx| TODO  | to be expanded |

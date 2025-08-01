@@ -1,5 +1,5 @@
 (library (minidraw)
-  (export 
+  (export
    version
    initDrawBoard
    setColor
@@ -9,7 +9,7 @@
    savePng
    )
   (import (chezscheme) (ffi))
-  
+
   ;; TODO: exactly where the library will be loaded?? Boundary between different libs??
   (define this_name_does_not_matter
     (load-dynamic-lib "../minidraw/libminidraw"))

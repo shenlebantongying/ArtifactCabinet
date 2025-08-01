@@ -30,5 +30,5 @@ let tom = create "tom" "cool!"
 
 john.print
 tom.print
-        
+
 0 // return an integer exit code

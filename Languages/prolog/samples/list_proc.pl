@@ -16,9 +16,9 @@ true .
 */
 
 /*
-	[a, b, c] = [Head | Tail].	 % a = Head, [b, c] = Tail. 
-	[a, b] = [A, B | T].	     % a = A, b = B, [] = Tail. 
-	[a, B | C] = [X | Y].	     % a = X, [B | C] = Y. 
+	[a, b, c] = [Head | Tail].	 % a = Head, [b, c] = Tail.
+	[a, b] = [A, B | T].	     % a = A, b = B, [] = Tail.
+	[a, B | C] = [X | Y].	     % a = X, [B | C] = Y.
 */
 
 

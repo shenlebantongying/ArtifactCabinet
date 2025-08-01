@@ -46,4 +46,3 @@
 ;; 'cons will be renamed to the same sym
 ;; (expand '(a3))
 ;; (cons820956 cons820956 #t)
-

@@ -13,7 +13,7 @@ aMap = Map.fromList [("1","2"),("2","3"),("3","4")]
 
 lookup3 :: Ord k => k -> Map.Map k k -> Maybe k
 lookup3 k1 m = (helper . helper . helper) (Just k1)
-    where helper Nothing = Nothing 
+    where helper Nothing = Nothing
           helper (Just k) = Map.lookup k m
 -- TODO -> how to implement this recrusively?
 

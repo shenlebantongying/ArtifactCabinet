@@ -7,4 +7,3 @@ set(CMAKE_CXX_STANDARD 20)
 
 # add the executable
 add_executable(playground simple_vector_vector_int.cpp)
-

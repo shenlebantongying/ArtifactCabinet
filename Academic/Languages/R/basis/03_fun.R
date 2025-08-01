@@ -1,4 +1,4 @@
-# (...) -> execute and print 
+# (...) -> execute and print
 (d0<-matrix(c(1,2,3,4,5,6),nrow=2))
 (d1<-d0[,c(2,3)])
 (d2<-t(d1))

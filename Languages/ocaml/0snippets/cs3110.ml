@@ -3,7 +3,7 @@ https://cs3110.github.io/textbook/cover.html
 *)
 (* All parts are supposed to run in interactive way *)
 
-
+
 
 (* reverse a string *)
 
@@ -57,7 +57,7 @@ h 4 8 13
 *)
 
 
-
+
 (* 3. Data and Types *)
 (* simple construction *)
 
@@ -83,7 +83,5 @@ let rec concate = function
 concate ["nice ";"ok";" sure"];;
 
 
-
-(* 4. Correctness and efficiency *)
 
-
+(* 4. Correctness and efficiency *)

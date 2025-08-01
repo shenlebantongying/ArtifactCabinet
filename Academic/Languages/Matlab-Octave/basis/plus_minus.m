@@ -4,4 +4,3 @@ function [ret1,ret2] = plus_minus(in1,in2)
     ret1 = in1+in2;
     ret2 = in1-in2;
 end
-

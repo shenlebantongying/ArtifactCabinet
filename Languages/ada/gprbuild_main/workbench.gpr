@@ -7,4 +7,3 @@ project Workbench is
                  "main.adb");
 
 end Workbench;
-

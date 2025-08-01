@@ -18,7 +18,3 @@ fib3[10]
 (*LinearRecurrence*)
 (* y[n+2]=6y[n+1]-y[n], y[0]=1,y,[1]=3*)
 LinearRecurrence[{6,-1},{1,3},10]
-
-
-
-

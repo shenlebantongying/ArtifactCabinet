@@ -51,7 +51,7 @@
 (mycircular! (list 1 2 3))
 ;; => #1=(1 2 3 . #1#)
 
-(fifth (mycircular! (list 1 2 3))) 
+(fifth (mycircular! (list 1 2 3)))
 ;; in SBCL => 2 (2 bits, #x2, #o2, #b10)
 
 ;; Simple currying in Lisp
@@ -81,7 +81,7 @@
 ;; SINGLE-FLOAT names a primitive type-specifier:
 ;; Lambda-list: (&OPTIONAL (SB-KERNEL::LOW '*) (SB-KERNEL::HIGH '*))
 
-  
+
 ;; define are global somehow
 
 (defstruct name
@@ -104,4 +104,3 @@
 (reduce #'* '(1 2 3 4 5 6)) ;; => 720
 
 ;; TODO: paip-lisp assignments.
-

@@ -9,5 +9,3 @@ TODO: Load any shader
 ```sh
 fd -e cpp -X clang-format -i
 ```
-
-

@@ -9,4 +9,3 @@ function fun.LaTeX()
 end
 
 return fun
-

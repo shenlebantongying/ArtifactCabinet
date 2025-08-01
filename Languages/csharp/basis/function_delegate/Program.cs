@@ -7,12 +7,12 @@ namespace function_delegate
   class Program
   {
     public  delegate  int IntFn(int x);
-  
+
     public static int apply(int x, IntFn f)
     {
       return f(x);
     }
-    
+
     // Function that meet the IntFn requirement,
     // TODO: check how to explicitly state delegate
 

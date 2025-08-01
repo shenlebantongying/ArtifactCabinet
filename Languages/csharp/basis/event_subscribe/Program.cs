@@ -3,7 +3,7 @@ using System.Net.Http;
 
 namespace event_subscribe
 {
-  
+
   public class CustomEventArgs : EventArgs
   {
     public string Message { get; set; }
@@ -23,7 +23,7 @@ namespace event_subscribe
       _id = id;
       pub.RaiseCustomEvent += HandleCustomEvent;
     }
-    
+
     public void  HandleCustomEvent(object sender, CustomEventArgs a)
     {
       Console.WriteLine($"{_id}->{a.Message}");
@@ -44,15 +44,15 @@ namespace event_subscribe
         raiseEvent(this, e);
       }
     }
-    
+
     public void DoSomething()
     {
-      OnRaiseCustomEvent(new CustomEventArgs("Event Triggered")); 
+      OnRaiseCustomEvent(new CustomEventArgs("Event Triggered"));
     }
-    
+
   }
 
-  class Program 
+  class Program
   {
     static void Main(string[] args)
     {
@@ -60,14 +60,14 @@ namespace event_subscribe
       var pub = new Publisher();
       var sub1 = new Subscriber("sub1", pub);
       var sub2 = new Subscriber("sub2", pub);
-      
+
       pub.DoSomething();
       pub.DoSomething();
       pub.DoSomething();
       pub.DoSomething();
       pub.DoSomething();
       pub.DoSomething();
-      
+
       Console.ReadLine();
 
     }

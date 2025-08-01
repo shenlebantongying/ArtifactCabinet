@@ -1,6 +1,6 @@
 class event =
 object
-    method execute = (); 
+    method execute = ();
 end
 
 class frenchEvent =

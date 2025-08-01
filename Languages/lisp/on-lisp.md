@@ -11149,16 +11149,16 @@ of macro expansion desired with the optional rule keyword parameter,
 which specifies the evaluation rule to be used for the arguments in the
 macro call. If this parameter is:
 
-`:all`  
+`:all`
 (the default) the macroexpansion will be on the model of alist. All the
 arguments in the macro call will be evaluated, with it always bound to
 the value of the previous argument.
 
-`:first`  
+`:first`
 the macroexpansion will be on the model of aif. Only the first argument
 will necessarily be evaluated, and it will be bound to its value.
 
-`:place`  
+`:place`
 the macroexpansion will be on the model of asetf. The first argument
 will be treated as a generalized variable, and it will be bound to its
 initial value.
@@ -13500,7 +13500,7 @@ This example creates a function which is a closure containing a
 reference to g, which is itself a closure containing a reference to f.
 Similar chains of closures were built by the network compiler on page
 
-1.  
+1.
 2.  The parameter list of a function defined with =defun must consist
     solely of parameter names.
 3.  Functions which make use of continuations, or call other functions
@@ -13832,14 +13832,14 @@ processes. Figure 21.1 contains code for the basic data structures, the
 default process, initialization, and instantiation of processes.
 Processes, or procs, have the following structure:
 
-`pri`  
+`pri`
 is the priority of the process, which should be a positive number.
 
-==  
+==
 state is a continuation representing the state of a suspended process. A
 process is restarted by funcalling its state.
 
-`wait`  
+`wait`
 is usually a function which must return true in order for the process to
 be restarted, but initially the wait of a newly created process is nil.
 A process with a null wait can always be restarted.
@@ -19140,30 +19140,30 @@ CLTL2, Chapter 11.
 This section is also intended as a bibliography. All the books and
 papers listed here should be considered recommended reading.
 
-**v**  
+**v**
 Foderaro, John K. Introduction to the Special Lisp Section. CACM 34, 9
 (September 1991), p. 27.
 
-**viii**  
+**viii**
 The final Prolog implementation is 94 lines of code. It uses 90 lines of
 utilities from previous chapters. The ATN compiler adds 33 lines, for a
 total of 217. Since Lisp has no formal notion of a line, there is a
 large margin for error when measuring the length of a Lisp program in
 lines.
 
-**ix**  
+**ix**
 Steele, Guy L., Jr. Common Lisp: the Language, 2nd Edition. Digital
 Press, Bedford (MA), 1990.
 
-**5**  
+**5**
 Brooks, Frederick P. The Mythical Man-Month. Addison-Wesley, Reading
 (MA), 1975, p. 16.
 
-**18**  
+**18**
 Abelson, Harold, and Gerald Jay Sussman, with Julie Sussman. Structure
 and Interpretation of Computer Programs. MIT Press,
 
-**21**  
+**21**
 More precisely, we cannot define a recursive function with a single
 lambda-expression. We can, however, generate a recursive function by
 writing a function to take itself as an additional argument,
@@ -19204,7 +19204,7 @@ which could have been expressed directly as:
 
 Many Common Lisp users will find labels or alambda more convenient.
 
-**23**  
+**23**
 Gabriel, Richard P. Performance and Standardization. Proceedings of the
 First International Workshop on Lisp Evolution and Standardization,
 1988, p. 60.
@@ -19215,7 +19215,7 @@ information, the Lisp code is 17% faster than an iterative C version of
 this function." His paper mentions several other programs which ran
 faster in Lisp than in C, including one that was 42% faster.
 
-**24**  
+**24**
 If you wanted to compile all the named functions currently loaded, you
 could do it by calling compall:
 
@@ -19230,13 +19230,13 @@ could do it by calling compall:
 
 This function also prints the name of each function as it is compiled.
 
-**26**  
+**26**
 You may be able to see whether inline declarations are being obeyed by
 calling (disassemble 'foo), which displays some representation of the
 object code of function foo. This is also one way to check whether
 tail-recursion optimization is being done.
 
-**31**  
+**31**
 One could imagine nreverse defined as:
 
 ``` example
@@ -19254,7 +19254,7 @@ One could imagine nreverse defined as:
       (setf (cdr c) lst))))
 ```
 
-**43**  
+**43**
 Good design always puts a premium on economy, but there is an additional
 reason that programs should be dense. When a program is dense, you can
 see more of it at once.
@@ -19281,13 +19281,13 @@ Imagine how hard it would be to program if you had to look at your code
 on a display half the size of the one you're used to. Making your code
 twice as dense will make programming that much easier.
 
-**44**  
+**44**
 Steele, Guy L., Jr. Debunking the "Expensive Procedure Call" Myth or,
 Procedural Call Implementations Considered Harmful or, LAMBDA: The
 Ultimate GOTO. Proceedings of the National Conference of the ACM,
 1977, p. 157.
 
-**48**  
+**48**
 For reference, here are simpler definitions of some of the functions in
 Figures 4.2 and 4.3. All are substantially (at least 10%) slower:
 
@@ -19324,7 +19324,7 @@ Figures 4.2 and 4.3. All are substantially (at least 10%) slower:
                tree))))
 ```
 
-**49**  
+**49**
 Written as it is, find2 will generate an error if it runs off the end of
 a dotted list:
 
@@ -19357,7 +19357,7 @@ Those which operate on sequences will accept dotted lists. However, in
 general it would be asking for trouble to pass dotted lists to any
 function that wasn't specifically intended for use on them.
 
-**66**  
+**66**
 If we could tell how many parameters each function had, we could write a
 version of compose so that, in f \#g, multiple values returned by g
 would become the corresponding arguments to f. In CLTL2, the new
@@ -19367,7 +19367,7 @@ option of returning nil, and usually does so for built-in functions.
 What we really need is a function that would take a function as an
 argument and return its parameter list.
 
-**73**  
+**73**
 A version of rfind-if which searches for whole subtrees could be defined
 as follows:
 
@@ -19391,14 +19391,14 @@ both atoms and lists:
 (B C D E)
 ```
 
-**95**  
+**95**
 McCarthy, John, Paul W. Abrahams, Daniel J. Edwards, Timothy
 
 1.  Hart, and Michael I. Levin. Lisp 1.5 Programmer's Manual, 2nd
 
 Edition. MIT Press, Cambridge, 1965, pp. 70-71.
 
-**106**  
+**106**
 When Section 8.1 says that a certain kind of operator can only be
 written as a macro, it means, can only be written by the user as a
 macro. Special forms can do everything macros can, but there is no way
@@ -19435,7 +19435,7 @@ function before evaluating the arguments, whereas in Common Lisp the
 order of these two operations is deliberately unspecified. For a sketch
 of eval in Scheme, see Abelson and Sussman, p. 299.
 
-**115**  
+**115**
 It's reasonable to say that a utility function is justified when it pays
 for itself in brevity. Utilities written as macros may have to meet a
 stricter standard. Reading macro calls can be more difficult than
@@ -19453,7 +19453,7 @@ is without reading the macro's definition. So a macro, depending on how
 clear it is, may have to save much more than its own length in order to
 justify its existence.
 
-**126**  
+**126**
 The definition of for given in Figure 9.2, like several others defined
 in this book, is correct on the assumption that the initforms in a do
 expression will be evaluated left-to-right. CLTL2 (p. 165) says that
@@ -19466,7 +19466,7 @@ there is no reason that the order of evaluation of the initforms of a do
 should be unspecified, since the evaluation of a let is left-to-right,
 and so is the evaluation of the stepforms in do itself.
 
-**128**  
+**128**
 Common Lisp's gentemp is like gensym except that it interns the symbol
 it creates. Like gensym, gentemp maintains an internal counter which it
 uses to make print names. If the symbol it wants to create already
@@ -19491,7 +19491,7 @@ gentemp? Indeed, for macros the only advantage of gentemp is that the
 symbols it makes can be written out and read back in, and in such cases
 they are certainly not guaranteed to be unique.
 
-**131**  
+**131**
 The capture of function names would be a more serious problem in Scheme,
 due to its single name-space. Not until 1991 did the Scheme standard
 suggest any official way of defining macros. Scheme's current provision
@@ -19499,11 +19499,11 @@ for hygienic macros differs greatly from defmacro. For details, and a
 bibliography of recent research on the subject, see the most recent
 Scheme report.
 
-**137**  
+**137**
 Miller, Molly M., and Eric Benson. Lisp Style and Design. Digital Press,
 Bedford (MA), 1990, p. 86.
 
-**158**  
+**158**
 Instead of writing mvpsetq, it would be cleaner to define an inversion
 for values. Then instead of
 
@@ -19523,7 +19523,7 @@ impossible to define such an inversion; get-setf-method won't return
 more than one store variable, and presumably the expansion function of
 psetf wouldn't know what to do with them if it did.
 
-**180**  
+**180**
 One of the lessons of setf is that certain classes of macros can hide
 truly enormous amounts of computation and yet leave the source code
 perfectly comprehensible. Eventually setf may be just one of a class of
@@ -19536,15 +19536,15 @@ references, this macro would have to be told how to make expressions
 true. In the general case, such a macro call might amount to a call to
 Prolog.
 
-**198**  
+**198**
 Gelernter, David H., and Suresh Jagannathan. Programming Linguistics.
 MIT Press, Cambridge, 1990, p. 305.
 
-**199**  
+**199**
 Norvig, Peter. Paradigms of Artificial Intelligence Programming: Case
 Studies in Common Lisp. Morgan Kaufmann, San Mateo (CA), 1992, p. 856.
 
-**213**  
+**213**
 The constant least-negative-normalized-double-float and its three
 cousins have the longest names in Common Lisp, with 38 characters each.
 The operator with the longest name is get-setf-method-multiple-value,
@@ -19563,7 +19563,7 @@ all the symbols visible in the current package:
            (length (symbol-name y))))))
 ```
 
-**217**  
+**217**
 As of CLTL2, the expansion function of a macro is supposed to be defined
 in the environment where the defmacro expression appears. This should
 make it possible to give propmacro the cleaner definition:
@@ -19600,7 +19600,7 @@ In CLTL1, the expansion function of a macro was considered to be defined
 in the null lexical environment. So for maximum portability, macro
 definitions should avoid using the enclosing environment anyway.
 
-**238**  
+**238**
 Functions like match are sometimes described as doing unification. They
 don't, quite; match will successfully match (f ?x) and ?x, but those two
 expressions should not unify.
@@ -19609,7 +19609,7 @@ For a description of unification, see: Nilsson, Nils J. Problem-Solving
 Methods in Artificial Intelligence. McGraw-Hill, New York, 1971, pp.
 175-178.
 
-**244**  
+**244**
 It's not really necessary to set unbound variables to gensyms, or to
 call gensym? at runtime. The expansion-generating code in Figures 18.7
 and 18.8 could be written to keep track of the variables for which
@@ -19618,7 +19618,7 @@ to be turned inside-out, however: instead of generating the expansion on
 the way back up the recursion, it would have to be accumulated on the
 way down.
 
-**244**  
+**244**
 A symbol like ?x occurring in the pattern of an if-match always denotes
 a new variable, just as a symbol in the car of a let binding clause
 does. So although Lisp variables can be used in patterns, pattern
@@ -19647,7 +19647,7 @@ of an if-match, you can get the desired effect by writing:
 The restriction, and the solution, apply to the with-answer and
 with-inference macros defined in Chapters 19 and 24 as well.
 
-**254**  
+**254**
 If it were a problem that "unbound" pattern variables were nil, you
 could have them bound to a distinct gensym by saying (defconstant
 unbound (gensym)) and then replacing the line
@@ -19662,7 +19662,7 @@ in with-answer with:
 `(,v (aif2 (binding ',v ,binds) it unbound))
 ```
 
-**258**  
+**258**
 Scheme was invented by Guy L. Steele Jr. and Gerald J. Sussman in 1975.
 The language is currently defined by: Clinger, William, and Jonathan A.
 Rees (Eds.). Revised 4 Report on the Algorithmic Language Scheme. 1991.
@@ -19670,7 +19670,7 @@ Rees (Eds.). Revised 4 Report on the Algorithmic Language Scheme. 1991.
 This report, and various implementations of Scheme, were at the time of
 printing available by anonymous FTP from altdorf.ai.mit.edu:pub.
 
-**266**  
+**266**
 As another example of the technique presented in Chapter 16, here is the
 derivation of the defmacro template within the definition of =defun:
 
@@ -19688,7 +19688,7 @@ derivation of the defmacro template within the definition of =defun:
    `(,',f *cont* ,,@parms))
 ```
 
-**267**  
+**267**
 If you wanted to see multiple return values in the toplevel, you could
 say instead:
 
@@ -19698,17 +19698,17 @@ say instead:
       (if (cdr args) args (car args))))
 ```
 
-**273**  
+**273**
 This example is based on one given in: Wand, Mitchell.
 Continuation-Based Program Transformation Strategies. JACM 27, 1
 (January 1980), pp. 166.
 
-**273**  
+**273**
 A program to transform Scheme code into continuation-passing style
 appears in: Steele, Guy L., Jr. LAMBDA: The Ultimate Declarative. MIT
 Artificial Intelligence Memo 379, November 1976, pp. 30-38.
 
-**292**  
+**292**
 These implementations of choose and fail would be clearer in T, a
 dialect of Scheme which has push and pop, and allows define in
 non-toplevel contexts:
@@ -19742,11 +19742,11 @@ Department, New Haven, 1988.
 The T manual, and T itself, were at the time of printing available by
 anonymous FTP from hing.lcs.mit.edu:pub/t3.1.
 
-**293**  
+**293**
 Floyd, Robert W. Nondeterministic Algorithms. JACM 14, 4 (October 1967),
 pp. 636-644.
 
-**298**  
+**298**
 The continuation-passing macros defined in Chapter 20 depend heavily on
 the optimization of tail calls. Without it they may not work for large
 problems. For example, at the time of printing, few computers have
@@ -19754,7 +19754,7 @@ enough memory to allow the Prolog defined in Chapter 24 to run the zebra
 benchmark without the optimization of tail calls. (Warning: some Lisps
 crash when they run out of stack space.)
 
-**303**  
+**303**
 It's also possible to define a depth-first correct choose that works by
 explicitly avoiding circular paths. Here is a definition in T:
 
@@ -19824,11 +19824,11 @@ Note also that this version is intended for use only in compiled code.
 In interpreted code, the macro call might be expanded repeatedly, each
 time generating a new gensymed tag.
 
-**305**  
+**305**
 Woods, William A. Transition Network Grammars for Natural Language
 Analysis. CACM 3, 10 (October 1970), pp. 591-606.
 
-**312**  
+**312**
 The original ATN system included operators for manipulating registers on
 the stack while in a sub-network. These could easily be added, but there
 is also a more general solution: to insert a lambda-expression to be
@@ -19848,7 +19848,7 @@ then following the arc (however deep) would set the the topmost instance
 of the register a (the one visible when traversing the topmost ATN) to
 1.
 
-**323**  
+**323**
 If necessary, it would be easy to modify the Prolog to take advantage of
 an existing database of facts. The solution would be to make prove
 (page 336) a nested choose:
@@ -19862,7 +19862,7 @@ an existing database of facts. The solution would be to make prove
               (=funcall r query binds))))
 ```
 
-**325**  
+**325**
 To test quickly whether there is any match for a query, you could use
 the following macro:
 
@@ -19873,12 +19873,12 @@ the following macro:
              (return t))))
 ```
 
-**344**  
+**344**
 The examples in this section are translated from ones given in:
 Sterling, Leon, and Ehud Shapiro. The Art of Prolog: Advanced
 Programming Techniques. MIT Press, Cambridge, 1986.
 
-**349**  
+**349**
 The lack of a distinct name for the concepts underlying Lisp may be a
 serious barrier to the language's acceptance. Somehow one can say "We
 need to use C++ because we want to do object-oriented programming," but
@@ -19899,7 +19899,7 @@ failure, because the power of Lisp arises from the combination of at
 least five or six features. Perhaps we should resign ourselves to the
 fact that the only accurate name for what Lisp offers is Lisp.
 
-**352**  
+**352**
 For efficiency, sort doesn't guarantee to preserve the order of sequence
 elements judged equal by the function given as the second argument. For
 example, a valid Common Lisp implementation could do this:
@@ -19942,7 +19942,7 @@ been freshly made.
 [^3]: Under dynamic scope the same idiom will work for a different
     reason–so long as neither of mapcar's parameter is called
 
-    1.  
+    1.
 
 [^4]: The declaration (optimize speed) ought to be an abbreviation for
     (optimize (speed 3)). However, one Common Lisp implementation does

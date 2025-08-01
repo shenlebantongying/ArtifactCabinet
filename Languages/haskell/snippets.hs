@@ -40,7 +40,7 @@ effiReverse lst =
 max' :: Ord a => [a] -> a
 max' [] = error "empty"
 max' [x] = x
-max' (x:xs) 
-    | x > maxTail = x 
+max' (x:xs)
+    | x > maxTail = x
     | otherwise = maxTail
     where maxTail = max' xs -- recursion happens here

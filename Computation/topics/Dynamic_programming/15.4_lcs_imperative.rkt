@@ -55,10 +55,10 @@
 
 ;'(A B   C   B D A B))
 ;'(  B D C A B   A))
-;    ^   ^   ^   ^ 
+;    ^   ^   ^   ^
 
 ;; However, there is another solution -> '(B D A B)
 
 ;'(A B C B D   A B))
 ;'(  B     D C A B A))
-;    ^     ^   ^ ^ 
+;    ^     ^   ^ ^

@@ -12,4 +12,3 @@
 + Le Robert <https://dictionnaire.lerobert.com/fr/>
 + Wikitionary <https://en.wiktionary.org/wiki/>
 + Wikitionnaire <https://fr.wiktionary.org/wiki/>
-

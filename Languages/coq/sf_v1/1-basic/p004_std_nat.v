@@ -23,10 +23,8 @@ Fixpoint slb_plus (n: nat) (m:nat) :nat :=
 Compute (slb_plus 2 3).
 (* = S (S (S (S (S O))))*)
 
-Notation "x λ+ y " := (slb_plus x y) 
+Notation "x λ+ y " := (slb_plus x y)
                         (at level 50, left associativity) : nat_scope.
 
 Example test_plus: 2 λ+ 3 = 5.
 Proof. simpl. reflexivity. Qed.
-
-

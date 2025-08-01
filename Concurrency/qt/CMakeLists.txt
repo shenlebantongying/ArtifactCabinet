@@ -14,4 +14,3 @@ foreach (F ${MFILES})
     add_executable("target_${F_STEM}" ${F})
     target_link_libraries("target_${F_STEM}" Qt::Core Qt6::Concurrent)
 endforeach ()
-

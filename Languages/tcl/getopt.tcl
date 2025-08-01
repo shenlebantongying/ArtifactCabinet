@@ -18,8 +18,8 @@ puts [array size params]
 parray params
 
 puts $params(s)
-if { $params(s) } { 
+if { $params(s) } {
     set sourcefile "true"
-} 
+}
 
 puts $sourcefile

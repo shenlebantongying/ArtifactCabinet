@@ -12,7 +12,7 @@ protected:
 int main() {
 
     auto b = S();
-    
+
 
     std::vector<std::shared_ptr<std::string>> a{};
     for (int i = 0; i < 5; ++i) {

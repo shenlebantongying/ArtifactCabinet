@@ -1,15 +1,15 @@
-move(1,Fom_pole,To_pole,_) :-  
-    write('Move top disk from '), 
-    write(Fom_pole), 
-    write(' to '), 
-    write(To_pole), 
-    nl. 
-move(Height,Fom_pole,To_pole,With_pole) :- 
-    Height>1, 
-    M is Height-1, 
-    move(M,Fom_pole,With_pole,To_pole), 
-    move(1,Fom_pole,To_pole,_), 
-    move(M,With_pole,To_pole,Fom_pole).  
+move(1,Fom_pole,To_pole,_) :-
+    write('Move top disk from '),
+    write(Fom_pole),
+    write(' to '),
+    write(To_pole),
+    nl.
+move(Height,Fom_pole,To_pole,With_pole) :-
+    Height>1,
+    M is Height-1,
+    move(M,Fom_pole,With_pole,To_pole),
+    move(1,Fom_pole,To_pole,_),
+    move(M,With_pole,To_pole,Fom_pole).
 
 /*
 Usage:
@@ -36,10 +36,10 @@ def move_tower(Height, from_pole, to_pole, with_pole):
         move_disk(from_pole, to_pole)
         move_tower(Height -1, with_pole, to_pole, from_pole)
         print("---")
-		
+
 def move_disk(fp,tp):
     print("moving disk from",fp,"to",tp)
-	
+
 move_tower(3, "A", "B", "C")
 
 Output:

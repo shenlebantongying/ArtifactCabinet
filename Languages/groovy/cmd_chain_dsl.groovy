@@ -10,4 +10,3 @@ def please(action){
 please show the sqr_root of 100
 
 please(show).the(sqr_root).of(100)
-

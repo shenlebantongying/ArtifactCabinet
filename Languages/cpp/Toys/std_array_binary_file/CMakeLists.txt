@@ -11,4 +11,3 @@ add_executable(array_binary_format_file main.cpp)
 target_link_libraries(array_binary_format_file
         Qt::Core
 )
-

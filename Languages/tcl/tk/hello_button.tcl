@@ -2,7 +2,7 @@
 
 proc hello {arg1} {
     puts "hello $arg1"
-} 
+}
 
 button .hello -text "hello" -command { hello "world!"}
 place .hello -x 10 -y 10

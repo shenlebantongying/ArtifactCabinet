@@ -6,7 +6,7 @@ pub fn main(){
     let mut matrix = [[0 as usize; NCOL]; NROW];
     //                      ^
     //                      | CRAP :)
-     
+
     for row in 0..NROW{
         for col in 0..NCOL{
             matrix[row][col]= (row+1)*(col+1);

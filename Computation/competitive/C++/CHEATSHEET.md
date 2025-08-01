@@ -2,7 +2,7 @@
 + https://codeforces.com/blog/entry/10124
 
 ```cpp
-// Codeforces require speed rather than safty or architecture 
+// Codeforces require speed rather than safty or architecture
 
 #define MIN(a,b) (a) < (b) ? (a) : (b)
 #define MAX(a,b) (a) > (b) ? (a) : (b)
@@ -11,8 +11,8 @@
 // Include EVERY std librarys of C and C++
 // https://github.com/gcc-mirror/gcc/blob/master/libstdc%2B%2B-v3/include/precompiled/stdc%2B%2B.h
 // Path under GCC tree libstdc++-v3/include/precompiled/stdc++.h
-#include <bits/stdc++.h> 
- 
+#include <bits/stdc++.h>
+
 using namespace std;
 
 //Speed up hack

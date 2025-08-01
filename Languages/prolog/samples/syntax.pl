@@ -18,9 +18,8 @@ father(X,Y) :-
 
 % X is taller than Y,
 % if H1 is the hight of X, H2 is the Height of Y,
-% and H1 is biggher than H2 
+% and H1 is biggher than H2
 taller_than(X,Y) :-
-    Height(X, H1), 
+    Height(X, H1),
     Height(Y, H2),
     H1 > H2.
-

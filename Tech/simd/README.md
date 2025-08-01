@@ -40,18 +40,18 @@ float32 -> Sign bit (1) + Exponent width (8 bits) + Significand precision (23 bi
 
 ### SIMD Types:
 
-|Data Types | Description | 
+|Data Types | Description |
 |---------- |:-----------:|
 | __m128    | 4 floats   |
-| __m128d   | 2 doubles   | 
+| __m128d   | 2 doubles   |
 | __m256    | 8 floats    |
-| __m256d   | 4 doubles    |    
+| __m256d   | 4 doubles    |
 |__m128i    | Any integers|
 |__m256i    | Any integers|
 
 `__m256i` -> 32 bytes -> 32 int8_t(char) -> 16 int16_t(short) -> 8 int32_t(int) -> 4 int64_t(long)
 
-`__m128` is defined in GCC as 
+`__m128` is defined in GCC as
 ```C
 typedef float __m128 __attribute__ ((__vector_size__ (16), __may_alias__));
 
@@ -61,7 +61,7 @@ int32_t -> max 2^(32)-1 = 2,147,483,647 min -2^(32-1) = - 2,147,483,648
 
 #### Different types of values in vectors
 
-+ `si128` – signed 128-bit integer  
++ `si128` – signed 128-bit integer
 + `epi8`, `epi32`, `epi64` — 16 signed 8-bit integers or 4 signed 32-bit integers or 2 64-bit integers
 + `epu8` — 16 unsigned 8-bit integers (when there is a difference between what an operation would do with signed and unsigned numbers, such as with conversion to a larger integer or multiplication)
 + `epu16`, `epu32` — 8 unsigned 16-bit integers or 4 unsigned 32-bit integers (when the operation would be different from signed)

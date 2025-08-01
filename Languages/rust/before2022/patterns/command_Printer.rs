@@ -9,7 +9,7 @@ pub trait Print {
     fn execute(&self) -> &str;
 }
 
-// Two commands PrintA & PrintB, 
+// Two commands PrintA & PrintB,
 // that share same Print trait
 
 pub struct PrintA;
@@ -62,7 +62,7 @@ fn main(){
     my_printer.add_printer(Box::new(PrintB));
     my_printer.add_printer(Box::new(PrintB));
 
-            
+
     for x in my_printer.execute(){
         println!("{} ",x);
     }

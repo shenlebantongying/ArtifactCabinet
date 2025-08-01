@@ -36,7 +36,7 @@ fun range(start:int,over:int) =
         count start
     end;
 (* both are valid *)
-range(5,10); 
+range(5,10);
 range((2,4));
 
 
@@ -54,7 +54,7 @@ fun g_max (xs:int list) =
         in  if isSome tl_ans andalso valOf tl_ans > hd xs
             then tl_ans
             else SOME(hd xs)
-    end; 
+    end;
 (* fn: int list -> int option *)
 
 g_max([3,4,1,2]);
@@ -79,7 +79,7 @@ fun unzip3 lst =
     case lst of
           [] => ([],[],[])
         | (a,b,c)::tl=> let val (l1,l2,l3) = unzip3 tl
-                        in  
+                        in
                             (a::l1,b::l2,c::l3)
                         end;
 
@@ -129,9 +129,8 @@ fun double_or_triple f =
     then fn x => 2*x
     else fn x => 3*x;
 (* fn : (int -> bool) -> int -> int *)
-(* Take a function that map an int to bool, 
+(* Take a function that map an int to bool,
 then it will return a function that double_or_triple a number *)
 
 double_or_triple (fn x => if x>5 then true else false) 3;
 (* => 6, as 9 < 5, it wil be doubled *
-

@@ -14,5 +14,5 @@ StreamPlot[{1,p[x,y]},{x,-10,10},{y,-10,10}]
 
 
 (* Example: two of the curves of the function `f` *)
-Show[{ContourPlot[x^2+y^2+4y==0,{x,-10,10},{y,-10,10}], 
+Show[{ContourPlot[x^2+y^2+4y==0,{x,-10,10},{y,-10,10}],
 	  ContourPlot[x^2+y^2+-4y==0,{x,-10,10},{y,-10,10}]}]

@@ -17,4 +17,3 @@ path = "src/async_io.rs"
 [[bin]]
 name = "arc_basis"
 path = "src/arc_basis.rs"
-

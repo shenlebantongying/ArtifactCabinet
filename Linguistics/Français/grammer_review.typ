@@ -113,7 +113,7 @@ Adjectif masc #is Adjectif fem #is +ment #is Adverbe
 
 Or just add +ment if masc already ends -e.
 
-- difficile, difficilement 
+- difficile, difficilement
 
 #S[Vous faites _rarement_ de l'exercice!][You rarely exercise.]
 
@@ -206,7 +206,7 @@ Similar to _Passé Composé_.
 === Subjonctif Présent
 
 #S[Il est dommage que les parents de Tex #Conj[soient] morts.][
-  It is sad that Tex's parents are dead.    
+  It is sad that Tex's parents are dead.
 ]
 
 === Subjonctif Passé
@@ -419,7 +419,7 @@ dont #is pronom relatif
 ]
 
 #S[Après son explication, j'ai compris ce qu'elle voulait dire.][
-  After her 
+  After her
 
 #S[Ça s'écrit avec deux Y][It's spelled with two letter Y]
 explanation, I understood what she meant.
@@ -439,3 +439,46 @@ explanation, I understood what she meant.
 
 #hr_
 
+== July 31
+
+- #S[Vous #Conj[pouvez] m'#Conj[aider]?][
+  Can you help me?
+]
+- #S[Je peux vous aider?][
+  Can I help you?
+]
+
+#S[Vous faites quoi dans la vie?][
+  What do you do for a living?
+]
+
+#hr_
+
+
+- #S[C'est toi qui...][
+  It was you who... (Somewhat fixed expression.)]
+- #S[C'est toi qui le dis!][That's what you say!]
+
+#S[Vous travaillez où?][
+  Where do you work?
+]
+
+#hr_
+
+#link("https://www.alloprof.qc.ca/fr/eleves/bv/francais/qu-elle-et-qu-elles-quel-quels-quelle-et-quelles-f1328")
+
+- quel/quels #is masc.
+- quels/quelles #is fem.
+
+
+#hr_
+
+*Verb + preposition(à/de/par/pour) + infinitive*
+
+- #Dict[parvenir]
+- #S[Elle est finalement *parvenue* à ouvrir la porte.][
+  She finally managed to open the door.
+]
+- #S[On est *parvenu* à régler l'affaire.][
+  We managed to setting/concluding the business.
+]

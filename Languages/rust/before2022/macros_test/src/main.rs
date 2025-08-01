@@ -17,7 +17,7 @@ meta_hello!(sophy);
 macro_rules! evaluation_and_result {
     ($expression:expr) => {
         println!("{:?} = {:?}",
-        stringify!($expression), 
+        stringify!($expression),
         $expression)
     };
 }

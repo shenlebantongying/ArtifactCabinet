@@ -6,7 +6,7 @@
          (f2 (x) (+ x x)))
     (f1 3))
 
-(let ((af (lambda (x) (+ x x)))) 
+(let ((af (lambda (x) (+ x x))))
     (funcall af 2))
 
 ;; reduce

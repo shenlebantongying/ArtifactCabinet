@@ -35,7 +35,7 @@ fn main() {
             // + n -> line number
             // + line -> line content
         }
-    }   
+    }
 }
 ```
 

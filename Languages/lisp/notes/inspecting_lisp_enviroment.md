@@ -1,4 +1,4 @@
-(list-all-packages) ; => sly inspector, 
+(list-all-packages) ; => sly inspector,
 
 asdf without quicklisp
 ```lisp

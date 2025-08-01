@@ -24,12 +24,12 @@ let main argv =
     let dog = animal("john", 13)
     printAnimalAge dog
     printfn "access a class %d" dog.age
-    
+
     // Two way to create a object, one is "type" another is more "class"
     let john = {First="john"; Last="nice"}
     let tom = create "tom" "cool!"
-    
+
     john.print
     tom.print
-            
+
     0 // return an integer exit code

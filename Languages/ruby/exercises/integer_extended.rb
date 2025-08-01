@@ -16,4 +16,3 @@ end
 16.square_root_times { puts '16' } # Ruby blocks
 0.square_root_times { puts '0' }
 3.square_root_times { puts '3' }
-

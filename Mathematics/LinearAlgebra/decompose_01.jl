@@ -13,7 +13,6 @@ U=[ 1  2  3;
 A=[ 1  2  3;
     2  6  7;
     2  2  4]
-    
+
 display(E*A==U)
 display(L*U==A)
-

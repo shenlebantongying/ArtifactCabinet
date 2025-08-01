@@ -15,7 +15,7 @@ print:
 
 	pop %rbx
 	pop %rax
-	
+
 	inc %rbx
 
 	dec %rax  # affecting ZF for jnz

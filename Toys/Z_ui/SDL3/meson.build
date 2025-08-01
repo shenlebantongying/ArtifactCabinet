@@ -21,4 +21,3 @@ inc = include_directories('.')
 z_dep = declare_dependency(link_with: lib, include_directories: inc)
 
 t1 = executable('t1', ['./tests/nest_layout.cpp'], dependencies: [deps, z_dep])
-

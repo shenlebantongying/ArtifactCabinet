@@ -15,7 +15,7 @@
 - listings -> include source code
 - biblatex
 
-Graphics -> TikZ/MetaPost/Asymptote. 
+Graphics -> TikZ/MetaPost/Asymptote.
 
 For ref, just define one for each document.
 
@@ -38,4 +38,3 @@ https://authors.acm.org/proceedings/production-information/accepted-latex-packag
 # Math
 
 mathpartir for induction rules
-

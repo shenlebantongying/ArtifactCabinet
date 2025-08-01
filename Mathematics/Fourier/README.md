@@ -7,4 +7,3 @@ Vladimir Dobrushkin
 ```sh
 wolframscript -f ./fig1.wl
 ```
-

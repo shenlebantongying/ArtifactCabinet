@@ -18,4 +18,3 @@
 # Windows/mingw64/MSYS2
 
 `pacman -S mingw-w64-x86_64-SDL2 mingw-w64-x86_64-SDL2_ttf`
-

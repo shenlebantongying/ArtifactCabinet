@@ -17,7 +17,7 @@ foreach w [winfo children .c] {grid configure $w -padx 5 -pady 5}
 focus .c.feet
 bind . <Return> {calculate}
 
-proc calculate {} {  
+proc calculate {} {
    if {[catch {
        set ::meters [expr {round($::feet*0.3048*10000.0)/10000.0}]
    }]!=0} {

@@ -21,4 +21,3 @@ main = do
 
 f :: [String] -> [Int]
 f = map read
-

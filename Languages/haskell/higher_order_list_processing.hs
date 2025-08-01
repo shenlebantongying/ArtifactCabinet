@@ -15,7 +15,7 @@ print $ foldr (-) 6 [3,2,1]
 
 :{
 add1 :: [Int] -> [Int]
-add1 lst = 
+add1 lst =
   if null lst
   then []
   else (head lst + 1) : (add1 (tail lst));
@@ -25,7 +25,7 @@ add1 [1,2,3]
 
 :{
 recMap :: (a -> b) -> [a] -> [b]
-recMap f lst = 
+recMap f lst =
   if null lst
   then []
   else (f (head lst)) : (recMap f (tail lst))
@@ -54,7 +54,7 @@ matchFilter(\x -> (x `rem` 2 == 0)) [1,2,3,4]
 --                ^ raw even
 
 {-
-Reducing is a special case of folding in which no initial accumulation element is supplied 
+Reducing is a special case of folding in which no initial accumulation element is supplied
 and the folding operation is an associative, commutative binary operator over a set.
 -}
 

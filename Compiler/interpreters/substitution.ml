@@ -70,4 +70,3 @@ let rec eval (e:expr):expr =
 
 
 (eval (Decl ("x", Int 10, (Decl("x", Int 5, Var "x")))));;
-

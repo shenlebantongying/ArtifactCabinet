@@ -48,4 +48,3 @@ int main ()
     graph[1].push_back(0);
     cout<<rec(-1,1,cat_q[1])<<endl;
 }
-

@@ -78,4 +78,3 @@
     (+ (first x) (sum (rest x)))))
 
 (sum [1 2 3])
-

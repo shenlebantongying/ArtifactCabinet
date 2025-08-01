@@ -30,4 +30,3 @@ rule3 = @rule chain1(~x) => chain2(~x)
 rule3(rule2(chain0("jerry")))
 
 ## Constrains
-

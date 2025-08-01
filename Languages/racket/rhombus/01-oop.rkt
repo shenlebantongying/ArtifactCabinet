@@ -5,13 +5,13 @@ interface Shape:
   method area()
   method double_area():
     area()*2
-  
+
 class Circle(r):
   implements:
     Shape
   override area():
     3.15*r**2
-      
+
 class Square(x,y):
   implements:
     Shape

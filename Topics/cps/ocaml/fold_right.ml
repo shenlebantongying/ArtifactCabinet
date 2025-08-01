@@ -10,7 +10,7 @@ fold_right (fun x y -> x + y) [1;2;3] 0;;
 (*
 
   fold_right op [x1;x2] init;;
-  
+
   * -> apply
 
   (fun x -> x) * (fun a -> (op x1 a)) * (fun a -> (op x2 a)) * init

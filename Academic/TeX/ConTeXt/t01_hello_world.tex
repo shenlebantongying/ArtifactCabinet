@@ -15,16 +15,16 @@
 \title{Ella}
 
 \startsection[title={Random Text}]
-  
+
   \define\Hello{Hello!}
-  
+
   Ref table -> \in{Table}[tbl:b]
-  
+
   Ref sec -> \in{Sec}[SomeSec]
 
   \goto{https://wiki.contextgarden.net/}[url(https://wiki.contextgarden.net/)]
-  
-  
+
+
   \Hello{} \ConTeXt \hfill \Hello{} \par
 
   \definecolor[MyPink][r=.8,g=.2,b=.2]
@@ -51,7 +51,7 @@
 \stopsection
 
 \startsection[title={Table},reference=SomeSec]
-    
+
   \placetable[here][tab:a]{Table Title}{%
     \starttabulate[|c|c|c|]
       \HL
@@ -65,15 +65,15 @@
   \placetable[here][tbl:b]{Table Title}{%
     \starttabulate[|c|c|c|]
       \HL
-      
+
       \NC a \NC b \NC c \NR
       \HL
-      
+
       \NC a \NC b \NC c \NR
       \HL
     \stoptabulate
   }
-  
+
 \stopsection
 
 \startsection[title={Some Code}]
@@ -82,12 +82,11 @@
     before={\startframedtext[width=\textwidth]},
     after={\stopframedtext},
   ]
-    
+
   \starttyping
     #include <stdio.h>
     int main(){ return 1;}
   \stoptyping
-  
+
 \stopsection
 \stoptext
-

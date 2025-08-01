@@ -15,7 +15,7 @@ Serious fun with Coq, a theorem prover developed by INRIA.
 
 + Types and Programming Languages, Benjamin C. Pierce
 
-<!-- 
+<!--
 + Coq Tactics Cheatsheet <https://www.cs.cornell.edu/courses/cs3110/2017fa/a5/coq-tactics-cheatsheet.html>
 -->
 

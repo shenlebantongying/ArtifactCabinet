@@ -21,4 +21,3 @@ o3 = AnotherClass.new
 puts o1.print_identifier
 puts o2.print_identifier
 puts o3.print_identifier
-

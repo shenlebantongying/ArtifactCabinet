@@ -1,9 +1,9 @@
 
 -- from kfisher's slides
-echoDup :: IO () 
+echoDup :: IO ()
 echoDup = getChar >>= (\c -> putChar c >>= (\() -> putChar c))
 
--- use of >> 
+-- use of >>
 echoDup' = getChar >>= (\c -> putChar c >> putChar c)
 
 -- get two char by using return

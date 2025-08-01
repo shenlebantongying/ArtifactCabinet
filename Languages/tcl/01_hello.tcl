@@ -19,7 +19,7 @@ puts [expr {1.0==1}]   ;# compare value
 puts [expr {1.0 eq 1}] ;# compare string
 
 set x 1
-puts [expr $x>0 ? $x+1 : $x-1] 
+puts [expr $x>0 ? $x+1 : $x-1]
 
 puts "\n Define functions:"
 
@@ -58,4 +58,3 @@ set mymap(first) "first"
 set mymap(second) "second"
 
 puts $mymap(first);
-

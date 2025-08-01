@@ -12,7 +12,7 @@ Recursive Divide&Conquer with ForkJoin
 # Note:
 ## Other implementations
 + OpenMP
-+ .Net -> Task Parallel Library 
++ .Net -> Task Parallel Library
 
 # todo:
 

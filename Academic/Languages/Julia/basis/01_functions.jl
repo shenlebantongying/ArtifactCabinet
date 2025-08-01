@@ -25,7 +25,7 @@ function generic_sum(args...)
     return sum
 end
 
-generic_sum(1,2,3,4,5,6) 
+generic_sum(1,2,3,4,5,6)
 # -> 21
 
 # Anonymous functions
@@ -45,7 +45,6 @@ typeof(expr1)
 expr1.head #-> call
 expr1.args #-> :+ 1 1
 
-# thus expr1 is equal to 
-expr2 = Expr(:call, :+, 1 , 1) 
+# thus expr1 is equal to
+expr2 = Expr(:call, :+, 1 , 1)
 # which is exactly a (+ 1 1) in lisp!
-

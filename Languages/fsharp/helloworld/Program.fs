@@ -13,8 +13,8 @@ let rec printList ilist=
     match ilist with
     | [] -> ()
     | h::t -> printf "%d " h
-              printList t 
-    
+              printList t
+
 
 (* Pattern matching *)
 
@@ -38,10 +38,10 @@ let first = array1.[0]
 // Convent higher-order functions
 
 let range_list = [1..2..10] // python: range
-let for_list   = [ for i in 1.0..4.0 -> i**2.] // Python: list comprehension 
+let for_list   = [ for i in 1.0..4.0 -> i**2.] // Python: list comprehension
 
-let init_list = List.init 5 (fun i -> 2 * i + 1) 
-    
+let init_list = List.init 5 (fun i -> 2 * i + 1)
+
 
 // Pipeline
 let piped_x = 10 |> square |> square |> negate

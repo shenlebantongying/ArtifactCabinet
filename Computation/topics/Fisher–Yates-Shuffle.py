@@ -31,7 +31,7 @@ if __name__ == "__main__":
     # print(statistics.variance(stat.values()))
 
 """
-./Fisher–Yates-Shuffle.py > a.dat 
+./Fisher–Yates-Shuffle.py > a.dat
 
 gnu plot:
 

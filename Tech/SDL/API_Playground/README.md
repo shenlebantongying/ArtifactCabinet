@@ -7,7 +7,7 @@
 
 `window pixel size` will be the size of drawing buffer `SDL_Surface/SDL_Texture`
 
-We set `cairo_surface_set_device_scale` to `SDL pixel density`, 
+We set `cairo_surface_set_device_scale` to `SDL pixel density`,
 so that we draw on coordinates of `window size` without considering the underlying buffer
 
 # Drawing buffer

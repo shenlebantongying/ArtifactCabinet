@@ -44,7 +44,7 @@ list(FIND SLB_LST "NO" o2)
 message("${o1}") # true  ->  1
 message("${o2}") # false -> -1
 
-# Every Statement is a Command 
+# Every Statement is a Command
 # There is no return value!
 list(LENGTH SLB_LST slb_len)
 message("List length -> ${slb_len}")

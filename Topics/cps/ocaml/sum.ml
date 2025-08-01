@@ -10,11 +10,11 @@ sum [1;2;3;4];;
 (*
 
   * -> apply
-  
+
   sum x1, x2, x3;;
-  
+
   will be expanded into
 
   (fun x -> x) * (fun a -> x1 + a) * (fun a -> x2 + a) * (fun a -> x3 + a) * 0
-  
+
  *)

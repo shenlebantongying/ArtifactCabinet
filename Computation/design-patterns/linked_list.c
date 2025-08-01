@@ -4,7 +4,7 @@ Complie & run with:
 gcc -o linked_list linked_list.c -std=c11 && ./linked_list
 
 DesierdL output:
-0 1 2 3 4 5 6 7 8 9 10 
+0 1 2 3 4 5 6 7 8 9 10
 
 ========================= */
 

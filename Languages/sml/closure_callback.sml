@@ -33,7 +33,7 @@ fun printIfPressed i =
     onKeyEvent (fn j => if i=j
                         then print ("The key pressed" ^ Int.toString i ^ "\n")
                         else ());
-                        
+
 
 (* register the keys you want *)
 val _ = printIfPressed 4;

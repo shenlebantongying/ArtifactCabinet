@@ -17,4 +17,3 @@
 (ldb (byte 3 1) #b111000)
 
 (ldb (byte 16 16) #xdeadbabe)
-

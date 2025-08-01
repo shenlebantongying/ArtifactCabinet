@@ -56,4 +56,3 @@ Compute (plus (S (S O)) (S (S (S O)))).
 (* 3 + 2 = 5
 = S (S (S (S (S O))))
      : nat *)
-

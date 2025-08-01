@@ -37,6 +37,3 @@ function make_o2(type){
 let my_new_o2 = make_o2("candy")
 console.log(my_new_o2)
 my_new_o2.a_action("new_o2")
-
-
-

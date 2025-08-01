@@ -8,7 +8,7 @@ pub fn main(){
     // In Rust, every value has an one owner
 
     let hel:&str;
-    
+
     {
         let hello = String::from("hello!");
 
@@ -16,7 +16,7 @@ pub fn main(){
 //                        ^ transfer ownerships
 
 //        consume(hello);   // Not possible, because ownership of hello already transferred.
-        
+
         consume(borrowed_str.to_string()); // YES, because borrowed_str own the "Hello!"
 
         hel=substr(borrowed_str);
@@ -26,8 +26,8 @@ pub fn main(){
     // println!("{}",hel); => lifetime error
 
 }
-//                                   
-//                         ▼          ▼ 
+//
+//                         ▼          ▼
 fn substr<'a> (input_str: &'a str) -> &'a str{
 //       ▲
 //return value have same lifetime as input_str

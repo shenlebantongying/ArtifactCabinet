@@ -37,21 +37,20 @@ data Sqr = Sqr {
 -- Type synonyms (TYPE)
 
 type PhoneBook = [(String, String)]
-inPhoneBook :: String -> String -> PhoneBook -> Bool 
+inPhoneBook :: String -> String -> PhoneBook -> Bool
 inPhoneBook name pnum pbook = (name, pnum) `elem` pbook
 -- >>> :t PhoneBook
 -- Data constructor not in scope: PhoneBook
 
 iBook :: [(String, String)]
-iBook =      
-    [("betty","555-2938")     
-    ,("bonnie","452-2928")     
-    ,("patsy","493-2928")     
-    ,("lucille","205-2928")     
-    ,("wendy","939-8282")     
-    ,("penny","853-2492")     
-    ]  
+iBook =
+    [("betty","555-2938")
+    ,("bonnie","452-2928")
+    ,("patsy","493-2928")
+    ,("lucille","205-2928")
+    ,("wendy","939-8282")
+    ,("penny","853-2492")
+    ]
 
 -- >>> inPhoneBook "wendy" "939-8282" iBook
 -- True
-

@@ -10,5 +10,3 @@ deps = [dependency('raylib')]
 
 executable('00_hello', '00_hello.cpp', dependencies: deps)
 executable('01_cam', '01_cam.cpp', dependencies: deps)
-
-

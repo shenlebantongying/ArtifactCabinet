@@ -2,7 +2,7 @@
 
 Program hello;
 
-Type 
+Type
   TMyClass = Class
     Name: RawByteString;
     Procedure SetName (Const s: RawByteString);
@@ -19,7 +19,7 @@ Begin
   Name := s
 End;
 
-Var 
+Var
   MyObj: TMyClass;
 Begin
   MyObj := TMyClass.Create;

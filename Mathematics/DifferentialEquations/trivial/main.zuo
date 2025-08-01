@@ -18,7 +18,7 @@
               ,(lambda (dest token)
                  (pp tex dest)
                  (shell/wait "contextjit" tex))]
-     
+
      ;; target for each asy files
      ,@(map
         (lambda (s o)
@@ -27,7 +27,7 @@
                        (pp s dest)
                        (shell/wait "asy" "-f" "pdf" s))])
         asy asy_pdf)
-     
+
      ;; this is a phony target cause "clean" is a symbol
      [:target clean ()
               ,(lambda (token)
@@ -44,5 +44,3 @@
                                               (is-zuodb o)))
                                         all-files)])
                    (for-each rm* to-be-deleted)))])))
-
-

@@ -4,8 +4,8 @@ factorial(0,1).
 
 % The factorial of N is F
 factorial(N, F) :-
-    N > 0,            
-    N1 is N - 1,      
+    N > 0,
+    N1 is N - 1,
     factorial(N1,F1), % Factorial of N1 is F1
     F is N * F1.      % and F is N * F1
 

@@ -17,7 +17,7 @@ let int2bits_v1 a =
 (* without str and strict 32 length*)
 
 (*
-List of same elements n times 
+List of same elements n times
 copied from ocaml battries *)
 let lst_make x n =
   if x < 0 then invalid_arg "lst_make";
@@ -58,4 +58,3 @@ let ()=
   test 2147483647 [0;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1];
   test 321 [0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;1;0;0;0;0;0;1];
   test 1 [0;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1];
-

@@ -18,7 +18,7 @@
 
 (define (da xt inc)
   (when (< xt width)
-    (begin 
+    (begin
       (draw-vertical-line xt)
       (da (+ xt inc) (+ inc 10)))))
 

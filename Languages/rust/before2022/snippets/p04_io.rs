@@ -11,14 +11,14 @@ fn main(){
     };
 
     let mut s = String::new();
-    
+
     match file.read_to_string(&mut s){
         Err(_why) => panic!("No str"),
         Ok(_) => (),
     }
 
     let split = s.split("\n");
-    
+
     for a in split{
         println!("Splitting line");
 

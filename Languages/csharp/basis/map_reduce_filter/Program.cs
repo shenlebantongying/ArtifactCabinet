@@ -11,11 +11,11 @@ namespace Pallets
 
     static void map_reduce_filter()
     {
-      
+
       // Map -> Select
       // Reduce -> Aggregate
       // Filter -> Where
-      
+
       Console.WriteLine(
         Enumerable.Range(1, 10)
         .Select(x => x * 2)
@@ -29,12 +29,12 @@ namespace Pallets
         from rq in r
         where rq > 3
         select rq;
-      
+
       r_queried.ToList().ForEach(Console.Write);
 
 
       string[] fruits = { "apple", "mango", "orange", "passionfruit", "grape" };
-      
+
     }
 
     static void Main(string[] args)

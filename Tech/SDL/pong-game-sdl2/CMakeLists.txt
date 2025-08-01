@@ -36,4 +36,3 @@ endif()
 # FIXME: add a findSDL2 for linux
 #include_directories(${SDL2_INCLUDE_DIRS})
 # find_package(PkgConfig REQUIRED)
-

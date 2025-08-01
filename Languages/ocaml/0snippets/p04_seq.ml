@@ -7,13 +7,13 @@ exception Nope
 type 'a seq =
   | Nil
   | Cons of 'a * (unit -> 'a seq);;
-let head  = function 
+let head  = function
   | Cons (x,_) -> x;
   | Nil -> raise Nope;;
 let tail = function
   | Cons (_,xf) -> (xf ());
   | Nil -> Nil;;
-  
+
 let rec from k = Cons (k, fun() -> from (k+1));;
 let it = from 1;;
 (head (tail (tail it)));;

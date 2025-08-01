@@ -37,7 +37,7 @@ coloring(A,B,C,D) :-
 
 /*
 
-Querying: 
+Querying:
 
 ?- coloring(A,B,C,D).
 A = D, D = r,

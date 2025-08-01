@@ -26,9 +26,9 @@ fn main() {
 
                 if n==0{
                     zeros+=1;
-                } else 
+                } else
                 if n>0 {
-                    acc+=n-1;  
+                    acc+=n-1;
                 } if n<0 {
                     flipper*=-1;
                     acc+= -n-1;
