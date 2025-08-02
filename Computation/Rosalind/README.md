@@ -23,4 +23,19 @@ $$
 
 TODO: solve this visually
 
+## FIBD, fib with deaths
+
+One proof,
++ https://arxiv.org/abs/2312.13098v3
++ https://bica.the-ica.org/Volumes/103//Reprints/BICA2024-01-Reprint.pdf
+
+Insane
++ https://www.fq.math.ca/list-of-issues.html
+
 ## PROT, Genetic code, Codon
+
+
+## TREE, find independent subgraphsf
+
+TODO: graph have many representations, try something else
+TODO: boost's graph library?

@@ -17,7 +17,7 @@ fn parse_rna_codon(s: &str) -> BTreeMap<&str, &str> {
 
 fn main() {
     let data = fs::read_to_string("./data/rosalind_prot.txt").expect("no file");
-    let data_codon = fs::read_to_string("./codon_table_RNA.txt").expect("no file");
+    let data_codon = fs::read_to_string("./table_codon_RNA.txt").expect("no file");
     let map = parse_rna_codon(&data_codon);
 
     // TODO: there are some nightly chunks in std, but not today

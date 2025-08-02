@@ -19,7 +19,7 @@ func check(err error) {
 func main() {
 	data, err := os.ReadFile("./data/rosalind_mrna.txt")
 	check(err)
-	codon_table, err := os.ReadFile("./codon_table_RNA.txt")
+	codon_table, err := os.ReadFile("./table_codon_RNA.txt")
 	check(err)
 	codon_str := string(codon_table)
 
