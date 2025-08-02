@@ -35,7 +35,14 @@ Insane
 ## PROT, Genetic code, Codon
 
 
-## TREE, find independent subgraphsf
+## TREE, find graph components
 
-TODO: graph have many representations, try something else
+TODO: graph has many representations, try something else
+
 TODO: boost's graph library?
+
+TODO: combined with probability?
+
+- https://networkx.org
+- https://graph-tool.skewed.de/
+- https://igraph.org/
