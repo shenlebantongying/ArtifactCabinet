@@ -25,3 +25,4 @@ README.pdf
 .scala-build/
 .bsp/
 .metals/
+*.asv

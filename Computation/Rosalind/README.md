@@ -46,3 +46,29 @@ TODO: combined with probability?
 - https://networkx.org
 - https://graph-tool.skewed.de/
 - https://igraph.org/
+
+## SPLC,
+
+- intron
+- amino acid
+
+## LIA, binomial theorem
+
+Because all mating individuals including the initial one are `AaBb`. The probability for an individual to be a particular alleles is unchanged across generations.
+
+In $k$ generation, there will be $2^k$ individuals.
+
+$$
+\begin{align*}
+    P[\text{AaBb}] &= 1/4 \\
+    P[\text{Not AaBb}] &= 3/4
+\end{align*}
+$$
+
+The probability of k generation having at least $N$ `AaBb` is thus
+
+$$
+    \sum_{i=N}^{2^k} \binom{2^k}{i} \times P[\text{AaBb}]^i  (1-P[\text{AaBb}])^{2^k-i}
+$$
+
+TODO: review binomial
