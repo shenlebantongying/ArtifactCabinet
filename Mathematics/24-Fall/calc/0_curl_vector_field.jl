@@ -11,6 +11,6 @@ ys = LinRange(-100, 100, 9)
 xvs = [ -y for x in xs, y in ys ]
 yvs = [ x for x in xs, y in ys ]
 
-arrows!(xs, ys, xvs, yvs, arrowsize = 10, lengthscale = 0.3)
+arrows2d!(xs, ys, xvs, yvs, lengthscale = 0.3)
 
 save("0curl.pdf",f)
