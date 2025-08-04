@@ -12,4 +12,7 @@
 watchexec -e asy make
 
 fd -e asy | xargs clang-format -i
-``
+
+# 3d
+asy -o html
+```

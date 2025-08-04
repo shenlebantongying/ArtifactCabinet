@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+% flaw: TikZ is not a real 3d plotter.
+% so items overlaps according to drawing order.
+
+\usetikzlibrary{3d}
+\begin{tikzpicture}[->,transform canvas={scale=3.0}]
+  \draw[color=blue] (0,0,0) -- (xyz spherical cs:radius=1,latitude=90);
+
+  \begin{scope}[canvas is zy plane at x=0]
+    \draw[color=purple] (0,0) circle (1);
+  \end{scope}
+
+  \draw[color=green] (0,0,0) -- (xyz spherical cs:radius=1,longitude=90);
+
+  \begin{scope}[canvas is zx plane at y=0]
+    \draw[color=brown] (0,0) circle (1);
+  \end{scope}
+
+  \draw[color=red] (0,0,0) -- (xyz spherical cs:radius=1);
+\end{tikzpicture}
+\end{document}

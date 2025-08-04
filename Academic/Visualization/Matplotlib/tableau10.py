@@ -16,8 +16,9 @@ plt.plot(px + 5)
 plt.plot(px + 6)
 plt.plot(px + 7)
 
+plt.savefig("tableau10_demo.pdf")
 # %%
-plt.style.available
+print(plt.style.available)
 # %%
 os.getcwd()
 # %%

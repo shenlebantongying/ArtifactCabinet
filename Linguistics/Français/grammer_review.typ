@@ -482,3 +482,9 @@ explanation, I understood what she meant.
 - #S[On est *parvenu* à régler l'affaire.][
   We managed to setting/concluding the business.
 ]
+
+== Aug 3
+
+#S[Vous #Conj[avez] quel âge?][
+  How old are you?
+]
