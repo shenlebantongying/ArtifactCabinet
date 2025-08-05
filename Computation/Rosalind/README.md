@@ -72,3 +72,7 @@ $$
 $$
 
 TODO: review binomial
+
+## LCSM, longest common subsequence
+
+TODO: read the complexity analysis again...

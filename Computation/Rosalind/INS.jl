@@ -10,13 +10,12 @@ begin
         acc += 1
     end
 
-    for i = 2:length(seq)
+    for i in 2:length(seq)
         k = i
-        while k > 1 && seq[k] < seq[k-1]
+        while k > 1 && seq[k] < seq[k - 1]
             swap!(seq, k, k - 1)
             k = k - 1
         end
-
     end
     println(seq)
     println(acc)
