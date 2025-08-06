@@ -76,3 +76,13 @@ TODO: review binomial
 ## LCSM, longest common subsequence
 
 TODO: read the complexity analysis again...
+
+## MAJ, major elements
+
+TODO: O(1) method?
+
+## MPRT, http get..
+
+Note that subsequences finding problems in bioinformatics generally wants to all subsequences including the ones that overlapps.
+
+Regex needs trick like `(?=(N[^P][ST][^P]))`. Though, this is no longer regular expression anymore?
