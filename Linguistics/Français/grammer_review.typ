@@ -488,3 +488,26 @@ explanation, I understood what she meant.
 #S[Vous #Conj[avez] quel âge?][
   How old are you?
 ]
+#S[Quel âge a votre fils?][
+  How old is your son?
+]
+#S[Est-ce que ce sont vos frères et sœurs?][
+  Are these your siblings?
+]
+#S[Je fais du vélo][
+  I go biking
+]
+#S[On fait *de* la zumba dans une école.][
+  We do zumba in a school.
+]
+#S[Je fais du vélo.][
+  I go biking.
+]
+
+Partitive articles
+
+TODO: word combinations?s
+
+- du, de l' #is masc.
+- de la, de l' #is fem.
+- des #is plural.

@@ -26,3 +26,4 @@ README.pdf
 .bsp/
 .metals/
 *.asv
+deno.lock
