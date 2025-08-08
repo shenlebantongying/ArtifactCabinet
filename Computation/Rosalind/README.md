@@ -86,3 +86,11 @@ TODO: O(1) method?
 Note that subsequences finding problems in bioinformatics generally wants to all subsequences including the ones that overlapps.
 
 Regex needs trick like `(?=(N[^P][ST][^P]))`. Though, this is no longer regular expression anymore?
+
+## CC, graph components
+
+## HEA, heap sort
+
+## PAR, partition
+
+https://en.wikipedia.org/wiki/Multiway_number_partitioning
