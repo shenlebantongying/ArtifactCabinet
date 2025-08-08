@@ -94,3 +94,10 @@ Regex needs trick like `(?=(N[^P][ST][^P]))`. Though, this is no longer regular 
 ## PAR, partition
 
 https://en.wikipedia.org/wiki/Multiway_number_partitioning
+
+## 3SUM
+
+Any deterministic 3SUM algorithm may require $\Omega(n^2)$ time. $O(n^2)$ is good.
+
+- https://en.wikipedia.org/wiki/3SUM
+- https://www.epfl.ch/labs/disopt/wp-content/uploads/2021/05/notes10.pdf
