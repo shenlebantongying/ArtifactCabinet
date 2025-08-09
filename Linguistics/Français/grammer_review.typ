@@ -1,6 +1,6 @@
 #set document(title: "Français")
 #set text(
-  font:"New Computer Modern",
+  font:("Spot Mono","New Computer Modern"),
   lang: "fr")
 #set smartquote(enabled: false)
 
@@ -511,3 +511,46 @@ TODO: word combinations?s
 - du, de l' #is masc.
 - de la, de l' #is fem.
 - des #is plural.
+
+== Aug 9
+
+#S[Ils n'étudient pas la fin de semaine (FDS).][
+  They don't study in weekends.
+]
+
+#S[Vous étudiez quels jours de la semaine?][
+  You study in what days of the week?
+]
+
+#T[Le matin, L'après-midi, Le soir, La nuit][Morning, Afternoon, Evening, Night]
+
+- #S[*À* quelle heure vous mangez?][
+  When do you eat?
+]
+- #S[Je déjeune *à* huit heures *du* matin.][
+  I eat breakfast at 8:00 in morning.
+]
+
+- #S[Où habites-tu?][Where do you live?]
+- #S[Nous habitons au centre-ville de Tornoto][
+  We live in the central city of Tornoto.
+]
+
+au, à, en, aux #link("https://apprendre.tv5monde.com/en/aides/grammar-prepositions-au-en-aux-name-city-or-country")
+
+- #S[Mon condo *n'a* pas deux _salles de bain_.][
+  My condo don't have two _bathrooms_.
+][
+  Note that the *n'a* is ne + #Conj[a].
+]
+- #S[Est-ce que votre condo *a* un balcon?]
+
+- #T[il y a][there is/are]
+- #S[Dans la cuisine, *il y a* une table et quatre chaises.]
+- #S[Est-ce *qu'il* y a une télé dans ta chambre?]
+
+Mon,Ma,Mes #link("https://www.bbc.co.uk/bitesize/guides/z8tfxfr/revision/1")
+
+- #S[Bravo, tu as atteint la fin du niveau!]
+- #S[Tu #Conj[peux] maintenant accéder au prochain niveau de ton #Dict[parcours].]
+- #T[niveau][level]
