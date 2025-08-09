@@ -23,7 +23,6 @@ path = "HAMM.rs"
 name = "IPRB"
 path = "IPRB.rs"
 
-
 [[bin]]
 name = "FIB"
 path = "FIB.rs"
@@ -39,3 +38,11 @@ path = "PROT.rs"
 [[bin]]
 name = "SUBS"
 path = "SUBS.rs"
+
+[[bin]]
+name = "BIN"
+path = "BIN.rs"
+
+[lib]
+name="ros"
+path="./lib/ros.rs"
