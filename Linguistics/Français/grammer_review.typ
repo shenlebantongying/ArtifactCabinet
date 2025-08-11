@@ -1,6 +1,6 @@
 #set document(title: "Français")
 #set text(
-  font:("Spot Mono","New Computer Modern"),
+  font:("Maple Mono","Spot Mono","New Computer Modern"),
   lang: "fr")
 #set smartquote(enabled: false)
 
@@ -554,3 +554,24 @@ Mon,Ma,Mes #link("https://www.bbc.co.uk/bitesize/guides/z8tfxfr/revision/1")
 - #S[Bravo, tu as atteint la fin du niveau!]
 - #S[Tu #Conj[peux] maintenant accéder au prochain niveau de ton #Dict[parcours].]
 - #T[niveau][level]
+
+== Aug 10
+
+- #S[Bonne fin de semaine!][Have a good weekend!]
+- #S[Bonne fin de journée et à demain!][Have a good day and see ya tomorrow!]
+- #S[À bientôt!][See ya soon!]
+- #S[Je suis contente de te voir!][Good to see you!]
+- #S[Je suis très *contente de vous rencontrer*.][
+  I am very glad to meet you.]
+- #S[Je suis contente *de* vous *revoir*!][
+  I am happy to see you again!]
+
+#S[Je ne #Dict[connais] pas du tout cette région.][
+  I don't know about this region at all.]
+
+#S[la première dois][the first time]
+
+#S[Vous venez d'*où?*][Where are you from?]
+#S[On #Conj[vient] du Québec.][We're from Quebec.]
+
+#S[Que faites-vous dans la vie?][What do u do for living?]
