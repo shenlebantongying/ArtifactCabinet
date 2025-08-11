@@ -2,7 +2,7 @@
 
 from z3 import *
 
-# Solve a equation system
+# Solve an equation system
 
 x, y, z = Reals("x y z")
 s = Solver()
