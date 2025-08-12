@@ -29,12 +29,19 @@
   linebreak()
 }
 
-#let Dict(word) = {
-  link("https://dictionnaire.lerobert.com/definition/"+word.text)[#word]
-}
+#let Dict(word) = {link("https://dictionnaire.lerobert.com/definition/"+word.text)[#word]}
+#let DictWiki(word) = {link("https://en.wiktionary.org/wiki/"+word.text)[#word]}
+#let Conj(word) = {link("https://leconjugueur.lefigaro.fr/conjugaison/verbe/"+word.text)[#word]}
 
-#let Conj(word) = {
-  link("https://leconjugueur.lefigaro.fr/conjugaison/verbe/"+word.text)[#word]
+#let WordTable2(..tt) = {
+  table(
+    columns:2,
+    align: (right, left),
+    stroke: (top:gray, bottom: gray, left:none, right:none),
+    ..tt.pos().chunks(2,exact:true).map(pair=>{
+      let(word,comment)=pair
+      (Dict(word),comment)
+    }).flatten())
 }
 
 #let hr_ = line(length: 50%, stroke: 0.5pt + gray)
@@ -237,6 +244,31 @@ Similar to _Passé Composé_.
 === Le Participe Passé
 
 #pagebreak()
+
+= Musique
+
+== Je veux
+
+#link("https://www.youtube.com/watch?v=0TFNGRYMz1U")
+
+#S[Je veux de l'amour, de la joie, de la bonne humeur][
+  I want love, joy and good spirit.
+]
+
+#S[Bienvenue dans ma réalité.][
+  Welcome to my world.
+]
+
+#S[Allons ensemble, découvrir ma liberté.][
+  Let's go together, to discover my liberty.
+]
+
+== Les Yeux Noirs
+- #link("https://www.youtube.com/watch?v=gfiqW1WaGbw")
+- #link("https://lyricstranslate.com/en/les-yeux-noirs-blackdark-eyes.html")
+
+#pagebreak()
+
 = Random Reviews
 
 == July 1
@@ -340,20 +372,6 @@ Regular conjugaisons du participe passé
   Vincent *has* accepted to attend the event.
 ][
   Note that *a* is #Conj[avoir] and *de* and *à* are prepositions.
-]
-
-*Je veux* #link("https://www.youtube.com/watch?v=0TFNGRYMz1U")
-
-#S[Je veux de l'amour, de la joie, de la bonne humeur][
-  I want love, joy and good spirit.
-]
-
-#S[Bienvenue dans ma réalité.][
-  Welcome to my world.
-]
-
-#S[Allons ensemble, découvrir ma liberté.][
-  Let's go together, to discover my liberty.
 ]
 
 == July 28
@@ -575,3 +593,29 @@ Mon,Ma,Mes #link("https://www.bbc.co.uk/bitesize/guides/z8tfxfr/revision/1")
 #S[On #Conj[vient] du Québec.][We're from Quebec.]
 
 #S[Que faites-vous dans la vie?][What do u do for living?]
+
+== Aug 11
+
+#S[Notre père *n'a* pas de cheveux.][My father don't have hair.]
+#S[Ils ont les yeux bleus.][He has blue eyes.]
+#S[Je porte une chemise blanche.][I wear a white shirt.]
+#S[Je porte des lunettes.][I wear eye glasses.]
+
+#S[Je porte une robe *blanche* et des souliers *noirs*][
+  Note that adjectives agrees with the nouns.
+]
+
+#DictWiki[déjà]
+
+#WordTable2(
+  [malade],[sick],
+  [inquiète],[worried],
+  [nerveux],[nervous],
+  [en colère],[angry],
+  [fâchée],[angry],
+  [faim],[hungry],
+  [soif],[thirsty],
+  [chaud],[hot],
+  [froid],[cold],
+  [peur],[scared,fear],
+)
