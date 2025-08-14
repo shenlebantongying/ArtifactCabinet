@@ -13,12 +13,12 @@
       fill: luma(30%)))
 }
 
-#let is = sym.arrow.r
+#let est = sym.arrow.r
 
 /* Sentence */
 #let S(eg, ..trans) = {
   text([#eg],purple)
-  trans.pos().map(w => [\ #is #text([#w],olive)]).join()
+  trans.pos().map(w => [\ #est #text([#w],olive)]).join()
   linebreak()
 }
 
@@ -31,6 +31,7 @@
 
 #let Dict(word) = {link("https://dictionnaire.lerobert.com/definition/"+word.text)[#word]}
 #let DictWiki(word) = {link("https://en.wiktionary.org/wiki/"+word.text)[#word]}
+#let DictCollins(w) = {link("https://www.collinsdictionary.com/dictionary/french-english/"+w.text)[#w]}
 #let Conj(word) = {link("https://leconjugueur.lefigaro.fr/conjugaison/verbe/"+word.text)[#word]}
 
 #let WordTable2(..tt) = {
@@ -89,7 +90,7 @@ Subject + n' + avoir + pas + past participle of the main verb + ...
 Avoir + a hyphen + subject + past participle ...
 
 - #S[As-tu mangé avec ton frère pendant le week-end?][Did you eat with your brother during the weekend?]
-- As-tu #is swap subject & verb for questioning.
+- As-tu #est swap subject & verb for questioning.
 
 == Reflexive pronoun
 
@@ -113,7 +114,7 @@ If the reflexive pronoun is the *direct object* then the past participle agrees 
 
 #link("https://dictionnaire.lerobert.com/guide/formation-de-l-adverbe")
 
-Adjectif masc #is Adjectif fem #is +ment #is Adverbe
+Adjectif masc #est Adjectif fem #est +ment #est Adverbe
 
 - général, générale, généralement
 - parfait, parfaite, #Dict[parfaitement]
@@ -135,9 +136,9 @@ Or just add +ment if masc already ends -e.
 
 Verb form:
 
-le futur simple + imparfait endings #is le conditionnel
+le futur simple + imparfait endings #est le conditionnel
 
-parler_ai + ais #is parlerais
+parler_ai + ais #est parlerais
 
 == Combination of imparfait et conditionnel
 
@@ -199,7 +200,7 @@ Similar to _Passé Composé_.
 
 === Le Plus-Que-Parfait
 
-"More than perfect" #is talking about an event that happened before another event in the past.
+"More than perfect" #est talking about an event that happened before another event in the past.
 
 #S[J'#Conj[avais] beaucoup #Conj[pratiqué] avant d'étudier en France.][
   I *had practised* a lot before studying in France.
@@ -284,8 +285,8 @@ Similar to _Passé Composé_.
 #S[Une fille parle sa saison préférée.][A girl talks abot her favorite season.]
 
 #S[Il est ici/là-bas.]
-- ici #is here
-- là-bas #is over there
+- ici #est here
+- là-bas #est over there
 
 #S[Il faut qu'on parle][We need to talk. #link("https://fr.wikipedia.org/wiki/Il_faut_qu%27on_parle")]
 
@@ -295,10 +296,10 @@ Similar to _Passé Composé_.
 
 #hr_
 
-- à #is before city names (à Montréal)
-- en #is feminine countries (en Russie)
-- au #is masculine countries (au Canada)
-- aux #is plural countries (aux États-Unis)
+- à #est before city names (à Montréal)
+- en #est feminine countries (en Russie)
+- au #est masculine countries (au Canada)
+- aux #est plural countries (aux États-Unis)
 
 #hr_
 
@@ -310,9 +311,9 @@ plus/moins/aussi + adj. + que
 
 Regular conjugaisons du participe passé
 
-- -er #is -é
-- -ir #is -i
-- -re #is -u
+- -er #est -é
+- -ir #est -i
+- -re #est -u
 
 #hr_
 
@@ -334,7 +335,7 @@ Regular conjugaisons du participe passé
 #T[pouvoir][to be able to]
 #S[Il ne _peut_ pas parler][He cannot speak.]
 
-#T[qqch. #is quelque chose][something]
+#T[qqch. #est quelque chose][something]
 #S[Mets _quelque chose_ de chaud.][Wear something warm.]
 
 #S[Tu as passé un bon week-end?][
@@ -395,8 +396,8 @@ Regular conjugaisons du participe passé
   Which is your favourite colour?
 ]
 
-- qui #is who/whom
-- de qui/à qui #is whose
+- qui #est who/whom
+- de qui/à qui #est whose
 
 qui as subject:
 
@@ -409,7 +410,7 @@ qui as direct object:
 #S[Qui #Conj[as]-tu #Conj[vu] ce matin?][
   Who did you see this morning?
 ][
-  as-tu #is tu avoir in reverse.
+  as-tu #est tu avoir in reverse.
 ]
 
 quit with à indicating possession:
@@ -420,7 +421,7 @@ quit with à indicating possession:
 
 #hr_
 
-dont #is pronom relatif
+dont #est pronom relatif
 
 #S[#Dict[Voici] ce #Dict[dont] je veux te parler][
   This is what I what i want to talk about.
@@ -485,8 +486,8 @@ explanation, I understood what she meant.
 
 #link("https://www.alloprof.qc.ca/fr/eleves/bv/francais/qu-elle-et-qu-elles-quel-quels-quelle-et-quelles-f1328")
 
-- quel/quels #is masc.
-- quels/quelles #is fem.
+- quel/quels #est masc.
+- quels/quelles #est fem.
 
 
 #hr_
@@ -526,9 +527,9 @@ Partitive articles
 
 TODO: word combinations?s
 
-- du, de l' #is masc.
-- de la, de l' #is fem.
-- des #is plural.
+- du, de l' #est masc.
+- de la, de l' #est fem.
+- des #est plural.
 
 == Aug 9
 
@@ -619,3 +620,35 @@ Mon,Ma,Mes #link("https://www.bbc.co.uk/bitesize/guides/z8tfxfr/revision/1")
   [froid],[cold],
   [peur],[scared,fear],
 )
+
+== Aug 13
+
+#S[Êtes-vous correct?][Are you OK?]
+#S[Est-ce que vous #Conj[voyez] des amis la fin de semaine?]
+#S[Qu'est-ce qui te fait tripper dans la vie #DictCollins[à part] les fraises?][What makes you happy beside those berries.]
+#S[*Amies-tu aller* au restaurant la fin de semaine?][Would you like to go to restaurant in the weekend?]
+#S[Aimes-tu aller *au* gym ou *aux* arcades?]
+#S[Tu #Conj[vas] à la librairie avec Hassan.]
+#S[Je vais *au* supermarché.][*au* #est à + le for masc.]
+#S[Elle est restée *à la* maison.][She stayed at home.]
+#S[Est-ce que vous _allez au_ cinéma avec votre fils?]
+
+#hr_
+
+à vs de #link("https://dictionnaire.lerobert.com/guide/a-ou-de")
+
+#S[Je vais *à* la plage et j'écoute *de* la musique. ]
+
+#S[Joues-tu d'un instrument?][Do you play an instrument?]
+#S[Je joue *du* piano et *de la* guitare.]
+
+#S[Je #Dict[préfère] lire.]
+#S[Quel est ton sport préféré?]
+#S[Je *préfère* lire. Mon livre *préféré* est...]
+#S[Préfères-tu la ville ou la campagne?]
+Note that `préféré` is adjectif and `préférer` is verbe with conjugaison `je préfère`.
+
+- à + le #est au
+- de + le #est du
+
+#hr_
