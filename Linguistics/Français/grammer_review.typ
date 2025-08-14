@@ -301,6 +301,72 @@ et #Dict[souhaitez] comprendre _notre monde naturel_.
 Les études en géosciences _pourraient être un choix de carrière idéal_.
 #Tr[Those geo-science studies could be an ideal carrier choice.]
 
+= Le Cinéma
+
+== Amélie, 2001
+
+=== Chapter 2
+
+Les jours, les mois, puis les années passent.
+
+
+Mais ça, pour le moment, elle n'en sait rien.
+#Tr[But, for this moment, she knows nothing.]
+
+Je travaille jamais le dimanche.
+#Tr[I never work in Sundays.]
+
+Quand on #Conj[était] jeune avec ta mère, on #Conj[aurait] bien voyagé.
+#Tr[When you where young and your mom is alive, we would have a good travel.]
+
+J'aime bien me retourner dans le noir et contempler le visage des autres spectateurs.
+#Tr[I love watching in dark and thinking the faces of other watchers.]
+
+Briser la croûte des crèmes brûlées avec la pointe de la petite cuillère.
+#Tr[Break the crust of burnt cream with the tip of a little spoon.]
+
+Le temps n'a rien changé.
+#Tr[Time does not bring change.]
+
+C'est alors que survient l'événement qui va #Dict[bouleverser] la vie d'Amélie.
+#Tr[It is the time when the event, that changes the life of Amélie, occurs.]
+
+Où qu'il soit, elle va #Dict[retrouver]
+_la piste du propriétaire_ de _la boîte aux souvenirs_,
+et lui restituer son trésor.
+#Tr[No matter where he is, she is going to find the trail of the memory box's owner,
+and give his treasure back.]
+
+- qu'il #est que + il
+- Où que #est wherever
+
+Je voulais _vous demander_... les gens qui habitaient chez moi dans les années cinquante?
+#Tr[I want to ask you who lives in my home in the fifties.]
+
+C'est tout ce que j'ai à dire.
+#Tr[That's is all what would say.]
+#Tr[What more can I say?]
+
+=== Chapter 3
+
+Ça vous ennuie si je pars un peu plus #Dict[tôt], cet après midi?
+#Tr[Do you mind if I leave earlier, this afternoon?]
+
+Depuis cinq ans que j'habite ici,
+c'est la première fois que je vous #Dict[croise].
+#Tr[In the five years when I live here,
+This is the first time that I see you.]
+
+J'aime beaucoup ce tableau.
+
+Le plus dur, ce sont les regards.
+#Tr[The looks are the hardest part.]
+
+Elle est #Dict[peut-être] #Dict[seulement] différente des _autres_.
+#Tr[She is maybe only/just different from others.]
+
+#hr_ 30:00
+
 = Random Reviews
 
 == July 1
