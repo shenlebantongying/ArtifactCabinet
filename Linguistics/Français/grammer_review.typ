@@ -15,10 +15,13 @@
 
 #let est = sym.arrow.r
 
-/* Sentence */
+/* Translations */
+#let Tr(t) = {[\ #est #text(t,olive)]}
+
+/* Sentence -> Verbatim + Translation */
 #let S(eg, ..trans) = {
   text([#eg],purple)
-  trans.pos().map(w => [\ #est #text([#w],olive)]).join()
+  trans.pos().map(w => Tr(w)).join()
   linebreak()
 }
 
@@ -27,6 +30,16 @@
   text(weight: "bold",fill: rgb(8,25,45))[#term ]
   trans.pos().map(w => [: #w ]).join()
   linebreak()
+}
+
+/* Inline Annotation, NOTE: there is no way to align box to text' top bounding edge as of 2025 */
+#let Anno(t1,t2) = {
+  box(
+    par([
+      #text(t2,gray,0.75em)
+      #linebreak()
+      #t1],
+      leading:0.3em))
 }
 
 #let Dict(word) = {link("https://dictionnaire.lerobert.com/definition/"+word.text)[#word]}
@@ -244,9 +257,7 @@ Similar to _Passé Composé_.
 === Le Participe Présent
 === Le Participe Passé
 
-#pagebreak()
-
-= Musique
+= La Musique
 
 == Je veux
 
@@ -268,7 +279,27 @@ Similar to _Passé Composé_.
 - #link("https://www.youtube.com/watch?v=gfiqW1WaGbw")
 - #link("https://lyricstranslate.com/en/les-yeux-noirs-blackdark-eyes.html")
 
-#pagebreak()
+= La Vidéos
+
+== Sciences de la Terre et de l'environnement
+
+#link("https://www.youtube.com/watch?v=GLu5jvIHlE8")
+
+Notre planète a débuté son historie sous la forme d'une boule de feu.
+#Tr[Our plant starts its history from a big fire ball.]
+
+Les géosciences étudient la Terre et son environnement
+dans une optique interdisciplinaire qui intègre les connaissances
+et les méthodes des sciences biologiques, chimiques et physiques.
+
+Le géoscientifiques étudient des problèmes à des échelles temporelles et spatiales très vastes.
+#Tr[The geo-scientists study problems in a vaste temporal and spatial scale.]
+
+Si vous êtes curieux, créatif, avez le sens l'observation, aimez les activités de plein air
+et #Dict[souhaitez] comprendre _notre monde naturel_.
+
+Les études en géosciences _pourraient être un choix de carrière idéal_.
+#Tr[Those geo-science studies could be an ideal carrier choice.]
 
 = Random Reviews
 
@@ -651,4 +682,15 @@ Note that `préféré` is adjectif and `préférer` is verbe with conjugaison `j
 - à + le #est au
 - de + le #est du
 
-#hr_
+== Aug 14
+
+#link("https://en.wiktionary.org/wiki/Appendix:French_verbs")
+
+#S[Je *m'habille* et je *me prépare*.][I get dressed and I get ready.]
+
+#S[Comment vas-tu au travaille?][How do you get to work?]
+#S[Je prends le transport en commun.]
+#S[Je me promène à vélo et je marche à côté de la rivière.][
+  I ride a bike and walk in the river sides.]
+#S[Tu #Dict[vas] #Dict[au] travail en métro ou à vélo?][
+  Do you get to work by metro or by bike?]
