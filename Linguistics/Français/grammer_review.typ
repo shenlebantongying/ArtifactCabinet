@@ -461,6 +461,28 @@ Vous croyez aux miracles?
 Si vous laissez passer cette chance, alors avec le temps, c'est votre cœur qui va devenir aussi sec et cassant.
 #Tr[If you let this chance goes by, with the time passing, it is you heart that will become dry and brittle.]
 
+= Le savais-tu?
+
+== Débutant 1
+
+On utilise « vous » *comme marque de politesse* quand on s'adresse à quelqu'un dans un contexte formal.
+
+*Chaque* parent #Conj[peut] donner son nom à ses enfants.
+#Tr[Each parents can give their children their name.]
+Ceci est fréquent au Québec, où les femmes gardent leur *nom de naissance* quand elles se marient.
+#Tr[This is common in Quebec, where the women keep their birth name when they marry.]
+
+Au Québec, on répond souvent « Bienvenue » quand quelqu'un nous dit merci.
+#Tr[In Quebec, you often response "Bienvenue" when someone says merci.]
+C'est un anglicisme qui vient de « You're welcome » (Vous êtres bienvenu).
+
+Le pronom neutre « iel » est utilisé pour référer à une personne non-binaire.
+#Tr[The neutral pronoun "iel" is used for referring  a none-binary person.]
+
+C'est déjà *le nombril de la semaine*. Bientôt la fin de samine!
+#Tr[It is already the middle of the week. The weekends are near.]
+Le « nombril de la semaine» référer à la *journée de mercredi*, qui est au *milieu* de la semaine.
+
 = Random Reviews
 
 == July 1
@@ -877,3 +899,57 @@ Vous vivez seul?
 Tu *sors* avec quelqu'un?
 #Tr[Are you dating any one?]
 Je sors avec...
+
+Valérie va à la bibliothèque avec ses neveux.
+
+Dans _ses_ temps libres, _son_ neveu joue de la guitare.
+
+Ils ont combien de cousins?
+#Tr[How many cousins do they have?]
+
+Comment _il_ *s*'appelle, leur petit bébé?
+#Tr[What's their little boy's name?]
+
+== Aug 16, Weather
+
+#WordTable2(
+  [pleut],[raining],
+  [neige],[snowing],
+  [soleil],[sunny],
+  [brouillard],[fog],
+  [nuages],[clouds],
+  [orage],[storm],
+  [tempête de neige],[snowstorm],
+  [chaud],[hot],
+  [froid],[cold],
+  [frisquet],[chilly],
+  [frette],[freezing],
+  [gèle],[freezing]
+)
+
+Il y a _du vent_.
+#Tr[The weather is windy.]
+Il y a de la neige.
+#Tr[There's snow.]
+
+Ma fille a peur. Il y a un gros orage.
+#Tr[My daughter has feat. There is a big storm.]
+
+Il fait combien?
+#Tr[How warm/cold is it?]
+
+Je prends une douche froide. Il fait très chaud!
+
+Le soleil se lève et se couche.
+#Tr[The sun rises and sets.]
+
+- Le printemps
+- L'été
+- L'automne
+- L'hiver
+
+Ma saison préférée est l'automne.
+Pourquoi vous n'aimez pas l'été?
+J'adore l'hiver *parce que* je fais du ski.
+
+== Aug 16

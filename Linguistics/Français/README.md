@@ -12,3 +12,8 @@
 + Le Robert <https://dictionnaire.lerobert.com/fr/>
 + Wikitionary <https://en.wiktionary.org/wiki/>
 + Wikitionnaire <https://fr.wiktionary.org/wiki/>
+
+# Info
+
+- TCF https://www.france-education-international.fr/en/test/tcf-canada
+- TEF https://www.lefrancaisdesaffaires.fr/en/candidate/test-evaluation-francais/tef-canada/
