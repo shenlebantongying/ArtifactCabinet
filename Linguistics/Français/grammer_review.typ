@@ -13,6 +13,10 @@
       fill: luma(30%)))
 }
 
+#show emph: it => {
+  underline(it.body)
+}
+
 #let est = sym.arrow.r
 
 /* Translations */
@@ -850,3 +854,26 @@ Note that `préféré` is adjectif and `préférer` is verbe with conjugaison `j
   I ride a bike and walk in the river sides.]
 #S[Tu #Dict[vas] #Dict[au] travail en métro ou à vélo?][
   Do you get to work by metro or by bike?]
+
+== Aug 15
+
+#WordTable2(
+  [des tâches ménagères], [household chores],
+  [le lavage],[laundry],
+  [range la maison],[clean the house],
+  [couchez], [go to bed]
+)
+
+Que fais-tu le soir?
+Qu'est-ce que vous faites après le travail?
+Est-ce qu'il fait la vaisselle? #Tr[Will you do the dishes?]
+Mon conjoint prépare le *souper* et on *soupe* ensemble.
+
+#Conj[vivre] \
+Vous vivez seul?
+#Tr[Do you live alone?]
+
+#Dict[sortir] \
+Tu *sors* avec quelqu'un?
+#Tr[Are you dating any one?]
+Je sors avec...
