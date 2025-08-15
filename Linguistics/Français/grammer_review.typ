@@ -1,6 +1,6 @@
 #set document(title: "Français")
 #set text(
-  font:("Maple Mono","Spot Mono","New Computer Modern"),
+  font:("Comic Neue","New Computer Modern"),
   lang: "fr")
 #set smartquote(enabled: false)
 
@@ -305,10 +305,19 @@ Les études en géosciences _pourraient être un choix de carrière idéal_.
 
 == Amélie, 2001
 
+=== Chapter 1
+
+Dès lors, son père *la croit* victime d'une anomalie cardiaque.
+#Tr[Thenceforth, her father believed that she was a heart disease's victim. ]
+
+Amélie n'a de refuge *que* dans le monde qu'elle invente.
+#Tr[Amélie don't have a shelter except her imaginary world.]
+
+TODO: que?
+
 === Chapter 2
 
 Les jours, les mois, puis les années passent.
-
 
 Mais ça, pour le moment, elle n'en sait rien.
 #Tr[But, for this moment, she knows nothing.]
@@ -365,7 +374,88 @@ Le plus dur, ce sont les regards.
 Elle est #Dict[peut-être] #Dict[seulement] différente des _autres_.
 #Tr[She is maybe only/just different from others.]
 
-#hr_ 30:00
+Ça doit être mon ange gardien. C'est pas possible, autrement.
+#Tr[It must be my guardian angle. Other than that, it is no possible]
+
+Vous #Dict[croyez] pas?
+#Tr[You don't believe that?]
+
+Amélie #Conj[a] soudain le sentiment étrange *d'être* en harmonie totale avec elle même.
+#Tr[Amélie suddenly has a strange feeling *of being* in total harmony with herself.]
+
+=== Chapter 4
+
+Gina est assez grande pour *se défendre* toute seule.
+#Tr[Gina is strong enough to defend herself all alone.]
+
+Ouvrez les yeux, elle est là espérer une miette d'intérêt de votre part, et vous n'*en* avez que pour Gina.
+#Tr[Open your eyes, she is desperate for a tiny share of you interest, and you don't have that for Gina.]
+
+Note the `en + verb`.
+
+=== Chapter 5
+
+Une femme sans amour, c'est comme une fleur sans soleil.
+#Tr[A women without love is like flower without sun.]
+
+Je crois qu'*il y a* _quelque_ #Dict[chose] qui change.
+#Tr[I believe that there are things that changes.]
+
+Il y a _quelque_ chose qui _ne va pas_?
+#Tr[Is there something that's not going?]
+#Tr[Are things going well?]
+
+=== Chapter 6
+``
+Vous me désirez?
+#Tr[What do you want from me?]
+
+*J'y* retourne.
+#Tr[I go back there.]
+
+Note the `y` in `J'y` #est `Je y`  refers to the obvious place based on context.
+
+Voilà, tout ce que vous m'avez demandé.
+#Tr[Here, all this that you have asked.]
+
+=== Chapter 7
+
+Elle *espère* une récompense en échange de l'album.
+#Tr[She desperately want compensation in exchange for the album.]
+
+=== Chapter 8
+
+=== Chapter 9
+
+A ce moment précis de l'historie, Amélie est la seule à connaître la chef de l'énigme de _l'inconnu des photomatons_.
+#Tr[At this precise, Amélie is the only one knows the enigma/secret of the unknown (man) in the photo album.]
+
+=== Chapter 10
+
+C'est épatant! Tu #Conj[pouvait] pas fair mieux.
+#Tr[You are amazing. You couldn't do it better.]
+
+C'est vous?
+
+_L'inconnu des photomatons_ n'était pas _un revenant_, ni un obsédé par la peur de vieillir, c'était juste le réparateur.
+#Tr[The unknown (man) in the photo album is not a ghost, not a maniac, and not a man afraid of aging, he is just a repairer.]
+
+C'est vous qui *m'avez* laissé ça dans ma poche?
+#Tr[Is is you who put this in my pocket?]
+TODO: m'avez?
+
+=== Chapter 11
+
+Qu'est-ce qui se passe ici?
+#Tr[What's is happening here?]
+
+Vous croyez aux miracles?
+#Tr[Do you believe miracles?]
+
+=== Chapter 12
+
+Si vous laissez passer cette chance, alors avec le temps, c'est votre cœur qui va devenir aussi sec et cassant.
+#Tr[If you let this chance goes by, with the time passing, it is you heart that will become dry and brittle.]
 
 = Random Reviews
 
