@@ -952,4 +952,95 @@ Ma saison préférée est l'automne.
 Pourquoi vous n'aimez pas l'été?
 J'adore l'hiver *parce que* je fais du ski.
 
-== Aug 16
+== Aug 17
+
+=== Plans Making
+
+- #Dict[tenter]
+
+Note the *Adjectifs mobiles*
+- La semaine prochaine
+- Dimanche prochain
+
+- Est-ce que tu es libre...?
+- Je suis occupée/disponible.
+- Peut-être samedi?#Tr[Maybe Saturday?]
+- Ça marche! #Tr[That works!]
+
+Ça vous _tente de_ prendre un verre? #Tr[ Would you like to get a drink?]
+
+- Qu'est-ce qu'on fait? #Tr[What are we doing?]
+- Qu'est-ce que tu vas faire? #Tr[What are you going to do?]
+- Quand est-ce qu'on se voit? #Tr[When are we seeing each other?]
+- Où est-ce qu'on se rejoint? #Tr[Where are we meeting?]
+- Quels sont tes plans pour la semaine prochaine? #Tr[What are your plans for the next week?]
+
+Vous vous voyez à quelle heure chez vos parents?
+Vous n'allez pas sortir demain soir.
+
+=== Restaurant
+
+#WordTable2(
+  [salé],[salty],
+  [sucré],[sweet],
+  [épicé],[spicy],
+  [croustillantes],[crispy],
+  [délicieux],[delicious],
+  [dégueulasse],[disgusting],
+)
+
+- Avez-vous une réservation?
+- Quelque chose à boire? #Tr[Something to drink?]
+- Êtes-vous prêts à commander? #Tr[Are you ready to order?]
+- (Est-ce que) Tous est à votre goût? #Tr[Is everything tasteful to you?]
+
+- L'addition, s'il vous plaît. #Tr[The check, please.]
+- Une seule facture, s'il vous plaît.
+- Vous payez comment?
+- Comptant,Cash
+- Par carte, By carte (de crédit ou de débit)
+- Tu vas #Dict[laisser] un gros pourboire? #Tr[Will you leave a big tip?]
+- C'est vraiment pas nécessaire.
+- Je t'invite! #Tr[I invited you.]
+
+=== Housing
+
+- En haut, upstairs
+- En bas, downstairs
+- Au sous-sol, in the basement
+- Dans le grenier, in the attic
+- La salle de bain, bathroom
+- La salle de lavage, laundry room
+- À ta gauche, on your left
+- À ta droite, on your right
+- À côté de la cuisine, next to the kitchen
+- Au bout du corridor, down the hall
+- Au rez-de-chaussée, ground floor
+
+
+- Devant, in front of
+- Derrière, behind
+- Contre, against
+- Sur, On
+- Sous, Under
+- Au milieu de, in middle of
+
+- Un fauteuil confortable, a comfortable armchair
+- Des coussins colorés, colourful cushions
+- Des rideau épis, thick curtains
+
+- Un #Dict[vieux] four, An old oven
+- De vieillies armoires, old cabinets
+- De grandes fenêtres, large windows
+
+
+
+Les livres sont l'étagère. #Tr[The book is on the shelf.]
+
+=== Random
+
+*Si* j'_avais_ plus de temps cette année, je verrais mes amis plus souvent.
+
+The first clause is imperfect.
+
+The second is conditional.
