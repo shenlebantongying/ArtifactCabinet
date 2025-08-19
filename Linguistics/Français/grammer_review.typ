@@ -483,6 +483,53 @@ C'est déjà *le nombril de la semaine*. Bientôt la fin de samine!
 #Tr[It is already the middle of the week. The weekends are near.]
 Le « nombril de la semaine» référer à la *journée de mercredi*, qui est au *milieu* de la semaine.
 
+== Débutant 2
+
+Mon kangourou est tellement doux!
+#Tr[My hoodie is so soft!]
+
+Au Québec, un chandail à capuchon (hoodie) est communément appelé un « kangourou ».
+
+J'écoute ce balado #Dict[tous] les matins
+#Tr[I listen to this podcast every morning.]
+
+Les francophones du Canada utilisent le terme «balado» pour désigner un « podcast ».
+
+Elle achète des livres à la librairie.
+#Tr[She buys books at the bookstore.]
+
+La crosse est le sport national du Canada.
+#Tr[Lacrosse is Canada's national sport.]
+
+Salut, mon chum, comment ça va?
+#Tr[Hey, buddy, how's it going?]
+
+Le mot « chum » ne réfère pas toujours à un petit ami ou un conjoint. Ça peut aussi désigner un ami.
+#Tr[The word "chum" does not always refer to boy friend or partner. It also used for referring a friend.]
+
+Mets tes bottes de pine, il pleut.
+#Tr[Put on your rubber boots, it's raining.]
+
+En Ontario francophone, les « bottes de pine » sont des bottes de pluie.
+
+
+Mes grands-parents sont des snowbirds.
+#Tr[My grandparents are snowbirds.]
+
+Au Canada, le terme « snowbird » désigne une personne qui #Dict[fuit] le froid pour passer l'hiver dans une région plus chaude.
+#Tr[In canada, the term "snowbird" means a person who escape cold for living winter in a warmer region.]
+
+Porte ta *tuque*, il fait froid!
+#Tr[Put on your toque, it's cold!]
+
+Au Canada, une « tuque » désigne un bonnet de laine épais, essentiel pour affronter les hivers.
+
+On va au dépanneur pour acheter du lait.
+#Tr[We are going to the convenience store to buy milk.]
+
+Au Québec, un « dépanneur », ou « dep », est un petit magasin de quartier *ouvert tard le soir*.
+#Tr[In Quebec, a convenience store is a small market in neighbour that opens late at night.]
+
 = Random Reviews
 
 == July 1
