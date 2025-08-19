@@ -1017,7 +1017,6 @@ Vous n'allez pas sortir demain soir.
 - Au bout du corridor, down the hall
 - Au rez-de-chaussée, ground floor
 
-
 - Devant, in front of
 - Derrière, behind
 - Contre, against
@@ -1033,8 +1032,6 @@ Vous n'allez pas sortir demain soir.
 - De vieillies armoires, old cabinets
 - De grandes fenêtres, large windows
 
-
-
 Les livres sont l'étagère. #Tr[The book is on the shelf.]
 
 === Random
@@ -1044,3 +1041,50 @@ Les livres sont l'étagère. #Tr[The book is on the shelf.]
 The first clause is imperfect.
 
 The second is conditional.
+
+== Aug 18
+
+#WordTable2(
+  [entre],[between],
+  [au coin de],[on the corner of],
+  [en face de],[across from],
+  [près de],[close to],
+  [loin de],[far from],
+)
+
+L'arrêt d'autobus, the bus stop
+
+Ma cuisine a un *vieux* four et de *vieilles* armoires.
+
+- Est-ce qu'il y a un dépanneur dans ton quartier? #Tr[Is there an convenience store in your area?]
+- *Il n'y a pa d'*espaces verts dans ma ville.
+- *Il n'y a pas de* stations de métro.
+- On ne va pas *à* l'église. Il n'y a pas d'églises dans notre quartier.
+
+On respecte beaucoup la nature, d'où vient l'eau, les plantes.
+#Tr[We respect the nature very much, the place where water comes from and the plants.]
+
+Où se trove...? #Tr[Where to find...]
+
+La station de métro n'est pas loin *du parc*.
+#Tr[Note, there is no article before *parc*.]
+
+On s'en va voir Marie.
+#Tr[We're going to go see Marie.]
+
+Comment *on va à* la plage?
+#Tr[How do you get to the beach?]
+
+*Pointing direction*
+- Tournez à gauche/droite, turn left/right
+- Continuez tout droit, keep going straight
+- Traversez le pont, cross the bridge
+- Prenez le métro, take the metro
+- Marchez jusqu'à, walk until / walk to
+- Sortez à la station, get off at ... station (take a train from ...)
+- Prenez la première rue à droite, take the first right
+
+Traversez le pont et continuez tout droit.
+
+Fallait prendre à gauche *au* dernier stop.
+#Tr[You have to turn left at the last stop sign.]
