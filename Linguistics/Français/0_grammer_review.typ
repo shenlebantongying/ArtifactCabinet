@@ -68,14 +68,6 @@
   *Langue Française*
 ])
 
-= ... avoir besoin de + infinitive form word ...
-
-need to do something
-
-- #S[J'ai besoin d'un verre.][I need a drink.]
-- #S[J'ai besoin d'aller à la poste.][I need to go to the post office.]
-- #S[J'ai besoin de manger.]
-
 = Passé composé
 
 == General
@@ -260,28 +252,6 @@ Similar to _Passé Composé_.
 == Le Participe
 === Le Participe Présent
 === Le Participe Passé
-
-= La Musique
-
-== Je veux
-
-#link("https://www.youtube.com/watch?v=0TFNGRYMz1U")
-
-#S[Je veux de l'amour, de la joie, de la bonne humeur][
-  I want love, joy and good spirit.
-]
-
-#S[Bienvenue dans ma réalité.][
-  Welcome to my world.
-]
-
-#S[Allons ensemble, découvrir ma liberté.][
-  Let's go together, to discover my liberty.
-]
-
-== Les Yeux Noirs
-- #link("https://www.youtube.com/watch?v=gfiqW1WaGbw")
-- #link("https://lyricstranslate.com/en/les-yeux-noirs-blackdark-eyes.html")
 
 = La Vidéos
 

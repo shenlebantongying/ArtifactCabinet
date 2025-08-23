@@ -25,3 +25,5 @@
 - <https://www.alloprof.qc.ca/>
 
 # Random
+
+- <https://www.uottawa.ca/notre-universite/administration-services/services-linguistiques/guide-de-redaction>

@@ -29,9 +29,9 @@
     spacing:2.5em,
     breakable:false)
 }
-#let Conj(t) = text(link("https://leconjugueur.lefigaro.fr/php5/index.php?verbe=a"+t.text))
-
-
+#let Conj(t) = link("https://leconjugueur.lefigaro.fr/php5/index.php?verbe="+t.text)[#t]
+#let DictCollins(t) = text(link("https://www.collinsdictionary.com/dictionary/french-english/"+t.text)[#t])
+#let DictLeRobert(t) = text(link("https://dictionnaire.lerobert.com/definition/"+t.text)[#t])
 #o[
   https://vitrinelinguistique.oqlf.gouv.qc.ca/22926/le-vocabulaire/nuances-semantiques/difference-entre-information-et-renseignement
 
@@ -127,10 +127,43 @@ The occupation doesn't not have an article.
 #o[
   https://vitrinelinguistique.oqlf.gouv.qc.ca/index.php?id=24654
 
-
   Réguliers
   - -er #est Le premier groupe
   - -ir #est Le deuxième groupe
 
   Irréguliers #est Le troisième groupe
+]
+
+#o[
+  ... avoir besoin de + infinitive form word ...
+
+  need to do something
+
+  - J'ai besoin d'un verre.#Tr[I need a drink.]
+  - J'ai besoin d'aller à la poste.#Tr[I need to go to the post ]
+  - J'ai besoin de manger.
+]
+
+#__
+Comment est-ce que l'on y va?
+#Tr[How do we get there]
+
+_l'on_ #est _on_ but fancy
+
+#__
+- D'accord #est Oki Doki
+- On y va! #est Let's go!
+- Je vous suis! #est I will follow you.
+
+
+#o[
+  https://www.uottawa.ca/notre-universite/administration-services/services-linguistiques/guide-de-redaction
+
+
+  Les recommandations suivantes s'adressent aux personnes qui #Conj[doivent] rédiger, réviser ou traduire des textes à l' Université d'Ottawa.
+  #Tr[The following recommandations is for personals who have to write, revise or translate texts for the University of Ottawa.]
+
+  - #DictLeRobert[suivant]
+  - Qui suit, qui vient immédiatement après. #Tr[The thing that follows, the thing that comes immediately after.]
+  - venir, to come
 ]
