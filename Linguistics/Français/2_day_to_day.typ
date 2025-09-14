@@ -167,3 +167,23 @@ _l'on_ #est _on_ but fancy
   - Qui suit, qui vient immédiatement après. #Tr[The thing that follows, the thing that comes immediately after.]
   - venir, to come
 ]
+
+J'aime bien son appart parce qu'il y a un grand salon.
+#Tr[I like his/her flat because there is a big living room.]
+
+Installez-vous dans le salon.
+#Tr[Get comfortable in the living room.]
+
+Faites #DictCollins[comme] chez vous!
+#Tr[Make yourself at home.]
+
+Voilà la chambre où vous allez dormir.
+#Tr[Here is the bedroom where you'll be sleep.]
+
+C'est toujours moi qui lava la _salle de bains_.
+#Tr[It's always me who cleans the bathroom!]
+
+#Conj[Sors] _des toilettes_, j'ai envie de faire pipi!
+#Tr[Get out of the toilets, I need to pee!]
+
+C'est un #DictCollins[endroit] très tranquille.
