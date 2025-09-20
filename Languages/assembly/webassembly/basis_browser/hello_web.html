@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<header>
+</header>
+<body>
+    <div id="myPage"></div>
+</body>
+<script>
+    const importObject = {
+        m: {pprint: (arg) => console.log(arg)}
+     };
+
+    WebAssembly.instantiateStreaming(fetch("./hello.wasm"),importObject).then(
+        (helloObj) => {
+            t=helloObj
+            let myPage = document.getElementById("myPage");
+            let p = document.createElement("p");
+            myPage.appendChild(p);
+            let ret = helloObj.instance.exports.hello();
+
+            helloObj.instance.exports.printer(2019);
+
+            let myMsg = document.createTextNode(`hello -> ${ret}`);
+            myPage.appendChild(myMsg);
+        },
+    );
+</script>
+</html>
