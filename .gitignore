@@ -27,3 +27,4 @@ README.pdf
 .metals/
 *.asv
 deno.lock
+__pycache__/

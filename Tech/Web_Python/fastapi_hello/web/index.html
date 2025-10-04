@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <body>
+    <form id="the_form">
+      <label> Your name: <input type="text" name="username" /> </label>
+      <button type="submit">submit!</button>
+    </form>
+
+    <hr />
+
+    <p id="logger"></p>
+    <script>
+      const form = document.getElementById("the_form");
+      const log = document.getElementById("logger");
+
+      async function doWork(username) {
+        try {
+          const response = await fetch("hello/" + username, {
+            method: "GET",
+          });
+
+          if (response.ok === true) {
+            const text = await response.json();
+            return text["message"];
+          } else {
+            throw new Error("Nope!");
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      async function logSubmit(event) {
+        event.preventDefault();
+        log.textContent = await doWork(form.elements["username"].value);
+      }
+
+      form.addEventListener("submit", logSubmit);
+    </script>
+  </body>
+</html>
