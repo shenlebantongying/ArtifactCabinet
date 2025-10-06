@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <body>
+    <p>Hello!</p>
+    <script>
+      var ws = new WebSocket("/myws");
+      var counter = 0;
+      console.log(ws);
+
+      ws.onopen = function () {
+        ws.send("hello!");
+      };
+
+      ws.onmessage = function (event) {
+        if (counter >= 10) {
+          ws.close();
+        } else {
+          console.log("-> " + event.data);
+          counter++;
+        }
+      };
+
+      ws.onclose = function (_) {
+        console.log("closed!");
+      };
+    </script>
+  </body>
+</html>
