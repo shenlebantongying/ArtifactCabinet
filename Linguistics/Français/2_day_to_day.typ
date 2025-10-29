@@ -187,3 +187,15 @@ C'est toujours moi qui lava la _salle de bains_.
 #Tr[Get out of the toilets, I need to pee!]
 
 C'est un #DictCollins[endroit] très tranquille.
+
+J'ai #Conj[mis] ton livre sur les étagères, Isabelle, regarde!
+#Tr[I've put your book on the shelves, Isabelle, look!]
+
+- #Conj[penser]
+- Tu *penses* quoi de _ma_ nouvelle table basse? Elle est stylée, non?
+
+Ne marchez pas sur le tapis avec vos chaussures, il est neuf!
+#Tr[Don't walk with shoes on the new rug.]
+
+Fais comme chez toi, installe-toi sur le fauteuil!
+#Tr[Make yourself at home, sit down on the armchair!]
