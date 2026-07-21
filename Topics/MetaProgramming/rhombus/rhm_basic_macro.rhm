@@ -1,0 +1,9 @@
+#lang rhombus/and_meta
+
+import:
+  pict
+
+macro 'exec: $(body)':
+  'fun (): $body'
+
+(exec: println("ok"))()
