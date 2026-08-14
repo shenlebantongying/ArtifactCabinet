@@ -1,0 +1,5 @@
+(lang dune 3.23)
+
+(name ffi_cstubs_miniRaylib)
+
+(generate_opam_files true)
