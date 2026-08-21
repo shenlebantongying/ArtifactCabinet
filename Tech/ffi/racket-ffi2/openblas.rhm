@@ -1,0 +1,19 @@
+#lang rhombus
+
+import:
+  ffi open
+
+def blas_lib = Lib.load("/opt/homebrew/opt/openblas/lib/libopenblas")
+
+foreign.struct lapack_complex_float(real :: float_t,
+                                    imag :: float_t)
+
+def lapack_make_complex_float:
+  cast ((float_t,float_t) -> lapack_complex_float) blas_lib!!.find("lapack_make_complex_float")
+
+
+foreign.fun scabs1(lapack_complex_float) :: float_t:
+  ~lib: blas_lib
+  ~c_id: scabs1_
+
+print(scabs1(lapack_make_complex_float(1.1,2.2)))
