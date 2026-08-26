@@ -1,0 +1,5 @@
+test-scip-deriv:
+    raco test ./sicp-deriv-test.rkt
+
+fmt:
+    raco fmt -i *.rkt
