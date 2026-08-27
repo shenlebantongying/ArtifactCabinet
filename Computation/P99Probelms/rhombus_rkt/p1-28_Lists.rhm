@@ -1,0 +1,49 @@
+#lang rhombus
+
+/*
+
+https://ocaml.org/exercises
+raco test ./p1-28_Lists.rhm
+
+*/
+
+// p01
+
+fun
+| last(PairList(x)): x
+| last(PairList(head, tail, ...)): last(PairList(tail,...))
+
+
+// p02
+
+fun
+| last2([x, y]): [x,y]
+| last2([head, tail, ...]): last2([tail,...])
+
+// p03
+// use for loop for no reason
+
+fun at(n::Int, lst::Listable):
+  let mutable ret=#void // Is this necessary?
+  for:
+    each:
+      e in lst
+      index in 0..lst.length()
+    keep_when index == n // fun way to do skipping
+    ret:=e
+  ret
+
+
+module test:
+
+  let tlist = [1,2,3,4,5]
+  let tplist = PairList[&tlist] // is this legit? or bug? PairList(&tlist) also works
+
+  // p1
+  check last(tplist) ~is List.last(tlist)
+  // p2
+  check last2(tlist) ~is [4,5]
+  // p3
+  check at(10, tlist ) ~is #void
+  check at(1,  tlist ) ~is 2
+  check at(2,  tplist) ~is 3
