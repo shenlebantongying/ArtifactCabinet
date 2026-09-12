@@ -29,3 +29,4 @@ README.pdf
 *.asv
 deno.lock
 __pycache__/
+*.DotSettings.user
