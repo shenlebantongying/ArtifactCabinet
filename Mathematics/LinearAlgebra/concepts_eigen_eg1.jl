@@ -61,4 +61,3 @@ compute([[-6 3]; [4 5]])
 # wikipedia's example
 # Eigenvectors is y = x and y = -x
 compute([[2 1]; [1 2]])
-
