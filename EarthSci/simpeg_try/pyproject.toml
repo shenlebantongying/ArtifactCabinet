@@ -1,0 +1,15 @@
+[project]
+name = "simpeg-try"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "shenleban tongying", email = "shenlebantongying@gmail.com" }
+]
+requires-python = ">=3.15"
+dependencies = [
+    "discretize>=0.13",
+    "numpy>=2.5",
+    "scipy-stubs>=1.18",
+    "simpeg>=0.26",
+]
