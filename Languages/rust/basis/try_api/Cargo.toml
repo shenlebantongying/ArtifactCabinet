@@ -1,0 +1,11 @@
+[package]
+name = "try_api"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+
+[[bin]]
+name = "cmd_runner"
+path = "cmd_runner.rs"

@@ -1,0 +1,8 @@
+[workspace]
+resolver = "3"
+
+members = [
+    "mini_queue",
+    "frequencyTable",
+    "try_api"
+]
