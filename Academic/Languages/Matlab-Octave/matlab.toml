@@ -1,0 +1,6 @@
+name = "academic"
+
+[folders]
+path = [
+    "diffeq",
+]
