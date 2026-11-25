@@ -1,0 +1,10 @@
+#lang rhombus
+
+fun mymap(l :: List ,f :: Function.of_arity(1)) :: List:
+  def ret = l.copy()
+  for (i in 0 .. ret.length()):
+    ret.set(i,f(ret.get(i)))
+  ret.to_list()
+
+println(mymap([1,2,3], (_ + 1)))
+println(mymap([1,2,3], fun (x): x + 1))
